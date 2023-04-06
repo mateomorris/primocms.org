@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="generator" content="Primo" />
+    <!-- HEAD_svelte-5ywbrw_START -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <style>
+        @import url("https://unpkg.com/tailwindcss@2.2.15/dist/base.css");
+        @import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);
+
+        #page {
+            --color-primored: #35d994;
+            --color-gray: #262626;
+            --color-black: #121212;
+            --color-white: #ffff;
+            --color-accent: var(--color-primored);
+            --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+
+            --padding-left: 2rem;
+            --padding-right: 2rem;
+
+            --color: #F3F3F3;
+            --background: var(--color-black);
+            --max-width: 900px;
+            --border-color: var(--color-gray);
+            --border: 2px solid var(--border-color);
+            --border-radius: 5px;
+
+            --heading-font-size: 2.25rem;
+            --heading-color: #FDFDFD;
+            --heading-font-weight: 600;
+            --subheading-color: #DADADA;
+            --body-color: #DADADA;
+
+            --transition-time: 0.1s;
+            --transition: var(--transition-time) color,
+                var(--transition-time) background-color, var(--transition-time) background,
+                var(--transition-time) border-color,
+                var(--transition-time) text-decoration-color,
+                var(--transition-time) box-shadow, var(--transition-time) transform;
+
+            --button-color: var(--color-white);
+            --button-background: var(--background);
+            --button-border: 1px solid white;
+            --button-hover-background: var(--color-primored);
+            --button-padding: 8px 20px;
+            --button-border-radius: 5px;
+
+            --padding: 2rem;
+
+            color: var(--body-color);
+            background: var(--background);
+            font-family: "Inter", system-ui, sans-serif;
+            transition: var(--transition);
+        }
+
+        #page[lang="ar"] {
+            direction: rtl;
+        }
+
+        #page {
+            font-weight: 300;
+        }
+
+        .section-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding-left: var(--padding);
+            padding-right: var(--padding);
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--button-color);
+            background: var(--button-background);
+            border: var(--button-border);
+            border-radius: 6px;
+            padding: var(--button-padding);
+            transition: var(--transition);
+            transform: translateY(0);
+        }
+
+        .button.secondary {
+            border: 0;
+            color: var(--color-white);
+            background: var(--color-gray);
+        }
+
+        .button.is-primary {
+            border-color: var(--color-accent);
+        }
+
+        .button.small {
+            color: var(--color);
+            padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+            font-size: 0.75rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .button.small svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .button:hover {
+            border-color: transparent;
+            background: var(--color-background);
+            color: white;
+            box-shadow: 0 0 0 2px var(--color-accent);
+        }
+
+        .button.disabled {
+            cursor: disabled;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .heading {
+            font-family: "Archivo", system-ui, sans-serif;
+            font-size: var(--heading-font-size, 49px);
+            line-height: var(--heading-line-height, 1.15);
+            font-weight: var(--heading-font-weight, 500);
+            color: var(--heading-color, #252428);
+            text-align: center;
+        }
+
+        h2.heading {
+            line-height: 1.15;
+        }
+
+        .subheading {
+            text-align: center;
+            font-size: 1.125rem;
+        }
+
+        .link {
+            transition: border-color 0.1s;
+        }
+
+        .link:hover {
+            border-color: transparent;
+        }
+
+        .link.underlined {
+            border-bottom: 2px solid var(--color-accent, #154bf4);
+        }
+
+        .link.underlined:hover {
+            border-color: transparent;
+        }
+
+        .link.arrow {
+            display: inline-flex;
+            align-items: center;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        .link.arrow svg {
+            transition: 0.1s transform;
+            transform: translateX(0);
+            position: relative;
+            top: 2px;
+        }
+
+        .link.arrow span {
+            margin-right: 0.5rem;
+        }
+
+        .link.arrow:hover svg {
+            transform: translateX(4px);
+        }
+
+        .content {
+            margin: 0 auto;
+            padding: 4rem var(--padding);
+        }
+
+        .content blockquote {
+            padding: 2rem;
+            border-left: 5px solid var(--border-color);
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+
+        .content h1 {
+            font-family: "Archivo", system-ui, sans-serif;
+            color: var(--color);
+            font-size: var(--heading-font-size);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .content h2 {
+            font-family: "Archivo", system-ui, sans-serif;
+            color: var(--color);
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .content h2+h3 {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-bottom: .5rem;
+            margin-top: 2rem;
+        }
+
+        .content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: .5rem;
+        }
+
+        .content img {
+            width: 100%;
+            margin: 2rem 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .content p {
+            line-height: 1.6;
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+
+        .content p:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        .content ol {
+            list-style: decimal;
+            padding-left: 1.25rem;
+        }
+
+        .content ul {
+            list-style: disc;
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .content ul li {
+            padding: 0.25rem 0;
+        }
+
+        .content strong {
+            font-weight: bold;
+        }
+
+        .content hr {
+            border-color: var(--border-color);
+            margin-block: 5rem;
+        }
+
+        .content a {
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        form label {
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        form label span {
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        form label input,
+        form label textarea {
+            padding: 0.5rem;
+            outline-color: transparent;
+            color: #222;
+            transition: var(--transition, 0.1s outline-color);
+            border: 1.5px solid var(--border-color, #eee);
+            border-radius: var(--border-radius);
+        }
+
+        form label input:focus,
+        form label textarea:focus {
+            outline-color: var(--color-accent, rebeccapurple);
+        }
+
+        form label input::-moz-placeholder,
+        form label textarea::-moz-placeholder {
+            font-weight: 300;
+        }
+
+        form label input:-ms-input-placeholder,
+        form label textarea:-ms-input-placeholder {
+            font-weight: 300;
+        }
+
+        form label input::placeholder,
+        form label textarea::placeholder {
+            font-weight: 300;
+        }
+
+        form .button {
+            /* Defined in Site CSS */
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+    </style><!-- HEAD_svelte-5ywbrw_END -->
+    <style></style>
+</head>
+
+<body id="page">
+
+
+    <script type="module">
+        const path = window.location.pathname === '/' ? '' : window.location.pathname
+        const [{
+            default: App
+        }, data] = await Promise.all([
+            import(path + '/_module.js'),
+            fetch('/en.json').then(res => res.json())
+        ]).catch(e => console.error(e))
+        new App({
+            target: document.querySelector('body'),
+            hydrate: true,
+        })
+    </script>
+</body>
+
+</html>
