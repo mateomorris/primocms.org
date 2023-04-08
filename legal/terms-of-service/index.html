@@ -3,7 +3,7 @@
 
 <head>
     <meta name="generator" content="Primo" />
-    <!-- HEAD_svelte-5ywbrw_START -->
+    <!-- HEAD_svelte-n6t81w_START -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <style>
@@ -32,7 +32,7 @@
             --heading-color: #FDFDFD;
             --heading-font-weight: 600;
             --subheading-color: #DADADA;
-            --body-color: #DADADA;
+            --body-color: #CECECE;
 
             --transition-time: 0.1s;
             --transition: var(--transition-time) color,
@@ -41,7 +41,7 @@
                 var(--transition-time) text-decoration-color,
                 var(--transition-time) box-shadow, var(--transition-time) transform;
 
-            --button-color: var(--color-white);
+            --button-color: var(--body-color);
             --button-background: var(--background);
             --button-border: 1px solid white;
             --button-hover-background: var(--color-primored);
@@ -325,7 +325,7 @@
             display: flex;
             justify-content: center;
         }
-    </style><!-- HEAD_svelte-5ywbrw_END -->
+    </style><!-- HEAD_svelte-n6t81w_END -->
     <style></style>
 </head>
 
@@ -336,9 +336,8 @@
         const path = window.location.pathname === '/' ? '' : window.location.pathname
         const [{
             default: App
-        }, data] = await Promise.all([
-            import(path + '/_module.js'),
-            fetch('/en.json').then(res => res.json())
+        }] = await Promise.all([
+            import(path + '/_module.js')
         ]).catch(e => console.error(e))
         new App({
             target: document.querySelector('body'),

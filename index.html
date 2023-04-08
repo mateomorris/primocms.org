@@ -3,7 +3,7 @@
 
 <head>
     <meta name="generator" content="Primo" />
-    <!-- HEAD_svelte-1y97kzh_START -->
+    <!-- HEAD_svelte-n6t81w_START -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <style>
@@ -32,7 +32,7 @@
             --heading-color: #FDFDFD;
             --heading-font-weight: 600;
             --subheading-color: #DADADA;
-            --body-color: #DADADA;
+            --body-color: #CECECE;
 
             --transition-time: 0.1s;
             --transition: var(--transition-time) color,
@@ -41,7 +41,7 @@
                 var(--transition-time) text-decoration-color,
                 var(--transition-time) box-shadow, var(--transition-time) transform;
 
-            --button-color: var(--color-white);
+            --button-color: var(--body-color);
             --button-background: var(--background);
             --button-border: 1px solid white;
             --button-hover-background: var(--color-primored);
@@ -325,14 +325,9 @@
             display: flex;
             justify-content: center;
         }
-
-        .content h1 {
-            padding-top: 10rem;
-            max-width: 800px;
-        }
-    </style><!-- HEAD_svelte-1y97kzh_END -->
+    </style><!-- HEAD_svelte-n6t81w_END -->
     <style>
-        .banner.svelte-1y59g07.svelte-1y59g07 {
+        .banner.svelte-wsl9vi.svelte-wsl9vi {
             background: var(--color-accent);
             padding: 0.6rem;
             text-align: center;
@@ -341,7 +336,7 @@
                     #35d994 100%)
         }
 
-        .banner.svelte-1y59g07 .memo-content.svelte-1y59g07 {
+        .banner.svelte-wsl9vi .memo-content.svelte-wsl9vi {
             display: flex;
             gap: 1.25rem;
             color: white;
@@ -350,18 +345,18 @@
             align-items: center
         }
 
-        .banner.svelte-1y59g07 .memo-content.svelte-1y59g07 a {
+        .banner.svelte-wsl9vi .memo-content.svelte-wsl9vi a {
             text-decoration: underline
         }
 
-        .banner.svelte-1y59g07 .memo-content a.svelte-1y59g07 {
+        .banner.svelte-wsl9vi .memo-content a.svelte-wsl9vi {
             font-weight: 400;
             border: 1.5px solid white;
             border-radius: var(--button-border-radius);
             padding: 2.75px 10px
         }
 
-        header.svelte-1y59g07.svelte-1y59g07 {
+        header.svelte-wsl9vi.svelte-wsl9vi {
             border-top: 1px solid #444;
             display: flex;
             justify-content: space-between;
@@ -370,20 +365,20 @@
             padding-bottom: 1rem
         }
 
-        .link.svelte-1y59g07.svelte-1y59g07 {
+        .link.svelte-wsl9vi.svelte-wsl9vi {
             border-color: transparent
         }
 
-        .link.svelte-1y59g07.svelte-1y59g07:hover {
+        .link.svelte-wsl9vi.svelte-wsl9vi:hover {
             border-color: var(--color-accent)
         }
 
-        .logo.svelte-1y59g07 svg {
+        .logo.svelte-wsl9vi svg {
             color: var(--color-white);
             width: 120px
         }
 
-        .logo.svelte-1y59g07 span.svelte-1y59g07 {
+        .logo.svelte-wsl9vi span.svelte-wsl9vi {
             border: 0 !important;
             clip: rect(1px, 1px, 1px, 1px) !important;
             -webkit-clip-path: inset(50%) !important;
@@ -397,11 +392,34 @@
             white-space: nowrap !important
         }
 
-        button#open.svelte-1y59g07.svelte-1y59g07 {
+        a.pill.svelte-wsl9vi.svelte-wsl9vi {
+            transition: 0.1s box-shadow;
+            fill: white;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.875rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 0.25rem 0.75rem
+        }
+
+        a.pill.svelte-wsl9vi span.svelte-wsl9vi {
+            display: none
+        }
+
+        @media(min-width: 500px) {
+            a.pill.svelte-wsl9vi span.svelte-wsl9vi {
+                display: inline
+            }
+        }
+
+        button#open.svelte-wsl9vi.svelte-wsl9vi {
             font-size: 3rem
         }
 
-        nav.svelte-1y59g07.svelte-1y59g07 {
+        nav.svelte-wsl9vi.svelte-wsl9vi {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -409,48 +427,48 @@
         }
 
         @media(min-width: 700px) {
-            nav.svelte-1y59g07.svelte-1y59g07 {
-                gap: 1.75rem
+            nav.svelte-wsl9vi.svelte-wsl9vi {
+                gap: 1.5rem
             }
         }
 
-        nav.svelte-1y59g07 select {
+        nav.svelte-wsl9vi select {
             background: transparent
         }
 
-        nav.svelte-1y59g07 button#close.svelte-1y59g07 {
+        nav.svelte-wsl9vi button#close.svelte-wsl9vi {
             display: none
         }
 
-        nav.svelte-1y59g07 .nav-item.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item.svelte-wsl9vi {
             position: relative
         }
 
-        nav.svelte-1y59g07 .nav-item .top-link.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item .top-link.svelte-wsl9vi {
             display: none;
             align-items: center;
             gap: 0.5rem;
             position: relative
         }
 
-        nav.svelte-1y59g07 .nav-item .top-link span.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item .top-link span.svelte-wsl9vi {
             border-bottom: 2px solid transparent
         }
 
-        nav.svelte-1y59g07 .nav-item .top-link .icon.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item .top-link .icon.svelte-wsl9vi {
             font-size: .9rem
         }
 
-        nav.svelte-1y59g07 .nav-item .top-link a.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item .top-link a.svelte-wsl9vi {
             border-bottom: 2px solid transparent
         }
 
-        nav.svelte-1y59g07 .nav-item .top-link a.svelte-1y59g07:hover,
-        nav.svelte-1y59g07 .nav-item .top-link a.active.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item .top-link a.svelte-wsl9vi:hover,
+        nav.svelte-wsl9vi .nav-item .top-link a.active.svelte-wsl9vi {
             border-color: var(--color-accent)
         }
 
-        nav.svelte-1y59g07 .nav-item .top-link .featured-pill.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item .top-link .featured-pill.svelte-wsl9vi {
             position: absolute;
             left: calc(100% - 9px);
             bottom: calc(100% - 4px);
@@ -462,7 +480,7 @@
             font-weight: 600
         }
 
-        nav.svelte-1y59g07 .nav-item .dropdown.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item .dropdown.svelte-wsl9vi {
             top: 100%;
             position: absolute;
             display: none;
@@ -474,13 +492,13 @@
             box-shadow: var(--box-shadow)
         }
 
-        nav.svelte-1y59g07 .nav-item:hover .dropdown.svelte-1y59g07 {
+        nav.svelte-wsl9vi .nav-item:hover .dropdown.svelte-wsl9vi {
             display: grid;
             place-items: flex-start;
             gap: 0.25rem
         }
 
-        nav#mobile-nav.svelte-1y59g07.svelte-1y59g07 {
+        nav#mobile-nav.svelte-wsl9vi.svelte-wsl9vi {
             position: absolute;
             flex-direction: column;
             text-align: center;
@@ -494,11 +512,11 @@
             padding: 2rem
         }
 
-        nav#mobile-nav.svelte-1y59g07 a.link.svelte-1y59g07 {
+        nav#mobile-nav.svelte-wsl9vi a.link.svelte-wsl9vi {
             display: block
         }
 
-        nav#mobile-nav.svelte-1y59g07 button#close.svelte-1y59g07 {
+        nav#mobile-nav.svelte-wsl9vi button#close.svelte-wsl9vi {
             display: block;
             position: absolute;
             right: 1rem;
@@ -509,23 +527,23 @@
 
         @media(min-width: 700px) {
 
-            #open.svelte-1y59g07.svelte-1y59g07,
-            #mobile-nav.svelte-1y59g07.svelte-1y59g07 {
+            #open.svelte-wsl9vi.svelte-wsl9vi,
+            #mobile-nav.svelte-wsl9vi.svelte-wsl9vi {
                 display: none
             }
 
-            nav.svelte-1y59g07 .nav-item .top-link.svelte-1y59g07 {
+            nav.svelte-wsl9vi .nav-item .top-link.svelte-wsl9vi {
                 display: flex
             }
         }
 
-        .section-container.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        .section-container.svelte-2181jx.svelte-2181jx {
             display: grid;
             gap: 4rem;
             page-bottom: 1rem
         }
 
-        .gradient.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        .gradient.svelte-2181jx.svelte-2181jx {
             position: absolute;
             top: 0;
             left: 0;
@@ -535,80 +553,102 @@
             max-height: 55rem;
             background: linear-gradient(180deg, #121212 82.63%, #222222 103.35%);
             mix-blend-mode: lighten;
-            border-bottom: 2px solid #393939;
+            border-bottom: 1px solid #393939;
             pointer-events: none
         }
 
-        .top.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        .top.svelte-2181jx.svelte-2181jx {
             display: grid
         }
 
-        .top.svelte-11si4ex .heading.svelte-11si4ex.svelte-11si4ex {
+        .top.svelte-2181jx .heading.svelte-2181jx {
             font-size: clamp(1.5rem, 5vw, 4rem);
             line-height: 1.1;
             margin-bottom: 2rem;
-            text-align: left
+            text-align: left;
+            margin-bottom: 0.75rem
         }
 
-        .top.svelte-11si4ex .heading.svelte-11si4ex strong {
+        .top.svelte-2181jx .heading.svelte-2181jx strong {
             color: var(--color-accent);
             font-style: inherit;
             font-weight: 600
         }
 
         @media(min-width: 1000px) {
-            .top.svelte-11si4ex .heading.svelte-11si4ex.svelte-11si4ex {
+            .top.svelte-2181jx .heading.svelte-2181jx {
                 font-size: 2.875rem
             }
 
-            .top.svelte-11si4ex .subheading.svelte-11si4ex.svelte-11si4ex {
+            .top.svelte-2181jx .subheading.svelte-2181jx {
                 max-width: 980px
             }
         }
 
-        .subheading.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        .subheading.svelte-2181jx.svelte-2181jx {
             font-weight: 300;
-            text-align: left
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 2.5rem
         }
 
-        .subheading.svelte-11si4ex a {
+        .subheading.svelte-2181jx img {
+            width: 1rem;
+            display: inline-block;
+            margin-left: 0.25rem;
+            transition: 0.1s transform
+        }
+
+        .subheading.svelte-2181jx img:hover {
+            transform: scale(1.2)
+        }
+
+        .subheading.svelte-2181jx a {
             unset: all;
-            border-bottom: 1px solid rgb(235, 85, 39);
             transition: var(--transition)
         }
 
-        .subheading.svelte-11si4ex a:hover {
+        .subheading.svelte-2181jx a:hover {
             border-color: transparent;
             color: rgb(235, 85, 39)
         }
 
-        h2.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        h2.svelte-2181jx.svelte-2181jx {
             margin-bottom: 3rem
         }
 
-        .buttons.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        .buttons.svelte-2181jx.svelte-2181jx {
             display: flex;
             align-items: flex-start;
             flex-wrap: wrap;
             gap: 1rem
         }
 
-        .buttons.svelte-11si4ex .button.svelte-11si4ex.svelte-11si4ex {
+        .buttons.svelte-2181jx .button.svelte-2181jx {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             text-align: left
         }
 
-        .buttons.svelte-11si4ex .button.svelte-11si4ex span.svelte-11si4ex {
+        .buttons .button.svelte-2181jx span.svelte-2181jx {
             margin-right: 0.5rem
         }
 
-        .buttons.svelte-11si4ex svg.svelte-11si4ex.svelte-11si4ex {
-            width: 1rem
+        .buttons.svelte-2181jx .button.primary.svelte-2181jx {
+            font-weight: 400;
+            border: 1.5px solid #35D994
         }
 
-        .right.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        .buttons.svelte-2181jx .button.primary.svelte-2181jx:hover {
+            box-shadow: none;
+            background: #35D994;
+            color: #121212
+        }
+
+        .right.svelte-2181jx.svelte-2181jx {
             display: grid;
             gap: 1rem;
             max-width: 1000px;
@@ -617,14 +657,16 @@
             width: 100%
         }
 
-        .right.svelte-11si4ex figure.svelte-11si4ex.svelte-11si4ex {
+        .right.svelte-2181jx figure.svelte-2181jx {
             width: 100%;
             position: relative;
             padding-top: 61%;
-            background: #111
+            background: #111;
+            scale: 1.1;
+            margin-top: 3rem
         }
 
-        .right.svelte-11si4ex figure iframe.svelte-11si4ex.svelte-11si4ex {
+        .right.svelte-2181jx figure iframe.svelte-2181jx {
             overflow: hidden;
             position: absolute;
             inset: 0;
@@ -634,42 +676,12 @@
         }
 
         @media(min-width: 1000px) {
-            .right.svelte-11si4ex figure iframe.svelte-11si4ex.svelte-11si4ex {
+            .right.svelte-2181jx figure iframe.svelte-2181jx {
                 border-radius: 14px
             }
         }
 
-        .right.svelte-11si4ex .buttons.svelte-11si4ex.svelte-11si4ex {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.75rem
-        }
-
-        .right.svelte-11si4ex .buttons .pill-button.svelte-11si4ex.svelte-11si4ex {
-            border-radius: 3rem;
-            border: 2px solid var(--color-accent);
-            padding: 0.25rem 0.75rem;
-            display: inline-flex;
-            transition: var(--transition)
-        }
-
-        .right.svelte-11si4ex .buttons.svelte-11si4ex .pill-button span.svelte-11si4ex {
-            margin-right: 0.5rem
-        }
-
-        .right.svelte-11si4ex .buttons .pill-button svg.svelte-11si4ex.svelte-11si4ex {
-            height: 100%;
-            width: 1rem
-        }
-
-        .right.svelte-11si4ex .buttons .pill-button.svelte-11si4ex.svelte-11si4ex:hover {
-            background: var(--color-accent);
-            color: white
-        }
-
-        #modal.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx.svelte-2181jx {
             position: fixed;
             inset: 0;
             z-index: 10;
@@ -678,14 +690,14 @@
             align-items: center
         }
 
-        #modal.svelte-11si4ex .bg.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .bg.svelte-2181jx {
             position: absolute;
             inset: 0;
             z-index: 0;
             background: rgba(0, 0, 0, 0.8)
         }
 
-        #modal.svelte-11si4ex .container.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .container.svelte-2181jx {
             background: var(--background);
             width: 100%;
             max-width: 500px;
@@ -696,57 +708,57 @@
             z-index: 1
         }
 
-        #modal.svelte-11si4ex .container.has-video.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .container.has-video.svelte-2181jx {
             max-width: 700px
         }
 
-        #modal.svelte-11si4ex .container iframe.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .container iframe.svelte-2181jx {
             aspect-ratio: 2 / 1;
             width: 100%
         }
 
-        #modal.svelte-11si4ex .container .title.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .container .title.svelte-2181jx {
             font-size: 1.3125rem;
             font-weight: 700;
             display: flex;
             align-items: center
         }
 
-        #modal.svelte-11si4ex .container .title span.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .container .title span.svelte-2181jx {
             margin-right: 0.75rem
         }
 
-        #modal.svelte-11si4ex .container .content.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .container .content.svelte-2181jx {
             padding: 0;
             margin-bottom: 1rem
         }
 
-        #modal.svelte-11si4ex .container .content.svelte-11si4ex p:not(:last-child) {
+        #modal.svelte-2181jx .container .content.svelte-2181jx p:not(:last-child) {
             display: block;
             margin-bottom: 1rem
         }
 
-        #modal.svelte-11si4ex .container .content.svelte-11si4ex a:hover {
+        #modal.svelte-2181jx .container .content.svelte-2181jx a:hover {
             border-color: transparent
         }
 
-        #modal.svelte-11si4ex .container .button.svelte-11si4ex.svelte-11si4ex {
+        #modal.svelte-2181jx .container .button.svelte-2181jx {
             display: flex;
             align-items: center;
             justify-content: center
         }
 
-        #modal.svelte-11si4ex .container .button.svelte-11si4ex span.svelte-11si4ex {
+        #modal.svelte-2181jx .container .button span.svelte-2181jx {
             margin-right: 0.75rem
         }
 
-        form.svelte-11si4ex.svelte-11si4ex.svelte-11si4ex {
+        form.svelte-2181jx.svelte-2181jx {
             display: flex;
             flex-direction: column;
             gap: 0.5rem
         }
 
-        form.svelte-11si4ex input.svelte-11si4ex.svelte-11si4ex {
+        form.svelte-2181jx input.svelte-2181jx {
             width: 100%;
             border-radius: 4px;
             border: 1.5px solid #cbcace;
@@ -756,55 +768,56 @@
             color: var(--color-gray)
         }
 
-        form.svelte-11si4ex button.svelte-11si4ex.svelte-11si4ex {
+        form.svelte-2181jx button.svelte-2181jx {
             width: 100%
         }
 
-        header.svelte-lknz1b.svelte-lknz1b {
+        header.svelte-37j5at.svelte-37j5at {
             display: grid;
             gap: 0.5rem;
             margin-bottom: 4rem
         }
 
-        .teasers.svelte-lknz1b.svelte-lknz1b {
+        .teasers.svelte-37j5at.svelte-37j5at {
             display: grid;
             gap: 6rem
         }
 
-        .teaser.svelte-lknz1b.svelte-lknz1b {
+        .teaser.svelte-37j5at.svelte-37j5at {
             display: grid;
-            gap: 3rem
+            gap: 2rem
         }
 
-        .teaser.svelte-lknz1b figure.svelte-lknz1b {
+        .teaser.svelte-37j5at figure.svelte-37j5at {
             width: 100%;
-            border-radius: var(--border-radius)
+            border-radius: var(--border-radius);
+            overflow: hidden
         }
 
-        .teaser.svelte-lknz1b figure iframe.svelte-lknz1b {
+        .teaser.svelte-37j5at figure iframe.svelte-37j5at {
             width: 100%;
             height: 100%;
             aspect-ratio: 1.78 / 1
         }
 
-        .teaser.svelte-lknz1b .content.svelte-lknz1b {
+        .teaser.svelte-37j5at .content.svelte-37j5at {
             padding: 0;
             display: grid;
             place-items: flex-start;
             gap: 1rem
         }
 
-        .teaser.svelte-lknz1b .content.svelte-lknz1b a {
+        .teaser.svelte-37j5at .content.svelte-37j5at a {
             text-decoration: underline
         }
 
-        .teaser.svelte-lknz1b .content .heading.svelte-lknz1b {
+        .teaser.svelte-37j5at .content .heading.svelte-37j5at {
             text-align: left;
             margin-bottom: 0
         }
 
         @media(min-width: 800px) {
-            .teaser.svelte-lknz1b.svelte-lknz1b {
+            .teaser.svelte-37j5at.svelte-37j5at {
                 grid-template-columns: 1fr 1fr;
                 place-items:center
                 /* switch direction for even items */
@@ -821,130 +834,167 @@
         }
 
         @media(min-width: 900px) {
-            section.svelte-lknz1b.svelte-lknz1b {
-                gap: 6rem
+            section.svelte-37j5at.svelte-37j5at {
+                gap: 8rem
             }
 
-            header.svelte-lknz1b.svelte-lknz1b {
+            header.svelte-37j5at.svelte-37j5at {
                 margin-bottom: 8rem
             }
 
-            .teasers.svelte-lknz1b.svelte-lknz1b {
+            .teasers.svelte-37j5at.svelte-37j5at {
                 display: grid;
-                gap: 12rem
+                gap: 5rem
             }
 
-            .teaser.svelte-lknz1b.svelte-lknz1b {
-                gap: 6rem
+            .teaser.svelte-37j5at.svelte-37j5at {
+                gap: 8rem
             }
         }
 
-        .heading.svelte-70t6t3.svelte-70t6t3.svelte-70t6t3 {
-            text-align: left;
-            margin-bottom: 1.5rem;
-            grid-column: 1 / span 2
-        }
-
-        .accordion.svelte-70t6t3.svelte-70t6t3.svelte-70t6t3 {
-            width: 100%;
-            display: grid;
-            -moz-column-gap: 2rem;
-            column-gap: 2rem
-        }
-
-        .accordion.svelte-70t6t3 .item.svelte-70t6t3.svelte-70t6t3 {
-            padding: 1.5rem 0
-        }
-
-        .accordion.svelte-70t6t3 .item.svelte-70t6t3.svelte-70t6t3:not(:last-child) {
-            border-bottom: 1px solid var(--border-color, #eee)
-        }
-
-        .accordion.svelte-70t6t3 .item.active button .icon.svelte-70t6t3.svelte-70t6t3 {
-            transform: scaleY(-1)
-        }
-
-        .accordion.svelte-70t6t3 .item button.svelte-70t6t3.svelte-70t6t3 {
+        section.section-container.svelte-b58jhf.svelte-b58jhf {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%
+            flex-direction: column;
+            gap: 3.5rem
         }
 
-        .accordion.svelte-70t6t3 .item button span.svelte-70t6t3.svelte-70t6t3 {
-            font-size: 1.25rem;
-            font-weight: 600
+        header.svelte-b58jhf.svelte-b58jhf {
+            display: grid;
+            gap: 1rem
         }
 
-        .accordion.svelte-70t6t3 .item button .icon.svelte-70t6t3.svelte-70t6t3 {
-            font-size: 1.25rem;
-            color: var(--color-accent, rebeccapurple);
-            transition: transform 0.2s
+        ul.svelte-b58jhf.svelte-b58jhf {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+            gap: 4rem 2rem
         }
 
-        .accordion.svelte-70t6t3 .item button.svelte-70t6t3+.description.svelte-70t6t3 {
-            padding-top: 0.5rem
+        ul.svelte-b58jhf li.svelte-b58jhf {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem
         }
 
-        .accordion.svelte-70t6t3 .item .description.svelte-70t6t3.svelte-70t6t3 {
-            padding-right: 2rem
+        ul.svelte-b58jhf li .title.svelte-b58jhf {
+            font-family: Archivo;
+            color: var(--color-white, #e5e5e5);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-weight: 500;
+            font-size: 1.25rem
         }
 
-        section.svelte-1mqhrx0.svelte-1mqhrx0 {
+        ul.svelte-b58jhf li .title.svelte-b58jhf a {
+            border-bottom: 2px solid var(--color-primored);
+            transition: var(--transition)
+        }
+
+        ul.svelte-b58jhf li .title.svelte-b58jhf a:hover {
+            border-color: transparent
+        }
+
+        ul.svelte-b58jhf li .title.svelte-b58jhf svg {
+            color: var(--color-accent, #154bf4);
+            height: 24px;
+            width: 24px;
+            transform: translateY(3px)
+        }
+
+        ul.svelte-b58jhf li .description.svelte-b58jhf {
+            color: var(--color-body)
+        }
+
+        ul.svelte-b58jhf li .description.svelte-b58jhf a {
+            text-decoration: underline
+        }
+
+        .arrow-link.svelte-b58jhf.svelte-b58jhf {
+            font-weight: 500;
+            align-self: flex-end;
+            display: flex;
+            align-items: center
+        }
+
+        .arrow-link.svelte-b58jhf span.svelte-b58jhf {
+            margin-right: 0.75rem
+        }
+
+        .arrow-link.svelte-b58jhf svg.svelte-b58jhf {
+            transition: transform 0.1s
+        }
+
+        .arrow-link.svelte-b58jhf:hover svg.svelte-b58jhf {
+            transform: translateX(3px)
+        }
+
+        section.svelte-1nitu89.svelte-1nitu89 {
             display: grid;
             gap: 2rem;
             padding-top: 6rem;
             padding-bottom: 8rem
         }
 
-        .inner-content.svelte-1mqhrx0.svelte-1mqhrx0 {
+        .inner-content.svelte-1nitu89.svelte-1nitu89 {
             display: grid;
             place-content: flex-start;
             gap: 0.5rem
         }
 
-        .inner-content.svelte-1mqhrx0 .heading.svelte-1mqhrx0 {
+        .inner-content.svelte-1nitu89 .heading.svelte-1nitu89 {
             font-size: 1.75rem;
             text-align: left
         }
 
-        .inner-content.svelte-1mqhrx0 .subheading.svelte-1mqhrx0 {
+        .inner-content.svelte-1nitu89 .subheading.svelte-1nitu89 {
             text-align: left;
             color: var(--subheading-color)
         }
 
-        form.svelte-1mqhrx0.svelte-1mqhrx0 {
+        form.svelte-1nitu89.svelte-1nitu89 {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             box-shadow: var(--box-shadow)
         }
 
-        form.svelte-1mqhrx0 input.svelte-1mqhrx0 {
+        form.svelte-1nitu89 input.svelte-1nitu89 {
             width: 100%;
             border-radius: 4px;
-            border: 1.5px solid #CBCACE;
+            border: 1.5px solid #cbcace;
             padding: 0.5rem 0.75rem;
             font-size: 1rem;
             background: var(--color-white);
             color: var(--color-gray)
         }
 
-        form.svelte-1mqhrx0 .button.svelte-1mqhrx0 {
+        form.svelte-1nitu89 .button.svelte-1nitu89 {
             width: 100%
         }
 
+        form.svelte-1nitu89 .button.primary.svelte-1nitu89 {
+            font-weight: 400;
+            border: 1.5px solid #35d994
+        }
+
+        form.svelte-1nitu89 .button.svelte-1nitu89:hover {
+            box-shadow: none;
+            background: #35d994;
+            color: #121212
+        }
+
         @media(min-width: 700px) {
-            section.svelte-1mqhrx0.svelte-1mqhrx0 {
+            section.svelte-1nitu89.svelte-1nitu89 {
                 grid-template-columns: 2fr 1fr;
                 gap: 7rem
             }
 
-            section.svelte-1mqhrx0 .inner-content.svelte-1mqhrx0 {
+            section.svelte-1nitu89 .inner-content.svelte-1nitu89 {
                 gap: 1rem
             }
 
-            section.svelte-1mqhrx0 .inner-content .heading.svelte-1mqhrx0 {
+            section.svelte-1nitu89 .inner-content .heading.svelte-1nitu89 {
                 text-align: left
             }
         }
@@ -998,7 +1048,7 @@
 
     <div class="section" id="section-f48141c3-b822-4492-b576-c4979f50ff94">
         <div class="component">
-            <header class="section-container svelte-1y59g07"><a href="/" class="logo svelte-1y59g07"><span class="svelte-1y59g07">primo</span>
+            <header class="section-container svelte-wsl9vi"><a href="/" class="logo svelte-wsl9vi"><span class="svelte-wsl9vi">primo</span>
                     <!-- HTML_TAG_START --><svg viewBox="0 0 871 198" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_250_527)">
                             <path d="M814.062 159.924C782.686 159.924 757.171 134.408 757.171 103.032C757.171 71.6567 782.686 46.1408 814.062 46.1408C845.438 46.1408 870.954 71.6567 870.954 103.032C870.954 134.408 845.438 159.924 814.062 159.924ZM814.062 70.3186C796.021 70.3186 781.395 84.9914 781.395 102.986C781.395 120.981 796.067 135.654 814.062 135.654C832.057 135.654 846.73 120.981 846.73 102.986C846.73 84.9914 832.057 70.3186 814.062 70.3186Z" fill="#FDFDFD" />
@@ -1025,27 +1075,30 @@
                             </clipPath>
                         </defs>
                     </svg><!-- HTML_TAG_END --></a>
-                <nav class="svelte-1y59g07">
-                    <div class="nav-item svelte-1y59g07">
-                        <div class="top-link svelte-1y59g07">
-                            <a href="/why" class="link svelte-1y59g07">Why</a>
+                <nav class="svelte-wsl9vi"><a class="link pill svelte-wsl9vi" href="https://github.com/primodotso/primo" aria-label="Github repo"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--ic"><!-- HTML_TAG_START -->
+                            <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" /><!-- HTML_TAG_END -->
+                        </svg>
+                        <span class="svelte-wsl9vi">Star on Github</span></a>
+
+                    <div class="nav-item svelte-wsl9vi">
+                        <div class="top-link svelte-wsl9vi">
+                            <a href="/why" class="link svelte-wsl9vi">Why</a>
                         </div>
 
                     </div>
-                    <div class="nav-item svelte-1y59g07">
-                        <div class="top-link svelte-1y59g07">
-                            <a href="https://docs.primo.so" class="link svelte-1y59g07">Docs</a>
+                    <div class="nav-item svelte-wsl9vi">
+                        <div class="top-link svelte-wsl9vi">
+                            <a href="https://docs.primo.so" class="link svelte-wsl9vi">Docs</a>
                         </div>
 
                     </div>
-                    <div class="nav-item svelte-1y59g07">
-                        <div class="top-link svelte-1y59g07">
-                            <a href="" class="link svelte-1y59g07">Themes</a>
+                    <div class="nav-item svelte-wsl9vi">
+                        <div class="top-link svelte-wsl9vi">
+                            <a href="" class="link svelte-wsl9vi">Themes</a>
                         </div>
 
                     </div>
-
-                    <button id="open" class="svelte-1y59g07"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START -->
+                    <button id="open" class="svelte-wsl9vi"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START -->
                             <g id="iconifySvelte0">
                                 <g id="iconifySvelte1">
                                     <g id="iconifySvelte2" fill="currentColor">
@@ -1062,24 +1115,42 @@
     </div>
     <div class="section" id="section-57bc7e2d-167b-4acd-9166-d2f7a3d32e3f">
         <div class="component">
-            <header class="section-container svelte-11si4ex">
-                <div class="gradient svelte-11si4ex"></div>
-                <div class="top svelte-11si4ex">
-                    <h1 class="heading svelte-11si4ex"><!-- HTML_TAG_START -->Primo is a visual CMS that makes it a blast to build <strong>pages</strong>, manage <strong>content</strong>, and edit <strong>code</strong> - one block at a time.<!-- HTML_TAG_END --></h1>
+            <header class="section-container svelte-2181jx">
+                <div class="gradient svelte-2181jx"></div>
+                <div class="top svelte-2181jx">
+                    <h1 class="heading svelte-2181jx"><!-- HTML_TAG_START -->
+                        <p>Primo is a visual CMS that makes it a blast to build <strong>pages</strong>, manage <strong>content</strong>, and edit <strong>code</strong> - one block at a time.</p><!-- HTML_TAG_END -->
+                    </h1>
+                    <div class="subheading svelte-2181jx">Powered by <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="0.84em" height="1em" viewBox="0 0 256 308" style="vertical-align: -0.125em; " class="iconify iconify--logos"><!-- HTML_TAG_START -->
+                                <path fill="#FF3E00" d="M239.682 40.707C211.113-.182 154.69-12.301 113.895 13.69L42.247 59.356a82.198 82.198 0 0 0-37.135 55.056a86.566 86.566 0 0 0 8.536 55.576a82.425 82.425 0 0 0-12.296 30.719a87.596 87.596 0 0 0 14.964 66.244c28.574 40.893 84.997 53.007 125.787 27.016l71.648-45.664a82.182 82.182 0 0 0 37.135-55.057a86.601 86.601 0 0 0-8.53-55.577a82.409 82.409 0 0 0 12.29-30.718a87.573 87.573 0 0 0-14.963-66.244" />
+                                <path fill="#FFF" d="M106.889 270.841c-23.102 6.007-47.497-3.036-61.103-22.648a52.685 52.685 0 0 1-9.003-39.85a49.978 49.978 0 0 1 1.713-6.693l1.35-4.115l3.671 2.697a92.447 92.447 0 0 0 28.036 14.007l2.663.808l-.245 2.659a16.067 16.067 0 0 0 2.89 10.656a17.143 17.143 0 0 0 18.397 6.828a15.786 15.786 0 0 0 4.403-1.935l71.67-45.672a14.922 14.922 0 0 0 6.734-9.977a15.923 15.923 0 0 0-2.713-12.011a17.156 17.156 0 0 0-18.404-6.832a15.78 15.78 0 0 0-4.396 1.933l-27.35 17.434a52.298 52.298 0 0 1-14.553 6.391c-23.101 6.007-47.497-3.036-61.101-22.649a52.681 52.681 0 0 1-9.004-39.849a49.428 49.428 0 0 1 22.34-33.114l71.664-45.677a52.218 52.218 0 0 1 14.563-6.398c23.101-6.007 47.497 3.036 61.101 22.648a52.685 52.685 0 0 1 9.004 39.85a50.559 50.559 0 0 1-1.713 6.692l-1.35 4.116l-3.67-2.693a92.373 92.373 0 0 0-28.037-14.013l-2.664-.809l.246-2.658a16.099 16.099 0 0 0-2.89-10.656a17.143 17.143 0 0 0-18.398-6.828a15.786 15.786 0 0 0-4.402 1.935l-71.67 45.674a14.898 14.898 0 0 0-6.73 9.975a15.9 15.9 0 0 0 2.709 12.012a17.156 17.156 0 0 0 18.404 6.832a15.841 15.841 0 0 0 4.402-1.935l27.345-17.427a52.147 52.147 0 0 1 14.552-6.397c23.101-6.006 47.497 3.037 61.102 22.65a52.681 52.681 0 0 1 9.003 39.848a49.453 49.453 0 0 1-22.34 33.12l-71.664 45.673a52.218 52.218 0 0 1-14.563 6.398" /><!-- HTML_TAG_END -->
+                            </svg></span>, <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="0.98em" height="1em" viewBox="0 0 256 263" style="vertical-align: -0.125em; " class="iconify iconify--logos"><!-- HTML_TAG_START -->
+                                <defs>
+                                    <linearGradient id="iconifySvelte3" x1="20.862%" x2="63.426%" y1="20.687%" y2="44.071%">
+                                        <stop offset="0%" stop-color="#249361" />
+                                        <stop offset="100%" stop-color="#3ECF8E" />
+                                    </linearGradient>
+                                    <linearGradient id="iconifySvelte4" x1="1.991%" x2="21.403%" y1="-13.158%" y2="34.708%">
+                                        <stop offset="0%" />
+                                        <stop offset="100%" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#iconifySvelte3)" d="M149.602 258.579c-6.718 8.46-20.338 3.824-20.5-6.977l-2.367-157.984h106.229c19.24 0 29.971 22.223 18.007 37.292l-101.37 127.669Z" />
+                                <path fill="url(#iconifySvelte4)" fill-opacity=".2" d="M149.602 258.579c-6.718 8.46-20.338 3.824-20.5-6.977l-2.367-157.984h106.229c19.24 0 29.971 22.223 18.007 37.292l-101.37 127.669Z" />
+                                <path fill="#3ECF8E" d="M106.399 4.37c6.717-8.461 20.338-3.826 20.5 6.976l1.037 157.984H23.037c-19.241 0-29.973-22.223-18.008-37.292L106.4 4.369Z" /><!-- HTML_TAG_END -->
+                            </svg></span>, and <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" style="vertical-align: -0.125em; color: white; " class="iconify iconify--mdi"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /><!-- HTML_TAG_END -->
+                            </svg></span></div>
 
-                    <div class="buttons svelte-11si4ex"><a href="/why-primo" class="button svelte-11si4ex" target="_blank" rel="noreferrer"><span class="svelte-11si4ex">Try it</span></a>
-                        <a href="https://github.com/primodotso/primo-server" class="button svelte-11si4ex" target="_blank" rel="noreferrer"><span class="svelte-11si4ex">Get Started</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1.03em" height="1em" viewBox="0 0 1536 1504" class="iconify iconify--fa"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="M768 0q209 0 385.5 103T1433 382.5T1536 768q0 251-146.5 451.5T1011 1497q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142q57-6 102.5-18t94-39t81-66.5t53-105T1258 728q0-119-79-206q37-91-8-204q-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27T450 331.5T365 318q-45 113-8 204q-79 87-79 206q0 85 20.5 150T351 983t80.5 67t94 39t102.5 18q-39 36-49 103q-21 10-45 15t-57 5t-65.5-21.5T356 1146q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5t9 14t13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30t69.5 7t55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5T0 768q0-209 103-385.5T382.5 103T768 0zM291 1103q3-7-7-12q-10-3-13 2q-3 7 7 12q9 6 13-2zm31 34q7-5-2-16q-10-9-16-3q-7 5 2 16q10 10 16 3zm30 45q9-7 0-19q-8-13-17-6q-9 5 0 18t17 7zm42 42q8-8-4-19q-12-12-20-3q-9 8 4 19q12 12 20 3zm57 25q3-11-13-16q-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11q-16 0-16 11q0 13 17 11q16 0 16-11zm58-10q-2-11-18-9q-16 3-14 15t18 8t14-14z" /><!-- HTML_TAG_END -->
+                    <div class="buttons svelte-2181jx">
+                        <a href="https://github.com/primodotso/primo-server" class="button primary svelte-2181jx" target="_blank" rel="noreferrer">Get Started
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="M11.3 19.3q-.275-.275-.288-.7t.263-.7l4.9-4.9H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.175l-4.9-4.9q-.275-.275-.263-.7t.288-.7q.275-.275.7-.275t.7.275l6.6 6.6q.15.125.213.313t.062.387q0 .2-.062.375t-.213.325l-6.6 6.6q-.275.275-.7.275t-.7-.275Z" /><!-- HTML_TAG_END -->
                             </svg></a>
                     </div>
                 </div>
-                <div class="right svelte-11si4ex">
-                    <figure class="svelte-11si4ex"><iframe src="https://player.vimeo.com/video/736328521?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479" width="2304" height="1440" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Landing Page Demo" class="svelte-11si4ex"></iframe></figure>
-                    <div class="buttons svelte-11si4ex"><button class="pill-button svelte-11si4ex"><span class="svelte-11si4ex">Watch the introduction</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="svelte-11si4ex">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                            </svg></button></div>
+                <div class="right svelte-2181jx">
+                    <figure class="svelte-2181jx"><iframe src="https://player.vimeo.com/video/736328521?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479" width="2304" height="1440" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Landing Page Demo" class="svelte-2181jx"></iframe></figure>
                 </div>
             </header>
 
@@ -1087,170 +1158,164 @@
     </div>
     <div class="section" id="section-417e3913-6125-4a8d-a625-e41536bc98c4">
         <div class="component">
-            <section class="section-container svelte-lknz1b">
-                <header class="svelte-lknz1b">
+            <section class="section-container svelte-37j5at">
+                <header class="svelte-37j5at">
                     <h2 class="heading">The all-in-one way to make websites</h2>
                     <h3 class="subheading">Primo makes it easier than every before to build, edit, and publish</h3>
                 </header>
-                <div class="teasers svelte-lknz1b">
-                    <div class="teaser svelte-lknz1b">
-                        <div class="content svelte-lknz1b">
-                            <h2 class="heading svelte-lknz1b">Drag-n-drop, but better</h2>
+                <div class="teasers svelte-37j5at">
+                    <div class="teaser svelte-37j5at">
+                        <div class="content svelte-37j5at">
+                            <h2 class="heading svelte-37j5at">Drag-n-drop, but better</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>In qui sit irure ullamco consequat quis veniam ut et cillum mollit est. Consectetur deserunt cupidatat ipsum officia proident esse qui Lorem laboris pariatur minim.</p><!-- HTML_TAG_END -->
+                                <p>Build your site's pages by dragging and dropping your Blocks onto the page, unincumbered by tedious design options.</p><!-- HTML_TAG_END -->
                             </div>
-                            <a class="link svelte-lknz1b" href="/">
+                            <a class="link svelte-37j5at" href="/">
                             </a>
                         </div>
-                        <figure class="svelte-lknz1b"><img src="https://picsum.photos/600/400?blur=10" alt=""></figure>
+                        <figure class="svelte-37j5at"><img src="https://picsum.photos/600/400?blur=10" alt=""></figure>
                     </div>
-                    <div class="teaser svelte-lknz1b">
-                        <div class="content svelte-lknz1b">
-                            <h2 class="heading svelte-lknz1b">Visual content editing</h2>
+                    <div class="teaser svelte-37j5at">
+                        <div class="content svelte-37j5at">
+                            <h2 class="heading svelte-37j5at">Visual content editing</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>Edit structured content from components' isolated fields and edit editorial content right on the page. Assemble new sites and pages with the ease of a visual content editor.</p><!-- HTML_TAG_END -->
+                                <p>Update your text, images, and links directly on the page &amp; manage everything else from the Fields view.</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
-                        <figure class="svelte-lknz1b"><img src="https://picsum.photos/600/400?blur=10" alt=""></figure>
+                        <figure class="svelte-37j5at"><img src="https://picsum.photos/600/400?blur=10" alt=""></figure>
                     </div>
-                    <div class="teaser svelte-lknz1b">
-                        <div class="content svelte-lknz1b">
-                            <h2 class="heading svelte-lknz1b">Instant development</h2>
+                    <div class="teaser svelte-37j5at">
+                        <div class="content svelte-37j5at">
+                            <h2 class="heading svelte-37j5at">Instant development</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>Access your site's code with the flick of a switch. Modify your components from Primo's feature-rich embedded code editor. See a live, mobile-first preview and build reactive components with the power of Svelte.</p><!-- HTML_TAG_END -->
+                                <p>Access your blocks' code with a click - right from the browser. Each block is a Svelte component. </p><!-- HTML_TAG_END -->
                             </div>
                         </div>
-                        <figure class="svelte-lknz1b"><img src="https://picsum.photos/600/400?blur=10" alt=""></figure>
+                        <figure class="svelte-37j5at"><img src="https://picsum.photos/600/400?blur=10" alt=""></figure>
                     </div>
                 </div>
             </section>
         </div>
     </div>
-    <div class="section" id="section-c06f4d35-cd1e-48a7-9beb-91a776a7a0f1">
+    <div class="section" id="section-851e5afc-8663-4917-b5d7-f4266ac84835">
         <div class="component">
-            <section class="section-container svelte-70t6t3">
-                <h2 class="heading svelte-70t6t3">And everything else:</h2>
-                <div class="accordion svelte-70t6t3">
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Internationalization</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Real-time collaboration</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Secure by default</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Fast-loading pages</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Multisite to the max</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Encapsulated styles</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Deploy to Github</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Scales to millions</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                    <div class="item svelte-70t6t3"><button class="svelte-70t6t3"><span class="svelte-70t6t3">Use from any device</span>
-                            <span class="icon svelte-70t6t3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
-                                    <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
-                                </svg>
-                            </span></button>
-
-                        <noscript>
-                            <div class="description svelte-70t6t3"><!-- HTML_TAG_START -->[object Object]<!-- HTML_TAG_END --></div>
-                        </noscript>
-                    </div>
-                </div>
+            <section class="section-container svelte-b58jhf">
+                <ul class="svelte-b58jhf">
+                    <li class="svelte-b58jhf">
+                        <h3 class="title svelte-b58jhf"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m213.66 66.34l-40-40A8 8 0 0 0 168 24H88a16 16 0 0 0-16 16v16H56a16 16 0 0 0-16 16v144a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16v-16h16a16 16 0 0 0 16-16V72a8 8 0 0 0-2.34-5.66ZM136 192H88a8 8 0 0 1 0-16h48a8 8 0 0 1 0 16Zm0-32H88a8 8 0 0 1 0-16h48a8 8 0 0 1 0 16Zm64 24h-16v-80a8 8 0 0 0-2.34-5.66l-40-40A8 8 0 0 0 136 56H88V40h76.69L200 75.31Z" /><!-- HTML_TAG_END -->
+                            </svg>
+                            <span><!-- HTML_TAG_START -->Static Sites<!-- HTML_TAG_END --></span>
+                        </h3>
+                        <div class="description svelte-b58jhf" data-key="items[0].description"><!-- HTML_TAG_START -->
+                            <h1>Your websites are secure, scalable to millions, and fast-loading, no fancy plugins needed.</h1><!-- HTML_TAG_END -->
+                        </div>
+                    </li>
+                    <li class="svelte-b58jhf">
+                        <h3 class="title svelte-b58jhf"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9A3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42c-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3a3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9c-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65c2.56.34 4.45 1.51 4.45 2.9V20Z" /><!-- HTML_TAG_END -->
+                            </svg>
+                            <span><!-- HTML_TAG_START -->Real-time collaboration<!-- HTML_TAG_END --></span>
+                        </h3>
+                        <div class="description svelte-b58jhf" data-key="items[1].description"><!-- HTML_TAG_START -->
+                            <h1>Enjoy any number of collaborators as developers or content editors. </h1><!-- HTML_TAG_END -->
+                        </div>
+                    </li>
+                    <li class="svelte-b58jhf">
+                        <h3 class="title svelte-b58jhf"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 2048 2048" class="iconify iconify--fluent-mdl2"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m601 1152l295 886v10H765l-86-256H345l-86 256H128v-10l295-886h178zm36 512l-125-374l-125 374h250zM893 512q3 65 3 128v64q0 32-2 64H768v128H523l10 64q5 32 14 64H418q-8-32-12-64t-9-64H188q20 36 46 68t57 60h-35l-45 90q-101-91-156-214T0 640q0-88 23-170t64-153t100-129T317 88t153-65T640 0q88 0 170 23t153 64t129 100t100 130t65 153t23 170q0 32-3 64t-10 64h-124q17-65 17-128t-17-128H893zM640 120q-19 0-34 16t-28 41t-22 56t-15 60t-11 54t-6 37h231q-2-11-6-35t-10-54t-16-60t-22-56t-28-42t-33-17zM387 768q-3-64-3-128q0-63 3-128H137q-17 65-17 128t17 128h250zm11-384q6-58 18-116t34-112q-83 33-150 91T188 384h210zm369 384q3-64 3-128q0-63-3-128H513q-3 65-3 128q0 64 3 128h254zm58-613q23 54 36 112t20 117h211q-45-78-113-137t-154-92zm566 734q0-30-1-61t-8-60q69 0 137 6q6 1 12 3t7 10q0 5-3 12t-5 12q-2 6-3 16t-2 21t-1 22t0 17v13h296q42 0 83-1t84-2q7 0 13 3q3 5 3 10q-1 17-2 35t-1 36v58q0 36 1 72t2 73v7q0 4-3 6q-8 2-13 2h-25q-20 0-41 1q-19 0-34-1t-17-3q-2-8-2-24t-1-36q0-33 1-68t1-52h-802v39q0 15 1 31t0 34q0 29-1 52t-3 26q-8 2-13 2H949q-11 0-13-3t-2-13q1-40 1-79t0-79v-58q0-29-1-58q0-5 2-11q8-2 13-2q42 1 83 2t84 1h275v-11zm639 553q2 8 2 13v96q0 4-2 12q-8 2-13 2q-40-1-79-2t-79-1h-321v33q0 52 1 104t3 104v4q0 24-9 48t-29 38q-14 10-39 15t-55 8t-56 3t-44 1h-19q-13 0-18-6q-3-3-7-16t-6-18q-7-26-16-48t-24-46q34 4 68 5t68 2q24 0 36-7t13-34v-190h-319q-40 0-80 1t-80 2q-8 0-12-3q-2-6-2-11v-103q0-4 3-7q6-2 11-2l80 2q40 1 80 1h319q-2-26-2-52t-6-53q20 2 39 3t40 4h3q1 0 4 1q35-25 67-53t64-57h-308q-42 0-83 1t-84 2q-8 0-12-3q-2-6-2-11v-95q0-4 2-12q8-2 12-2q42 1 83 2t84 1h373q16 0 30-4t25-5q8 0 23 12t30 28t26 32t12 25q0 10-6 15t-15 10q-14 7-27 18t-25 21q-52 43-104 83t-110 78v11h321q40 0 79-1t79-2q7 0 13 3z" /><!-- HTML_TAG_END -->
+                            </svg>
+                            <span><!-- HTML_TAG_START -->Internationalization<!-- HTML_TAG_END --></span>
+                        </h3>
+                        <div class="description svelte-b58jhf" data-key="items[2].description"><!-- HTML_TAG_START -->
+                            <h1>Choose from over 60 locales, have each built as a static version so you can rule your SEO.</h1><!-- HTML_TAG_END -->
+                        </div>
+                    </li>
+                    <li class="svelte-b58jhf">
+                        <h3 class="title svelte-b58jhf"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--gg"><!-- HTML_TAG_START -->
+                                <g fill="currentColor">
+                                    <path fill-rule="evenodd" d="M14 7a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-4Zm3 2h-2v6h2V9Z" clip-rule="evenodd" />
+                                    <path d="M6 7a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6Zm0 4a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H6Zm-1 5a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" />
+                                    <path fill-rule="evenodd" d="M4 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H4Zm16 2H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1Z" clip-rule="evenodd" />
+                                </g><!-- HTML_TAG_END -->
+                            </svg>
+                            <span><!-- HTML_TAG_START -->Multisite to the max<!-- HTML_TAG_END --></span>
+                        </h3>
+                        <div class="description svelte-b58jhf" data-key="items[3].description"><!-- HTML_TAG_START -->
+                            <h1>Create an unlimited number of websites on a single server and start new sites in seconds.</h1><!-- HTML_TAG_END -->
+                        </div>
+                    </li>
+                    <li class="svelte-b58jhf">
+                        <h3 class="title svelte-b58jhf"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /><!-- HTML_TAG_END -->
+                            </svg>
+                            <span><!-- HTML_TAG_START -->Deploy to Github<!-- HTML_TAG_END --></span>
+                        </h3>
+                        <div class="description svelte-b58jhf" data-key="items[4].description"><!-- HTML_TAG_START -->
+                            <h1>Deploy your site to a Github repository, from where you can easily deploy it to any web host.</h1><!-- HTML_TAG_END -->
+                        </div>
+                    </li>
+                    <li class="svelte-b58jhf">
+                        <h3 class="title svelte-b58jhf"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--tabler"><!-- HTML_TAG_START -->
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 5v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zM9 18h6" /><!-- HTML_TAG_END -->
+                            </svg>
+                            <span><!-- HTML_TAG_START -->Use from any device<!-- HTML_TAG_END --></span>
+                        </h3>
+                        <div class="description svelte-b58jhf" data-key="items[5].description"><!-- HTML_TAG_START -->
+                            <p>Build pages, manage content, and edit code from any device with a web browser. </p><!-- HTML_TAG_END -->
+                        </div>
+                    </li>
+                </ul>
             </section>
+        </div>
+    </div>
+    <div class="section" id="section-790613a0-f588-456b-8567-f18d54607245">
+        <div class="component">
+            <div class="section-container content"><!-- HTML_TAG_START -->
+                <h1>A few things on the roadmap:</h1>
+                <ul>
+                    <li>
+                        <p><strong>Use headless </strong>alongside SvelteKit, NextJS, Astro, etc.</p>
+                    </li>
+                    <li>
+                        <p><strong>Leverage GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p>
+                    </li>
+                    <li>
+                        <p><strong>Design fields</strong> to give content editors focused style options.</p>
+                    </li>
+                    <li>
+                        <p><strong>Cloud functions</strong> for writing backend code alongside frontend code.</p>
+                    </li>
+                </ul><!-- HTML_TAG_END -->
+            </div>
         </div>
     </div>
     <div class="section" id="section-9e29bab2-fb8b-4f3b-8de3-016839c39c27">
         <div class="component">
-            <section class="section-container svelte-1mqhrx0" id="mc_embed_signup">
-                <div class="inner-content svelte-1mqhrx0">
-                    <h2 class="heading svelte-1mqhrx0">Get monthly updates on new releases and features</h2>
-                    <h3 class="subheading svelte-1mqhrx0">We're making progress fast. Subscribe to our monthly newsletter to stay up to date on the latest features.</h3>
+            <section class="section-container svelte-1nitu89" id="mc_embed_signup">
+                <div class="inner-content svelte-1nitu89">
+                    <h2 class="heading svelte-1nitu89">Get monthly updates on new releases and features</h2>
+                    <h3 class="subheading svelte-1nitu89">We're making progress fast. Subscribe to our monthly newsletter to stay up to date on the latest features.</h3>
                 </div>
                 <div class="form">
                     <div id="mlb2-5039306" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5039306">
                         <div class="ml-form-align-center">
                             <div class="ml-form-embedWrapper embedForm">
                                 <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                                    <form class="ml-block-form svelte-1mqhrx0" action="https://static.mailerlite.com/webforms/submit/j2m2z7" data-code="j2m2z7" method="post" target="_blank">
+                                    <form class="ml-block-form svelte-1nitu89" action="https://static.mailerlite.com/webforms/submit/j2m2z7" data-code="j2m2z7" method="post" target="_blank">
                                         <div class="ml-form-formContent">
                                             <div class="ml-form-fieldRow ml-last-item">
-                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required"><input aria-label="email" aria-required="true" type="email" class="form-control svelte-1mqhrx0" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email"></div>
+                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required"><input aria-label="email" aria-required="true" type="email" class="form-control svelte-1nitu89" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email"></div>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="ml-submit" value="1" class="svelte-1mqhrx0">
-                                        <div class="ml-form-embedSubmit"><button type="submit" class="primary button svelte-1mqhrx0">Subscribe</button>
+                                        <input type="hidden" name="ml-submit" value="1" class="svelte-1nitu89">
+                                        <div class="ml-form-embedSubmit"><button type="submit" class="button primary svelte-1nitu89">Subscribe</button>
                                             <button disabled="disabled" style="display: none" type="button" class="loading">
                                                 <div class="ml-form-embedSubmitLoad"></div>
                                                 <span class="sr-only">Loading...</span>
                                             </button>
                                         </div>
-                                        <input type="hidden" name="anticsrf" value="true" class="svelte-1mqhrx0">
+                                        <input type="hidden" name="anticsrf" value="true" class="svelte-1nitu89">
                                     </form>
                                 </div>
                                 <div class="ml-form-successBody row-success" style="display: none">
@@ -1309,9 +1374,8 @@
         const path = window.location.pathname === '/' ? '' : window.location.pathname
         const [{
             default: App
-        }, data] = await Promise.all([
-            import(path + '/_module.js'),
-            fetch('/en.json').then(res => res.json())
+        }] = await Promise.all([
+            import(path + '/_module.js')
         ]).catch(e => console.error(e))
         new App({
             target: document.querySelector('body'),
