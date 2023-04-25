@@ -539,8 +539,533 @@
             }
         }
 
-        .content.svelte-3los8l h1 {
-            text-align: var(--heading-align)
+        .section-container.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            padding-top: 3rem
+        }
+
+        header.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 2rem
+        }
+
+        header.svelte-jzgfhg .heading.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            text-align: left;
+            margin-bottom: .75rem
+        }
+
+        header.svelte-jzgfhg .subheading.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            color: #eee;
+            text-align: left;
+            max-width: 675px
+        }
+
+        header.svelte-jzgfhg button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-accent);
+            padding: 0.25rem 0.75rem
+        }
+
+        .items.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            gap: 2rem;
+            place-items: start
+        }
+
+        @media(min-width: 500px) {
+            .items.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(min-width: 700px) {
+            .items.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+                grid-template-columns: 1fr 1fr 1fr
+            }
+        }
+
+        .item.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid
+        }
+
+        .item.svelte-jzgfhg img.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            margin-bottom: 0.75rem;
+            border-radius: 0.125rem;
+            overflow: hidden
+        }
+
+        .item.svelte-jzgfhg footer.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 1.125rem
+        }
+
+        .item.svelte-jzgfhg footer .info.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem
+        }
+
+        .item footer .info.svelte-jzgfhg .price.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            border-radius: 1rem;
+            background: #333;
+            padding-inline: 8px;
+            margin: auto 0
+        }
+
+        .item.svelte-jzgfhg footer .buttons.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            gap: 0.45rem
+        }
+
+        .item.svelte-jzgfhg footer .buttons button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            transition: 0.1s color
+        }
+
+        .item.svelte-jzgfhg footer .buttons button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg:hover {
+            color: var(--color-accent)
+        }
+
+        .item.svelte-jzgfhg footer .buttons button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg:last-child {
+            font-size: 1.2rem
+        }
+
+        #overlay.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            background: rgba(0, 0, 0, 0.9)
+        }
+
+        #overlay.svelte-jzgfhg .background.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        #overlay.svelte-jzgfhg .inner.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            position: absolute;
+            right: 0;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: white;
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+            place-content: space-between normal
+        }
+
+        #overlay.svelte-jzgfhg header.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            width: 100%;
+            justify-content: space-between;
+            display: flex
+        }
+
+        #overlay.svelte-jzgfhg header.svelte-jzgfhg button.svelte-jzgfhg.svelte-jzgfhg {
+            color: #111;
+            border: 0
+        }
+
+        #overlay.svelte-jzgfhg .heading.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            color: #222;
+            font-size: 1.5rem;
+            text-align: left
+        }
+
+        #overlay.svelte-jzgfhg ul.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            gap: 1.5rem
+        }
+
+        #overlay.svelte-jzgfhg li.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            gap: 0.5rem
+        }
+
+        #overlay.svelte-jzgfhg li.svelte-jzgfhg img.svelte-jzgfhg.svelte-jzgfhg {
+            -o-object-fit: contain;
+            object-fit: contain;
+            border-radius: 0.25rem;
+            border: 1px solid #eee
+        }
+
+        #overlay.svelte-jzgfhg li.svelte-jzgfhg h3.svelte-jzgfhg.svelte-jzgfhg {
+            font-weight: 500
+        }
+
+        #overlay.svelte-jzgfhg li.svelte-jzgfhg .info.svelte-jzgfhg.svelte-jzgfhg {
+            color: #555;
+            display: flex;
+            gap: 0.5rem
+        }
+
+        #overlay.svelte-jzgfhg li .info .price.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            color: #999
+        }
+
+        #overlay.svelte-jzgfhg li.svelte-jzgfhg button.svelte-jzgfhg.svelte-jzgfhg {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem
+        }
+
+        #overlay.svelte-jzgfhg .cta form.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            gap: 0.5rem
+        }
+
+        #overlay.svelte-jzgfhg .cta form .total.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #111
+        }
+
+        #overlay.svelte-jzgfhg .cta form input.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: none
+        }
+
+        #overlay.svelte-jzgfhg .cta form .button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            justify-content: center;
+            width: 100%
+        }
+
+        #overlay.svelte-jzgfhg .cta form .button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg:hover {
+            color: #111
+        }
+
+        #modal.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, 0.9)
+        }
+
+        #modal.svelte-jzgfhg .loading.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            width: 100%;
+            font-size: 5rem;
+            display: flex;
+            justify-content: center
+        }
+
+        #modal.svelte-jzgfhg .background.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        #modal.svelte-jzgfhg button.close.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            font-size: 1.5rem;
+            color: white;
+            position: absolute;
+            top: 1rem;
+            left: 1rem
+        }
+
+        #modal.svelte-jzgfhg .arrow-buttons.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            position: fixed;
+            inset: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none
+        }
+
+        #modal.svelte-jzgfhg .arrow-buttons button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            pointer-events: all;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: #222;
+            transition: 0.1s background
+        }
+
+        #modal.svelte-jzgfhg .arrow-buttons button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg:hover {
+            background: #333
+        }
+
+        #modal.svelte-jzgfhg .arrow-buttons button.left.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            margin-right: auto
+        }
+
+        #modal.svelte-jzgfhg .arrow-buttons button.right.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            margin-left: auto
+        }
+
+        @media(min-width: 1200px) {
+            #modal.svelte-jzgfhg .arrow-buttons button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+                font-size: 2rem
+            }
+
+            #modal.svelte-jzgfhg .arrow-buttons button.left.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+                margin-left: -1.5rem
+            }
+
+            #modal.svelte-jzgfhg .arrow-buttons button.right.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+                margin-right: -1.5rem
+            }
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #111;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            position: relative;
+            margin: 1rem;
+            overflow: scroll
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg header.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            gap: 4rem;
+            margin-bottom: 8rem
+        }
+
+        #modal.svelte-jzgfhg .inner header .body.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            place-content: start
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg header .body .price.svelte-jzgfhg.svelte-jzgfhg {
+            background: #222;
+            padding: 0 0.75rem;
+            border-radius: 1rem;
+            margin-bottom: 0.5rem;
+            margin-right: auto
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg header.svelte-jzgfhg .body .heading.svelte-jzgfhg {
+            text-align: left;
+            margin-bottom: 1rem
+        }
+
+        #modal.svelte-jzgfhg .inner header .body .content.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            margin-bottom: 1.75rem;
+            padding: 0
+        }
+
+        #modal.svelte-jzgfhg .inner header .body .actions.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            gap: 1rem
+        }
+
+        #modal.svelte-jzgfhg .inner header figure.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            position: relative
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg header figure img.svelte-jzgfhg.svelte-jzgfhg {
+            border-radius: var(--border-radius)
+        }
+
+        #modal.svelte-jzgfhg .inner header figure img.desktop.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            width: 100%
+        }
+
+        #modal.svelte-jzgfhg .inner header figure img.mobile.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            width: 30%;
+            position: absolute;
+            bottom: -2rem;
+            right: 2rem;
+            box-shadow: var(--box-shadow)
+        }
+
+        @media(min-width: 900px) {
+            #modal.svelte-jzgfhg .inner.svelte-jzgfhg header.svelte-jzgfhg.svelte-jzgfhg {
+                grid-template-columns: 1fr 1fr;
+                gap: 7rem
+            }
+        }
+
+        #modal.svelte-jzgfhg .inner section.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            gap: 2rem
+        }
+
+        #modal.svelte-jzgfhg .inner section.svelte-jzgfhg h2.svelte-jzgfhg.svelte-jzgfhg {
+            font-weight: 600;
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem
+        }
+
+        #modal.svelte-jzgfhg .inner section .screenshots.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding-bottom: 6rem
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg section.svelte-jzgfhg .screenshots img.svelte-jzgfhg:first-child {
+            width: 30%;
+            border-radius: 4px
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg section.svelte-jzgfhg .screenshots img.svelte-jzgfhg:nth-child(2) {
+            width: 60%;
+            border-radius: 4px
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg section.svelte-jzgfhg .screenshots img.svelte-jzgfhg:last-child {
+            width: 100%;
+            border-radius: 4px
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg section ul.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            gap: 2rem;
+            padding-bottom: 6rem
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg section ul li.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            gap: 0.5rem
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg section ul li.svelte-jzgfhg a {
+            text-decoration: underline
+        }
+
+        #modal.svelte-jzgfhg .inner section ul li .icon.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            margin-top: 2px
+        }
+
+        #modal.svelte-jzgfhg .inner.svelte-jzgfhg section .accordion li.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            text-align: left
+        }
+
+        #modal.svelte-jzgfhg .inner section .accordion li .title.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            text-align: left;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            width: 100%;
+            transition: 0.1s color
+        }
+
+        #modal.svelte-jzgfhg .inner section .accordion li .title .icon.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            color: inherit;
+            transition: 0.1s transform
+        }
+
+        #modal.svelte-jzgfhg .inner section .accordion li.active .title.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            color: var(--color-accent)
+        }
+
+        #modal.svelte-jzgfhg .inner section .accordion li.active .title .icon.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            transform: scaleY(-1)
+        }
+
+        @media(min-width: 900px) {
+            #modal.svelte-jzgfhg .inner section.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+                grid-template-columns: 1fr 2fr;
+                gap: 7rem
+            }
+
+            #modal.svelte-jzgfhg .inner section.svelte-jzgfhg h2.svelte-jzgfhg.svelte-jzgfhg {
+                padding-right: 3rem;
+                border-bottom: 0;
+                border-right: 1px solid var(--border-color)
+            }
+        }
+
+        @media(min-width: 900px) {
+            #modal.svelte-jzgfhg .inner.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+                padding: 3rem;
+                padding-top: 4rem
+            }
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg header.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            grid-template-columns: auto;
+            place-items: start;
+            place-content: start;
+            gap: 0.5rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg header.svelte-jzgfhg .heading.svelte-jzgfhg.svelte-jzgfhg {
+            text-align: left;
+            margin-bottom: 0.5rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg header.svelte-jzgfhg .subheading.svelte-jzgfhg.svelte-jzgfhg {
+            text-align: left;
+            margin-bottom: 1rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg header.svelte-jzgfhg button.svelte-jzgfhg.svelte-jzgfhg {
+            padding: 0.5rem 1.125rem;
+            border-color: var(--color-accent)
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg ul.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            margin-bottom: 3rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg ul.svelte-jzgfhg li.svelte-jzgfhg.svelte-jzgfhg {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color)
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg h3.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg button.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg .instructions.svelte-jzgfhg.svelte-jzgfhg.svelte-jzgfhg {
+            margin-bottom: 3rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg .instructions.svelte-jzgfhg h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem
+        }
+
+        #modal.completed-purchase.svelte-jzgfhg .instructions.svelte-jzgfhg ol {
+            display: grid;
+            gap: 0.5rem;
+            list-style: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem
         }
 
         section.svelte-1dfzr7p.svelte-1dfzr7p {
@@ -661,7 +1186,7 @@
 
 <body id="page">
 
-    <div class="section" id="section-d4e310f9-b777-4f66-a347-0e5825bb72b4">
+    <div class="section" id="section-b34ff128-02f7-4e4c-966a-aa0300dadddd">
         <div class="component">
             <header class="section-container svelte-dwwyq"><a href="/" class="logo svelte-dwwyq"><span class="svelte-dwwyq">primo</span>
                     <!-- HTML_TAG_START --><svg viewBox="0 0 871 198" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -722,17 +1247,53 @@
             </header>
         </div>
     </div>
-    <div class="section" id="section-839e43ff-a084-438d-a766-f2ecc93836a8">
+    <div class="section" id="section-a073f9f7-e29a-4899-bcbe-8cc236288e37">
         <div class="component">
-            <div class="section-container content svelte-3los8l" style="
---heading-align: left"><!-- HTML_TAG_START -->
-                <h1>Why Primo</h1>
-                <p>Traditional monolithic CMSs like WordPress, Drupal, and Joomla enable quick setup and easy content editing, but rely on antiquated and heavy development practices (often relying on plugins and third-party services to customize the site and add new components). Headless CMSs have popped up to modernize the view layer with modern development practices and frameworks, but have a poor content editing experience due to their full separation from the site's presentation.</p>
-                <p>Primo is a modern approach to the monolithic CMS that builds on the traditional monolith's benefits of a quick setup and easy content editing alongside the flexibility of modern development. These combine into a web publishing tool that is significantly easier to use for both technical and non-technical users and enables both to build faster, more secure, more unique websites.</p><!-- HTML_TAG_END -->
-            </div>
+            <section class="section-container svelte-jzgfhg">
+                <header class="svelte-jzgfhg">
+                    <div class="heading-grouo">
+                        <h1 class="heading svelte-jzgfhg">Themes</h1>
+                        <h2 class="subheading svelte-jzgfhg">Get up and running in seconds - just download a theme and upload it when creating a site.</h2>
+                    </div>
+                </header>
+
+                <div class="items svelte-jzgfhg">
+                    <div class="item svelte-jzgfhg"><button class="svelte-jzgfhg"><img src="https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.10%20AM.png" alt="" class="svelte-jzgfhg"></button>
+                        <footer class="svelte-jzgfhg">
+                            <div class="info svelte-jzgfhg">
+                                <h2 class="svelte-jzgfhg">Startup</h2>
+                            </div>
+                            <div class="buttons svelte-jzgfhg"><button class="svelte-jzgfhg"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--akar-icons"><!-- HTML_TAG_START -->
+                                        <g fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path stroke-linecap="round" d="M12 7h.01" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 11h2v5m-2 0h4" />
+                                        </g><!-- HTML_TAG_END -->
+                                    </svg></button>
+                                <button class="svelte-jzgfhg"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 16 16" class="iconify iconify--charm"><!-- HTML_TAG_START -->
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.25 13.25h9m-8.5-6.5l4 3.5l4-3.5m-4-5v8.5" /><!-- HTML_TAG_END -->
+                                    </svg>
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+            <link rel="preload" as="image" href="https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.30%20AM.png">
+            <link rel="preload" as="image" href="https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.19%20AM.png">
+            <link rel="preload" as="image" href="https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.40.08%20PM.png">
+            <link rel="preload" as="image" href="https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.39.07%20PM.png">
+            <link rel="preload" as="image" href="https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.12.59%20PM.png">
+            <link rel="preload" as="image" href="https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.11.29%20PM.png">
         </div>
     </div>
-    <div class="section" id="section-ad9969b3-51c9-414a-8680-4575fb7c31a6">
+    <div class="section" id="section-977e2db8-241e-4803-bd2a-5c74699682da">
         <div class="component">
             <section class="section-container svelte-1dfzr7p" id="mc_embed_signup">
                 <div class="inner-content svelte-1dfzr7p">
@@ -798,7 +1359,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
         </div>
     </div>
-    <div class="section" id="section-a787683e-c410-4327-87f0-e70029b3247c">
+    <div class="section" id="section-8a667b05-7ea1-4878-a974-4321deef4684">
         <div class="component">
             <footer class="svelte-9dgfd5">
                 <div class="section-container svelte-9dgfd5">

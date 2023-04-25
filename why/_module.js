@@ -1098,16 +1098,16 @@ function create_fragment(ctx) {
 			meta0 = element("meta");
 			meta1 = element("meta");
 			style = element("style");
-			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 900px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  background: var(--button-background);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border-color: var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n}\n\nh2.heading {\n  line-height: 1.15;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: var(--heading-font-size);\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.5rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: bold;\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    /* Defined in Site CSS */\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  background: var(--button-background);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border-color: var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    /* Defined in Site CSS */\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			this.h();
 		},
 		l(nodes) {
-			const head_nodes = head_selector('svelte-n6t81w', document.head);
+			const head_nodes = head_selector('svelte-tvek1j', document.head);
 			meta0 = claim_element(head_nodes, "META", { name: true, content: true });
 			meta1 = claim_element(head_nodes, "META", { charset: true });
 			style = claim_element(head_nodes, "STYLE", {});
 			var style_nodes = children(style);
-			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 900px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  background: var(--button-background);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border-color: var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n}\n\nh2.heading {\n  line-height: 1.15;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: var(--heading-font-size);\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.5rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: bold;\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    /* Defined in Site CSS */\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  background: var(--button-background);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border-color: var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    /* Defined in Site CSS */\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			style_nodes.forEach(detach);
 			head_nodes.forEach(detach);
 			this.h();
@@ -1135,31 +1135,21 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { logo } = $$props;
-	let { site_nav } = $$props;
-	let { footer_links } = $$props;
+	let { favicon } = $$props;
 	let { test } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('logo' in $$props) $$invalidate(0, logo = $$props.logo);
-		if ('site_nav' in $$props) $$invalidate(1, site_nav = $$props.site_nav);
-		if ('footer_links' in $$props) $$invalidate(2, footer_links = $$props.footer_links);
-		if ('test' in $$props) $$invalidate(3, test = $$props.test);
+		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
+		if ('test' in $$props) $$invalidate(1, test = $$props.test);
 	};
 
-	return [logo, site_nav, footer_links, test];
+	return [favicon, test];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance, create_fragment, safe_not_equal, {
-			logo: 0,
-			site_nav: 1,
-			footer_links: 2,
-			test: 3
-		});
+		init(this, options, instance, create_fragment, safe_not_equal, { favicon: 0, test: 1 });
 	}
 }
 
@@ -2538,8 +2528,11 @@ function iconToHTML(body, attributes) {
 function encodeSVGforURL(svg) {
   return svg.replace(/"/g, "'").replace(/%/g, "%25").replace(/#/g, "%23").replace(/</g, "%3C").replace(/>/g, "%3E").replace(/\s+/g, " ");
 }
+function svgToData(svg) {
+  return "data:image/svg+xml," + encodeSVGforURL(svg);
+}
 function svgToURL(svg) {
-  return 'url("data:image/svg+xml,' + encodeSVGforURL(svg) + '")';
+  return 'url("' + svgToData(svg) + '")';
 }
 const defaultExtendedIconCustomisations = {
   ...defaultIconCustomisations,
@@ -3025,43 +3018,43 @@ class Component$1 extends SvelteComponent {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[8] = list[i].link;
-	child_ctx[9] = list[i].links;
-	const constants_0 = /*links*/ child_ctx[9].length > 0;
-	child_ctx[10] = constants_0;
+	child_ctx[7] = list[i].link;
+	child_ctx[8] = list[i].links;
+	const constants_0 = /*links*/ child_ctx[8].length > 0;
+	child_ctx[9] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[8] = list[i].link;
+	child_ctx[7] = list[i].link;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[8] = list[i].link;
-	child_ctx[9] = list[i].links;
-	child_ctx[15] = list[i].featured;
-	const constants_0 = /*links*/ child_ctx[9].length > 0;
-	child_ctx[10] = constants_0;
+	child_ctx[7] = list[i].link;
+	child_ctx[8] = list[i].links;
+	child_ctx[14] = list[i].featured;
+	const constants_0 = /*links*/ child_ctx[8].length > 0;
+	child_ctx[9] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_3(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[8] = list[i].link;
+	child_ctx[7] = list[i].link;
 	return child_ctx;
 }
 
-// (238:14) {#if banner.label}
+// (236:14) {#if banner.label}
 function create_if_block_5(ctx) {
 	let div1;
 	let div0;
 	let p;
-	let raw_value = /*banner*/ ctx[1].label + "";
+	let raw_value = /*banner*/ ctx[0].label + "";
 	let t;
-	let if_block = /*banner*/ ctx[1].cta.label && create_if_block_6(ctx);
+	let if_block = /*banner*/ ctx[0].cta.label && create_if_block_6(ctx);
 
 	return {
 		c() {
@@ -3087,8 +3080,8 @@ function create_if_block_5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "memo-content svelte-wsl9vi");
-			attr(div1, "class", "banner svelte-wsl9vi");
+			attr(div0, "class", "memo-content svelte-dwwyq");
+			attr(div1, "class", "banner svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3099,8 +3092,8 @@ function create_if_block_5(ctx) {
 			if (if_block) if_block.m(div0, null);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*banner*/ 2 && raw_value !== (raw_value = /*banner*/ ctx[1].label + "")) p.innerHTML = raw_value;
-			if (/*banner*/ ctx[1].cta.label) {
+			if (dirty & /*banner*/ 1 && raw_value !== (raw_value = /*banner*/ ctx[0].label + "")) p.innerHTML = raw_value;
+			if (/*banner*/ ctx[0].cta.label) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
@@ -3120,10 +3113,10 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (242:6) {#if banner.cta.label}
+// (240:6) {#if banner.cta.label}
 function create_if_block_6(ctx) {
 	let a;
-	let t_value = /*banner*/ ctx[1].cta.label + "";
+	let t_value = /*banner*/ ctx[0].cta.label + "";
 	let t;
 	let a_href_value;
 
@@ -3141,17 +3134,17 @@ function create_if_block_6(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*banner*/ ctx[1].cta.url);
-			attr(a, "class", "svelte-wsl9vi");
+			attr(a, "href", a_href_value = /*banner*/ ctx[0].cta.url);
+			attr(a, "class", "svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*banner*/ 2 && t_value !== (t_value = /*banner*/ ctx[1].cta.label + "")) set_data(t, t_value);
+			if (dirty & /*banner*/ 1 && t_value !== (t_value = /*banner*/ ctx[0].cta.label + "")) set_data(t, t_value);
 
-			if (dirty & /*banner*/ 2 && a_href_value !== (a_href_value = /*banner*/ ctx[1].cta.url)) {
+			if (dirty & /*banner*/ 1 && a_href_value !== (a_href_value = /*banner*/ ctx[0].cta.url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3161,7 +3154,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (265:10) {#if featured}
+// (263:10) {#if featured}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3180,7 +3173,7 @@ function create_if_block_4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "featured-pill svelte-wsl9vi");
+			attr(span, "class", "featured-pill svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span, anchor);
@@ -3192,10 +3185,10 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (271:10) {:else}
+// (269:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[8].label + "";
+	let t_value = /*link*/ ctx[7].label + "";
 	let t;
 	let a_href_value;
 
@@ -3213,23 +3206,23 @@ function create_else_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-wsl9vi");
-			toggle_class(a, "active", /*link*/ ctx[8].url === window.location.pathname);
+			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "class", "link svelte-dwwyq");
+			toggle_class(a, "active", /*link*/ ctx[7].url === window.location.pathname);
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
 				attr(a, "href", a_href_value);
 			}
 
 			if (dirty & /*nav, window*/ 4) {
-				toggle_class(a, "active", /*link*/ ctx[8].url === window.location.pathname);
+				toggle_class(a, "active", /*link*/ ctx[7].url === window.location.pathname);
 			}
 		},
 		i: noop,
@@ -3240,10 +3233,10 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (268:10) {#if hasDropdown}
+// (266:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
-	let t0_value = /*link*/ ctx[8].label + "";
+	let t0_value = /*link*/ ctx[7].label + "";
 	let t0;
 	let t1;
 	let span1;
@@ -3276,8 +3269,8 @@ function create_if_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-wsl9vi");
-			attr(span1, "class", "icon svelte-wsl9vi");
+			attr(span0, "class", "svelte-dwwyq");
+			attr(span1, "class", "icon svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span0, anchor);
@@ -3288,7 +3281,7 @@ function create_if_block_3(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if ((!current || dirty & /*nav*/ 4) && t0_value !== (t0_value = /*link*/ ctx[8].label + "")) set_data(t0, t0_value);
+			if ((!current || dirty & /*nav*/ 4) && t0_value !== (t0_value = /*link*/ ctx[7].label + "")) set_data(t0, t0_value);
 		},
 		i(local) {
 			if (current) return;
@@ -3308,10 +3301,10 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (278:8) {#if hasDropdown}
+// (276:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
-	let each_value_3 = /*links*/ ctx[9];
+	let each_value_3 = /*links*/ ctx[8];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_3.length; i += 1) {
@@ -3340,7 +3333,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "dropdown svelte-wsl9vi");
+			attr(div, "class", "dropdown svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3353,7 +3346,7 @@ function create_if_block_2(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*nav*/ 4) {
-				each_value_3 = /*links*/ ctx[9];
+				each_value_3 = /*links*/ ctx[8];
 				let i;
 
 				for (i = 0; i < each_value_3.length; i += 1) {
@@ -3382,10 +3375,10 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (280:12) {#each links as { link }}
+// (278:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[8].label + "";
+	let t_value = /*link*/ ctx[7].label + "";
 	let t;
 	let a_href_value;
 
@@ -3403,17 +3396,17 @@ function create_each_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-wsl9vi");
+			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "class", "link svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3423,7 +3416,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (261:4) {#each nav as { link, links, featured }}
+// (259:4) {#each nav as { link, links, featured }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3432,18 +3425,18 @@ function create_each_block_2(ctx) {
 	let if_block1;
 	let t1;
 	let current;
-	let if_block0 = /*featured*/ ctx[15] && create_if_block_4();
+	let if_block0 = /*featured*/ ctx[14] && create_if_block_4();
 	const if_block_creators = [create_if_block_3, create_else_block_1];
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*hasDropdown*/ ctx[10]) return 0;
+		if (/*hasDropdown*/ ctx[9]) return 0;
 		return 1;
 	}
 
 	current_block_type_index = select_block_type(ctx);
 	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-	let if_block2 = /*hasDropdown*/ ctx[10] && create_if_block_2(ctx);
+	let if_block2 = /*hasDropdown*/ ctx[9] && create_if_block_2(ctx);
 
 	return {
 		c() {
@@ -3471,8 +3464,8 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-wsl9vi");
-			attr(div1, "class", "nav-item svelte-wsl9vi");
+			attr(div0, "class", "top-link svelte-dwwyq");
+			attr(div1, "class", "nav-item svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3485,7 +3478,7 @@ function create_each_block_2(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*featured*/ ctx[15]) {
+			if (/*featured*/ ctx[14]) {
 				if (if_block0) ; else {
 					if_block0 = create_if_block_4();
 					if_block0.c();
@@ -3522,7 +3515,7 @@ function create_each_block_2(ctx) {
 				if_block1.m(div0, null);
 			}
 
-			if (/*hasDropdown*/ ctx[10]) {
+			if (/*hasDropdown*/ ctx[9]) {
 				if (if_block2) {
 					if_block2.p(ctx, dirty);
 				} else {
@@ -3553,7 +3546,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (291:2) {#if mobileNavOpen}
+// (289:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3610,9 +3603,9 @@ function create_if_block$1(ctx) {
 		h() {
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-wsl9vi");
+			attr(button, "class", "svelte-dwwyq");
 			attr(nav_1, "id", "mobile-nav");
-			attr(nav_1, "class", "svelte-wsl9vi");
+			attr(nav_1, "class", "svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav_1, anchor);
@@ -3686,10 +3679,10 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (299:8) {:else}
+// (297:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[8].label + "";
+	let t_value = /*link*/ ctx[7].label + "";
 	let t;
 	let a_href_value;
 
@@ -3707,17 +3700,17 @@ function create_else_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-wsl9vi");
+			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "class", "link svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3727,10 +3720,10 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (295:8) {#if hasDropdown}
+// (293:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
-	let each_value_1 = /*links*/ ctx[9];
+	let each_value_1 = /*links*/ ctx[8];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -3763,7 +3756,7 @@ function create_if_block_1$1(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*nav*/ 4) {
-				each_value_1 = /*links*/ ctx[9];
+				each_value_1 = /*links*/ ctx[8];
 				let i;
 
 				for (i = 0; i < each_value_1.length; i += 1) {
@@ -3792,10 +3785,10 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (296:10) {#each links as { link }}
+// (294:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[8].label + "";
+	let t_value = /*link*/ ctx[7].label + "";
 	let t;
 	let a_href_value;
 
@@ -3813,17 +3806,17 @@ function create_each_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-wsl9vi");
+			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "class", "link svelte-dwwyq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3833,12 +3826,12 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (293:6) {#each nav as { link, links }}
+// (291:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
 	function select_block_type_1(ctx, dirty) {
-		if (/*hasDropdown*/ ctx[10]) return create_if_block_1$1;
+		if (/*hasDropdown*/ ctx[9]) return create_if_block_1$1;
 		return create_else_block$1;
 	}
 
@@ -3885,11 +3878,11 @@ function create_fragment$2(ctx) {
 	let header;
 	let a0;
 	let span0;
-	let t1_value = /*logo*/ ctx[0].title + "";
+	let t1_value = /*logo*/ ctx[1].title + "";
 	let t1;
 	let t2;
 	let html_tag;
-	let raw_value = /*logo*/ ctx[0].svg + "";
+	let raw_value = /*logo*/ ctx[1].svg + "";
 	let t3;
 	let nav_1;
 	let a1;
@@ -3905,7 +3898,7 @@ function create_fragment$2(ctx) {
 	let current;
 	let mounted;
 	let dispose;
-	let if_block0 = /*banner*/ ctx[1].label && create_if_block_5(ctx);
+	let if_block0 = /*banner*/ ctx[0].label && create_if_block_5(ctx);
 
 	icon0 = new Component$1({
 			props: { icon: "ic:outline-star-purple500" }
@@ -4013,18 +4006,18 @@ function create_fragment$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-wsl9vi");
+			attr(span0, "class", "svelte-dwwyq");
 			html_tag.a = null;
 			attr(a0, "href", "/");
-			attr(a0, "class", "logo svelte-wsl9vi");
-			attr(span1, "class", "svelte-wsl9vi");
-			attr(a1, "class", "link pill svelte-wsl9vi");
-			attr(a1, "href", "https://github.com/primodotso/primo");
+			attr(a0, "class", "logo svelte-dwwyq");
+			attr(span1, "class", "svelte-dwwyq");
+			attr(a1, "class", "link pill svelte-dwwyq");
+			attr(a1, "href", "https://github.com/primocms/primo");
 			attr(a1, "aria-label", "Github repo");
 			attr(button, "id", "open");
-			attr(button, "class", "svelte-wsl9vi");
-			attr(nav_1, "class", "svelte-wsl9vi");
-			attr(header, "class", "section-container svelte-wsl9vi");
+			attr(button, "class", "svelte-dwwyq");
+			attr(nav_1, "class", "svelte-dwwyq");
+			attr(header, "class", "section-container svelte-dwwyq");
 			attr(div0, "class", "component");
 			attr(div1, "class", "section");
 			attr(div1, "id", "section-d4e310f9-b777-4f66-a347-0e5825bb72b4");
@@ -4068,7 +4061,7 @@ function create_fragment$2(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (/*banner*/ ctx[1].label) {
+			if (/*banner*/ ctx[0].label) {
 				if (if_block0) {
 					if_block0.p(ctx, dirty);
 				} else {
@@ -4081,8 +4074,8 @@ function create_fragment$2(ctx) {
 				if_block0 = null;
 			}
 
-			if ((!current || dirty & /*logo*/ 1) && t1_value !== (t1_value = /*logo*/ ctx[0].title + "")) set_data(t1, t1_value);
-			if ((!current || dirty & /*logo*/ 1) && raw_value !== (raw_value = /*logo*/ ctx[0].svg + "")) html_tag.p(raw_value);
+			if ((!current || dirty & /*logo*/ 2) && t1_value !== (t1_value = /*logo*/ ctx[1].title + "")) set_data(t1, t1_value);
+			if ((!current || dirty & /*logo*/ 2) && raw_value !== (raw_value = /*logo*/ ctx[1].svg + "")) html_tag.p(raw_value);
 
 			if (dirty & /*nav, window*/ 4) {
 				each_value_2 = /*nav*/ ctx[2];
@@ -4172,11 +4165,10 @@ function create_fragment$2(ctx) {
 }
 
 function instance$2($$self, $$props, $$invalidate) {
-	let { logo } = $$props;
-	let { site_nav } = $$props;
-	let { footer_links } = $$props;
+	let { favicon } = $$props;
 	let { test } = $$props;
 	let { banner } = $$props;
+	let { logo } = $$props;
 	let { nav } = $$props;
 	let mobileNavOpen = false;
 
@@ -4185,24 +4177,14 @@ function instance$2($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$set = $$props => {
-		if ('logo' in $$props) $$invalidate(0, logo = $$props.logo);
-		if ('site_nav' in $$props) $$invalidate(5, site_nav = $$props.site_nav);
-		if ('footer_links' in $$props) $$invalidate(6, footer_links = $$props.footer_links);
-		if ('test' in $$props) $$invalidate(7, test = $$props.test);
-		if ('banner' in $$props) $$invalidate(1, banner = $$props.banner);
+		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
+		if ('test' in $$props) $$invalidate(6, test = $$props.test);
+		if ('banner' in $$props) $$invalidate(0, banner = $$props.banner);
+		if ('logo' in $$props) $$invalidate(1, logo = $$props.logo);
 		if ('nav' in $$props) $$invalidate(2, nav = $$props.nav);
 	};
 
-	return [
-		logo,
-		banner,
-		nav,
-		mobileNavOpen,
-		toggleMobileNav,
-		site_nav,
-		footer_links,
-		test
-	];
+	return [banner, logo, nav, mobileNavOpen, toggleMobileNav, favicon, test];
 }
 
 class Component$2 extends SvelteComponent {
@@ -4210,11 +4192,10 @@ class Component$2 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
-			logo: 0,
-			site_nav: 5,
-			footer_links: 6,
-			test: 7,
-			banner: 1,
+			favicon: 5,
+			test: 6,
+			banner: 0,
+			logo: 1,
 			nav: 2
 		});
 	}
@@ -4227,6 +4208,7 @@ function create_fragment$3(ctx) {
 	let div1;
 	let div0;
 	let raw_value = /*content*/ ctx[0].html + "";
+	let div0_style_value;
 
 	return {
 		c() {
@@ -4240,7 +4222,7 @@ function create_fragment$3(ctx) {
 			var div2_nodes = children(div2);
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			div0 = claim_element(div1_nodes, "DIV", { class: true, style: true });
 			var div0_nodes = children(div0);
 			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
@@ -4248,7 +4230,11 @@ function create_fragment$3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "section-container content");
+			attr(div0, "class", "section-container content svelte-3los8l");
+
+			attr(div0, "style", div0_style_value = `
+--heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`);
+
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
 			attr(div2, "id", "section-839e43ff-a084-438d-a766-f2ecc93836a8");
@@ -4260,7 +4246,12 @@ function create_fragment$3(ctx) {
 			div0.innerHTML = raw_value;
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*content*/ 1 && raw_value !== (raw_value = /*content*/ ctx[0].html + "")) div0.innerHTML = raw_value;		},
+			if (dirty & /*content*/ 1 && raw_value !== (raw_value = /*content*/ ctx[0].html + "")) div0.innerHTML = raw_value;
+			if (dirty & /*style*/ 2 && div0_style_value !== (div0_style_value = `
+--heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`)) {
+				attr(div0, "style", div0_style_value);
+			}
+		},
 		i: noop,
 		o: noop,
 		d(detaching) {
@@ -4270,21 +4261,19 @@ function create_fragment$3(ctx) {
 }
 
 function instance$3($$self, $$props, $$invalidate) {
-	let { logo } = $$props;
-	let { site_nav } = $$props;
-	let { footer_links } = $$props;
+	let { favicon } = $$props;
 	let { test } = $$props;
 	let { content } = $$props;
+	let { style } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('logo' in $$props) $$invalidate(1, logo = $$props.logo);
-		if ('site_nav' in $$props) $$invalidate(2, site_nav = $$props.site_nav);
-		if ('footer_links' in $$props) $$invalidate(3, footer_links = $$props.footer_links);
-		if ('test' in $$props) $$invalidate(4, test = $$props.test);
+		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
+		if ('test' in $$props) $$invalidate(3, test = $$props.test);
 		if ('content' in $$props) $$invalidate(0, content = $$props.content);
+		if ('style' in $$props) $$invalidate(1, style = $$props.style);
 	};
 
-	return [content, logo, site_nav, footer_links, test];
+	return [content, style, favicon, test];
 }
 
 class Component$3 extends SvelteComponent {
@@ -4292,11 +4281,10 @@ class Component$3 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
-			logo: 1,
-			site_nav: 2,
-			footer_links: 3,
-			test: 4,
-			content: 0
+			favicon: 2,
+			test: 3,
+			content: 0,
+			style: 1
 		});
 	}
 }
@@ -4313,9 +4301,8 @@ function create_fragment$4(ctx) {
 	let t0;
 	let t1;
 	let h3;
-	let t2_value = /*signup_form*/ ctx[0].subheading + "";
+	let raw_value = /*signup_form*/ ctx[0].subheading.html + "";
 	let t2;
-	let t3;
 	let div12;
 	let div11;
 	let div10;
@@ -4326,38 +4313,38 @@ function create_fragment$4(ctx) {
 	let div2;
 	let div1;
 	let input0;
-	let t4;
+	let t3;
 	let input1;
-	let t5;
+	let t4;
 	let div5;
 	let button0;
+	let t5;
 	let t6;
-	let t7;
 	let button1;
 	let div4;
-	let t8;
+	let t7;
 	let span;
+	let t8;
 	let t9;
-	let t10;
 	let input2;
-	let t11;
+	let t10;
 	let div8;
 	let div7;
 	let h4;
+	let t11;
 	let t12;
-	let t13;
 	let p;
+	let t13;
 	let t14;
-	let t15;
 	let img;
 	let img_src_value;
-	let t16;
+	let t15;
 	let script0;
+	let t16;
 	let t17;
-	let t18;
 	let script1;
 	let script1_src_value;
-	let t19;
+	let t18;
 	let link;
 
 	return {
@@ -4370,8 +4357,7 @@ function create_fragment$4(ctx) {
 			t0 = text(t0_value);
 			t1 = space();
 			h3 = element("h3");
-			t2 = text(t2_value);
-			t3 = space();
+			t2 = space();
 			div12 = element("div");
 			div11 = element("div");
 			div10 = element("div");
@@ -4382,36 +4368,36 @@ function create_fragment$4(ctx) {
 			div2 = element("div");
 			div1 = element("div");
 			input0 = element("input");
-			t4 = space();
+			t3 = space();
 			input1 = element("input");
-			t5 = space();
+			t4 = space();
 			div5 = element("div");
 			button0 = element("button");
-			t6 = text("Subscribe");
-			t7 = space();
+			t5 = text("Subscribe");
+			t6 = space();
 			button1 = element("button");
 			div4 = element("div");
-			t8 = space();
+			t7 = space();
 			span = element("span");
-			t9 = text("Loading...");
-			t10 = space();
+			t8 = text("Loading...");
+			t9 = space();
 			input2 = element("input");
-			t11 = space();
+			t10 = space();
 			div8 = element("div");
 			div7 = element("div");
 			h4 = element("h4");
-			t12 = text("Thank you!");
-			t13 = space();
+			t11 = text("Thank you!");
+			t12 = space();
 			p = element("p");
-			t14 = text("You have successfully joined our subscriber list.");
-			t15 = space();
+			t13 = text("You have successfully joined our subscriber list.");
+			t14 = space();
 			img = element("img");
-			t16 = space();
+			t15 = space();
 			script0 = element("script");
-			t17 = text("function ml_webform_success_5039306() {\n      var r = ml_jQuery || jQuery;\n      r(\".ml-subscribe-form-5039306 .row-success\").show(),\n        r(\".ml-subscribe-form-5039306 .row-form\").hide();\n    }");
-			t18 = space();
+			t16 = text("function ml_webform_success_5039306() {\n      var r = ml_jQuery || jQuery;\n      r(\".ml-subscribe-form-5039306 .row-success\").show(),\n        r(\".ml-subscribe-form-5039306 .row-form\").hide();\n    }");
+			t17 = space();
 			script1 = element("script");
-			t19 = space();
+			t18 = space();
 			link = element("link");
 			this.h();
 		},
@@ -4431,10 +4417,9 @@ function create_fragment$4(ctx) {
 			t1 = claim_space(div0_nodes);
 			h3 = claim_element(div0_nodes, "H3", { class: true });
 			var h3_nodes = children(h3);
-			t2 = claim_text(h3_nodes, t2_value);
 			h3_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
-			t3 = claim_space(section_nodes);
+			t2 = claim_space(section_nodes);
 			div12 = claim_element(section_nodes, "DIV", { class: true });
 			var div12_nodes = children(div12);
 			div11 = claim_element(div12_nodes, "DIV", { id: true, class: true });
@@ -4476,51 +4461,51 @@ function create_fragment$4(ctx) {
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
-			t4 = claim_space(form_nodes);
+			t3 = claim_space(form_nodes);
 			input1 = claim_element(form_nodes, "INPUT", { type: true, name: true, class: true });
-			t5 = claim_space(form_nodes);
+			t4 = claim_space(form_nodes);
 			div5 = claim_element(form_nodes, "DIV", { class: true });
 			var div5_nodes = children(div5);
 			button0 = claim_element(div5_nodes, "BUTTON", { type: true, class: true });
 			var button0_nodes = children(button0);
-			t6 = claim_text(button0_nodes, "Subscribe");
+			t5 = claim_text(button0_nodes, "Subscribe");
 			button0_nodes.forEach(detach);
-			t7 = claim_space(div5_nodes);
+			t6 = claim_space(div5_nodes);
 			button1 = claim_element(div5_nodes, "BUTTON", { style: true, type: true, class: true });
 			var button1_nodes = children(button1);
 			div4 = claim_element(button1_nodes, "DIV", { class: true });
 			children(div4).forEach(detach);
-			t8 = claim_space(button1_nodes);
+			t7 = claim_space(button1_nodes);
 			span = claim_element(button1_nodes, "SPAN", { class: true });
 			var span_nodes = children(span);
-			t9 = claim_text(span_nodes, "Loading...");
+			t8 = claim_text(span_nodes, "Loading...");
 			span_nodes.forEach(detach);
 			button1_nodes.forEach(detach);
 			div5_nodes.forEach(detach);
-			t10 = claim_space(form_nodes);
+			t9 = claim_space(form_nodes);
 			input2 = claim_element(form_nodes, "INPUT", { type: true, name: true, class: true });
 			form_nodes.forEach(detach);
 			div6_nodes.forEach(detach);
-			t11 = claim_space(div9_nodes);
+			t10 = claim_space(div9_nodes);
 			div8 = claim_element(div9_nodes, "DIV", { class: true, style: true });
 			var div8_nodes = children(div8);
 			div7 = claim_element(div8_nodes, "DIV", { class: true });
 			var div7_nodes = children(div7);
 			h4 = claim_element(div7_nodes, "H4", {});
 			var h4_nodes = children(h4);
-			t12 = claim_text(h4_nodes, "Thank you!");
+			t11 = claim_text(h4_nodes, "Thank you!");
 			h4_nodes.forEach(detach);
-			t13 = claim_space(div7_nodes);
+			t12 = claim_space(div7_nodes);
 			p = claim_element(div7_nodes, "P", {});
 			var p_nodes = children(p);
-			t14 = claim_text(p_nodes, "You have successfully joined our subscriber list.");
+			t13 = claim_text(p_nodes, "You have successfully joined our subscriber list.");
 			p_nodes.forEach(detach);
 			div7_nodes.forEach(detach);
 			div8_nodes.forEach(detach);
 			div9_nodes.forEach(detach);
 			div10_nodes.forEach(detach);
 			div11_nodes.forEach(detach);
-			t15 = claim_space(div12_nodes);
+			t14 = claim_space(div12_nodes);
 
 			img = claim_element(div12_nodes, "IMG", {
 				src: true,
@@ -4532,17 +4517,17 @@ function create_fragment$4(ctx) {
 			});
 
 			div12_nodes.forEach(detach);
-			t16 = claim_space(section_nodes);
+			t15 = claim_space(section_nodes);
 			script0 = claim_element(section_nodes, "SCRIPT", {});
 			var script0_nodes = children(script0);
-			t17 = claim_text(script0_nodes, "function ml_webform_success_5039306() {\n      var r = ml_jQuery || jQuery;\n      r(\".ml-subscribe-form-5039306 .row-success\").show(),\n        r(\".ml-subscribe-form-5039306 .row-form\").hide();\n    }");
+			t16 = claim_text(script0_nodes, "function ml_webform_success_5039306() {\n      var r = ml_jQuery || jQuery;\n      r(\".ml-subscribe-form-5039306 .row-success\").show(),\n        r(\".ml-subscribe-form-5039306 .row-form\").hide();\n    }");
 			script0_nodes.forEach(detach);
-			t18 = claim_space(section_nodes);
+			t17 = claim_space(section_nodes);
 			script1 = claim_element(section_nodes, "SCRIPT", { src: true, type: true });
 			var script1_nodes = children(script1);
 			script1_nodes.forEach(detach);
 			section_nodes.forEach(detach);
-			t19 = claim_space(div13_nodes);
+			t18 = claim_space(div13_nodes);
 
 			link = claim_element(div13_nodes, "LINK", {
 				rel: true,
@@ -4557,13 +4542,13 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-1nitu89");
-			attr(h3, "class", "subheading svelte-1nitu89");
-			attr(div0, "class", "inner-content svelte-1nitu89");
+			attr(h2, "class", "heading svelte-1dfzr7p");
+			attr(h3, "class", "subheading content svelte-1dfzr7p");
+			attr(div0, "class", "inner-content svelte-1dfzr7p");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-1nitu89");
+			attr(input0, "class", "form-control svelte-1dfzr7p");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -4574,9 +4559,9 @@ function create_fragment$4(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-1nitu89");
+			attr(input1, "class", "svelte-1dfzr7p");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "button primary svelte-1nitu89");
+			attr(button0, "class", "button primary svelte-1dfzr7p");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
 			attr(span, "class", "sr-only");
 			button1.disabled = "disabled";
@@ -4587,8 +4572,8 @@ function create_fragment$4(ctx) {
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-1nitu89");
-			attr(form, "class", "ml-block-form svelte-1nitu89");
+			attr(input2, "class", "svelte-1dfzr7p");
+			attr(form, "class", "ml-block-form svelte-1dfzr7p");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -4615,7 +4600,7 @@ function create_fragment$4(ctx) {
 			attr(div12, "class", "form");
 			if (!src_url_equal(script1.src, script1_src_value = "https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c")) attr(script1, "src", script1_src_value);
 			attr(script1, "type", "text/javascript");
-			attr(section, "class", "section-container svelte-1nitu89");
+			attr(section, "class", "section-container svelte-1dfzr7p");
 			attr(section, "id", "mc_embed_signup");
 			attr(link, "rel", "stylesheet");
 			attr(link, "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
@@ -4635,8 +4620,8 @@ function create_fragment$4(ctx) {
 			append_hydration(h2, t0);
 			append_hydration(div0, t1);
 			append_hydration(div0, h3);
-			append_hydration(h3, t2);
-			append_hydration(section, t3);
+			h3.innerHTML = raw_value;
+			append_hydration(section, t2);
 			append_hydration(section, div12);
 			append_hydration(div12, div11);
 			append_hydration(div11, div10);
@@ -4647,42 +4632,41 @@ function create_fragment$4(ctx) {
 			append_hydration(div3, div2);
 			append_hydration(div2, div1);
 			append_hydration(div1, input0);
-			append_hydration(form, t4);
+			append_hydration(form, t3);
 			append_hydration(form, input1);
-			append_hydration(form, t5);
+			append_hydration(form, t4);
 			append_hydration(form, div5);
 			append_hydration(div5, button0);
-			append_hydration(button0, t6);
-			append_hydration(div5, t7);
+			append_hydration(button0, t5);
+			append_hydration(div5, t6);
 			append_hydration(div5, button1);
 			append_hydration(button1, div4);
-			append_hydration(button1, t8);
+			append_hydration(button1, t7);
 			append_hydration(button1, span);
-			append_hydration(span, t9);
-			append_hydration(form, t10);
+			append_hydration(span, t8);
+			append_hydration(form, t9);
 			append_hydration(form, input2);
-			append_hydration(div9, t11);
+			append_hydration(div9, t10);
 			append_hydration(div9, div8);
 			append_hydration(div8, div7);
 			append_hydration(div7, h4);
-			append_hydration(h4, t12);
-			append_hydration(div7, t13);
+			append_hydration(h4, t11);
+			append_hydration(div7, t12);
 			append_hydration(div7, p);
-			append_hydration(p, t14);
-			append_hydration(div12, t15);
+			append_hydration(p, t13);
+			append_hydration(div12, t14);
 			append_hydration(div12, img);
-			append_hydration(section, t16);
+			append_hydration(section, t15);
 			append_hydration(section, script0);
-			append_hydration(script0, t17);
-			append_hydration(section, t18);
+			append_hydration(script0, t16);
+			append_hydration(section, t17);
 			append_hydration(section, script1);
-			append_hydration(div13, t19);
+			append_hydration(div13, t18);
 			append_hydration(div13, link);
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*signup_form*/ 1 && t0_value !== (t0_value = /*signup_form*/ ctx[0].heading + "")) set_data(t0, t0_value);
-			if (dirty & /*signup_form*/ 1 && t2_value !== (t2_value = /*signup_form*/ ctx[0].subheading + "")) set_data(t2, t2_value);
-		},
+			if (dirty & /*signup_form*/ 1 && raw_value !== (raw_value = /*signup_form*/ ctx[0].subheading.html + "")) h3.innerHTML = raw_value;		},
 		i: noop,
 		o: noop,
 		d(detaching) {
@@ -4692,34 +4676,23 @@ function create_fragment$4(ctx) {
 }
 
 function instance$4($$self, $$props, $$invalidate) {
-	let { logo } = $$props;
-	let { site_nav } = $$props;
-	let { footer_links } = $$props;
+	let { favicon } = $$props;
 	let { test } = $$props;
 	let { signup_form } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('logo' in $$props) $$invalidate(1, logo = $$props.logo);
-		if ('site_nav' in $$props) $$invalidate(2, site_nav = $$props.site_nav);
-		if ('footer_links' in $$props) $$invalidate(3, footer_links = $$props.footer_links);
-		if ('test' in $$props) $$invalidate(4, test = $$props.test);
+		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
+		if ('test' in $$props) $$invalidate(2, test = $$props.test);
 		if ('signup_form' in $$props) $$invalidate(0, signup_form = $$props.signup_form);
 	};
 
-	return [signup_form, logo, site_nav, footer_links, test];
+	return [signup_form, favicon, test];
 }
 
 class Component$4 extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
-			logo: 1,
-			site_nav: 2,
-			footer_links: 3,
-			test: 4,
-			signup_form: 0
-		});
+		init(this, options, instance$4, create_fragment$4, safe_not_equal, { favicon: 1, test: 2, signup_form: 0 });
 	}
 }
 
@@ -4727,21 +4700,21 @@ class Component$4 extends SvelteComponent {
 
 function get_each_context$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
-	child_ctx[10] = list[i].icon;
+	child_ctx[7] = list[i].link;
+	child_ctx[8] = list[i].icon;
 	return child_ctx;
 }
 
 function get_each_context_1$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
+	child_ctx[7] = list[i].link;
 	return child_ctx;
 }
 
-// (90:6) {#each footer_nav as { link }}
+// (88:6) {#each footer_nav as { link }}
 function create_each_block_1$1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[9].label + "";
+	let t_value = /*link*/ ctx[7].label + "";
 	let t;
 	let a_href_value;
 
@@ -4759,7 +4732,7 @@ function create_each_block_1$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
 			attr(a, "class", "svelte-9dgfd5");
 		},
 		m(target, anchor) {
@@ -4767,9 +4740,9 @@ function create_each_block_1$1(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*footer_nav*/ 1 && t_value !== (t_value = /*link*/ ctx[9].label + "")) set_data(t, t_value);
+			if (dirty & /*footer_nav*/ 1 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
 
-			if (dirty & /*footer_nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (dirty & /*footer_nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -4779,7 +4752,7 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (99:6) {#each social as { link, icon }}
+// (97:6) {#each social as { link, icon }}
 function create_each_block$1(ctx) {
 	let li;
 	let a;
@@ -4788,7 +4761,7 @@ function create_each_block$1(ctx) {
 	let a_aria_label_value;
 	let t;
 	let current;
-	icon = new Component$1({ props: { icon: /*icon*/ ctx[10] } });
+	icon = new Component$1({ props: { icon: /*icon*/ ctx[8] } });
 
 	return {
 		c() {
@@ -4816,8 +4789,8 @@ function create_each_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[9].label);
+			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[7].label);
 			attr(a, "class", "svelte-9dgfd5");
 		},
 		m(target, anchor) {
@@ -4829,14 +4802,14 @@ function create_each_block$1(ctx) {
 		},
 		p(ctx, dirty) {
 			const icon_changes = {};
-			if (dirty & /*social*/ 2) icon_changes.icon = /*icon*/ ctx[10];
+			if (dirty & /*social*/ 2) icon_changes.icon = /*icon*/ ctx[8];
 			icon.$set(icon_changes);
 
-			if (!current || dirty & /*social*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (!current || dirty & /*social*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
 				attr(a, "href", a_href_value);
 			}
 
-			if (!current || dirty & /*social*/ 2 && a_aria_label_value !== (a_aria_label_value = /*link*/ ctx[9].label)) {
+			if (!current || dirty & /*social*/ 2 && a_aria_label_value !== (a_aria_label_value = /*link*/ ctx[7].label)) {
 				attr(a, "aria-label", a_aria_label_value);
 			}
 		},
@@ -5080,23 +5053,19 @@ function create_fragment$5(ctx) {
 }
 
 function instance$5($$self, $$props, $$invalidate) {
-	let { logo } = $$props;
-	let { site_nav } = $$props;
-	let { footer_links } = $$props;
+	let { favicon } = $$props;
 	let { test } = $$props;
 	let { footer_nav } = $$props;
 	let { social } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('logo' in $$props) $$invalidate(2, logo = $$props.logo);
-		if ('site_nav' in $$props) $$invalidate(3, site_nav = $$props.site_nav);
-		if ('footer_links' in $$props) $$invalidate(4, footer_links = $$props.footer_links);
-		if ('test' in $$props) $$invalidate(5, test = $$props.test);
+		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
+		if ('test' in $$props) $$invalidate(3, test = $$props.test);
 		if ('footer_nav' in $$props) $$invalidate(0, footer_nav = $$props.footer_nav);
 		if ('social' in $$props) $$invalidate(1, social = $$props.social);
 	};
 
-	return [footer_nav, social, logo, site_nav, footer_links, test];
+	return [footer_nav, social, favicon, test];
 }
 
 class Component$5 extends SvelteComponent {
@@ -5104,10 +5073,8 @@ class Component$5 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
-			logo: 2,
-			site_nav: 3,
-			footer_links: 4,
-			test: 5,
+			favicon: 2,
+			test: 3,
 			footer_nav: 0,
 			social: 1
 		});
@@ -5117,31 +5084,21 @@ class Component$5 extends SvelteComponent {
 /* generated by Svelte v3.58.0 */
 
 function instance$6($$self, $$props, $$invalidate) {
-	let { logo } = $$props;
-	let { site_nav } = $$props;
-	let { footer_links } = $$props;
+	let { favicon } = $$props;
 	let { test } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('logo' in $$props) $$invalidate(0, logo = $$props.logo);
-		if ('site_nav' in $$props) $$invalidate(1, site_nav = $$props.site_nav);
-		if ('footer_links' in $$props) $$invalidate(2, footer_links = $$props.footer_links);
-		if ('test' in $$props) $$invalidate(3, test = $$props.test);
+		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
+		if ('test' in $$props) $$invalidate(1, test = $$props.test);
 	};
 
-	return [logo, site_nav, footer_links, test];
+	return [favicon, test];
 }
 
 class Component$6 extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance$6, null, safe_not_equal, {
-			logo: 0,
-			site_nav: 1,
-			footer_links: 2,
-			test: 3
-		});
+		init(this, options, instance$6, null, safe_not_equal, { favicon: 0, test: 1 });
 	}
 }
 
@@ -5163,95 +5120,34 @@ function create_fragment$6(ctx) {
 
 	component_0 = new Component({
 			props: {
-				logo: {
-					"image": {
-						"alt": "",
-						"src": "",
-						"url": "",
-						"size": null
-					},
-					"title": "Prolan & Co"
+				favicon: {
+					"alt": "",
+					"src": "https://picsum.photos/600/400?blur=10",
+					"url": "https://picsum.photos/600/400?blur=10",
+					"size": null
 				},
-				site_nav: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact" }
-					}
-				],
-				footer_links: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact Us" }
-					}
-				],
 				test: "THE TEST VALUE"
 			}
 		});
 
 	component_1 = new Component$2({
 			props: {
-				logo: {
-					"svg": "<svg viewBox=\"0 0 871 198\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <g clip-path=\"url(#clip0_250_527)\"> <path d=\"M814.062 159.924C782.686 159.924 757.171 134.408 757.171 103.032C757.171 71.6567 782.686 46.1408 814.062 46.1408C845.438 46.1408 870.954 71.6567 870.954 103.032C870.954 134.408 845.438 159.924 814.062 159.924ZM814.062 70.3186C796.021 70.3186 781.395 84.9914 781.395 102.986C781.395 120.981 796.067 135.654 814.062 135.654C832.057 135.654 846.73 120.981 846.73 102.986C846.73 84.9914 832.057 70.3186 814.062 70.3186Z\" fill=\"#FDFDFD\"/> <path d=\"M700.925 46.0947C689.897 46.0947 679.931 50.5242 672.641 57.676C665.35 50.5242 655.384 46.0947 644.356 46.0947C622.07 46.0947 603.983 64.228 603.983 86.4679V147.789C603.983 154.479 609.382 159.878 616.072 159.878C622.763 159.878 628.161 154.479 628.161 147.789V86.4679C628.161 77.5627 635.405 70.3186 644.31 70.3186C653.215 70.3186 660.46 77.5627 660.46 86.4679V147.789C660.46 154.479 665.858 159.878 672.548 159.878C679.239 159.878 684.637 154.479 684.637 147.789V86.4679C684.637 77.5627 691.881 70.3186 700.787 70.3186C709.692 70.3186 716.936 77.5627 716.936 86.4679V147.789C716.936 154.479 722.334 159.878 729.025 159.878C735.715 159.878 741.114 154.479 741.114 147.789V86.4679C741.114 64.1819 722.98 46.0947 700.74 46.0947H700.925Z\" fill=\"#FDFDFD\"/> <path d=\"M571.039 159.786C564.348 159.786 558.95 154.387 558.95 147.697V58.0913C558.95 51.4009 564.348 46.0024 571.039 46.0024C577.729 46.0024 583.128 51.4009 583.128 58.0913V147.697C583.128 154.387 577.729 159.786 571.039 159.786Z\" fill=\"#FDFDFD\"/> <path d=\"M571.039 26.4848C578.352 26.4848 584.281 20.556 584.281 13.2424C584.281 5.92883 578.352 0 571.039 0C563.725 0 557.796 5.92883 557.796 13.2424C557.796 20.556 563.725 26.4848 571.039 26.4848Z\" fill=\"#FDFDFD\"/> <path d=\"M482.356 159.785C475.666 159.785 470.267 154.387 470.267 147.697V102.894C470.267 71.5181 495.783 46.0023 527.159 46.0023C533.849 46.0023 539.248 51.4007 539.248 58.0911C539.248 64.7816 533.849 70.18 527.159 70.18C509.118 70.18 494.491 84.8528 494.491 102.848V147.65C494.491 154.341 489.093 159.739 482.402 159.739L482.356 159.785Z\" fill=\"#FDFDFD\"/> <path d=\"M349.701 197.99C343.011 197.99 337.612 192.592 337.612 185.901V102.894C337.612 71.5182 363.128 46.0024 394.504 46.0024C425.88 46.0024 451.396 71.5182 451.396 102.894C451.396 134.27 425.88 159.786 394.504 159.786C387.814 159.786 382.415 154.387 382.415 147.697C382.415 141.006 387.814 135.608 394.504 135.608C412.545 135.608 427.172 120.935 427.172 102.94C427.172 84.9452 412.499 70.2724 394.504 70.2724C376.509 70.2724 361.836 84.9452 361.836 102.94V185.947C361.836 192.638 356.438 198.036 349.747 198.036L349.701 197.99Z\" fill=\"#FDFDFD\"/> <path d=\"M222.814 159.371C219.723 159.371 216.631 158.171 214.232 155.818C209.526 151.065 209.526 143.406 214.232 138.699L249.668 103.263L214.232 67.8271C209.526 63.0746 209.526 55.4153 214.232 50.7089C218.984 45.9564 226.644 45.9564 231.35 50.7089L275.368 94.7272C280.075 99.4797 280.075 107.139 275.368 111.845L231.35 155.864C228.997 158.217 225.906 159.417 222.768 159.417L222.814 159.371Z\" fill=\"#35D994\"/> <path d=\"M94.7272 197.99C91.6358 197.99 88.5443 196.791 86.145 194.437L3.55296 111.799C-1.1534 107.047 -1.1534 99.3874 3.55296 94.681L47.5713 50.6627C52.3238 45.9102 59.9832 45.9102 64.6895 50.6627C69.3959 55.4152 69.3959 63.0746 64.6895 67.7809L29.2073 103.217L103.263 177.273C107.97 182.026 107.97 189.685 103.263 194.391C100.91 196.744 97.8186 197.944 94.6811 197.944L94.7272 197.99Z\" fill=\"url(#paint0_linear_250_527)\"/> <path d=\"M94.7273 197.99C88.0369 197.99 82.6384 192.592 82.6384 185.901V102.894C82.6384 71.5181 108.154 46.0023 139.53 46.0023C170.906 46.0023 196.422 71.5181 196.422 102.894C196.422 134.27 170.906 159.785 139.53 159.785C132.84 159.785 127.441 154.387 127.441 147.697C127.441 141.006 132.84 135.608 139.53 135.608C157.571 135.608 172.198 120.935 172.198 102.94C172.198 84.9451 157.525 70.2723 139.53 70.2723C121.535 70.2723 106.862 84.9451 106.862 102.94V185.947C106.862 192.638 101.464 198.036 94.7735 198.036L94.7273 197.99Z\" fill=\"#35D994\"/> </g> <defs> <linearGradient id=\"paint0_linear_250_527\" x1=\"25.5621\" y1=\"72.6719\" x2=\"125.319\" y2=\"172.428\" gradientUnits=\"userSpaceOnUse\"> <stop stop-color=\"#35D994\"/> <stop offset=\"0.16\" stop-color=\"#32D28E\"/> <stop offset=\"0.38\" stop-color=\"#29BF80\"/> <stop offset=\"0.64\" stop-color=\"#1CA169\"/> <stop offset=\"0.93\" stop-color=\"#097649\"/> <stop offset=\"0.95\" stop-color=\"#097548\"/> </linearGradient> <clipPath id=\"clip0_250_527\"> <rect width=\"871\" height=\"197.99\" fill=\"white\"/> </clipPath> </defs> </svg>",
-					"title": "primo"
+				favicon: {
+					"alt": "",
+					"src": "https://picsum.photos/600/400?blur=10",
+					"url": "https://picsum.photos/600/400?blur=10",
+					"size": null
 				},
-				site_nav: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact" }
-					}
-				],
-				footer_links: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact Us" }
-					}
-				],
 				test: "THE TEST VALUE",
 				banner: {
 					"cta": { "url": "", "label": "", "active": false },
 					"label": ""
 				},
+				logo: {
+					"svg": "<svg viewBox=\"0 0 871 198\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <g clip-path=\"url(#clip0_250_527)\"> <path d=\"M814.062 159.924C782.686 159.924 757.171 134.408 757.171 103.032C757.171 71.6567 782.686 46.1408 814.062 46.1408C845.438 46.1408 870.954 71.6567 870.954 103.032C870.954 134.408 845.438 159.924 814.062 159.924ZM814.062 70.3186C796.021 70.3186 781.395 84.9914 781.395 102.986C781.395 120.981 796.067 135.654 814.062 135.654C832.057 135.654 846.73 120.981 846.73 102.986C846.73 84.9914 832.057 70.3186 814.062 70.3186Z\" fill=\"#FDFDFD\"/> <path d=\"M700.925 46.0947C689.897 46.0947 679.931 50.5242 672.641 57.676C665.35 50.5242 655.384 46.0947 644.356 46.0947C622.07 46.0947 603.983 64.228 603.983 86.4679V147.789C603.983 154.479 609.382 159.878 616.072 159.878C622.763 159.878 628.161 154.479 628.161 147.789V86.4679C628.161 77.5627 635.405 70.3186 644.31 70.3186C653.215 70.3186 660.46 77.5627 660.46 86.4679V147.789C660.46 154.479 665.858 159.878 672.548 159.878C679.239 159.878 684.637 154.479 684.637 147.789V86.4679C684.637 77.5627 691.881 70.3186 700.787 70.3186C709.692 70.3186 716.936 77.5627 716.936 86.4679V147.789C716.936 154.479 722.334 159.878 729.025 159.878C735.715 159.878 741.114 154.479 741.114 147.789V86.4679C741.114 64.1819 722.98 46.0947 700.74 46.0947H700.925Z\" fill=\"#FDFDFD\"/> <path d=\"M571.039 159.786C564.348 159.786 558.95 154.387 558.95 147.697V58.0913C558.95 51.4009 564.348 46.0024 571.039 46.0024C577.729 46.0024 583.128 51.4009 583.128 58.0913V147.697C583.128 154.387 577.729 159.786 571.039 159.786Z\" fill=\"#FDFDFD\"/> <path d=\"M571.039 26.4848C578.352 26.4848 584.281 20.556 584.281 13.2424C584.281 5.92883 578.352 0 571.039 0C563.725 0 557.796 5.92883 557.796 13.2424C557.796 20.556 563.725 26.4848 571.039 26.4848Z\" fill=\"#FDFDFD\"/> <path d=\"M482.356 159.785C475.666 159.785 470.267 154.387 470.267 147.697V102.894C470.267 71.5181 495.783 46.0023 527.159 46.0023C533.849 46.0023 539.248 51.4007 539.248 58.0911C539.248 64.7816 533.849 70.18 527.159 70.18C509.118 70.18 494.491 84.8528 494.491 102.848V147.65C494.491 154.341 489.093 159.739 482.402 159.739L482.356 159.785Z\" fill=\"#FDFDFD\"/> <path d=\"M349.701 197.99C343.011 197.99 337.612 192.592 337.612 185.901V102.894C337.612 71.5182 363.128 46.0024 394.504 46.0024C425.88 46.0024 451.396 71.5182 451.396 102.894C451.396 134.27 425.88 159.786 394.504 159.786C387.814 159.786 382.415 154.387 382.415 147.697C382.415 141.006 387.814 135.608 394.504 135.608C412.545 135.608 427.172 120.935 427.172 102.94C427.172 84.9452 412.499 70.2724 394.504 70.2724C376.509 70.2724 361.836 84.9452 361.836 102.94V185.947C361.836 192.638 356.438 198.036 349.747 198.036L349.701 197.99Z\" fill=\"#FDFDFD\"/> <path d=\"M222.814 159.371C219.723 159.371 216.631 158.171 214.232 155.818C209.526 151.065 209.526 143.406 214.232 138.699L249.668 103.263L214.232 67.8271C209.526 63.0746 209.526 55.4153 214.232 50.7089C218.984 45.9564 226.644 45.9564 231.35 50.7089L275.368 94.7272C280.075 99.4797 280.075 107.139 275.368 111.845L231.35 155.864C228.997 158.217 225.906 159.417 222.768 159.417L222.814 159.371Z\" fill=\"#35D994\"/> <path d=\"M94.7272 197.99C91.6358 197.99 88.5443 196.791 86.145 194.437L3.55296 111.799C-1.1534 107.047 -1.1534 99.3874 3.55296 94.681L47.5713 50.6627C52.3238 45.9102 59.9832 45.9102 64.6895 50.6627C69.3959 55.4152 69.3959 63.0746 64.6895 67.7809L29.2073 103.217L103.263 177.273C107.97 182.026 107.97 189.685 103.263 194.391C100.91 196.744 97.8186 197.944 94.6811 197.944L94.7272 197.99Z\" fill=\"url(#paint0_linear_250_527)\"/> <path d=\"M94.7273 197.99C88.0369 197.99 82.6384 192.592 82.6384 185.901V102.894C82.6384 71.5181 108.154 46.0023 139.53 46.0023C170.906 46.0023 196.422 71.5181 196.422 102.894C196.422 134.27 170.906 159.785 139.53 159.785C132.84 159.785 127.441 154.387 127.441 147.697C127.441 141.006 132.84 135.608 139.53 135.608C157.571 135.608 172.198 120.935 172.198 102.94C172.198 84.9451 157.525 70.2723 139.53 70.2723C121.535 70.2723 106.862 84.9451 106.862 102.94V185.947C106.862 192.638 101.464 198.036 94.7735 198.036L94.7273 197.99Z\" fill=\"#35D994\"/> </g> <defs> <linearGradient id=\"paint0_linear_250_527\" x1=\"25.5621\" y1=\"72.6719\" x2=\"125.319\" y2=\"172.428\" gradientUnits=\"userSpaceOnUse\"> <stop stop-color=\"#35D994\"/> <stop offset=\"0.16\" stop-color=\"#32D28E\"/> <stop offset=\"0.38\" stop-color=\"#29BF80\"/> <stop offset=\"0.64\" stop-color=\"#1CA169\"/> <stop offset=\"0.93\" stop-color=\"#097649\"/> <stop offset=\"0.95\" stop-color=\"#097548\"/> </linearGradient> <clipPath id=\"clip0_250_527\"> <rect width=\"871\" height=\"197.99\" fill=\"white\"/> </clipPath> </defs> </svg>",
+					"title": "primo"
+				},
 				nav: [
-					{
-						"link": {
-							"url": "/why",
-							"label": "Why",
-							"active": false
-						},
-						"links": []
-					},
 					{
 						"link": {
 							"url": "https://docs.primo.so",
@@ -5274,137 +5170,48 @@ function create_fragment$6(ctx) {
 
 	component_2 = new Component$3({
 			props: {
-				logo: {
-					"image": {
-						"alt": "",
-						"src": "",
-						"url": "",
-						"size": null
-					},
-					"title": "Prolan & Co"
+				favicon: {
+					"alt": "",
+					"src": "https://picsum.photos/600/400?blur=10",
+					"url": "https://picsum.photos/600/400?blur=10",
+					"size": null
 				},
-				site_nav: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact" }
-					}
-				],
-				footer_links: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact Us" }
-					}
-				],
 				test: "THE TEST VALUE",
 				content: {
-					"html": "<h1>Why Primo</h1><p>Tools for building for the web should be approachable, powerful, and fully available by everyone. Site builders are approachable, but lack in power and aren't self-ownable. Modern development frameworks are powerful and self-ownable, but not very approachable.</p><p>Primo is an attempt to build a web-publishing tool that streamlines the process of building and managing websites so that publishing to the web can be easy, simple, and fun - but in a way that creates an easy on-ramp to the more advanced functionality offered by HTML, CSS, and JS (specifically Svelte). </p>",
-					"markdown": "# Why Primo\n\nTools for building for the web should be approachable, powerful, and fully available by everyone. Site builders are approachable, but lack in power and aren't self-ownable. Modern development frameworks are powerful and self-ownable, but not very approachable.\n\nPrimo is an attempt to build a web-publishing tool that streamlines the process of building and managing websites so that publishing to the web can be easy, simple, and fun - but in a way that creates an easy on-ramp to the more advanced functionality offered by HTML, CSS, and JS (specifically Svelte).\n\n"
-				}
+					"html": "<h1>Why Primo</h1><p>Traditional monolithic CMSs like WordPress, Drupal, and Joomla enable quick setup and easy content editing, but rely on antiquated and heavy development practices (often relying on plugins and third-party services to customize the site and add new components). Headless CMSs have popped up to modernize the view layer with modern development practices and frameworks, but have a poor content editing experience due to their full separation from the site's presentation.</p><p>Primo is a modern approach to the monolithic CMS that builds on the traditional monolith's benefits of a quick setup and easy content editing alongside the flexibility of modern development. These combine into a web publishing tool that is significantly easier to use for both technical and non-technical users and enables both to build faster, more secure, more unique websites.</p>",
+					"markdown": "# Why Primo\n\nTraditional monolithic CMSs like WordPress, Drupal, and Joomla enable quick setup and easy content editing, but rely on antiquated and heavy development practices (often relying on plugins and third-party services to customize the site and add new components). Headless CMSs have popped up to modernize the view layer with modern development practices and frameworks, but have a poor content editing experience due to their full separation from the site's presentation.\n\nPrimo is a modern approach to the monolithic CMS that builds on the traditional monolith's benefits of a quick setup and easy content editing alongside the flexibility of modern development. These combine into a web publishing tool that is significantly easier to use for both technical and non-technical users and enables both to build faster, more secure, more unique websites.\n\n"
+				},
+				style: { "center_heading": "" }
 			}
 		});
 
 	component_3 = new Component$4({
 			props: {
-				logo: {
-					"image": {
-						"alt": "",
-						"src": "",
-						"url": "",
-						"size": null
-					},
-					"title": "Prolan & Co"
+				favicon: {
+					"alt": "",
+					"src": "https://picsum.photos/600/400?blur=10",
+					"url": "https://picsum.photos/600/400?blur=10",
+					"size": null
 				},
-				site_nav: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact" }
-					}
-				],
-				footer_links: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact Us" }
-					}
-				],
 				test: "THE TEST VALUE",
 				signup_form: {
-					"heading": "Get monthly updates on new releases and features",
-					"subheading": "We're making progress fast. Subscribe to our monthly newsletter to stay up to date on the latest features."
+					"heading": "Hear about future updates, including:",
+					"subheading": {
+						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique sites, pages, and blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
+					}
 				}
 			}
 		});
 
 	component_4 = new Component$5({
 			props: {
-				logo: {
-					"image": {
-						"alt": "",
-						"src": "",
-						"url": "",
-						"size": null
-					},
-					"title": "Prolan & Co"
+				favicon: {
+					"alt": "",
+					"src": "https://picsum.photos/600/400?blur=10",
+					"url": "https://picsum.photos/600/400?blur=10",
+					"size": null
 				},
-				site_nav: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact" }
-					}
-				],
-				footer_links: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact Us" }
-					}
-				],
 				test: "THE TEST VALUE",
 				footer_nav: [
 					{
@@ -5443,43 +5250,12 @@ function create_fragment$6(ctx) {
 
 	component_5 = new Component$6({
 			props: {
-				logo: {
-					"image": {
-						"alt": "",
-						"src": "",
-						"url": "",
-						"size": null
-					},
-					"title": "Prolan & Co"
+				favicon: {
+					"alt": "",
+					"src": "https://picsum.photos/600/400?blur=10",
+					"url": "https://picsum.photos/600/400?blur=10",
+					"size": null
 				},
-				site_nav: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact" }
-					}
-				],
-				footer_links: [
-					{
-						"link": { "url": "/work", "label": "Work" }
-					},
-					{
-						"link": { "url": "/services", "label": "Services" }
-					},
-					{
-						"link": { "url": "/company", "label": "Company" }
-					},
-					{
-						"link": { "url": "/contact", "label": "Contact Us" }
-					}
-				],
 				test: "THE TEST VALUE"
 			}
 		});

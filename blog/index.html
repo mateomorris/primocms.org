@@ -539,78 +539,89 @@
             }
         }
 
-        .content.svelte-3los8l h1 {
-            text-align: var(--heading-align)
-        }
-
-        section.svelte-1dfzr7p.svelte-1dfzr7p {
+        header.svelte-19r3x5r.svelte-19r3x5r {
             display: grid;
-            gap: 2rem;
-            padding-top: 6rem;
-            padding-bottom: 8rem
-        }
-
-        .inner-content.svelte-1dfzr7p.svelte-1dfzr7p {
-            display: grid;
-            place-content: flex-start;
-            gap: 0.5rem
-        }
-
-        .inner-content.svelte-1dfzr7p .heading.svelte-1dfzr7p {
-            font-size: 1.75rem;
-            text-align: left
-        }
-
-        .inner-content.svelte-1dfzr7p .subheading.svelte-1dfzr7p {
-            text-align: left;
-            color: var(--subheading-color);
-            padding: 0
-        }
-
-        form.svelte-1dfzr7p.svelte-1dfzr7p {
-            display: flex;
-            flex-direction: column;
             gap: 0.5rem;
-            box-shadow: var(--box-shadow)
+            margin-bottom: 4rem
         }
 
-        form.svelte-1dfzr7p input.svelte-1dfzr7p {
+        header.svelte-19r3x5r .heading.svelte-19r3x5r,
+        header.svelte-19r3x5r .subheading.svelte-19r3x5r {
+            text-wrap: balance
+        }
+
+        .teasers.svelte-19r3x5r.svelte-19r3x5r {
+            display: grid;
+            gap: 6rem
+        }
+
+        .teaser.svelte-19r3x5r.svelte-19r3x5r {
+            display: grid;
+            gap: 2rem
+        }
+
+        .teaser.svelte-19r3x5r figure.svelte-19r3x5r {
             width: 100%;
-            border-radius: 4px;
-            border: 1.5px solid #cbcace;
-            padding: 0.5rem 0.75rem;
-            font-size: 1rem;
-            background: var(--color-white);
-            color: var(--color-gray)
+            border-radius: var(--border-radius);
+            overflow: hidden
         }
 
-        form.svelte-1dfzr7p .button.svelte-1dfzr7p {
-            width: 100%
+        .teaser.svelte-19r3x5r figure iframe.svelte-19r3x5r {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1.78 / 1
         }
 
-        form.svelte-1dfzr7p .button.primary.svelte-1dfzr7p {
-            font-weight: 400;
-            border: 1.5px solid #35d994
+        .teaser.svelte-19r3x5r .content.svelte-19r3x5r {
+            padding: 0;
+            display: grid;
+            place-items: flex-start;
+            gap: 1rem
         }
 
-        form.svelte-1dfzr7p .button.svelte-1dfzr7p:hover {
-            box-shadow: none;
-            background: #35d994;
-            color: #121212
+        .teaser.svelte-19r3x5r .content.svelte-19r3x5r a {
+            text-decoration: underline
         }
 
-        @media(min-width: 700px) {
-            section.svelte-1dfzr7p.svelte-1dfzr7p {
-                grid-template-columns: 2fr 1fr;
-                gap: 7rem
+        .teaser.svelte-19r3x5r .content .heading.svelte-19r3x5r {
+            text-align: left;
+            margin: 0;
+            font-size: 1.75rem
+        }
+
+        @media(min-width: 800px) {
+            .teaser.svelte-19r3x5r.svelte-19r3x5r {
+                grid-template-columns: 1fr 1fr;
+                place-items:center
+                /* switch direction for even items */
+                /*     &:nth-child(even) .content {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    &:nth-child(even) figure {
+      grid-row: 1;
+      grid-column: 1;
+    } */
+            }
+        }
+
+        @media(min-width: 900px) {
+            section.svelte-19r3x5r.svelte-19r3x5r {
+                gap: 8rem
             }
 
-            section.svelte-1dfzr7p .inner-content.svelte-1dfzr7p {
-                gap: 1rem
+            header.svelte-19r3x5r.svelte-19r3x5r {
+                margin-bottom: 8rem
             }
 
-            section.svelte-1dfzr7p .inner-content .heading.svelte-1dfzr7p {
-                text-align: left
+            .teasers.svelte-19r3x5r.svelte-19r3x5r {
+                display: grid;
+                gap: 8rem
+            }
+
+            .teaser.svelte-19r3x5r.svelte-19r3x5r {
+                gap: 10rem
             }
         }
 
@@ -661,7 +672,7 @@
 
 <body id="page">
 
-    <div class="section" id="section-d4e310f9-b777-4f66-a347-0e5825bb72b4">
+    <div class="section" id="section-2265d2d7-9794-4d5d-9f3f-cb139ed61921">
         <div class="component">
             <header class="section-container svelte-dwwyq"><a href="/" class="logo svelte-dwwyq"><span class="svelte-dwwyq">primo</span>
                     <!-- HTML_TAG_START --><svg viewBox="0 0 871 198" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -722,83 +733,28 @@
             </header>
         </div>
     </div>
-    <div class="section" id="section-839e43ff-a084-438d-a766-f2ecc93836a8">
+    <div class="section" id="section-15a4429c-3559-4d39-a727-47fa483a053e">
         <div class="component">
-            <div class="section-container content svelte-3los8l" style="
---heading-align: left"><!-- HTML_TAG_START -->
-                <h1>Why Primo</h1>
-                <p>Traditional monolithic CMSs like WordPress, Drupal, and Joomla enable quick setup and easy content editing, but rely on antiquated and heavy development practices (often relying on plugins and third-party services to customize the site and add new components). Headless CMSs have popped up to modernize the view layer with modern development practices and frameworks, but have a poor content editing experience due to their full separation from the site's presentation.</p>
-                <p>Primo is a modern approach to the monolithic CMS that builds on the traditional monolith's benefits of a quick setup and easy content editing alongside the flexibility of modern development. These combine into a web publishing tool that is significantly easier to use for both technical and non-technical users and enables both to build faster, more secure, more unique websites.</p><!-- HTML_TAG_END -->
-            </div>
-        </div>
-    </div>
-    <div class="section" id="section-ad9969b3-51c9-414a-8680-4575fb7c31a6">
-        <div class="component">
-            <section class="section-container svelte-1dfzr7p" id="mc_embed_signup">
-                <div class="inner-content svelte-1dfzr7p">
-                    <h2 class="heading svelte-1dfzr7p">Hear about future updates, including:</h2>
-                    <h3 class="subheading content svelte-1dfzr7p"><!-- HTML_TAG_START -->
-                        <ul>
-                            <li>
-                                <p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p>
-                            </li>
-                            <li>
-                                <p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p>
-                            </li>
-                            <li>
-                                <p><strong>Design fields</strong> to give content editors style options.</p>
-                            </li>
-                            <li>
-                                <p><strong>Cloud functions</strong> for writing backend code from Primo.</p>
-                            </li>
-                        </ul><!-- HTML_TAG_END -->
-                    </h3>
-                </div>
-                <div class="form">
-                    <div id="mlb2-5039306" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5039306">
-                        <div class="ml-form-align-center">
-                            <div class="ml-form-embedWrapper embedForm">
-                                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                                    <form class="ml-block-form svelte-1dfzr7p" action="https://static.mailerlite.com/webforms/submit/j2m2z7" data-code="j2m2z7" method="post" target="_blank">
-                                        <div class="ml-form-formContent">
-                                            <div class="ml-form-fieldRow ml-last-item">
-                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required"><input aria-label="email" aria-required="true" type="email" class="form-control svelte-1dfzr7p" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email"></div>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="ml-submit" value="1" class="svelte-1dfzr7p">
-                                        <div class="ml-form-embedSubmit"><button type="submit" class="button primary svelte-1dfzr7p">Subscribe</button>
-                                            <button disabled="disabled" style="display: none" type="button" class="loading">
-                                                <div class="ml-form-embedSubmitLoad"></div>
-                                                <span class="sr-only">Loading...</span>
-                                            </button>
-                                        </div>
-                                        <input type="hidden" name="anticsrf" value="true" class="svelte-1dfzr7p">
-                                    </form>
-                                </div>
-                                <div class="ml-form-successBody row-success" style="display: none">
-                                    <div class="ml-form-successContent">
-                                        <h4>Thank you!</h4>
-                                        <p>You have successfully joined our subscriber list.</p>
-                                    </div>
-                                </div>
+            <section class="section-container svelte-19r3x5r">
+                <header class="svelte-19r3x5r">
+                    <h2 class="heading svelte-19r3x5r">Blog</h2>
+                    <h3 class="subheading svelte-19r3x5r">What we've been up to</h3>
+                </header>
+                <div class="teasers svelte-19r3x5r">
+                    <div class="teaser svelte-19r3x5r">
+                        <div class="content svelte-19r3x5r">
+                            <h2 class="heading svelte-19r3x5r">Introducing Primo Version 2</h2>
+                            <div class="body"><!-- HTML_TAG_START -->
+                                <p>Everything new in Primo version 2.</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
+                        <figure class="svelte-19r3x5r"><img src="https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224415769Screenshot%202023-04-23%20at%2012.33.29%20AM.png" alt=""></figure>
                     </div>
-                    <img src="https://track.mailerlite.com/webforms/o/5039306/j2m2z7?v1637419080" width="1" height="1" style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block; " alt="." border="0">
                 </div>
-                <script>
-                    function ml_webform_success_5039306() {
-                        var r = ml_jQuery || jQuery;
-                        r(".ml-subscribe-form-5039306 .row-success").show(),
-                            r(".ml-subscribe-form-5039306 .row-form").hide();
-                    }
-                </script>
-                <script src="https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c" type="text/javascript"></script>
             </section>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
         </div>
     </div>
-    <div class="section" id="section-a787683e-c410-4327-87f0-e70029b3247c">
+    <div class="section" id="section-05745e9c-b702-47af-82e9-9b15be5f0da6">
         <div class="component">
             <footer class="svelte-9dgfd5">
                 <div class="section-container svelte-9dgfd5">

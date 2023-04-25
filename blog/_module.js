@@ -1136,20 +1136,18 @@ function create_fragment(ctx) {
 
 function instance($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
-	let { test } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
-		if ('test' in $$props) $$invalidate(1, test = $$props.test);
 	};
 
-	return [favicon, test];
+	return [favicon];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { favicon: 0, test: 1 });
+		init(this, options, instance, create_fragment, safe_not_equal, { favicon: 0 });
 	}
 }
 
@@ -3018,36 +3016,36 @@ class Component$1 extends SvelteComponent {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[7] = list[i].link;
-	child_ctx[8] = list[i].links;
-	const constants_0 = /*links*/ child_ctx[8].length > 0;
-	child_ctx[9] = constants_0;
+	child_ctx[6] = list[i].link;
+	child_ctx[7] = list[i].links;
+	const constants_0 = /*links*/ child_ctx[7].length > 0;
+	child_ctx[8] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[7] = list[i].link;
+	child_ctx[6] = list[i].link;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[7] = list[i].link;
-	child_ctx[8] = list[i].links;
-	child_ctx[14] = list[i].featured;
-	const constants_0 = /*links*/ child_ctx[8].length > 0;
-	child_ctx[9] = constants_0;
+	child_ctx[6] = list[i].link;
+	child_ctx[7] = list[i].links;
+	child_ctx[13] = list[i].featured;
+	const constants_0 = /*links*/ child_ctx[7].length > 0;
+	child_ctx[8] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_3(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[7] = list[i].link;
+	child_ctx[6] = list[i].link;
 	return child_ctx;
 }
 
-// (236:14) {#if banner.label}
+// (235:14) {#if banner.label}
 function create_if_block_5(ctx) {
 	let div1;
 	let div0;
@@ -3113,7 +3111,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (240:6) {#if banner.cta.label}
+// (239:6) {#if banner.cta.label}
 function create_if_block_6(ctx) {
 	let a;
 	let t_value = /*banner*/ ctx[0].cta.label + "";
@@ -3154,7 +3152,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (263:10) {#if featured}
+// (262:10) {#if featured}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3185,10 +3183,10 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (269:10) {:else}
+// (268:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[7].label + "";
+	let t_value = /*link*/ ctx[6].label + "";
 	let t;
 	let a_href_value;
 
@@ -3206,23 +3204,23 @@ function create_else_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[6].url);
 			attr(a, "class", "link svelte-dwwyq");
-			toggle_class(a, "active", /*link*/ ctx[7].url === window.location.pathname);
+			toggle_class(a, "active", /*link*/ ctx[6].url === window.location.pathname);
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[6].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[6].url)) {
 				attr(a, "href", a_href_value);
 			}
 
 			if (dirty & /*nav, window*/ 4) {
-				toggle_class(a, "active", /*link*/ ctx[7].url === window.location.pathname);
+				toggle_class(a, "active", /*link*/ ctx[6].url === window.location.pathname);
 			}
 		},
 		i: noop,
@@ -3233,10 +3231,10 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (266:10) {#if hasDropdown}
+// (265:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
-	let t0_value = /*link*/ ctx[7].label + "";
+	let t0_value = /*link*/ ctx[6].label + "";
 	let t0;
 	let t1;
 	let span1;
@@ -3281,7 +3279,7 @@ function create_if_block_3(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if ((!current || dirty & /*nav*/ 4) && t0_value !== (t0_value = /*link*/ ctx[7].label + "")) set_data(t0, t0_value);
+			if ((!current || dirty & /*nav*/ 4) && t0_value !== (t0_value = /*link*/ ctx[6].label + "")) set_data(t0, t0_value);
 		},
 		i(local) {
 			if (current) return;
@@ -3301,10 +3299,10 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (276:8) {#if hasDropdown}
+// (275:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
-	let each_value_3 = /*links*/ ctx[8];
+	let each_value_3 = /*links*/ ctx[7];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_3.length; i += 1) {
@@ -3346,7 +3344,7 @@ function create_if_block_2(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*nav*/ 4) {
-				each_value_3 = /*links*/ ctx[8];
+				each_value_3 = /*links*/ ctx[7];
 				let i;
 
 				for (i = 0; i < each_value_3.length; i += 1) {
@@ -3375,10 +3373,10 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (278:12) {#each links as { link }}
+// (277:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[7].label + "";
+	let t_value = /*link*/ ctx[6].label + "";
 	let t;
 	let a_href_value;
 
@@ -3396,7 +3394,7 @@ function create_each_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[6].url);
 			attr(a, "class", "link svelte-dwwyq");
 		},
 		m(target, anchor) {
@@ -3404,9 +3402,9 @@ function create_each_block_3(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[6].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[6].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3416,7 +3414,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (259:4) {#each nav as { link, links, featured }}
+// (258:4) {#each nav as { link, links, featured }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3425,18 +3423,18 @@ function create_each_block_2(ctx) {
 	let if_block1;
 	let t1;
 	let current;
-	let if_block0 = /*featured*/ ctx[14] && create_if_block_4();
+	let if_block0 = /*featured*/ ctx[13] && create_if_block_4();
 	const if_block_creators = [create_if_block_3, create_else_block_1];
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*hasDropdown*/ ctx[9]) return 0;
+		if (/*hasDropdown*/ ctx[8]) return 0;
 		return 1;
 	}
 
 	current_block_type_index = select_block_type(ctx);
 	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-	let if_block2 = /*hasDropdown*/ ctx[9] && create_if_block_2(ctx);
+	let if_block2 = /*hasDropdown*/ ctx[8] && create_if_block_2(ctx);
 
 	return {
 		c() {
@@ -3478,7 +3476,7 @@ function create_each_block_2(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*featured*/ ctx[14]) {
+			if (/*featured*/ ctx[13]) {
 				if (if_block0) ; else {
 					if_block0 = create_if_block_4();
 					if_block0.c();
@@ -3515,7 +3513,7 @@ function create_each_block_2(ctx) {
 				if_block1.m(div0, null);
 			}
 
-			if (/*hasDropdown*/ ctx[9]) {
+			if (/*hasDropdown*/ ctx[8]) {
 				if (if_block2) {
 					if_block2.p(ctx, dirty);
 				} else {
@@ -3546,7 +3544,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (289:2) {#if mobileNavOpen}
+// (288:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3679,10 +3677,10 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (297:8) {:else}
+// (296:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[7].label + "";
+	let t_value = /*link*/ ctx[6].label + "";
 	let t;
 	let a_href_value;
 
@@ -3700,7 +3698,7 @@ function create_else_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[6].url);
 			attr(a, "class", "link svelte-dwwyq");
 		},
 		m(target, anchor) {
@@ -3708,9 +3706,9 @@ function create_else_block$1(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[6].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[6].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3720,10 +3718,10 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (293:8) {#if hasDropdown}
+// (292:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
-	let each_value_1 = /*links*/ ctx[8];
+	let each_value_1 = /*links*/ ctx[7];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -3756,7 +3754,7 @@ function create_if_block_1$1(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*nav*/ 4) {
-				each_value_1 = /*links*/ ctx[8];
+				each_value_1 = /*links*/ ctx[7];
 				let i;
 
 				for (i = 0; i < each_value_1.length; i += 1) {
@@ -3785,10 +3783,10 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (294:10) {#each links as { link }}
+// (293:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[7].label + "";
+	let t_value = /*link*/ ctx[6].label + "";
 	let t;
 	let a_href_value;
 
@@ -3806,7 +3804,7 @@ function create_each_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[6].url);
 			attr(a, "class", "link svelte-dwwyq");
 		},
 		m(target, anchor) {
@@ -3814,9 +3812,9 @@ function create_each_block_1(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[6].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[6].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3826,12 +3824,12 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (291:6) {#each nav as { link, links }}
+// (290:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
 	function select_block_type_1(ctx, dirty) {
-		if (/*hasDropdown*/ ctx[9]) return create_if_block_1$1;
+		if (/*hasDropdown*/ ctx[8]) return create_if_block_1$1;
 		return create_else_block$1;
 	}
 
@@ -4020,7 +4018,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-dwwyq");
 			attr(div0, "class", "component");
 			attr(div1, "class", "section");
-			attr(div1, "id", "section-646b9787-c821-4ed4-a7cd-973e91861925");
+			attr(div1, "id", "section-2265d2d7-9794-4d5d-9f3f-cb139ed61921");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -4166,7 +4164,6 @@ function create_fragment$2(ctx) {
 
 function instance$2($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
-	let { test } = $$props;
 	let { banner } = $$props;
 	let { logo } = $$props;
 	let { nav } = $$props;
@@ -4178,521 +4175,18 @@ function instance$2($$self, $$props, $$invalidate) {
 
 	$$self.$$set = $$props => {
 		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
-		if ('test' in $$props) $$invalidate(6, test = $$props.test);
 		if ('banner' in $$props) $$invalidate(0, banner = $$props.banner);
 		if ('logo' in $$props) $$invalidate(1, logo = $$props.logo);
 		if ('nav' in $$props) $$invalidate(2, nav = $$props.nav);
 	};
 
-	return [banner, logo, nav, mobileNavOpen, toggleMobileNav, favicon, test];
+	return [banner, logo, nav, mobileNavOpen, toggleMobileNav, favicon];
 }
 
 class Component$2 extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
-			favicon: 5,
-			test: 6,
-			banner: 0,
-			logo: 1,
-			nav: 2
-		});
-	}
-}
-
-/* generated by Svelte v3.58.0 */
-
-function create_fragment$3(ctx) {
-	let div2;
-	let div1;
-	let div0;
-	let raw_value = /*content*/ ctx[0].html + "";
-	let div0_style_value;
-
-	return {
-		c() {
-			div2 = element("div");
-			div1 = element("div");
-			div0 = element("div");
-			this.h();
-		},
-		l(nodes) {
-			div2 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div2_nodes = children(div2);
-			div1 = claim_element(div2_nodes, "DIV", { class: true });
-			var div1_nodes = children(div1);
-			div0 = claim_element(div1_nodes, "DIV", { class: true, style: true });
-			var div0_nodes = children(div0);
-			div0_nodes.forEach(detach);
-			div1_nodes.forEach(detach);
-			div2_nodes.forEach(detach);
-			this.h();
-		},
-		h() {
-			attr(div0, "class", "section-container content svelte-3los8l");
-
-			attr(div0, "style", div0_style_value = `
---heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`);
-
-			attr(div1, "class", "component");
-			attr(div2, "class", "section");
-			attr(div2, "id", "section-03d473dc-dd25-445b-9a80-9afdf750c4e4");
-		},
-		m(target, anchor) {
-			insert_hydration(target, div2, anchor);
-			append_hydration(div2, div1);
-			append_hydration(div1, div0);
-			div0.innerHTML = raw_value;
-		},
-		p(ctx, [dirty]) {
-			if (dirty & /*content*/ 1 && raw_value !== (raw_value = /*content*/ ctx[0].html + "")) div0.innerHTML = raw_value;
-			if (dirty & /*style*/ 2 && div0_style_value !== (div0_style_value = `
---heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`)) {
-				attr(div0, "style", div0_style_value);
-			}
-		},
-		i: noop,
-		o: noop,
-		d(detaching) {
-			if (detaching) detach(div2);
-		}
-	};
-}
-
-function instance$3($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
-	let { test } = $$props;
-	let { content } = $$props;
-	let { style } = $$props;
-
-	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
-		if ('test' in $$props) $$invalidate(3, test = $$props.test);
-		if ('content' in $$props) $$invalidate(0, content = $$props.content);
-		if ('style' in $$props) $$invalidate(1, style = $$props.style);
-	};
-
-	return [content, style, favicon, test];
-}
-
-class Component$3 extends SvelteComponent {
-	constructor(options) {
-		super();
-
-		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
-			favicon: 2,
-			test: 3,
-			content: 0,
-			style: 1
-		});
-	}
-}
-
-/* generated by Svelte v3.58.0 */
-
-function create_fragment$4(ctx) {
-	let div14;
-	let div13;
-	let section;
-	let div0;
-	let h2;
-	let t0_value = /*signup_form*/ ctx[0].heading + "";
-	let t0;
-	let t1;
-	let h3;
-	let raw_value = /*signup_form*/ ctx[0].subheading.html + "";
-	let t2;
-	let div12;
-	let div11;
-	let div10;
-	let div9;
-	let div6;
-	let form;
-	let div3;
-	let div2;
-	let div1;
-	let input0;
-	let t3;
-	let input1;
-	let t4;
-	let div5;
-	let button0;
-	let t5;
-	let t6;
-	let button1;
-	let div4;
-	let t7;
-	let span;
-	let t8;
-	let t9;
-	let input2;
-	let t10;
-	let div8;
-	let div7;
-	let h4;
-	let t11;
-	let t12;
-	let p;
-	let t13;
-	let t14;
-	let img;
-	let img_src_value;
-	let t15;
-	let script0;
-	let t16;
-	let t17;
-	let script1;
-	let script1_src_value;
-	let t18;
-	let link;
-
-	return {
-		c() {
-			div14 = element("div");
-			div13 = element("div");
-			section = element("section");
-			div0 = element("div");
-			h2 = element("h2");
-			t0 = text(t0_value);
-			t1 = space();
-			h3 = element("h3");
-			t2 = space();
-			div12 = element("div");
-			div11 = element("div");
-			div10 = element("div");
-			div9 = element("div");
-			div6 = element("div");
-			form = element("form");
-			div3 = element("div");
-			div2 = element("div");
-			div1 = element("div");
-			input0 = element("input");
-			t3 = space();
-			input1 = element("input");
-			t4 = space();
-			div5 = element("div");
-			button0 = element("button");
-			t5 = text("Subscribe");
-			t6 = space();
-			button1 = element("button");
-			div4 = element("div");
-			t7 = space();
-			span = element("span");
-			t8 = text("Loading...");
-			t9 = space();
-			input2 = element("input");
-			t10 = space();
-			div8 = element("div");
-			div7 = element("div");
-			h4 = element("h4");
-			t11 = text("Thank you!");
-			t12 = space();
-			p = element("p");
-			t13 = text("You have successfully joined our subscriber list.");
-			t14 = space();
-			img = element("img");
-			t15 = space();
-			script0 = element("script");
-			t16 = text("function ml_webform_success_5039306() {\n      var r = ml_jQuery || jQuery;\n      r(\".ml-subscribe-form-5039306 .row-success\").show(),\n        r(\".ml-subscribe-form-5039306 .row-form\").hide();\n    }");
-			t17 = space();
-			script1 = element("script");
-			t18 = space();
-			link = element("link");
-			this.h();
-		},
-		l(nodes) {
-			div14 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div14_nodes = children(div14);
-			div13 = claim_element(div14_nodes, "DIV", { class: true });
-			var div13_nodes = children(div13);
-			section = claim_element(div13_nodes, "SECTION", { class: true, id: true });
-			var section_nodes = children(section);
-			div0 = claim_element(section_nodes, "DIV", { class: true });
-			var div0_nodes = children(div0);
-			h2 = claim_element(div0_nodes, "H2", { class: true });
-			var h2_nodes = children(h2);
-			t0 = claim_text(h2_nodes, t0_value);
-			h2_nodes.forEach(detach);
-			t1 = claim_space(div0_nodes);
-			h3 = claim_element(div0_nodes, "H3", { class: true });
-			var h3_nodes = children(h3);
-			h3_nodes.forEach(detach);
-			div0_nodes.forEach(detach);
-			t2 = claim_space(section_nodes);
-			div12 = claim_element(section_nodes, "DIV", { class: true });
-			var div12_nodes = children(div12);
-			div11 = claim_element(div12_nodes, "DIV", { id: true, class: true });
-			var div11_nodes = children(div11);
-			div10 = claim_element(div11_nodes, "DIV", { class: true });
-			var div10_nodes = children(div10);
-			div9 = claim_element(div10_nodes, "DIV", { class: true });
-			var div9_nodes = children(div9);
-			div6 = claim_element(div9_nodes, "DIV", { class: true });
-			var div6_nodes = children(div6);
-
-			form = claim_element(div6_nodes, "FORM", {
-				class: true,
-				action: true,
-				"data-code": true,
-				method: true,
-				target: true
-			});
-
-			var form_nodes = children(form);
-			div3 = claim_element(form_nodes, "DIV", { class: true });
-			var div3_nodes = children(div3);
-			div2 = claim_element(div3_nodes, "DIV", { class: true });
-			var div2_nodes = children(div2);
-			div1 = claim_element(div2_nodes, "DIV", { class: true });
-			var div1_nodes = children(div1);
-
-			input0 = claim_element(div1_nodes, "INPUT", {
-				"aria-label": true,
-				"aria-required": true,
-				type: true,
-				class: true,
-				"data-inputmask": true,
-				name: true,
-				placeholder: true,
-				autocomplete: true
-			});
-
-			div1_nodes.forEach(detach);
-			div2_nodes.forEach(detach);
-			div3_nodes.forEach(detach);
-			t3 = claim_space(form_nodes);
-			input1 = claim_element(form_nodes, "INPUT", { type: true, name: true, class: true });
-			t4 = claim_space(form_nodes);
-			div5 = claim_element(form_nodes, "DIV", { class: true });
-			var div5_nodes = children(div5);
-			button0 = claim_element(div5_nodes, "BUTTON", { type: true, class: true });
-			var button0_nodes = children(button0);
-			t5 = claim_text(button0_nodes, "Subscribe");
-			button0_nodes.forEach(detach);
-			t6 = claim_space(div5_nodes);
-			button1 = claim_element(div5_nodes, "BUTTON", { style: true, type: true, class: true });
-			var button1_nodes = children(button1);
-			div4 = claim_element(button1_nodes, "DIV", { class: true });
-			children(div4).forEach(detach);
-			t7 = claim_space(button1_nodes);
-			span = claim_element(button1_nodes, "SPAN", { class: true });
-			var span_nodes = children(span);
-			t8 = claim_text(span_nodes, "Loading...");
-			span_nodes.forEach(detach);
-			button1_nodes.forEach(detach);
-			div5_nodes.forEach(detach);
-			t9 = claim_space(form_nodes);
-			input2 = claim_element(form_nodes, "INPUT", { type: true, name: true, class: true });
-			form_nodes.forEach(detach);
-			div6_nodes.forEach(detach);
-			t10 = claim_space(div9_nodes);
-			div8 = claim_element(div9_nodes, "DIV", { class: true, style: true });
-			var div8_nodes = children(div8);
-			div7 = claim_element(div8_nodes, "DIV", { class: true });
-			var div7_nodes = children(div7);
-			h4 = claim_element(div7_nodes, "H4", {});
-			var h4_nodes = children(h4);
-			t11 = claim_text(h4_nodes, "Thank you!");
-			h4_nodes.forEach(detach);
-			t12 = claim_space(div7_nodes);
-			p = claim_element(div7_nodes, "P", {});
-			var p_nodes = children(p);
-			t13 = claim_text(p_nodes, "You have successfully joined our subscriber list.");
-			p_nodes.forEach(detach);
-			div7_nodes.forEach(detach);
-			div8_nodes.forEach(detach);
-			div9_nodes.forEach(detach);
-			div10_nodes.forEach(detach);
-			div11_nodes.forEach(detach);
-			t14 = claim_space(div12_nodes);
-
-			img = claim_element(div12_nodes, "IMG", {
-				src: true,
-				width: true,
-				height: true,
-				style: true,
-				alt: true,
-				border: true
-			});
-
-			div12_nodes.forEach(detach);
-			t15 = claim_space(section_nodes);
-			script0 = claim_element(section_nodes, "SCRIPT", {});
-			var script0_nodes = children(script0);
-			t16 = claim_text(script0_nodes, "function ml_webform_success_5039306() {\n      var r = ml_jQuery || jQuery;\n      r(\".ml-subscribe-form-5039306 .row-success\").show(),\n        r(\".ml-subscribe-form-5039306 .row-form\").hide();\n    }");
-			script0_nodes.forEach(detach);
-			t17 = claim_space(section_nodes);
-			script1 = claim_element(section_nodes, "SCRIPT", { src: true, type: true });
-			var script1_nodes = children(script1);
-			script1_nodes.forEach(detach);
-			section_nodes.forEach(detach);
-			t18 = claim_space(div13_nodes);
-
-			link = claim_element(div13_nodes, "LINK", {
-				rel: true,
-				href: true,
-				integrity: true,
-				crossorigin: true,
-				referrerpolicy: true
-			});
-
-			div13_nodes.forEach(detach);
-			div14_nodes.forEach(detach);
-			this.h();
-		},
-		h() {
-			attr(h2, "class", "heading svelte-1dfzr7p");
-			attr(h3, "class", "subheading content svelte-1dfzr7p");
-			attr(div0, "class", "inner-content svelte-1dfzr7p");
-			attr(input0, "aria-label", "email");
-			attr(input0, "aria-required", "true");
-			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-1dfzr7p");
-			attr(input0, "data-inputmask", "");
-			attr(input0, "name", "fields[email]");
-			attr(input0, "placeholder", "Email");
-			attr(input0, "autocomplete", "email");
-			attr(div1, "class", "ml-field-group ml-field-email ml-validate-email ml-validate-required");
-			attr(div2, "class", "ml-form-fieldRow ml-last-item");
-			attr(div3, "class", "ml-form-formContent");
-			attr(input1, "type", "hidden");
-			attr(input1, "name", "ml-submit");
-			input1.value = "1";
-			attr(input1, "class", "svelte-1dfzr7p");
-			attr(button0, "type", "submit");
-			attr(button0, "class", "button primary svelte-1dfzr7p");
-			attr(div4, "class", "ml-form-embedSubmitLoad");
-			attr(span, "class", "sr-only");
-			button1.disabled = "disabled";
-			set_style(button1, "display", "none");
-			attr(button1, "type", "button");
-			attr(button1, "class", "loading");
-			attr(div5, "class", "ml-form-embedSubmit");
-			attr(input2, "type", "hidden");
-			attr(input2, "name", "anticsrf");
-			input2.value = "true";
-			attr(input2, "class", "svelte-1dfzr7p");
-			attr(form, "class", "ml-block-form svelte-1dfzr7p");
-			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
-			attr(form, "data-code", "j2m2z7");
-			attr(form, "method", "post");
-			attr(form, "target", "_blank");
-			attr(div6, "class", "ml-form-embedBody ml-form-embedBodyDefault row-form");
-			attr(div7, "class", "ml-form-successContent");
-			attr(div8, "class", "ml-form-successBody row-success");
-			set_style(div8, "display", "none");
-			attr(div9, "class", "ml-form-embedWrapper embedForm");
-			attr(div10, "class", "ml-form-align-center");
-			attr(div11, "id", "mlb2-5039306");
-			attr(div11, "class", "ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5039306");
-			if (!src_url_equal(img.src, img_src_value = "https://track.mailerlite.com/webforms/o/5039306/j2m2z7?v1637419080")) attr(img, "src", img_src_value);
-			attr(img, "width", "1");
-			attr(img, "height", "1");
-			set_style(img, "max-width", "1px");
-			set_style(img, "max-height", "1px");
-			set_style(img, "visibility", "hidden");
-			set_style(img, "padding", "0");
-			set_style(img, "margin", "0");
-			set_style(img, "display", "block");
-			attr(img, "alt", ".");
-			attr(img, "border", "0");
-			attr(div12, "class", "form");
-			if (!src_url_equal(script1.src, script1_src_value = "https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c")) attr(script1, "src", script1_src_value);
-			attr(script1, "type", "text/javascript");
-			attr(section, "class", "section-container svelte-1dfzr7p");
-			attr(section, "id", "mc_embed_signup");
-			attr(link, "rel", "stylesheet");
-			attr(link, "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
-			attr(link, "integrity", "sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==");
-			attr(link, "crossorigin", "anonymous");
-			attr(link, "referrerpolicy", "no-referrer");
-			attr(div13, "class", "component");
-			attr(div14, "class", "section");
-			attr(div14, "id", "section-adc58c7e-464f-4e17-8111-4fb1dbdff427");
-		},
-		m(target, anchor) {
-			insert_hydration(target, div14, anchor);
-			append_hydration(div14, div13);
-			append_hydration(div13, section);
-			append_hydration(section, div0);
-			append_hydration(div0, h2);
-			append_hydration(h2, t0);
-			append_hydration(div0, t1);
-			append_hydration(div0, h3);
-			h3.innerHTML = raw_value;
-			append_hydration(section, t2);
-			append_hydration(section, div12);
-			append_hydration(div12, div11);
-			append_hydration(div11, div10);
-			append_hydration(div10, div9);
-			append_hydration(div9, div6);
-			append_hydration(div6, form);
-			append_hydration(form, div3);
-			append_hydration(div3, div2);
-			append_hydration(div2, div1);
-			append_hydration(div1, input0);
-			append_hydration(form, t3);
-			append_hydration(form, input1);
-			append_hydration(form, t4);
-			append_hydration(form, div5);
-			append_hydration(div5, button0);
-			append_hydration(button0, t5);
-			append_hydration(div5, t6);
-			append_hydration(div5, button1);
-			append_hydration(button1, div4);
-			append_hydration(button1, t7);
-			append_hydration(button1, span);
-			append_hydration(span, t8);
-			append_hydration(form, t9);
-			append_hydration(form, input2);
-			append_hydration(div9, t10);
-			append_hydration(div9, div8);
-			append_hydration(div8, div7);
-			append_hydration(div7, h4);
-			append_hydration(h4, t11);
-			append_hydration(div7, t12);
-			append_hydration(div7, p);
-			append_hydration(p, t13);
-			append_hydration(div12, t14);
-			append_hydration(div12, img);
-			append_hydration(section, t15);
-			append_hydration(section, script0);
-			append_hydration(script0, t16);
-			append_hydration(section, t17);
-			append_hydration(section, script1);
-			append_hydration(div13, t18);
-			append_hydration(div13, link);
-		},
-		p(ctx, [dirty]) {
-			if (dirty & /*signup_form*/ 1 && t0_value !== (t0_value = /*signup_form*/ ctx[0].heading + "")) set_data(t0, t0_value);
-			if (dirty & /*signup_form*/ 1 && raw_value !== (raw_value = /*signup_form*/ ctx[0].subheading.html + "")) h3.innerHTML = raw_value;		},
-		i: noop,
-		o: noop,
-		d(detaching) {
-			if (detaching) detach(div14);
-		}
-	};
-}
-
-function instance$4($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
-	let { test } = $$props;
-	let { signup_form } = $$props;
-
-	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
-		if ('test' in $$props) $$invalidate(2, test = $$props.test);
-		if ('signup_form' in $$props) $$invalidate(0, signup_form = $$props.signup_form);
-	};
-
-	return [signup_form, favicon, test];
-}
-
-class Component$4 extends SvelteComponent {
-	constructor(options) {
-		super();
-		init(this, options, instance$4, create_fragment$4, safe_not_equal, { favicon: 1, test: 2, signup_form: 0 });
+		init(this, options, instance$2, create_fragment$2, safe_not_equal, { favicon: 5, banner: 0, logo: 1, nav: 2 });
 	}
 }
 
@@ -4700,21 +4194,439 @@ class Component$4 extends SvelteComponent {
 
 function get_each_context$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[7] = list[i].link;
-	child_ctx[8] = list[i].icon;
+	child_ctx[4] = list[i];
+	return child_ctx;
+}
+
+// (122:10) {#if teaser.link.label}
+function create_if_block_1$2(ctx) {
+	let a;
+	let t_value = /*teaser*/ ctx[4].link.label + "";
+	let t;
+	let a_href_value;
+
+	return {
+		c() {
+			a = element("a");
+			t = text(t_value);
+			this.h();
+		},
+		l(nodes) {
+			a = claim_element(nodes, "A", { class: true, href: true });
+			var a_nodes = children(a);
+			t = claim_text(a_nodes, t_value);
+			a_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(a, "class", "link svelte-19r3x5r");
+			attr(a, "href", a_href_value = /*teaser*/ ctx[4].link.url);
+		},
+		m(target, anchor) {
+			insert_hydration(target, a, anchor);
+			append_hydration(a, t);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*teasers*/ 4 && t_value !== (t_value = /*teaser*/ ctx[4].link.label + "")) set_data(t, t_value);
+
+			if (dirty & /*teasers*/ 4 && a_href_value !== (a_href_value = /*teaser*/ ctx[4].link.url)) {
+				attr(a, "href", a_href_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(a);
+		}
+	};
+}
+
+// (135:10) {:else}
+function create_else_block$2(ctx) {
+	let img;
+	let img_src_value;
+	let img_alt_value;
+
+	return {
+		c() {
+			img = element("img");
+			this.h();
+		},
+		l(nodes) {
+			img = claim_element(nodes, "IMG", { src: true, alt: true });
+			this.h();
+		},
+		h() {
+			if (!src_url_equal(img.src, img_src_value = /*teaser*/ ctx[4].image.url)) attr(img, "src", img_src_value);
+			attr(img, "alt", img_alt_value = /*teaser*/ ctx[4].image.alt);
+		},
+		m(target, anchor) {
+			insert_hydration(target, img, anchor);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*teasers*/ 4 && !src_url_equal(img.src, img_src_value = /*teaser*/ ctx[4].image.url)) {
+				attr(img, "src", img_src_value);
+			}
+
+			if (dirty & /*teasers*/ 4 && img_alt_value !== (img_alt_value = /*teaser*/ ctx[4].image.alt)) {
+				attr(img, "alt", img_alt_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(img);
+		}
+	};
+}
+
+// (129:10) {#if teaser.video}
+function create_if_block$2(ctx) {
+	let iframe;
+	let iframe_src_value;
+
+	return {
+		c() {
+			iframe = element("iframe");
+			this.h();
+		},
+		l(nodes) {
+			iframe = claim_element(nodes, "IFRAME", {
+				src: true,
+				frameborder: true,
+				allow: true,
+				title: true,
+				class: true
+			});
+
+			children(iframe).forEach(detach);
+			this.h();
+		},
+		h() {
+			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*teaser*/ ctx[4].video + "?h=c4704a8ede&autoplay=1&muted=1&loop=1&autopause=0")) attr(iframe, "src", iframe_src_value);
+			attr(iframe, "frameborder", "0");
+			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
+			attr(iframe, "title", "video");
+			attr(iframe, "class", "svelte-19r3x5r");
+		},
+		m(target, anchor) {
+			insert_hydration(target, iframe, anchor);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*teasers*/ 4 && !src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*teaser*/ ctx[4].video + "?h=c4704a8ede&autoplay=1&muted=1&loop=1&autopause=0")) {
+				attr(iframe, "src", iframe_src_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(iframe);
+		}
+	};
+}
+
+// (117:4) {#each teasers as teaser}
+function create_each_block$1(ctx) {
+	let div2;
+	let div1;
+	let h2;
+	let t0_value = /*teaser*/ ctx[4].title + "";
+	let t0;
+	let t1;
+	let div0;
+	let raw_value = /*teaser*/ ctx[4].body.html + "";
+	let t2;
+	let t3;
+	let figure;
+	let t4;
+	let if_block0 = /*teaser*/ ctx[4].link.label && create_if_block_1$2(ctx);
+
+	function select_block_type(ctx, dirty) {
+		if (/*teaser*/ ctx[4].video) return create_if_block$2;
+		return create_else_block$2;
+	}
+
+	let current_block_type = select_block_type(ctx);
+	let if_block1 = current_block_type(ctx);
+
+	return {
+		c() {
+			div2 = element("div");
+			div1 = element("div");
+			h2 = element("h2");
+			t0 = text(t0_value);
+			t1 = space();
+			div0 = element("div");
+			t2 = space();
+			if (if_block0) if_block0.c();
+			t3 = space();
+			figure = element("figure");
+			if_block1.c();
+			t4 = space();
+			this.h();
+		},
+		l(nodes) {
+			div2 = claim_element(nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			h2 = claim_element(div1_nodes, "H2", { class: true });
+			var h2_nodes = children(h2);
+			t0 = claim_text(h2_nodes, t0_value);
+			h2_nodes.forEach(detach);
+			t1 = claim_space(div1_nodes);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			div0_nodes.forEach(detach);
+			t2 = claim_space(div1_nodes);
+			if (if_block0) if_block0.l(div1_nodes);
+			div1_nodes.forEach(detach);
+			t3 = claim_space(div2_nodes);
+			figure = claim_element(div2_nodes, "FIGURE", { class: true });
+			var figure_nodes = children(figure);
+			if_block1.l(figure_nodes);
+			figure_nodes.forEach(detach);
+			t4 = claim_space(div2_nodes);
+			div2_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(h2, "class", "heading svelte-19r3x5r");
+			attr(div0, "class", "body");
+			attr(div1, "class", "content svelte-19r3x5r");
+			attr(figure, "class", "svelte-19r3x5r");
+			attr(div2, "class", "teaser svelte-19r3x5r");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div2, anchor);
+			append_hydration(div2, div1);
+			append_hydration(div1, h2);
+			append_hydration(h2, t0);
+			append_hydration(div1, t1);
+			append_hydration(div1, div0);
+			div0.innerHTML = raw_value;
+			append_hydration(div1, t2);
+			if (if_block0) if_block0.m(div1, null);
+			append_hydration(div2, t3);
+			append_hydration(div2, figure);
+			if_block1.m(figure, null);
+			append_hydration(div2, t4);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*teasers*/ 4 && t0_value !== (t0_value = /*teaser*/ ctx[4].title + "")) set_data(t0, t0_value);
+			if (dirty & /*teasers*/ 4 && raw_value !== (raw_value = /*teaser*/ ctx[4].body.html + "")) div0.innerHTML = raw_value;
+			if (/*teaser*/ ctx[4].link.label) {
+				if (if_block0) {
+					if_block0.p(ctx, dirty);
+				} else {
+					if_block0 = create_if_block_1$2(ctx);
+					if_block0.c();
+					if_block0.m(div1, null);
+				}
+			} else if (if_block0) {
+				if_block0.d(1);
+				if_block0 = null;
+			}
+
+			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block1) {
+				if_block1.p(ctx, dirty);
+			} else {
+				if_block1.d(1);
+				if_block1 = current_block_type(ctx);
+
+				if (if_block1) {
+					if_block1.c();
+					if_block1.m(figure, null);
+				}
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(div2);
+			if (if_block0) if_block0.d();
+			if_block1.d();
+		}
+	};
+}
+
+function create_fragment$3(ctx) {
+	let div2;
+	let div1;
+	let section;
+	let header;
+	let h2;
+	let t0;
+	let t1;
+	let h3;
+	let t2;
+	let t3;
+	let div0;
+	let each_value = /*teasers*/ ctx[2];
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+	}
+
+	return {
+		c() {
+			div2 = element("div");
+			div1 = element("div");
+			section = element("section");
+			header = element("header");
+			h2 = element("h2");
+			t0 = text(/*heading*/ ctx[0]);
+			t1 = space();
+			h3 = element("h3");
+			t2 = text(/*subheading*/ ctx[1]);
+			t3 = space();
+			div0 = element("div");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			this.h();
+		},
+		l(nodes) {
+			div2 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div2_nodes = children(div2);
+			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			section = claim_element(div1_nodes, "SECTION", { class: true });
+			var section_nodes = children(section);
+			header = claim_element(section_nodes, "HEADER", { class: true });
+			var header_nodes = children(header);
+			h2 = claim_element(header_nodes, "H2", { class: true });
+			var h2_nodes = children(h2);
+			t0 = claim_text(h2_nodes, /*heading*/ ctx[0]);
+			h2_nodes.forEach(detach);
+			t1 = claim_space(header_nodes);
+			h3 = claim_element(header_nodes, "H3", { class: true });
+			var h3_nodes = children(h3);
+			t2 = claim_text(h3_nodes, /*subheading*/ ctx[1]);
+			h3_nodes.forEach(detach);
+			header_nodes.forEach(detach);
+			t3 = claim_space(section_nodes);
+			div0 = claim_element(section_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].l(div0_nodes);
+			}
+
+			div0_nodes.forEach(detach);
+			section_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			div2_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(h2, "class", "heading svelte-19r3x5r");
+			attr(h3, "class", "subheading svelte-19r3x5r");
+			attr(header, "class", "svelte-19r3x5r");
+			attr(div0, "class", "teasers svelte-19r3x5r");
+			attr(section, "class", "section-container svelte-19r3x5r");
+			attr(div1, "class", "component");
+			attr(div2, "class", "section");
+			attr(div2, "id", "section-15a4429c-3559-4d39-a727-47fa483a053e");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div2, anchor);
+			append_hydration(div2, div1);
+			append_hydration(div1, section);
+			append_hydration(section, header);
+			append_hydration(header, h2);
+			append_hydration(h2, t0);
+			append_hydration(header, t1);
+			append_hydration(header, h3);
+			append_hydration(h3, t2);
+			append_hydration(section, t3);
+			append_hydration(section, div0);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				if (each_blocks[i]) {
+					each_blocks[i].m(div0, null);
+				}
+			}
+		},
+		p(ctx, [dirty]) {
+			if (dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
+			if (dirty & /*subheading*/ 2) set_data(t2, /*subheading*/ ctx[1]);
+
+			if (dirty & /*teasers*/ 4) {
+				each_value = /*teasers*/ ctx[2];
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block$1(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		i: noop,
+		o: noop,
+		d(detaching) {
+			if (detaching) detach(div2);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+}
+
+function instance$3($$self, $$props, $$invalidate) {
+	let { favicon } = $$props;
+	let { heading } = $$props;
+	let { subheading } = $$props;
+	let { teasers } = $$props;
+
+	$$self.$$set = $$props => {
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
+		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
+		if ('subheading' in $$props) $$invalidate(1, subheading = $$props.subheading);
+		if ('teasers' in $$props) $$invalidate(2, teasers = $$props.teasers);
+	};
+
+	return [heading, subheading, teasers, favicon];
+}
+
+class Component$3 extends SvelteComponent {
+	constructor(options) {
+		super();
+
+		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
+			favicon: 3,
+			heading: 0,
+			subheading: 1,
+			teasers: 2
+		});
+	}
+}
+
+/* generated by Svelte v3.58.0 */
+
+function get_each_context$2(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[6] = list[i].link;
+	child_ctx[7] = list[i].icon;
 	return child_ctx;
 }
 
 function get_each_context_1$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[7] = list[i].link;
+	child_ctx[6] = list[i].link;
 	return child_ctx;
 }
 
-// (88:6) {#each footer_nav as { link }}
+// (87:6) {#each footer_nav as { link }}
 function create_each_block_1$1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[7].label + "";
+	let t_value = /*link*/ ctx[6].label + "";
 	let t;
 	let a_href_value;
 
@@ -4732,7 +4644,7 @@ function create_each_block_1$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[6].url);
 			attr(a, "class", "svelte-9dgfd5");
 		},
 		m(target, anchor) {
@@ -4740,9 +4652,9 @@ function create_each_block_1$1(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*footer_nav*/ 1 && t_value !== (t_value = /*link*/ ctx[7].label + "")) set_data(t, t_value);
+			if (dirty & /*footer_nav*/ 1 && t_value !== (t_value = /*link*/ ctx[6].label + "")) set_data(t, t_value);
 
-			if (dirty & /*footer_nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
+			if (dirty & /*footer_nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[6].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -4752,8 +4664,8 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (97:6) {#each social as { link, icon }}
-function create_each_block$1(ctx) {
+// (96:6) {#each social as { link, icon }}
+function create_each_block$2(ctx) {
 	let li;
 	let a;
 	let icon;
@@ -4761,7 +4673,7 @@ function create_each_block$1(ctx) {
 	let a_aria_label_value;
 	let t;
 	let current;
-	icon = new Component$1({ props: { icon: /*icon*/ ctx[8] } });
+	icon = new Component$1({ props: { icon: /*icon*/ ctx[7] } });
 
 	return {
 		c() {
@@ -4789,8 +4701,8 @@ function create_each_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
-			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[7].label);
+			attr(a, "href", a_href_value = /*link*/ ctx[6].url);
+			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[6].label);
 			attr(a, "class", "svelte-9dgfd5");
 		},
 		m(target, anchor) {
@@ -4802,14 +4714,14 @@ function create_each_block$1(ctx) {
 		},
 		p(ctx, dirty) {
 			const icon_changes = {};
-			if (dirty & /*social*/ 2) icon_changes.icon = /*icon*/ ctx[8];
+			if (dirty & /*social*/ 2) icon_changes.icon = /*icon*/ ctx[7];
 			icon.$set(icon_changes);
 
-			if (!current || dirty & /*social*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[7].url)) {
+			if (!current || dirty & /*social*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[6].url)) {
 				attr(a, "href", a_href_value);
 			}
 
-			if (!current || dirty & /*social*/ 2 && a_aria_label_value !== (a_aria_label_value = /*link*/ ctx[7].label)) {
+			if (!current || dirty & /*social*/ 2 && a_aria_label_value !== (a_aria_label_value = /*link*/ ctx[6].label)) {
 				attr(a, "aria-label", a_aria_label_value);
 			}
 		},
@@ -4829,7 +4741,7 @@ function create_each_block$1(ctx) {
 	};
 }
 
-function create_fragment$5(ctx) {
+function create_fragment$4(ctx) {
 	let div3;
 	let div2;
 	let footer;
@@ -4855,7 +4767,7 @@ function create_fragment$5(ctx) {
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
 	}
 
 	const out = i => transition_out(each_blocks[i], 1, 1, () => {
@@ -4943,7 +4855,7 @@ function create_fragment$5(ctx) {
 			attr(footer, "class", "svelte-9dgfd5");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-7abe43d9-289e-4c88-97c0-a9f75e8dcbc7");
+			attr(div3, "id", "section-05745e9c-b702-47af-82e9-9b15be5f0da6");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -5004,13 +4916,13 @@ function create_fragment$5(ctx) {
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context$1(ctx, each_value, i);
+					const child_ctx = get_each_context$2(ctx, each_value, i);
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
 						transition_in(each_blocks[i], 1);
 					} else {
-						each_blocks[i] = create_each_block$1(child_ctx);
+						each_blocks[i] = create_each_block$2(child_ctx);
 						each_blocks[i].c();
 						transition_in(each_blocks[i], 1);
 						each_blocks[i].m(ul, null);
@@ -5052,59 +4964,49 @@ function create_fragment$5(ctx) {
 	};
 }
 
-function instance$5($$self, $$props, $$invalidate) {
+function instance$4($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
-	let { test } = $$props;
 	let { footer_nav } = $$props;
 	let { social } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
-		if ('test' in $$props) $$invalidate(3, test = $$props.test);
 		if ('footer_nav' in $$props) $$invalidate(0, footer_nav = $$props.footer_nav);
 		if ('social' in $$props) $$invalidate(1, social = $$props.social);
 	};
 
-	return [footer_nav, social, favicon, test];
+	return [footer_nav, social, favicon];
+}
+
+class Component$4 extends SvelteComponent {
+	constructor(options) {
+		super();
+		init(this, options, instance$4, create_fragment$4, safe_not_equal, { favicon: 2, footer_nav: 0, social: 1 });
+	}
+}
+
+/* generated by Svelte v3.58.0 */
+
+function instance$5($$self, $$props, $$invalidate) {
+	let { favicon } = $$props;
+
+	$$self.$$set = $$props => {
+		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
+	};
+
+	return [favicon];
 }
 
 class Component$5 extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
-			favicon: 2,
-			test: 3,
-			footer_nav: 0,
-			social: 1
-		});
+		init(this, options, instance$5, null, safe_not_equal, { favicon: 0 });
 	}
 }
 
 /* generated by Svelte v3.58.0 */
 
-function instance$6($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
-	let { test } = $$props;
-
-	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
-		if ('test' in $$props) $$invalidate(1, test = $$props.test);
-	};
-
-	return [favicon, test];
-}
-
-class Component$6 extends SvelteComponent {
-	constructor(options) {
-		super();
-		init(this, options, instance$6, null, safe_not_equal, { favicon: 0, test: 1 });
-	}
-}
-
-/* generated by Svelte v3.58.0 */
-
-function create_fragment$6(ctx) {
+function create_fragment$5(ctx) {
 	let component_0;
 	let t0;
 	let component_1;
@@ -5114,8 +5016,6 @@ function create_fragment$6(ctx) {
 	let component_3;
 	let t3;
 	let component_4;
-	let t4;
-	let component_5;
 	let current;
 
 	component_0 = new Component({
@@ -5125,8 +5025,7 @@ function create_fragment$6(ctx) {
 					"src": "https://picsum.photos/600/400?blur=10",
 					"url": "https://picsum.photos/600/400?blur=10",
 					"size": null
-				},
-				test: "THE TEST VALUE"
+				}
 			}
 		});
 
@@ -5138,7 +5037,6 @@ function create_fragment$6(ctx) {
 					"url": "https://picsum.photos/600/400?blur=10",
 					"size": null
 				},
-				test: "THE TEST VALUE",
 				banner: {
 					"cta": { "url": "", "label": "", "active": false },
 					"label": ""
@@ -5176,12 +5074,26 @@ function create_fragment$6(ctx) {
 					"url": "https://picsum.photos/600/400?blur=10",
 					"size": null
 				},
-				test: "THE TEST VALUE",
-				content: {
-					"html": "<h1>Privacy Policy</h1><p>Effective date: March 5, 2022</p><p><strong>Primo Creative LLC</strong> (“us”, “we”, or “our”) operates the <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"http://primo.so\">primo.so</a> website, primo desktop app and primo server.</p><p>This page informs you of our policies regarding the collection, use and disclosure of usage data when you use our desktop application, server software, or <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"http://primo.so\">primo.so</a> website (Services).</p><h2>Definitions</h2><p>Services</p><ul><li><p>primo desktop app, primo server, and <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"https://primo.so\">https://primo.so</a> website</p></li></ul><p><br class=\"ProseMirror-trailingBreak\"></p><h4>Usage Data</h4><ul><li><p>Usage Data is data collected automatically either generated by the use of the Services or from the Services infrastructure itself (for example, number of components added to the page).</p><p><br class=\"ProseMirror-trailingBreak\"></p></li></ul><h4>Personal Data</h4><p>Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</p><p><br class=\"ProseMirror-trailingBreak\"></p><h4>Data Controller</h4><ul><li><p>Data Controller means the natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal information are, or are to be, processed.</p></li><li><p>For the purpose of this Privacy Policy, we are a Data Controller of your Personal Data.</p><p><br class=\"ProseMirror-trailingBreak\"></p></li></ul><h4>Data Processors (or Service Providers)</h4><ul><li><p>Data Processor (or Service Provider) means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.</p></li></ul><h4><br class=\"ProseMirror-trailingBreak\"></h4><h2>Information Collection and Use</h2><h4>Personal Data</h4><p>While using our primo website, we may ask you to provide us with certain personally identifiable information when you sign up to receive newsletters and features updates (\"Personal Data\"). Personally identifiable information includes your <strong>email address </strong>and <strong>country</strong>.</p><p>We may use this Personal Data to contact you with newsletters or promotional material that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by contacting us.&nbsp;</p><h2>Use of Data</h2><p>Primo uses the collected data for various purposes:</p><ul><li><p>To provide and maintain our Services</p></li><li><p>To notify you about changes to our Services</p></li><li><p>To gather analysis or valuable information so that we can improve our Services</p></li><li><p>To monitor the usage of our Services</p></li><li><p>To detect, prevent and address technical issues</p></li><li><p>To provide you with news, special offers and general information about other goods and services related to primo Services</p></li></ul><h2>Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)</h2><p>Primo can process your Personal Data because:&nbsp;</p><ul><li><p>We need to perform a contract with you</p></li><li><p>You have given us permission to do so</p></li><li><p>The processing is in our legitimate interests and it is not overridden by your rights</p></li><li><p>To comply with the law</p></li></ul><h2>Retention of Data</h2><p>Primo will retain your Personal Data (email address) only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes and enforce our legal agreements and policies.</p><p>Primo will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of our Services, or we are legally obligated to retain this data for longer periods.</p><h2>Transfer of Data</h2><p>Your information, including Personal Data, may be transferred to - and maintained on - computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p><p>If you are located outside the United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.</p><p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p><p>Primo will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p><h2>Security of Data</h2><p>The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p><h2>Your Data Protection Rights under the General Data Protection Regulation (GDPR)</h2><p>If you are a resident of the European Economic Area (EEA), you have certain data protection rights. Primo aims to take reasonable steps to allow you to correct, amend, delete or limit the use of your Personal Data.</p><p>If you wish to be informed about what Personal Data we hold about you and if you want it to be removed from our systems, please contact us.</p><p>In certain circumstances, you have the following data protection rights:</p><ul><li><p><strong>The right to access, update or delete the information we have on you.</strong> Whenever made possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.</p></li><li><p><strong>The right of rectification.</strong> You have the right to have your information rectified if that information is inaccurate or incomplete.</p></li><li><p><strong>The right to object.</strong> You have the right to object to our processing of your Personal Data.</p></li><li><p><strong>The right of restriction.</strong> You have the right to request that we restrict the processing of your personal information.</p></li><li><p><strong>The right to data portability.</strong> You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.</p></li><li><p><strong>The right to withdraw consent.</strong> You also have the right to withdraw your consent at any time where Primo relied on your consent to process your personal information.</p></li></ul><p>Please note that we may ask you to verify your identity before responding to such requests.</p><p>You have the right to complain to a Data Protection Authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA).</p><h2>Service Providers</h2><p>We may employ third party companies and individuals to facilitate our Services (\"Service Providers\"), provide the Services on our behalf, perform Services-related services or assist us in analyzing how our Services is used.</p><p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p><h4>Mailer Lite</h4><h4>Supabase</h4><h4>Simple Analytics</h4><h2>Changes to This Privacy Policy</h2><p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p><p>We will let you know via email and/or a prominent notice on our Services, prior to the change becoming effective and update the \"effective date\" at the top of this Privacy Policy.</p><p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p><h2>Contact Us</h2><p>If you have any questions about this Privacy Policy, please contact us by email: <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"mailto:contact@primo.so\"><strong>contact@primo.so</strong></a></p>",
-					"markdown": "# Privacy Policy\n\nEffective date: March 5, 2022\n\n**Primo Creative LLC** (“us”, “we”, or “our”) operates the [primo.so](<http://primo.so>) website, primo desktop app and primo server.\n\nThis page informs you of our policies regarding the collection, use and disclosure of usage data when you use our desktop application, server software, or [primo.so](<http://primo.so>) website (Services).\n\n## Definitions\n\nServices\n\n- primo desktop app, primo server, and [https://primo.so](<https://primo.so>) website\n\n\n<!-- -->\n\n<br class=\"ProseMirror-trailingBreak\">\n\n#### Usage Data\n\n- Usage Data is data collected automatically either generated by the use of the Services or from the Services infrastructure itself (for example, number of components added to the page).\n\n    <br class=\"ProseMirror-trailingBreak\">\n\n\n<!-- -->\n\n#### Personal Data\n\nPersonal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).\n\n<br class=\"ProseMirror-trailingBreak\">\n\n#### Data Controller\n\n- Data Controller means the natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal information are, or are to be, processed.\n\n- For the purpose of this Privacy Policy, we are a Data Controller of your Personal Data.\n\n    <br class=\"ProseMirror-trailingBreak\">\n\n\n<!-- -->\n\n#### Data Processors (or Service Providers)\n\n- Data Processor (or Service Provider) means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.\n\n\n<!-- -->\n\n#### <br class=\"ProseMirror-trailingBreak\">\n\n\n\n## Information Collection and Use\n\n#### Personal Data\n\nWhile using our primo website, we may ask you to provide us with certain personally identifiable information when you sign up to receive newsletters and features updates (\"Personal Data\"). Personally identifiable information includes your **email address **and **country**.\n\nWe may use this Personal Data to contact you with newsletters or promotional material that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by contacting us.\n\n## Use of Data\n\nPrimo uses the collected data for various purposes:\n\n- To provide and maintain our Services\n\n- To notify you about changes to our Services\n\n- To gather analysis or valuable information so that we can improve our Services\n\n- To monitor the usage of our Services\n\n- To detect, prevent and address technical issues\n\n- To provide you with news, special offers and general information about other goods and services related to primo Services\n\n\n<!-- -->\n\n## Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)\n\nPrimo can process your Personal Data because:\n\n- We need to perform a contract with you\n\n- You have given us permission to do so\n\n- The processing is in our legitimate interests and it is not overridden by your rights\n\n- To comply with the law\n\n\n<!-- -->\n\n## Retention of Data\n\nPrimo will retain your Personal Data (email address) only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes and enforce our legal agreements and policies.\n\nPrimo will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of our Services, or we are legally obligated to retain this data for longer periods.\n\n## Transfer of Data\n\nYour information, including Personal Data, may be transferred to - and maintained on - computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.\n\nIf you are located outside the United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.\n\nYour consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.\n\nPrimo will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.\n\n## Security of Data\n\nThe security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.\n\n## Your Data Protection Rights under the General Data Protection Regulation (GDPR)\n\nIf you are a resident of the European Economic Area (EEA), you have certain data protection rights. Primo aims to take reasonable steps to allow you to correct, amend, delete or limit the use of your Personal Data.\n\nIf you wish to be informed about what Personal Data we hold about you and if you want it to be removed from our systems, please contact us.\n\nIn certain circumstances, you have the following data protection rights:\n\n- **The right to access, update or delete the information we have on you.** Whenever made possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.\n\n- **The right of rectification.** You have the right to have your information rectified if that information is inaccurate or incomplete.\n\n- **The right to object.** You have the right to object to our processing of your Personal Data.\n\n- **The right of restriction.** You have the right to request that we restrict the processing of your personal information.\n\n- **The right to data portability.** You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.\n\n- **The right to withdraw consent.** You also have the right to withdraw your consent at any time where Primo relied on your consent to process your personal information.\n\n\n<!-- -->\n\nPlease note that we may ask you to verify your identity before responding to such requests.\n\nYou have the right to complain to a Data Protection Authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA).\n\n## Service Providers\n\nWe may employ third party companies and individuals to facilitate our Services (\"Service Providers\"), provide the Services on our behalf, perform Services-related services or assist us in analyzing how our Services is used.\n\nThese third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.\n\n#### Mailer Lite\n\n#### Supabase\n\n#### Simple Analytics\n\n## Changes to This Privacy Policy\n\nWe may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.\n\nWe will let you know via email and/or a prominent notice on our Services, prior to the change becoming effective and update the \"effective date\" at the top of this Privacy Policy.\n\nYou are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.\n\n## Contact Us\n\nIf you have any questions about this Privacy Policy, please contact us by email: [**contact@primo.so**](<mailto:contact@primo.so>)\n\n"
-				},
-				style: { "center_heading": "" }
+				heading: "Blog",
+				subheading: "What we've been up to",
+				teasers: [
+					{
+						"body": {
+							"html": "<p>Everything new in Primo version 2.</p>",
+							"markdown": "Everything new in Primo version 2.\n\n"
+						},
+						"link": {
+							"url": "http://localhost:5173/primocms.org",
+							"label": ""
+						},
+						"image": {
+							"alt": "",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224415769Screenshot%202023-04-23%20at%2012.33.29%20AM.png"
+						},
+						"title": "Introducing Primo Version 2",
+						"video": ""
+					}
+				]
 			}
 		});
 
@@ -5193,26 +5105,6 @@ function create_fragment$6(ctx) {
 					"url": "https://picsum.photos/600/400?blur=10",
 					"size": null
 				},
-				test: "THE TEST VALUE",
-				signup_form: {
-					"heading": "Hear about future updates, including:",
-					"subheading": {
-						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique sites, pages, and blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
-					}
-				}
-			}
-		});
-
-	component_4 = new Component$5({
-			props: {
-				favicon: {
-					"alt": "",
-					"src": "https://picsum.photos/600/400?blur=10",
-					"url": "https://picsum.photos/600/400?blur=10",
-					"size": null
-				},
-				test: "THE TEST VALUE",
 				footer_nav: [
 					{
 						"link": { "url": "/", "label": "Changelog" }
@@ -5248,15 +5140,14 @@ function create_fragment$6(ctx) {
 			}
 		});
 
-	component_5 = new Component$6({
+	component_4 = new Component$5({
 			props: {
 				favicon: {
 					"alt": "",
 					"src": "https://picsum.photos/600/400?blur=10",
 					"url": "https://picsum.photos/600/400?blur=10",
 					"size": null
-				},
-				test: "THE TEST VALUE"
+				}
 			}
 		});
 
@@ -5271,8 +5162,6 @@ function create_fragment$6(ctx) {
 			create_component(component_3.$$.fragment);
 			t3 = space();
 			create_component(component_4.$$.fragment);
-			t4 = space();
-			create_component(component_5.$$.fragment);
 		},
 		l(nodes) {
 			claim_component(component_0.$$.fragment, nodes);
@@ -5284,8 +5173,6 @@ function create_fragment$6(ctx) {
 			claim_component(component_3.$$.fragment, nodes);
 			t3 = claim_space(nodes);
 			claim_component(component_4.$$.fragment, nodes);
-			t4 = claim_space(nodes);
-			claim_component(component_5.$$.fragment, nodes);
 		},
 		m(target, anchor) {
 			mount_component(component_0, target, anchor);
@@ -5297,8 +5184,6 @@ function create_fragment$6(ctx) {
 			mount_component(component_3, target, anchor);
 			insert_hydration(target, t3, anchor);
 			mount_component(component_4, target, anchor);
-			insert_hydration(target, t4, anchor);
-			mount_component(component_5, target, anchor);
 			current = true;
 		},
 		p: noop,
@@ -5309,7 +5194,6 @@ function create_fragment$6(ctx) {
 			transition_in(component_2.$$.fragment, local);
 			transition_in(component_3.$$.fragment, local);
 			transition_in(component_4.$$.fragment, local);
-			transition_in(component_5.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -5318,7 +5202,6 @@ function create_fragment$6(ctx) {
 			transition_out(component_2.$$.fragment, local);
 			transition_out(component_3.$$.fragment, local);
 			transition_out(component_4.$$.fragment, local);
-			transition_out(component_5.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -5331,17 +5214,15 @@ function create_fragment$6(ctx) {
 			destroy_component(component_3, detaching);
 			if (detaching) detach(t3);
 			destroy_component(component_4, detaching);
-			if (detaching) detach(t4);
-			destroy_component(component_5, detaching);
 		}
 	};
 }
 
-class Component$7 extends SvelteComponent {
+class Component$6 extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment$6, safe_not_equal, {});
+		init(this, options, null, create_fragment$5, safe_not_equal, {});
 	}
 }
 
-export default Component$7;
+export default Component$6;
