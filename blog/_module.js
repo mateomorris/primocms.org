@@ -4018,7 +4018,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-dwwyq");
 			attr(div0, "class", "component");
 			attr(div1, "class", "section");
-			attr(div1, "id", "section-2265d2d7-9794-4d5d-9f3f-cb139ed61921");
+			attr(div1, "id", "section-897d2a36-bcda-4153-b095-a844005f1c67");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -4522,7 +4522,7 @@ function create_fragment$3(ctx) {
 			attr(section, "class", "section-container svelte-19r3x5r");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-15a4429c-3559-4d39-a727-47fa483a053e");
+			attr(div2, "id", "section-ae85b141-0843-486f-a943-ed32219817d5");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4790,8 +4790,8 @@ function create_fragment$4(ctx) {
 			div0 = element("div");
 			span = element("span");
 			a = element("a");
-			t1 = text("primo");
-			t2 = text(" powered");
+			t1 = text("Primo");
+			t2 = text(" Powered");
 			t3 = space();
 			ul = element("ul");
 
@@ -4825,9 +4825,9 @@ function create_fragment$4(ctx) {
 			var span_nodes = children(span);
 			a = claim_element(span_nodes, "A", { href: true, style: true });
 			var a_nodes = children(a);
-			t1 = claim_text(a_nodes, "primo");
+			t1 = claim_text(a_nodes, "Primo");
 			a_nodes.forEach(detach);
-			t2 = claim_text(span_nodes, " powered");
+			t2 = claim_text(span_nodes, " Powered");
 			span_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t3 = claim_space(div1_nodes);
@@ -4847,7 +4847,7 @@ function create_fragment$4(ctx) {
 		},
 		h() {
 			attr(nav, "class", "svelte-9dgfd5");
-			attr(a, "href", "https://primo.so");
+			attr(a, "href", "https://primocms.org");
 			set_style(a, "color", "rgb(53, 217, 148)");
 			set_style(div0, "font-weight", "500");
 			attr(ul, "class", "svelte-9dgfd5");
@@ -4855,7 +4855,7 @@ function create_fragment$4(ctx) {
 			attr(footer, "class", "svelte-9dgfd5");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-05745e9c-b702-47af-82e9-9b15be5f0da6");
+			attr(div3, "id", "section-308656fe-4086-400f-a015-fb0a0b47db06");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);

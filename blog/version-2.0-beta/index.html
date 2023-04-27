@@ -783,38 +783,42 @@
             text-align: var(--heading-align)
         }
 
-        section.svelte-1dfzr7p.svelte-1dfzr7p {
+        section.svelte-17hnavu.svelte-17hnavu {
+            border-top: 1px solid #222
+        }
+
+        .section-container.svelte-17hnavu.svelte-17hnavu {
             display: grid;
             gap: 2rem;
             padding-top: 6rem;
             padding-bottom: 8rem
         }
 
-        .inner-content.svelte-1dfzr7p.svelte-1dfzr7p {
+        .inner-content.svelte-17hnavu.svelte-17hnavu {
             display: grid;
             place-content: flex-start;
             gap: 0.5rem
         }
 
-        .inner-content.svelte-1dfzr7p .heading.svelte-1dfzr7p {
+        .inner-content.svelte-17hnavu .heading.svelte-17hnavu {
             font-size: 1.75rem;
             text-align: left
         }
 
-        .inner-content.svelte-1dfzr7p .subheading.svelte-1dfzr7p {
+        .inner-content.svelte-17hnavu .subheading.svelte-17hnavu {
             text-align: left;
             color: var(--subheading-color);
             padding: 0
         }
 
-        form.svelte-1dfzr7p.svelte-1dfzr7p {
+        form.svelte-17hnavu.svelte-17hnavu {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             box-shadow: var(--box-shadow)
         }
 
-        form.svelte-1dfzr7p input.svelte-1dfzr7p {
+        form.svelte-17hnavu input.svelte-17hnavu {
             width: 100%;
             border-radius: 4px;
             border: 1.5px solid #cbcace;
@@ -824,32 +828,32 @@
             color: var(--color-gray)
         }
 
-        form.svelte-1dfzr7p .button.svelte-1dfzr7p {
+        form.svelte-17hnavu .button.svelte-17hnavu {
             width: 100%
         }
 
-        form.svelte-1dfzr7p .button.primary.svelte-1dfzr7p {
+        form.svelte-17hnavu .button.primary.svelte-17hnavu {
             font-weight: 400;
             border: 1.5px solid #35d994
         }
 
-        form.svelte-1dfzr7p .button.svelte-1dfzr7p:hover {
+        form.svelte-17hnavu .button.svelte-17hnavu:hover {
             box-shadow: none;
             background: #35d994;
             color: #121212
         }
 
         @media(min-width: 700px) {
-            section.svelte-1dfzr7p.svelte-1dfzr7p {
+            .section-container.svelte-17hnavu.svelte-17hnavu {
                 grid-template-columns: 2fr 1fr;
                 gap: 7rem
             }
 
-            section.svelte-1dfzr7p .inner-content.svelte-1dfzr7p {
+            .section-container.svelte-17hnavu .inner-content.svelte-17hnavu {
                 gap: 1rem
             }
 
-            section.svelte-1dfzr7p .inner-content .heading.svelte-1dfzr7p {
+            .section-container.svelte-17hnavu .inner-content .heading.svelte-17hnavu {
                 text-align: left
             }
         }
@@ -901,7 +905,7 @@
 
 <body id="page">
 
-    <div class="section" id="section-3926ae5a-028a-46cf-866a-21a1c2405ac3">
+    <div class="section" id="section-a1fe3266-50c2-4393-8822-d12ea46f6dcf">
         <div class="component">
             <header class="section-container svelte-dwwyq"><a href="/" class="logo svelte-dwwyq"><span class="svelte-dwwyq">primo</span>
                     <!-- HTML_TAG_START --><svg viewBox="0 0 871 198" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -962,7 +966,7 @@
             </header>
         </div>
     </div>
-    <div class="section" id="section-d90b5e09-526b-4b1c-bcf9-c58b9c6a0da3">
+    <div class="section" id="section-aa0a9ed8-2ba6-44dc-98e5-a758ae6c888d">
         <div class="component">
             <div class="section-container content svelte-3los8l" style="
 --heading-align: left"><!-- HTML_TAG_START -->
@@ -971,19 +975,19 @@
             </div>
         </div>
     </div>
-    <div class="section" id="section-f2d5feec-4d3a-47ee-854f-2048b7227b58">
+    <div class="section" id="section-a972a22a-983b-44dd-bc61-a7df084d20f0">
         <div class="component">
             <section class="section-container svelte-1dym9tg">
                 <header class="svelte-1dym9tg">
-                    <h2 class="heading is-title svelte-1dym9tg">Updates</h2>
-                    <p>Some stuff about how we' ve updated our shit.</p>
+                    <h2 class="heading is-title svelte-1dym9tg">Changes &amp; Updates</h2>
+                    <p>Some stuff about how we' ve updated.</p>
                 </header>
                 <div class="teasers svelte-1dym9tg">
                     <div class="teaser svelte-1dym9tg">
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">UI redesign</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors.</p><!-- HTML_TAG_END -->
+                                <p>The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors (<strong>what is the point of that, how does that make editing the site more intuitive?</strong>).</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -997,7 +1001,7 @@
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">Flat-file to relational database</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db.</p><!-- HTML_TAG_END -->
+                                <p>In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db (<strong>sooo... why is that awesome!?</strong>).</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1008,7 +1012,7 @@
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">Simplified distribution</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>Managing both Primo Desktop and Primo Server created a lot of unnecessary complexity in the codebase, so in v2 the desktop version has been removed and Primo runs tightly coupled to a relational database.</p><!-- HTML_TAG_END -->
+                                <p>Managing both Primo Desktop and Primo Server created a lot of unnecessary complexity in the codebase, so in v2 the desktop version has been removed and Primo Server runs tightly coupled to a relational database.</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1022,7 +1026,7 @@
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">Easier code/content access</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>To make it easier to switch between your site's code and content, we've gotten ride of the content/code toggle and instead made both options accessible at the component level.</p><!-- HTML_TAG_END -->
+                                <p>To make it easier to access your site's code and content, we've gotten rid of the toggle and instead made both options accessible at the component level.</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1036,7 +1040,7 @@
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">Simpler page building</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>‘Content Sections no longer exist (since all text is on-page editable) and component sections are now just called Blocks.</p><!-- HTML_TAG_END -->
+                                <p>After making all text editable on the page there was no longer a need for a ‘Content Section'. So now all sections are components or "blocks".</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1050,7 +1054,7 @@
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">Simpler, more scalable deployment</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>Dealing with individual host's APIs caused a lot of complexity and was error-prone and unscalable. Since modern hosts auto-deploy from Github, we've decided to focus our efforts on that. </p><!-- HTML_TAG_END -->
+                                <p>Dealing with individual host's APIs caused a lot of complexity and was error-prone and unscalable. Since modern hosts auto-deploy from Github, we've decided to focus our efforts on that (replace that with something more descriptive).</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1072,7 +1076,7 @@
             <link rel="preload" as="image" href="https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224278049Screenshot%202023-04-23%20at%2012.31.14%20AM.png">
         </div>
     </div>
-    <div class="section" id="section-7ef370a2-6c82-4b31-beba-29e65b868b7f">
+    <div class="section" id="section-8ccbe514-ded8-4ade-b186-c57d94bd2068">
         <div class="component">
             <section class="section-container svelte-1dym9tg">
                 <header class="svelte-1dym9tg">
@@ -1112,7 +1116,7 @@
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">Real-time collaboration</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>Invite anybody to collaborate on a site with you. Now many people can collaborate on a site or page at the same time (just not the same block).</p><!-- HTML_TAG_END -->
+                                <p>Invite anybody to collaborate on a site with you. Now multiple people can collaborate on a site or page at the same time (just not the same block).</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1127,14 +1131,14 @@
                             </div>
                         </div>
                         <div class="image">
-                            <img src="https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.28.54%20PM.png1682216940361" alt="" class="svelte-1dym9tg">
+                            <img src="https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1682386497850Screen%20Shot%202023-04-24%20at%209.34.44%20PM.png" alt="" class="svelte-1dym9tg">
                         </div>
                     </div>
                     <div class="teaser svelte-1dym9tg">
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">Static Fields</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>Instead of having to create site fields and manage content shared across instances of a block from the toolbar, just set a field to 'static' to make it have a single value - especially useful for headers and footers.</p><!-- HTML_TAG_END -->
+                                <p>Instead of having to create site fields and manage content shared across instances of a block from the toolbar, just set a field to 'static' to make it have a single value - especially useful for navigation headers and footers.</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1145,7 +1149,7 @@
                         <div class="content svelte-1dym9tg">
                             <h2 class="heading svelte-1dym9tg">And More...</h2>
                             <div class="body"><!-- HTML_TAG_START -->
-                                <p>Duplicate blocks on the page, duplicate email invitees, site members, preview site.</p><!-- HTML_TAG_END -->
+                                <p>Duplicate blocks on the page and preview your site.</p><!-- HTML_TAG_END -->
                             </div>
                         </div>
                         <div class="image">
@@ -1164,88 +1168,90 @@
             <link rel="preload" as="image" href="">
         </div>
     </div>
-    <div class="section" id="section-f586500e-e215-4907-a9b6-90df8eb3ef72">
+    <div class="section" id="section-995637a6-a60a-4868-9e81-031fb3014a28">
         <div class="component">
             <div class="section-container content svelte-3los8l" style="
 --heading-align: left"><!-- HTML_TAG_START -->
                 <h2>What's next</h2>
-                <p>With Primo being the most stable it's been and the codebase being the healthiest it's been, we're focusing on expanding our feature set to make Primo even more powerful. We're also excited to work with our community to see how they use Primo and what new ideas they bring to the table.</p>
+                <p>With Primo's codebase being the most stable it's been, we're focusing our efforts on expanding our feature set to make Primo even more powerful. We're excited to work with our community to see how they use Primo and what new ideas they bring to the table.</p>
                 <p>The next focus for us will be working on Primo Cloud in order to provide an easier way for people to use Primo and to create a sustainable funding source for Primo's continued development.</p><!-- HTML_TAG_END -->
             </div>
         </div>
     </div>
-    <div class="section" id="section-e91ba265-b2da-4e1c-8404-e3e37ea29667">
+    <div class="section" id="section-6e2a693b-787b-48b2-bbed-0c3d73d0371e">
         <div class="component">
-            <section class="section-container svelte-1dfzr7p" id="mc_embed_signup">
-                <div class="inner-content svelte-1dfzr7p">
-                    <h2 class="heading svelte-1dfzr7p">Hear about future updates, including:</h2>
-                    <h3 class="subheading content svelte-1dfzr7p"><!-- HTML_TAG_START -->
-                        <ul>
-                            <li>
-                                <p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p>
-                            </li>
-                            <li>
-                                <p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p>
-                            </li>
-                            <li>
-                                <p><strong>Design fields</strong> to give content editors style options.</p>
-                            </li>
-                            <li>
-                                <p><strong>Cloud functions</strong> for writing backend code from Primo.</p>
-                            </li>
-                        </ul><!-- HTML_TAG_END -->
-                    </h3>
-                </div>
-                <div class="form">
-                    <div id="mlb2-5039306" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5039306">
-                        <div class="ml-form-align-center">
-                            <div class="ml-form-embedWrapper embedForm">
-                                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                                    <form class="ml-block-form svelte-1dfzr7p" action="https://static.mailerlite.com/webforms/submit/j2m2z7" data-code="j2m2z7" method="post" target="_blank">
-                                        <div class="ml-form-formContent">
-                                            <div class="ml-form-fieldRow ml-last-item">
-                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required"><input aria-label="email" aria-required="true" type="email" class="form-control svelte-1dfzr7p" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email"></div>
+            <section class="svelte-17hnavu">
+                <div class="section-container svelte-17hnavu">
+                    <div class="inner-content svelte-17hnavu">
+                        <h2 class="heading svelte-17hnavu">Hear about future updates, including:</h2>
+                        <h3 class="subheading content svelte-17hnavu"><!-- HTML_TAG_START -->
+                            <ul>
+                                <li>
+                                    <p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Design fields</strong> to give content editors style options.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Cloud functions</strong> for writing backend code from Primo.</p>
+                                </li>
+                            </ul><!-- HTML_TAG_END -->
+                        </h3>
+                    </div>
+                    <div class="form">
+                        <div id="mlb2-5039306" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5039306">
+                            <div class="ml-form-align-center">
+                                <div class="ml-form-embedWrapper embedForm">
+                                    <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                        <form class="ml-block-form svelte-17hnavu" action="https://static.mailerlite.com/webforms/submit/j2m2z7" data-code="j2m2z7" method="post" target="_blank">
+                                            <div class="ml-form-formContent">
+                                                <div class="ml-form-fieldRow ml-last-item">
+                                                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required"><input aria-label="email" aria-required="true" type="email" class="form-control svelte-17hnavu" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email"></div>
+                                                </div>
                                             </div>
+                                            <input type="hidden" name="ml-submit" value="1" class="svelte-17hnavu">
+                                            <div class="ml-form-embedSubmit"><button type="submit" class="button primary svelte-17hnavu">Subscribe</button>
+                                                <button disabled="disabled" style="display: none" type="button" class="loading">
+                                                    <div class="ml-form-embedSubmitLoad"></div>
+                                                    <span class="sr-only">Loading...</span>
+                                                </button>
+                                            </div>
+                                            <input type="hidden" name="anticsrf" value="true" class="svelte-17hnavu">
+                                        </form>
+                                    </div>
+                                    <div class="ml-form-successBody row-success" style="display: none">
+                                        <div class="ml-form-successContent">
+                                            <h4>Thank you!</h4>
+                                            <p>You have successfully joined our subscriber list.</p>
                                         </div>
-                                        <input type="hidden" name="ml-submit" value="1" class="svelte-1dfzr7p">
-                                        <div class="ml-form-embedSubmit"><button type="submit" class="button primary svelte-1dfzr7p">Subscribe</button>
-                                            <button disabled="disabled" style="display: none" type="button" class="loading">
-                                                <div class="ml-form-embedSubmitLoad"></div>
-                                                <span class="sr-only">Loading...</span>
-                                            </button>
-                                        </div>
-                                        <input type="hidden" name="anticsrf" value="true" class="svelte-1dfzr7p">
-                                    </form>
-                                </div>
-                                <div class="ml-form-successBody row-success" style="display: none">
-                                    <div class="ml-form-successContent">
-                                        <h4>Thank you!</h4>
-                                        <p>You have successfully joined our subscriber list.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <img src="https://track.mailerlite.com/webforms/o/5039306/j2m2z7?v1637419080" width="1" height="1" style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block; " alt="." border="0">
                     </div>
-                    <img src="https://track.mailerlite.com/webforms/o/5039306/j2m2z7?v1637419080" width="1" height="1" style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block; " alt="." border="0">
+                    <script>
+                        function ml_webform_success_5039306() {
+                            var r = ml_jQuery || jQuery;
+                            r(".ml-subscribe-form-5039306 .row-success").show(),
+                                r(".ml-subscribe-form-5039306 .row-form").hide();
+                        }
+                    </script>
+                    <script src="https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c" type="text/javascript"></script>
                 </div>
-                <script>
-                    function ml_webform_success_5039306() {
-                        var r = ml_jQuery || jQuery;
-                        r(".ml-subscribe-form-5039306 .row-success").show(),
-                            r(".ml-subscribe-form-5039306 .row-form").hide();
-                    }
-                </script>
-                <script src="https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c" type="text/javascript"></script>
             </section>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
         </div>
     </div>
-    <div class="section" id="section-b21c31b2-211c-469e-8d78-cbcf0043541a">
+    <div class="section" id="section-a0440e48-f9bd-4f5a-ab33-cb3b46967af6">
         <div class="component">
             <footer class="svelte-9dgfd5">
                 <div class="section-container svelte-9dgfd5">
                     <nav class="svelte-9dgfd5"><a href="/" class="svelte-9dgfd5">Changelog</a><a href="/" class="svelte-9dgfd5">Open Source</a><a href="/" class="svelte-9dgfd5">Terms of Service</a></nav>
-                    <div style="font-weight:500"><span><a href="https://primo.so" style="color: rgb(53, 217, 148);">primo</a> powered</span></div>
+                    <div style="font-weight:500"><span><a href="https://primocms.org" style="color: rgb(53, 217, 148);">Primo</a> Powered</span></div>
                     <ul class="svelte-9dgfd5">
                         <li><a href="https://forum.primo.so" aria-label="Forum" class="svelte-9dgfd5"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="0.88em" height="1em" viewBox="0 0 448 512" class="iconify iconify--fa6-brands"><!-- HTML_TAG_START -->
                                     <path fill="currentColor" d="M225.9 32C103.3 32 0 130.5 0 252.1C0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9C448 134.3 348.6 32 225.9 32zM224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61c0-70.7 57.3-128 128-128s128 57.3 128 128s-57.3 128-128 128z" /><!-- HTML_TAG_END -->
