@@ -6871,7 +6871,7 @@ function create_fragment$9(ctx) {
 					},
 					{
 						"link": {
-							"url": "",
+							"url": "/themes",
 							"label": "Themes",
 							"active": false
 						},

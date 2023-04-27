@@ -5127,7 +5127,7 @@ function create_fragment$5(ctx) {
 					},
 					{
 						"link": {
-							"url": "",
+							"url": "/themes",
 							"label": "Themes",
 							"active": false
 						},

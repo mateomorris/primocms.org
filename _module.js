@@ -1094,11 +1094,9 @@ function create_fragment(ctx) {
 	let link_href_value;
 	let title_value;
 	let meta2;
-	let title_value_1;
 	let style;
 	let t;
 	document.title = title_value = /*title*/ ctx[1];
-	document.title = title_value_1 = /*title*/ ctx[1];
 
 	return {
 		c() {
@@ -1111,7 +1109,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			const head_nodes = head_selector('svelte-fwq7e0', document.head);
+			const head_nodes = head_selector('svelte-yxjru1', document.head);
 			meta0 = claim_element(head_nodes, "META", { name: true, content: true });
 			meta1 = claim_element(head_nodes, "META", { charset: true });
 			link = claim_element(head_nodes, "LINK", { rel: true, type: true, href: true });
@@ -1152,10 +1150,6 @@ function create_fragment(ctx) {
 
 			if (dirty & /*description*/ 4) {
 				attr(meta2, "content", /*description*/ ctx[2]);
-			}
-
-			if (dirty & /*title*/ 2 && title_value_1 !== (title_value_1 = /*title*/ ctx[1])) {
-				document.title = title_value_1;
 			}
 		},
 		i: noop,
@@ -16678,7 +16672,7 @@ function create_fragment$8(ctx) {
 					},
 					{
 						"link": {
-							"url": "",
+							"url": "/themes",
 							"label": "Themes",
 							"active": false
 						},
