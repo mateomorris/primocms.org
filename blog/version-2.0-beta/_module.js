@@ -6993,7 +6993,7 @@ function create_fragment$9(ctx) {
 
 	component_4 = new Component$5({
 			props: {
-				title: "Changes & Updates\n\nWe've significantly simplified Primo under the hood to make it more stable and easier to set up. ",
+				title: "Changes & Updates",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
@@ -7001,11 +7001,11 @@ function create_fragment$9(ctx) {
 					"size": 8
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				subtitle: "",
+				subtitle: "We've significantly simplified Primo under the hood to make it more stable and easier to set up. ",
 				teasers: [
 					{
 						"body": {
-							"html": "<p>The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors from which you can manage their code and fields in a single place. </p>",
+							"html": "<p>The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors from which you can manage their code and fields in a single place.</p>",
 							"markdown": "The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors from which you can manage their code and fields in a single place.\n\n"
 						},
 						"link": { "url": "", "label": "", "active": false },
@@ -7025,7 +7025,7 @@ function create_fragment$9(ctx) {
 					},
 					{
 						"body": {
-							"html": "<p>In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db, making your site much more scalable than before (i.e. not just small sites). </p>",
+							"html": "<p>In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db, making your site much more scalable than before (i.e. not just small sites).</p>",
 							"markdown": "In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db, making your site much more scalable than before (i.e. not just small sites).\n\n"
 						},
 						"link": { "url": "", "label": "", "active": false },
