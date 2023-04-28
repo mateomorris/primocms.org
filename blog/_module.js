@@ -1096,7 +1096,7 @@ function create_fragment(ctx) {
 	let meta2;
 	let style;
 	let t;
-	document.title = title_value = /*title*/ ctx[1];
+	document.title = title_value = /*title*/ ctx[0];
 
 	return {
 		c() {
@@ -1127,7 +1127,7 @@ function create_fragment(ctx) {
 			attr(meta1, "charset", "UTF-8");
 			attr(link, "rel", "shortcut icon");
 			attr(link, "type", "image/jpg");
-			attr(link, "href", link_href_value = /*favicon*/ ctx[0].url);
+			attr(link, "href", link_href_value = /*favicon*/ ctx[1].url);
 			attr(meta2, "name", "description");
 			attr(meta2, "content", /*description*/ ctx[2]);
 		},
@@ -1140,11 +1140,11 @@ function create_fragment(ctx) {
 			append_hydration(style, t);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*favicon*/ 1 && link_href_value !== (link_href_value = /*favicon*/ ctx[0].url)) {
+			if (dirty & /*favicon*/ 2 && link_href_value !== (link_href_value = /*favicon*/ ctx[1].url)) {
 				attr(link, "href", link_href_value);
 			}
 
-			if (dirty & /*title*/ 2 && title_value !== (title_value = /*title*/ ctx[1])) {
+			if (dirty & /*title*/ 1 && title_value !== (title_value = /*title*/ ctx[0])) {
 				document.title = title_value;
 			}
 
@@ -1165,23 +1165,23 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(2, description = $$props.description);
 	};
 
-	return [favicon, title, description];
+	return [title, favicon, description];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { favicon: 0, title: 1, description: 2 });
+		init(this, options, instance, create_fragment, safe_not_equal, { title: 0, favicon: 1, description: 2 });
 	}
 }
 
@@ -4197,8 +4197,8 @@ function create_fragment$2(ctx) {
 }
 
 function instance$2($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { banner } = $$props;
 	let { logo } = $$props;
@@ -4210,15 +4210,15 @@ function instance$2($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(6, title = $$props.title);
+		if ('title' in $$props) $$invalidate(5, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(6, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(7, description = $$props.description);
 		if ('banner' in $$props) $$invalidate(0, banner = $$props.banner);
 		if ('logo' in $$props) $$invalidate(1, logo = $$props.logo);
 		if ('nav' in $$props) $$invalidate(2, nav = $$props.nav);
 	};
 
-	return [banner, logo, nav, mobileNavOpen, toggleMobileNav, favicon, title, description];
+	return [banner, logo, nav, mobileNavOpen, toggleMobileNav, title, favicon, description];
 }
 
 class Component$2 extends SvelteComponent {
@@ -4226,8 +4226,8 @@ class Component$2 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
-			favicon: 5,
-			title: 6,
+			title: 5,
+			favicon: 6,
 			description: 7,
 			banner: 0,
 			logo: 1,
@@ -4265,7 +4265,7 @@ function create_if_block_1$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "class", "link svelte-19r3x5r");
+			attr(a, "class", "link svelte-klxdzx");
 			attr(a, "href", a_href_value = /*teaser*/ ctx[6].link.url);
 		},
 		m(target, anchor) {
@@ -4349,7 +4349,7 @@ function create_if_block$2(ctx) {
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
 			attr(iframe, "title", "video");
-			attr(iframe, "class", "svelte-19r3x5r");
+			attr(iframe, "class", "svelte-klxdzx");
 		},
 		m(target, anchor) {
 			insert_hydration(target, iframe, anchor);
@@ -4431,11 +4431,11 @@ function create_each_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-19r3x5r");
+			attr(h2, "class", "heading svelte-klxdzx");
 			attr(div0, "class", "body");
-			attr(div1, "class", "content svelte-19r3x5r");
-			attr(figure, "class", "svelte-19r3x5r");
-			attr(div2, "class", "teaser svelte-19r3x5r");
+			attr(div1, "class", "content svelte-klxdzx");
+			attr(figure, "class", "svelte-klxdzx");
+			attr(div2, "class", "teaser svelte-klxdzx");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4561,11 +4561,11 @@ function create_fragment$3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-19r3x5r");
-			attr(h3, "class", "subheading svelte-19r3x5r");
-			attr(header, "class", "svelte-19r3x5r");
-			attr(div0, "class", "teasers svelte-19r3x5r");
-			attr(section, "class", "section-container svelte-19r3x5r");
+			attr(h2, "class", "heading svelte-klxdzx");
+			attr(h3, "class", "subheading svelte-klxdzx");
+			attr(header, "class", "svelte-klxdzx");
+			attr(div0, "class", "teasers svelte-klxdzx");
+			attr(section, "class", "section-container svelte-klxdzx");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
 			attr(div2, "id", "section-ae85b141-0843-486f-a943-ed32219817d5");
@@ -4626,23 +4626,23 @@ function create_fragment$3(ctx) {
 }
 
 function instance$3($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { heading } = $$props;
 	let { subheading } = $$props;
 	let { teasers } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(4, title = $$props.title);
+		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(4, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(5, description = $$props.description);
 		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
 		if ('subheading' in $$props) $$invalidate(1, subheading = $$props.subheading);
 		if ('teasers' in $$props) $$invalidate(2, teasers = $$props.teasers);
 	};
 
-	return [heading, subheading, teasers, favicon, title, description];
+	return [heading, subheading, teasers, title, favicon, description];
 }
 
 class Component$3 extends SvelteComponent {
@@ -4650,8 +4650,8 @@ class Component$3 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
-			favicon: 3,
-			title: 4,
+			title: 3,
+			favicon: 4,
 			description: 5,
 			heading: 0,
 			subheading: 1,
@@ -5017,21 +5017,21 @@ function create_fragment$4(ctx) {
 }
 
 function instance$4($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { footer_nav } = $$props;
 	let { social } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(4, description = $$props.description);
 		if ('footer_nav' in $$props) $$invalidate(0, footer_nav = $$props.footer_nav);
 		if ('social' in $$props) $$invalidate(1, social = $$props.social);
 	};
 
-	return [footer_nav, social, favicon, title, description];
+	return [footer_nav, social, title, favicon, description];
 }
 
 class Component$4 extends SvelteComponent {
@@ -5039,8 +5039,8 @@ class Component$4 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
-			favicon: 2,
-			title: 3,
+			title: 2,
+			favicon: 3,
 			description: 4,
 			footer_nav: 0,
 			social: 1
@@ -5051,23 +5051,23 @@ class Component$4 extends SvelteComponent {
 /* generated by Svelte v3.58.0 */
 
 function instance$5($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(2, description = $$props.description);
 	};
 
-	return [favicon, title, description];
+	return [title, favicon, description];
 }
 
 class Component$5 extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$5, null, safe_not_equal, { favicon: 0, title: 1, description: 2 });
+		init(this, options, instance$5, null, safe_not_equal, { title: 0, favicon: 1, description: 2 });
 	}
 }
 
@@ -5087,26 +5087,26 @@ function create_fragment$5(ctx) {
 
 	component_0 = new Component({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time."
 			}
 		});
 
 	component_1 = new Component$2({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				banner: {
 					"cta": { "url": "", "label": "", "active": false },
@@ -5119,7 +5119,15 @@ function create_fragment$5(ctx) {
 				nav: [
 					{
 						"link": {
-							"url": "https://docs.primo.so",
+							"url": "/why",
+							"label": "Why Primo",
+							"active": false
+						},
+						"links": []
+					},
+					{
+						"link": {
+							"url": "https://docs.primocms.org",
 							"label": "Docs",
 							"active": false
 						},
@@ -5139,13 +5147,13 @@ function create_fragment$5(ctx) {
 
 	component_2 = new Component$3({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "Blog",
 				subheading: "What we've been up to",
@@ -5172,13 +5180,13 @@ function create_fragment$5(ctx) {
 
 	component_3 = new Component$4({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
@@ -5201,15 +5209,24 @@ function create_fragment$5(ctx) {
 					},
 					{
 						"icon": "fa6-brands:discord",
-						"link": { "url": "/", "label": "Discord" }
+						"link": {
+							"url": "https://discord.gg/vzSFTS9",
+							"label": "Discord"
+						}
 					},
 					{
 						"icon": "fa6-brands:youtube",
-						"link": { "url": "/", "label": "Youtube" }
+						"link": {
+							"url": "https://www.youtube.com/@primocms",
+							"label": "Youtube"
+						}
 					},
 					{
 						"icon": "fa6-brands:github",
-						"link": { "url": "/", "label": "Github" }
+						"link": {
+							"url": "https://github.com/primocms/primo",
+							"label": "Github"
+						}
 					}
 				]
 			}
@@ -5217,13 +5234,13 @@ function create_fragment$5(ctx) {
 
 	component_4 = new Component$5({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time."
 			}
 		});

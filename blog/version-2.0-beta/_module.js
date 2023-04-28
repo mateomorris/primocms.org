@@ -1096,7 +1096,7 @@ function create_fragment(ctx) {
 	let meta2;
 	let style;
 	let t;
-	document.title = title_value = /*title*/ ctx[1];
+	document.title = title_value = /*title*/ ctx[0];
 
 	return {
 		c() {
@@ -1127,7 +1127,7 @@ function create_fragment(ctx) {
 			attr(meta1, "charset", "UTF-8");
 			attr(link, "rel", "shortcut icon");
 			attr(link, "type", "image/jpg");
-			attr(link, "href", link_href_value = /*favicon*/ ctx[0].url);
+			attr(link, "href", link_href_value = /*favicon*/ ctx[1].url);
 			attr(meta2, "name", "description");
 			attr(meta2, "content", /*description*/ ctx[2]);
 		},
@@ -1140,11 +1140,11 @@ function create_fragment(ctx) {
 			append_hydration(style, t);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*favicon*/ 1 && link_href_value !== (link_href_value = /*favicon*/ ctx[0].url)) {
+			if (dirty & /*favicon*/ 2 && link_href_value !== (link_href_value = /*favicon*/ ctx[1].url)) {
 				attr(link, "href", link_href_value);
 			}
 
-			if (dirty & /*title*/ 2 && title_value !== (title_value = /*title*/ ctx[1])) {
+			if (dirty & /*title*/ 1 && title_value !== (title_value = /*title*/ ctx[0])) {
 				document.title = title_value;
 			}
 
@@ -1165,19 +1165,19 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(2, description = $$props.description);
 		if ('test' in $$props) $$invalidate(3, test = $$props.test);
 	};
 
-	return [favicon, title, description, test];
+	return [title, favicon, description, test];
 }
 
 class Component extends SvelteComponent {
@@ -1185,8 +1185,8 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			favicon: 0,
-			title: 1,
+			title: 0,
+			favicon: 1,
 			description: 2,
 			test: 3
 		});
@@ -4205,8 +4205,8 @@ function create_fragment$2(ctx) {
 }
 
 function instance$2($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 	let { banner } = $$props;
@@ -4219,8 +4219,8 @@ function instance$2($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(6, title = $$props.title);
+		if ('title' in $$props) $$invalidate(5, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(6, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(7, description = $$props.description);
 		if ('test' in $$props) $$invalidate(8, test = $$props.test);
 		if ('banner' in $$props) $$invalidate(0, banner = $$props.banner);
@@ -4234,8 +4234,8 @@ function instance$2($$self, $$props, $$invalidate) {
 		nav,
 		mobileNavOpen,
 		toggleMobileNav,
-		favicon,
 		title,
+		favicon,
 		description,
 		test
 	];
@@ -4246,8 +4246,8 @@ class Component$2 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
-			favicon: 5,
-			title: 6,
+			title: 5,
+			favicon: 6,
 			description: 7,
 			test: 8,
 			banner: 0,
@@ -4317,23 +4317,23 @@ function create_fragment$3(ctx) {
 }
 
 function instance$3($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 	let { content } = $$props;
 	let { style } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(4, description = $$props.description);
 		if ('test' in $$props) $$invalidate(5, test = $$props.test);
 		if ('content' in $$props) $$invalidate(0, content = $$props.content);
 		if ('style' in $$props) $$invalidate(1, style = $$props.style);
 	};
 
-	return [content, style, favicon, title, description, test];
+	return [content, style, title, favicon, description, test];
 }
 
 class Component$3 extends SvelteComponent {
@@ -4341,8 +4341,8 @@ class Component$3 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
-			favicon: 2,
-			title: 3,
+			title: 2,
+			favicon: 3,
 			description: 4,
 			test: 5,
 			content: 0,
@@ -4943,7 +4943,7 @@ function create_fragment$4(ctx) {
 			attr(section, "class", "section-container svelte-1dym9tg");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-a972a22a-983b-44dd-bc61-a7df084d20f0");
+			attr(div2, "id", "section-8ccbe514-ded8-4ade-b186-c57d94bd2068");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -5055,8 +5055,8 @@ function create_fragment$4(ctx) {
 }
 
 function instance$4($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 	let { subtitle } = $$props;
@@ -5071,8 +5071,8 @@ function instance$4($$self, $$props, $$invalidate) {
 	const click_handler_1 = i => set_tab(i, 1);
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
 		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(6, description = $$props.description);
 		if ('test' in $$props) $$invalidate(7, test = $$props.test);
 		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
@@ -5098,8 +5098,8 @@ class Component$4 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
-			favicon: 5,
 			title: 0,
+			favicon: 5,
 			description: 6,
 			test: 7,
 			subtitle: 1,
@@ -5700,7 +5700,7 @@ function create_fragment$5(ctx) {
 			attr(section, "class", "section-container svelte-1dym9tg");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-8ccbe514-ded8-4ade-b186-c57d94bd2068");
+			attr(div2, "id", "section-a972a22a-983b-44dd-bc61-a7df084d20f0");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -5812,8 +5812,8 @@ function create_fragment$5(ctx) {
 }
 
 function instance$5($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 	let { subtitle } = $$props;
@@ -5828,8 +5828,8 @@ function instance$5($$self, $$props, $$invalidate) {
 	const click_handler_1 = i => set_tab(i, 1);
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
 		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(5, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(6, description = $$props.description);
 		if ('test' in $$props) $$invalidate(7, test = $$props.test);
 		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
@@ -5855,8 +5855,8 @@ class Component$5 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
-			favicon: 5,
 			title: 0,
+			favicon: 5,
 			description: 6,
 			test: 7,
 			subtitle: 1,
@@ -5925,23 +5925,23 @@ function create_fragment$6(ctx) {
 }
 
 function instance$6($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 	let { content } = $$props;
 	let { style } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(4, description = $$props.description);
 		if ('test' in $$props) $$invalidate(5, test = $$props.test);
 		if ('content' in $$props) $$invalidate(0, content = $$props.content);
 		if ('style' in $$props) $$invalidate(1, style = $$props.style);
 	};
 
-	return [content, style, favicon, title, description, test];
+	return [content, style, title, favicon, description, test];
 }
 
 class Component$6 extends SvelteComponent {
@@ -5949,8 +5949,8 @@ class Component$6 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
-			favicon: 2,
-			title: 3,
+			title: 2,
+			favicon: 3,
 			description: 4,
 			test: 5,
 			content: 0,
@@ -6217,13 +6217,13 @@ function create_fragment$7(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-17hnavu");
-			attr(h3, "class", "subheading content svelte-17hnavu");
-			attr(div0, "class", "inner-content svelte-17hnavu");
+			attr(h2, "class", "heading svelte-1nwuilq");
+			attr(h3, "class", "subheading content svelte-1nwuilq");
+			attr(div0, "class", "inner-content svelte-1nwuilq");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-17hnavu");
+			attr(input0, "class", "form-control svelte-1nwuilq");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -6234,9 +6234,9 @@ function create_fragment$7(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-17hnavu");
+			attr(input1, "class", "svelte-1nwuilq");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "button primary svelte-17hnavu");
+			attr(button0, "class", "button primary svelte-1nwuilq");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
 			attr(span, "class", "sr-only");
 			button1.disabled = "disabled";
@@ -6247,8 +6247,8 @@ function create_fragment$7(ctx) {
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-17hnavu");
-			attr(form, "class", "ml-block-form svelte-17hnavu");
+			attr(input2, "class", "svelte-1nwuilq");
+			attr(form, "class", "ml-block-form svelte-1nwuilq");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -6275,8 +6275,8 @@ function create_fragment$7(ctx) {
 			attr(div12, "class", "form");
 			if (!src_url_equal(script1.src, script1_src_value = "https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c")) attr(script1, "src", script1_src_value);
 			attr(script1, "type", "text/javascript");
-			attr(div13, "class", "section-container svelte-17hnavu");
-			attr(section, "class", "svelte-17hnavu");
+			attr(div13, "class", "section-container svelte-1nwuilq");
+			attr(section, "class", "svelte-1nwuilq");
 			attr(link, "rel", "stylesheet");
 			attr(link, "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
 			attr(link, "integrity", "sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==");
@@ -6352,21 +6352,21 @@ function create_fragment$7(ctx) {
 }
 
 function instance$7($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 	let { signup_form } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(3, description = $$props.description);
 		if ('test' in $$props) $$invalidate(4, test = $$props.test);
 		if ('signup_form' in $$props) $$invalidate(0, signup_form = $$props.signup_form);
 	};
 
-	return [signup_form, favicon, title, description, test];
+	return [signup_form, title, favicon, description, test];
 }
 
 class Component$7 extends SvelteComponent {
@@ -6374,8 +6374,8 @@ class Component$7 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$7, create_fragment$7, safe_not_equal, {
-			favicon: 1,
-			title: 2,
+			title: 1,
+			favicon: 2,
 			description: 3,
 			test: 4,
 			signup_form: 0
@@ -6740,23 +6740,23 @@ function create_fragment$8(ctx) {
 }
 
 function instance$8($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 	let { footer_nav } = $$props;
 	let { social } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(4, description = $$props.description);
 		if ('test' in $$props) $$invalidate(5, test = $$props.test);
 		if ('footer_nav' in $$props) $$invalidate(0, footer_nav = $$props.footer_nav);
 		if ('social' in $$props) $$invalidate(1, social = $$props.social);
 	};
 
-	return [footer_nav, social, favicon, title, description, test];
+	return [footer_nav, social, title, favicon, description, test];
 }
 
 class Component$8 extends SvelteComponent {
@@ -6764,8 +6764,8 @@ class Component$8 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$8, create_fragment$8, safe_not_equal, {
-			favicon: 2,
-			title: 3,
+			title: 2,
+			favicon: 3,
 			description: 4,
 			test: 5,
 			footer_nav: 0,
@@ -6777,19 +6777,19 @@ class Component$8 extends SvelteComponent {
 /* generated by Svelte v3.58.0 */
 
 function instance$9($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
 	let { title } = $$props;
+	let { favicon } = $$props;
 	let { description } = $$props;
 	let { test } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
-		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(2, description = $$props.description);
 		if ('test' in $$props) $$invalidate(3, test = $$props.test);
 	};
 
-	return [favicon, title, description, test];
+	return [title, favicon, description, test];
 }
 
 class Component$9 extends SvelteComponent {
@@ -6797,8 +6797,8 @@ class Component$9 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$9, null, safe_not_equal, {
-			favicon: 0,
-			title: 1,
+			title: 0,
+			favicon: 1,
 			description: 2,
 			test: 3
 		});
@@ -6829,13 +6829,13 @@ function create_fragment$9(ctx) {
 
 	component_0 = new Component({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE"
 			}
@@ -6843,13 +6843,13 @@ function create_fragment$9(ctx) {
 
 	component_1 = new Component$2({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
 				banner: {
@@ -6863,7 +6863,15 @@ function create_fragment$9(ctx) {
 				nav: [
 					{
 						"link": {
-							"url": "https://docs.primo.so",
+							"url": "/why",
+							"label": "Why Primo",
+							"active": false
+						},
+						"links": []
+					},
+					{
+						"link": {
+							"url": "https://docs.primocms.org",
 							"label": "Docs",
 							"active": false
 						},
@@ -6883,18 +6891,18 @@ function create_fragment$9(ctx) {
 
 	component_2 = new Component$3({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
 				content: {
-					"html": "<h1>Announcing Primo V2</h1><p>We’re excited to announce the public beta release of Primo version 2. After releasing Version 1's beta just a few months ago, we took a step back and returned with a fresh vision for the future of the tool which culminated in two months of effort to simplify Primo while making it easier to use.</p>",
-					"markdown": "# Announcing Primo V2\n\nWe’re excited to announce the public beta release of Primo version 2. After releasing Version 1's beta just a few months ago, we took a step back and returned with a fresh vision for the future of the tool which culminated in two months of effort to simplify Primo while making it easier to use.\n\n"
+					"html": "<h1>Announcing Primo V2</h1><p>We’re excited to announce the public beta release of Primo version 2. After releasing Version 1's beta just a few months ago, we took a step back and returned with a fresh vision for the future of the tool which culminated in two months of effort to make Primo more stable and even easier to use.</p>",
+					"markdown": "# Announcing Primo V2\n\nWe’re excited to announce the public beta release of Primo version 2. After releasing Version 1's beta just a few months ago, we took a step back and returned with a fresh vision for the future of the tool which culminated in two months of effort to make Primo more stable and even easier to use.\n\n"
 				},
 				style: { "center_heading": "" }
 			}
@@ -6902,153 +6910,16 @@ function create_fragment$9(ctx) {
 
 	component_3 = new Component$4({
 			props: {
-				favicon: {
-					"alt": "",
-					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
-					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
-					"size": 8
-				},
-				title: "Changes & Updates",
-				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE",
-				subtitle: "Some stuff about how we' ve updated.",
-				teasers: [
-					{
-						"body": {
-							"html": "<p>The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors (<strong>what is the point of that, how does that make editing the site more intuitive?</strong>).</p>",
-							"markdown": "The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors (**what is the point of that, how does that make editing the site more intuitive?**).\n\n"
-						},
-						"link": { "url": "", "label": "", "active": false },
-						"image": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224557611Screenshot%202023-04-23%20at%2012.35.54%20AM.png",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224557611Screenshot%202023-04-23%20at%2012.35.54%20AM.png",
-							"size": 255
-						},
-						"title": "UI redesign",
-						"image_v2": {
-							"alt": "New UI for primo editor",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224415769Screenshot%202023-04-23%20at%2012.33.29%20AM.png",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224415769Screenshot%202023-04-23%20at%2012.33.29%20AM.png",
-							"size": 516
-						}
-					},
-					{
-						"body": {
-							"html": "<p>In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db (<strong>sooo... why is that awesome!?</strong>).</p>",
-							"markdown": "In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db (**sooo... why is that awesome!?**).\n\n"
-						},
-						"link": { "url": "", "label": "", "active": false },
-						"image": {
-							"alt": "",
-							"src": "",
-							"url": "",
-							"size": null
-						},
-						"title": "Flat-file to relational database",
-						"image_v2": {
-							"alt": "Supabase dashboard with db tables",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.19.37%20PM.png1682216389419",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.19.37%20PM.png1682216389419",
-							"size": null
-						}
-					},
-					{
-						"body": {
-							"html": "<p>Managing both Primo Desktop and Primo Server created a lot of unnecessary complexity in the codebase, so in v2 the desktop version has been removed and Primo Server runs tightly coupled to a relational database.</p>",
-							"markdown": "Managing both Primo Desktop and Primo Server created a lot of unnecessary complexity in the codebase, so in v2 the desktop version has been removed and Primo Server runs tightly coupled to a relational database.\n\n"
-						},
-						"link": { "url": "", "label": "", "active": false },
-						"image": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682222745314Screenshot%202023-04-23%20at%2012.05.36%20AM.png",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682222745314Screenshot%202023-04-23%20at%2012.05.36%20AM.png",
-							"size": 14
-						},
-						"title": "Simplified distribution",
-						"image_v2": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.31.55%20PM.png1682217124396",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.31.55%20PM.png1682217124396",
-							"size": null
-						}
-					},
-					{
-						"body": {
-							"html": "<p>To make it easier to access your site's code and content, we've gotten rid of the toggle and instead made both options accessible at the component level.</p>",
-							"markdown": "To make it easier to access your site's code and content, we've gotten rid of the toggle and instead made both options accessible at the component level.\n\n"
-						},
-						"link": { "url": "", "label": "", "active": false },
-						"image": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224145393Screenshot%202023-04-23%20at%2012.29.01%20AM.png",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224145393Screenshot%202023-04-23%20at%2012.29.01%20AM.png",
-							"size": 50
-						},
-						"title": "Easier code/content access",
-						"image_v2": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682372748957Screen%20Shot%202023-04-24%20at%205.44.52%20PM.png",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682372748957Screen%20Shot%202023-04-24%20at%205.44.52%20PM.png",
-							"size": 90
-						}
-					},
-					{
-						"body": {
-							"html": "<p>After making all text editable on the page there was no longer a need for a ‘Content Section'. So now all sections are components or \"blocks\".</p>",
-							"markdown": "After making all text editable on the page there was no longer a need for a ‘Content Section'. So now all sections are components or \"blocks\".\n\n"
-						},
-						"link": { "url": "", "label": "", "active": false },
-						"image": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224200584Screenshot%202023-04-23%20at%2012.29.54%20AM.png",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224200584Screenshot%202023-04-23%20at%2012.29.54%20AM.png",
-							"size": 198
-						},
-						"title": "Simpler page building",
-						"image_v2": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.28.17%20PM.png1682216901688",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.28.17%20PM.png1682216901688",
-							"size": null
-						}
-					},
-					{
-						"body": {
-							"html": "<p>Dealing with individual host's APIs caused a lot of complexity and was error-prone and unscalable. Since modern hosts auto-deploy from Github, we've decided to focus our efforts on that (replace that with something more descriptive).</p>",
-							"markdown": "Dealing with individual host's APIs caused a lot of complexity and was error-prone and unscalable. Since modern hosts auto-deploy from Github, we've decided to focus our efforts on that (replace that with something more descriptive).\n\n"
-						},
-						"link": { "url": "", "label": "", "active": false },
-						"image": {
-							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224278049Screenshot%202023-04-23%20at%2012.31.14%20AM.png",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224278049Screenshot%202023-04-23%20at%2012.31.14%20AM.png",
-							"size": 28
-						},
-						"title": "Simpler, more scalable deployment",
-						"image_v2": {
-							"alt": "New Publish modal with Download and Deply to Github options",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.26.32%20PM.png1682216797847",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.26.32%20PM.png1682216797847",
-							"size": null
-						}
-					}
-				]
-			}
-		});
-
-	component_4 = new Component$5({
-			props: {
-				favicon: {
-					"alt": "",
-					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
-					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
-					"size": 8
-				},
 				title: "New features",
+				favicon: {
+					"alt": "",
+					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"size": 8
+				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
-				subtitle: "somethin' about new features",
+				subtitle: "This version was primarily about stabilization, but in the process we also added some much-needed features to Primo that make it a lot easier to build pages and manage content, collaborate, and scale your sites. ",
 				teasers: [
 					{
 						"body": {
@@ -7072,8 +6943,8 @@ function create_fragment$9(ctx) {
 					},
 					{
 						"body": {
-							"html": "<p>Move your components onto the page from the side panel containing all your site blocks.</p>",
-							"markdown": "Move your components onto the page from the side panel containing all your site blocks.\n\n"
+							"html": "<p>Move your components onto the page from the side panel. Default and static content can also be managed from the side panel. </p>",
+							"markdown": "Move your components onto the page from the side panel. Default and static content can also be managed from the side panel.\n\n"
 						},
 						"link": { "url": "", "label": "", "active": false },
 						"image": {
@@ -7152,8 +7023,8 @@ function create_fragment$9(ctx) {
 					},
 					{
 						"body": {
-							"html": "<p>Duplicate blocks on the page and preview your site.</p>",
-							"markdown": "Duplicate blocks on the page and preview your site.\n\n"
+							"html": "<p>Duplicate blocks on the page. Preview your site by appending '?preview' to the site URL. Deploy to a new or existing Github repository.</p>",
+							"markdown": "Duplicate blocks on the page. Preview your site by appending '?preview' to the site URL. Deploy to a new or existing Github repository.\n\n"
 						},
 						"link": { "url": "", "label": "", "active": false },
 						"image": {
@@ -7165,8 +7036,143 @@ function create_fragment$9(ctx) {
 						"title": "And More...",
 						"image_v2": {
 							"alt": "",
-							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.44.27%20PM.png1682217873800",
-							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.44.27%20PM.png1682217873800",
+							"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/Screenshot%202023-04-27%20at%2010.08.35%20PM.png1682647723450"
+						}
+					}
+				]
+			}
+		});
+
+	component_4 = new Component$5({
+			props: {
+				title: "Changes & Updates\n\nWe've significantly simplified Primo under the hood to make it more stable and easier to set up. ",
+				favicon: {
+					"alt": "",
+					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"size": 8
+				},
+				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
+				test: "THE TEST VALUE",
+				subtitle: "",
+				teasers: [
+					{
+						"body": {
+							"html": "<p>The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors from which you can manage their code and fields in a single place. </p>",
+							"markdown": "The toolbar has been redesigned to be simpler and more intuitive, with page and site options opening their own editors from which you can manage their code and fields in a single place.\n\n"
+						},
+						"link": { "url": "", "label": "", "active": false },
+						"image": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224557611Screenshot%202023-04-23%20at%2012.35.54%20AM.png",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224557611Screenshot%202023-04-23%20at%2012.35.54%20AM.png",
+							"size": 255
+						},
+						"title": "UI redesign",
+						"image_v2": {
+							"alt": "New UI for primo editor",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224415769Screenshot%202023-04-23%20at%2012.33.29%20AM.png",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224415769Screenshot%202023-04-23%20at%2012.33.29%20AM.png",
+							"size": 516
+						}
+					},
+					{
+						"body": {
+							"html": "<p>In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db, making your site much more scalable than before (i.e. not just small sites). </p>",
+							"markdown": "In version 1, your entire site was stored as a JSON file and re-uploaded in its entirety on every save. Now, all your sites, pages, page sections, and components are stored as rows in a relational db, making your site much more scalable than before (i.e. not just small sites).\n\n"
+						},
+						"link": { "url": "", "label": "", "active": false },
+						"image": {
+							"alt": "",
+							"src": "",
+							"url": "",
+							"size": null
+						},
+						"title": "Flat-file to relational database",
+						"image_v2": {
+							"alt": "Supabase dashboard with db tables",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.19.37%20PM.png1682216389419",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.19.37%20PM.png1682216389419",
+							"size": null
+						}
+					},
+					{
+						"body": {
+							"html": "<p>Managing both Primo Desktop and Primo Server created a lot of unnecessary complexity in the codebase, so in v2 the desktop version has been removed and Primo Server runs tightly coupled to a relational database.</p>",
+							"markdown": "Managing both Primo Desktop and Primo Server created a lot of unnecessary complexity in the codebase, so in v2 the desktop version has been removed and Primo Server runs tightly coupled to a relational database.\n\n"
+						},
+						"link": { "url": "", "label": "", "active": false },
+						"image": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682222745314Screenshot%202023-04-23%20at%2012.05.36%20AM.png",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682222745314Screenshot%202023-04-23%20at%2012.05.36%20AM.png",
+							"size": 14
+						},
+						"title": "Simplified distribution",
+						"image_v2": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.31.55%20PM.png1682217124396",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.31.55%20PM.png1682217124396",
+							"size": null
+						}
+					},
+					{
+						"body": {
+							"html": "<p>To make it easier to access your site's code and content, we've gotten rid of the toggle and instead made both options accessible at the component level.</p>",
+							"markdown": "To make it easier to access your site's code and content, we've gotten rid of the toggle and instead made both options accessible at the component level.\n\n"
+						},
+						"link": { "url": "", "label": "", "active": false },
+						"image": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224145393Screenshot%202023-04-23%20at%2012.29.01%20AM.png",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224145393Screenshot%202023-04-23%20at%2012.29.01%20AM.png",
+							"size": 50
+						},
+						"title": "Easier code/content access",
+						"image_v2": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682372748957Screen%20Shot%202023-04-24%20at%205.44.52%20PM.png",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682372748957Screen%20Shot%202023-04-24%20at%205.44.52%20PM.png",
+							"size": 90
+						}
+					},
+					{
+						"body": {
+							"html": "<p>After making all text editable on the page there was no longer a need for a ‘Content Section'. So now all sections are components or \"blocks\".</p>",
+							"markdown": "After making all text editable on the page there was no longer a need for a ‘Content Section'. So now all sections are components or \"blocks\".\n\n"
+						},
+						"link": { "url": "", "label": "", "active": false },
+						"image": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224200584Screenshot%202023-04-23%20at%2012.29.54%20AM.png",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224200584Screenshot%202023-04-23%20at%2012.29.54%20AM.png",
+							"size": 198
+						},
+						"title": "Simpler page building",
+						"image_v2": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.28.17%20PM.png1682216901688",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.28.17%20PM.png1682216901688",
+							"size": null
+						}
+					},
+					{
+						"body": {
+							"html": "<p>Dealing with individual hosts in v1 caused a lot of complexity and was error-prone. Since modern hosts auto-deploy from Github, it made more sense to deploy to a repository instead.</p>",
+							"markdown": "Dealing with individual hosts in v1 caused a lot of complexity and was error-prone. Since modern hosts auto-deploy from Github, it made more sense to deploy to a repository instead.\n\n"
+						},
+						"link": { "url": "", "label": "", "active": false },
+						"image": {
+							"alt": "",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224278049Screenshot%202023-04-23%20at%2012.31.14%20AM.png",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/1682224278049Screenshot%202023-04-23%20at%2012.31.14%20AM.png",
+							"size": 28
+						},
+						"title": "Simpler, more scalable deployment",
+						"image_v2": {
+							"alt": "New Publish modal with Download and Deply to Github options",
+							"src": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.26.32%20PM.png1682216797847",
+							"url": "https://kdtzsoeklezpgshpzqtf.supabase.co/storage/v1/object/public/images/7c1dc1a3-c9eb-4364-b31b-951ecfc2641d/Screenshot%202023-04-22%20at%2010.26.32%20PM.png1682216797847",
 							"size": null
 						}
 					}
@@ -7176,13 +7182,13 @@ function create_fragment$9(ctx) {
 
 	component_5 = new Component$6({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
 				content: {
@@ -7195,13 +7201,13 @@ function create_fragment$9(ctx) {
 
 	component_6 = new Component$7({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
 				signup_form: {
@@ -7216,13 +7222,13 @@ function create_fragment$9(ctx) {
 
 	component_7 = new Component$8({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
 				footer_nav: [
@@ -7246,15 +7252,24 @@ function create_fragment$9(ctx) {
 					},
 					{
 						"icon": "fa6-brands:discord",
-						"link": { "url": "/", "label": "Discord" }
+						"link": {
+							"url": "https://discord.gg/vzSFTS9",
+							"label": "Discord"
+						}
 					},
 					{
 						"icon": "fa6-brands:youtube",
-						"link": { "url": "/", "label": "Youtube" }
+						"link": {
+							"url": "https://www.youtube.com/@primocms",
+							"label": "Youtube"
+						}
 					},
 					{
 						"icon": "fa6-brands:github",
-						"link": { "url": "/", "label": "Github" }
+						"link": {
+							"url": "https://github.com/primocms/primo",
+							"label": "Github"
+						}
 					}
 				]
 			}
@@ -7262,13 +7277,13 @@ function create_fragment$9(ctx) {
 
 	component_8 = new Component$9({
 			props: {
+				title: "Primo",
 				favicon: {
 					"alt": "",
 					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				title: "Primo",
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE"
 			}
