@@ -3087,7 +3087,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (242:14) {#if banner.label}
+// (244:14) {#if banner.label}
 function create_if_block_5(ctx) {
 	let div1;
 	let div0;
@@ -3120,8 +3120,8 @@ function create_if_block_5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "memo-content svelte-p8we66");
-			attr(div1, "class", "banner svelte-p8we66");
+			attr(div0, "class", "memo-content svelte-1wjl1ph");
+			attr(div1, "class", "banner svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3153,7 +3153,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (246:6) {#if banner.cta.label}
+// (248:6) {#if banner.cta.label}
 function create_if_block_6(ctx) {
 	let a;
 	let t_value = /*banner*/ ctx[0].cta.label + "";
@@ -3175,7 +3175,7 @@ function create_if_block_6(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*banner*/ ctx[0].cta.url);
-			attr(a, "class", "svelte-p8we66");
+			attr(a, "class", "svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3194,7 +3194,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (269:10) {#if featured}
+// (271:10) {#if featured}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3213,7 +3213,7 @@ function create_if_block_4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "featured-pill svelte-p8we66");
+			attr(span, "class", "featured-pill svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span, anchor);
@@ -3225,7 +3225,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (275:10) {:else}
+// (277:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3247,7 +3247,7 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-p8we66");
+			attr(a, "class", "link svelte-1wjl1ph");
 			toggle_class(a, "active", /*link*/ ctx[9].url === window.location.pathname);
 		},
 		m(target, anchor) {
@@ -3273,7 +3273,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (272:10) {#if hasDropdown}
+// (274:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
 	let t0_value = /*link*/ ctx[9].label + "";
@@ -3309,8 +3309,8 @@ function create_if_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-p8we66");
-			attr(span1, "class", "icon svelte-p8we66");
+			attr(span0, "class", "svelte-1wjl1ph");
+			attr(span1, "class", "icon svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span0, anchor);
@@ -3341,7 +3341,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (282:8) {#if hasDropdown}
+// (284:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
 	let each_value_3 = /*links*/ ctx[10];
@@ -3373,7 +3373,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "dropdown svelte-p8we66");
+			attr(div, "class", "dropdown svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3415,7 +3415,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (284:12) {#each links as { link }}
+// (286:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3437,7 +3437,7 @@ function create_each_block_3(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-p8we66");
+			attr(a, "class", "link svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3456,7 +3456,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (265:4) {#each nav as { link, links, featured }}
+// (267:4) {#each nav as { link, links, featured }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3504,8 +3504,8 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-p8we66");
-			attr(div1, "class", "nav-item svelte-p8we66");
+			attr(div0, "class", "top-link svelte-1wjl1ph");
+			attr(div1, "class", "nav-item svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3586,7 +3586,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (295:2) {#if mobileNavOpen}
+// (297:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3643,9 +3643,9 @@ function create_if_block$1(ctx) {
 		h() {
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-p8we66");
+			attr(button, "class", "svelte-1wjl1ph");
 			attr(nav_1, "id", "mobile-nav");
-			attr(nav_1, "class", "svelte-p8we66");
+			attr(nav_1, "class", "svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav_1, anchor);
@@ -3719,7 +3719,7 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (303:8) {:else}
+// (305:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3741,7 +3741,7 @@ function create_else_block$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-p8we66");
+			attr(a, "class", "link svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3760,7 +3760,7 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (299:8) {#if hasDropdown}
+// (301:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*links*/ ctx[10];
@@ -3825,7 +3825,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (300:10) {#each links as { link }}
+// (302:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3847,7 +3847,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-p8we66");
+			attr(a, "class", "link svelte-1wjl1ph");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3866,7 +3866,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (297:6) {#each nav as { link, links }}
+// (299:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
@@ -4051,19 +4051,19 @@ function create_fragment$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-p8we66");
+			attr(span0, "class", "svelte-1wjl1ph");
 			html_tag.a = null;
 			attr(a0, "href", "/");
-			attr(a0, "class", "logo svelte-p8we66");
-			attr(span1, "class", "svelte-p8we66");
-			attr(a1, "class", "link pill svelte-p8we66");
+			attr(a0, "class", "logo svelte-1wjl1ph");
+			attr(span1, "class", "svelte-1wjl1ph");
+			attr(a1, "class", "link pill svelte-1wjl1ph");
 			attr(a1, "href", "https://github.com/primocms/primo");
 			attr(a1, "aria-label", "Github repo");
-			attr(div0, "class", "menu-icon svelte-p8we66");
+			attr(div0, "class", "menu-icon svelte-1wjl1ph");
 			attr(button, "id", "open");
-			attr(button, "class", "svelte-p8we66");
-			attr(nav_1, "class", "svelte-p8we66");
-			attr(header, "class", "section-container svelte-p8we66");
+			attr(button, "class", "svelte-1wjl1ph");
+			attr(nav_1, "class", "svelte-1wjl1ph");
+			attr(header, "class", "section-container svelte-1wjl1ph");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
 			attr(div2, "id", "section-fde29d82-d7ea-4ba0-803f-7100cbf2a7d0");
@@ -4616,13 +4616,13 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-1nwuilq");
-			attr(h3, "class", "subheading content svelte-1nwuilq");
-			attr(div0, "class", "inner-content svelte-1nwuilq");
+			attr(h2, "class", "heading svelte-gif1i0");
+			attr(h3, "class", "subheading content svelte-gif1i0");
+			attr(div0, "class", "inner-content svelte-gif1i0");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-1nwuilq");
+			attr(input0, "class", "form-control svelte-gif1i0");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -4633,9 +4633,9 @@ function create_fragment$4(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-1nwuilq");
+			attr(input1, "class", "svelte-gif1i0");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "button primary svelte-1nwuilq");
+			attr(button0, "class", "button primary svelte-gif1i0");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
 			attr(span, "class", "sr-only");
 			button1.disabled = "disabled";
@@ -4646,8 +4646,8 @@ function create_fragment$4(ctx) {
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-1nwuilq");
-			attr(form, "class", "ml-block-form svelte-1nwuilq");
+			attr(input2, "class", "svelte-gif1i0");
+			attr(form, "class", "ml-block-form svelte-gif1i0");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -4674,8 +4674,8 @@ function create_fragment$4(ctx) {
 			attr(div12, "class", "form");
 			if (!src_url_equal(script1.src, script1_src_value = "https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c")) attr(script1, "src", script1_src_value);
 			attr(script1, "type", "text/javascript");
-			attr(div13, "class", "section-container svelte-1nwuilq");
-			attr(section, "class", "svelte-1nwuilq");
+			attr(div13, "class", "section-container svelte-gif1i0");
+			attr(section, "class", "svelte-gif1i0");
 			attr(link, "rel", "stylesheet");
 			attr(link, "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
 			attr(link, "integrity", "sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==");
@@ -5256,7 +5256,7 @@ function create_fragment$6(ctx) {
 				nav: [
 					{
 						"link": {
-							"url": "https://docs.primo.so",
+							"url": "https://docs.primocms.org",
 							"label": "Docs",
 							"active": false
 						},
@@ -5264,7 +5264,7 @@ function create_fragment$6(ctx) {
 					},
 					{
 						"link": {
-							"url": "",
+							"url": "/themes",
 							"label": "Themes",
 							"active": false
 						},
