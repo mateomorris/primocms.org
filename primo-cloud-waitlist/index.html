@@ -545,80 +545,148 @@
             }
         }
 
-        .content.svelte-3los8l h1 {
-            text-align: var(--heading-align)
+        section.svelte-1vyylm0.svelte-1vyylm0 {
+            color: white;
+            background: var(--background)
         }
 
-        .section-container.svelte-gif1i0.svelte-gif1i0 {
-            display: grid;
-            gap: 2rem;
-            padding-top: 6rem;
-            padding-bottom: 8rem
-        }
-
-        .inner-content.svelte-gif1i0.svelte-gif1i0 {
-            display: grid;
-            place-content: flex-start;
-            gap: 0.5rem
-        }
-
-        .inner-content.svelte-gif1i0 .heading.svelte-gif1i0 {
-            font-size: 1.75rem;
-            text-align: left
-        }
-
-        .inner-content.svelte-gif1i0 .subheading.svelte-gif1i0 {
-            text-align: left;
-            color: var(--subheading-color);
-            padding: 0;
-            font-weight: 300
-        }
-
-        form.svelte-gif1i0.svelte-gif1i0 {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            box-shadow: var(--box-shadow)
-        }
-
-        form.svelte-gif1i0 input.svelte-gif1i0 {
+        .section-container.svelte-1vyylm0.svelte-1vyylm0 {
             width: 100%;
-            border-radius: 4px;
-            border: 1.5px solid #cbcace;
-            padding: 0.5rem 0.75rem;
-            font-size: 1rem;
-            background: var(--color-white);
-            color: var(--color-gray)
-        }
-
-        form.svelte-gif1i0 .button.svelte-gif1i0 {
-            width: 100%
-        }
-
-        form.svelte-gif1i0 .button.primary.svelte-gif1i0 {
-            font-weight: 400;
-            border: 1.5px solid #35d994
-        }
-
-        form.svelte-gif1i0 .button.svelte-gif1i0:hover {
-            box-shadow: none;
-            background: #35d994;
-            color: #121212
+            display: grid;
+            gap: 4rem
         }
 
         @media(min-width: 700px) {
-            .section-container.svelte-gif1i0.svelte-gif1i0 {
-                grid-template-columns: 2fr 1fr;
-                gap: 7rem
+            .section-container.svelte-1vyylm0.svelte-1vyylm0 {
+                grid-template-columns: 5fr 4fr
             }
+        }
 
-            .section-container.svelte-gif1i0 .inner-content.svelte-gif1i0 {
-                gap: 1rem
-            }
+        .main.svelte-1vyylm0.svelte-1vyylm0 {
+            display: grid;
+            gap: 1rem;
+            place-content: start
+        }
 
-            .section-container.svelte-gif1i0 .inner-content .heading.svelte-gif1i0 {
-                text-align: left
-            }
+        .main.svelte-1vyylm0 .heading.svelte-1vyylm0 {
+            text-align: left
+        }
+
+        .main.svelte-1vyylm0 .subheading.svelte-1vyylm0 {
+            opacity: 0.75;
+            line-height: 1.875rem;
+            text-align: left
+        }
+
+        .main.svelte-1vyylm0 ul.svelte-1vyylm0 {
+            display: grid;
+            gap: 1rem
+        }
+
+        .main.svelte-1vyylm0 li.svelte-1vyylm0 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem
+        }
+
+        .main.svelte-1vyylm0 li .icon.svelte-1vyylm0 {
+            font-size: 1.25rem;
+            color: var(--color-accent)
+        }
+
+        .main.svelte-1vyylm0 .label.svelte-1vyylm0 {
+            color: var(--body-color)
+        }
+
+        .card.svelte-1vyylm0.svelte-1vyylm0 {
+            color: #1d263a;
+            background: #1A1A1A;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 450px
+        }
+
+        .card.svelte-1vyylm0 form.svelte-1vyylm0 {
+            display: grid;
+            gap: 1rem
+        }
+
+        .card.svelte-1vyylm0 label.svelte-1vyylm0 {
+            display: grid;
+            gap: 4px;
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: #9D9D9D
+        }
+
+        .card.svelte-1vyylm0 label span.svelte-1vyylm0 {
+            margin-bottom: 0.25rem;
+            font-weight: 400
+        }
+
+        .card.svelte-1vyylm0 label.has-textarea.svelte-1vyylm0 {
+            grid-column: var(--wide)
+        }
+
+        .card.svelte-1vyylm0 input.svelte-1vyylm0,
+        .card.svelte-1vyylm0 textarea.svelte-1vyylm0 {
+            -webkit-appearance: none;
+            box-shadow: 0 0 0 1px #404040;
+            border-radius: 4px;
+            padding: .5rem;
+            background: transparent;
+            transition: 0.1s box-shadow;
+            color: white
+        }
+
+        .card.svelte-1vyylm0 input.svelte-1vyylm0::-moz-placeholder,
+        .card.svelte-1vyylm0 textarea.svelte-1vyylm0::-moz-placeholder {
+            color: #6E6E6E
+        }
+
+        .card.svelte-1vyylm0 input.svelte-1vyylm0:-ms-input-placeholder,
+        .card.svelte-1vyylm0 textarea.svelte-1vyylm0:-ms-input-placeholder {
+            color: #6E6E6E
+        }
+
+        .card.svelte-1vyylm0 input.svelte-1vyylm0::placeholder,
+        .card.svelte-1vyylm0 textarea.svelte-1vyylm0::placeholder {
+            color: #6E6E6E
+        }
+
+        .card.svelte-1vyylm0 input.svelte-1vyylm0:focus-visible,
+        .card.svelte-1vyylm0 textarea.svelte-1vyylm0:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 1px var(--color-accent)
+        }
+
+        .card.svelte-1vyylm0 .file.svelte-1vyylm0 {
+            cursor: pointer
+        }
+
+        .card.svelte-1vyylm0 .file .field-item.svelte-1vyylm0 {
+            display: flex;
+            justify-content: space-between;
+            padding: 0
+        }
+
+        .card.svelte-1vyylm0 .file .field-item span.button-left.svelte-1vyylm0 {
+            padding: 1rem;
+            flex: 1;
+            border-radius: 8px 0 0 8px;
+            border-right: none
+        }
+
+        .card.svelte-1vyylm0 .file .field-item span.button-right.svelte-1vyylm0 {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            padding-left: 2rem;
+            border-radius: 0 8px 8px 0
+        }
+
+        .card.svelte-1vyylm0 .file input.svelte-1vyylm0 {
+            display: none
         }
 
         footer.svelte-9dgfd5.svelte-9dgfd5 {
@@ -668,7 +736,7 @@
 
 <body id="page">
 
-    <div class="section" id="section-91445a50-c863-4f16-ba43-e87792858216">
+    <div class="section" id="section-eb84aa2a-95c3-4b72-be1d-4bced38b8007">
         <div class="component">
             <header class="section-container svelte-1wjl1ph"><a href="/" class="logo svelte-1wjl1ph"><span class="svelte-1wjl1ph">primo</span>
                     <!-- HTML_TAG_START --><svg viewBox="0 0 871 198" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -731,85 +799,58 @@
             </header>
         </div>
     </div>
-    <div class="section" id="section-e489592d-d879-4571-a0a6-502d806e636f">
+    <div class="section" id="section-87073b95-5a23-48a4-941a-e5fb4c43b4e9">
         <div class="component">
-            <div class="section-container content svelte-3los8l" style="
---heading-align: left"><!-- HTML_TAG_START -->
-                <h1>Why Primo</h1>
-                <p>Traditional monolithic CMSs like WordPress, Drupal, and Joomla enable quick setup and easy content editing, but rely on antiquated and heavy development practices (often relying on plugins and third-party services to customize the site and add new components). Headless CMSs have popped up to modernize the view layer with modern development practices and frameworks, but have a poor content editing experience due to their full separation from the site's presentation.</p>
-                <p>Primo is a modern approach to the monolithic CMS that builds on the traditional monolith's benefits of a quick setup and easy content editing alongside the flexibility of modern development. These combine into a web publishing tool that is significantly easier to use for both technical and non-technical users and enables both to build faster, more secure, more unique websites.</p><!-- HTML_TAG_END -->
-            </div>
-        </div>
-    </div>
-    <div class="section" id="section-cf6aadf2-c4a8-41d0-a70f-061419264e84">
-        <div class="component">
-            <section class="svelte-gif1i0">
-                <div class="section-container svelte-gif1i0">
-                    <div class="inner-content svelte-gif1i0">
-                        <h2 class="heading svelte-gif1i0">Hear about future updates, including:</h2>
-                        <h3 class="subheading content svelte-gif1i0"><!-- HTML_TAG_START -->
-                            <ul>
-                                <li>
-                                    <p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Design fields</strong> to give content editors style options.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Cloud functions</strong> for writing backend code from Primo.</p>
-                                </li>
-                            </ul><!-- HTML_TAG_END -->
-                        </h3>
-                    </div>
-                    <div class="form">
-                        <div id="mlb2-5039306" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5039306">
-                            <div class="ml-form-align-center">
-                                <div class="ml-form-embedWrapper embedForm">
-                                    <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                                        <form class="ml-block-form svelte-gif1i0" action="https://static.mailerlite.com/webforms/submit/j2m2z7" data-code="j2m2z7" method="post" target="_blank">
-                                            <div class="ml-form-formContent">
-                                                <div class="ml-form-fieldRow ml-last-item">
-                                                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required"><input aria-label="email" aria-required="true" type="email" class="form-control svelte-gif1i0" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email"></div>
-                                                </div>
-                                            </div>
-                                            <input type="hidden" name="ml-submit" value="1" class="svelte-gif1i0">
-                                            <div class="ml-form-embedSubmit"><button type="submit" class="button primary svelte-gif1i0">Subscribe</button>
-                                                <button disabled="disabled" style="display: none" type="button" class="loading">
-                                                    <div class="ml-form-embedSubmitLoad"></div>
-                                                    <span class="sr-only">Loading...</span>
-                                                </button>
-                                            </div>
-                                            <input type="hidden" name="anticsrf" value="true" class="svelte-gif1i0">
-                                        </form>
-                                    </div>
-                                    <div class="ml-form-successBody row-success" style="display: none">
-                                        <div class="ml-form-successContent">
-                                            <h4>Thank you!</h4>
-                                            <p>You have successfully joined our subscriber list.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <section class="svelte-1vyylm0">
+                <div class="section-container svelte-1vyylm0">
+                    <div class="main svelte-1vyylm0">
+                        <h2 class="heading svelte-1vyylm0">Primo Cloud Waitlist</h2>
+                        <div class="subheading svelte-1vyylm0"><!-- HTML_TAG_START -->
+                            <p>Benefits of primo cloud, we will open primo cloud for a limited number of customers. Sign up to receive an exclusive invite. &nbsp;</p><!-- HTML_TAG_END -->
                         </div>
-                        <img src="https://track.mailerlite.com/webforms/o/5039306/j2m2z7?v1637419080" width="1" height="1" style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block; " alt="." border="0">
+                        <ul class="svelte-1vyylm0">
+                            <li class="svelte-1vyylm0"><span class="icon svelte-1vyylm0"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                        <path fill="currentColor" d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" /><!-- HTML_TAG_END -->
+                                    </svg></span>
+                                <span class="label svelte-1vyylm0">No setup</span>
+                            </li>
+                            <li class="svelte-1vyylm0"><span class="icon svelte-1vyylm0"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                        <path fill="currentColor" d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" /><!-- HTML_TAG_END -->
+                                    </svg></span>
+                                <span class="label svelte-1vyylm0">Automatic updates</span>
+                            </li>
+                            <li class="svelte-1vyylm0"><span class="icon svelte-1vyylm0"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                        <path fill="currentColor" d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" /><!-- HTML_TAG_END -->
+                                    </svg></span>
+                                <span class="label svelte-1vyylm0">Priority support</span>
+                            </li>
+                        </ul>
                     </div>
-                    <script>
-                        function ml_webform_success_5039306() {
-                            var r = ml_jQuery || jQuery;
-                            r(".ml-subscribe-form-5039306 .row-success").show(),
-                                r(".ml-subscribe-form-5039306 .row-form").hide();
-                        }
-                    </script>
-                    <script src="https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c" type="text/javascript"></script>
+                    <div class="card svelte-1vyylm0">
+                        <form class="svelte-1vyylm0">
+                            <label class="svelte-1vyylm0"><span class="svelte-1vyylm0">Name
+                                    <span class="required svelte-1vyylm0">*</span></span>
+                                <input type="text" name="Name" placeholder="" class="svelte-1vyylm0">
+                            </label>
+                            <label class="svelte-1vyylm0"><span class="svelte-1vyylm0">Email
+                                    <span class="required svelte-1vyylm0">*</span></span>
+                                <input type="text" name="Email" placeholder="" class="svelte-1vyylm0">
+                            </label>
+                            <label class="has-textarea svelte-1vyylm0"><span class="svelte-1vyylm0">What you'll use it for
+                                </span>
+                                <textarea name="What you'll use it for" placeholder="Client work, personal projects, etc" class="svelte-1vyylm0"></textarea>
+                            </label>
+                            <button type="submit" class="button is-primary"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 32 32" class="iconify iconify--carbon"><!-- HTML_TAG_START -->
+                                    <path fill="currentColor" d="M27.71 4.29a1 1 0 0 0-1.05-.23l-22 8a1 1 0 0 0 0 1.87l8.59 3.43L19.59 11L21 12.41l-6.37 6.37l3.44 8.59A1 1 0 0 0 19 28a1 1 0 0 0 .92-.66l8-22a1 1 0 0 0-.21-1.05Z" /><!-- HTML_TAG_END -->
+                                </svg>
+                                <span class="svelte-1vyylm0">Submit</span></button>
+                        </form>
+                    </div>
                 </div>
             </section>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
         </div>
     </div>
-    <div class="section" id="section-f158f1ce-a7d0-4771-be6f-519489fa44df">
+    <div class="section" id="section-65799d76-1c21-4854-a6da-eee08fc001ed">
         <div class="component">
             <footer class="svelte-9dgfd5">
                 <div class="section-container svelte-9dgfd5">

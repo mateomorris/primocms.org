@@ -1343,18 +1343,18 @@ function create_fragment(ctx) {
 			link = element("link");
 			meta2 = element("meta");
 			style = element("style");
-			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  background: var(--button-background);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border-color: var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			this.h();
 		},
 		l(nodes) {
-			const head_nodes = head_selector('svelte-125viaz', document.head);
+			const head_nodes = head_selector('svelte-2h93ap', document.head);
 			meta0 = claim_element(head_nodes, "META", { name: true, content: true });
 			meta1 = claim_element(head_nodes, "META", { charset: true });
 			link = claim_element(head_nodes, "LINK", { rel: true, type: true, href: true });
 			meta2 = claim_element(head_nodes, "META", { name: true, content: true });
 			style = claim_element(head_nodes, "STYLE", {});
 			var style_nodes = children(style);
-			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  background: var(--button-background);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border-color: var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			style_nodes.forEach(detach);
 			head_nodes.forEach(detach);
 			this.h();
@@ -18406,12 +18406,6 @@ function get_each_context_6(ctx, list, i) {
 function get_each_context_7(ctx, list, i) {
 	const child_ctx = ctx.slice();
 	child_ctx[53] = list[i];
-	return child_ctx;
-}
-
-function get_each_context_8(ctx, list, i) {
-	const child_ctx = ctx.slice();
-	child_ctx[53] = list[i];
 	child_ctx[63] = i;
 	return child_ctx;
 }
@@ -18734,7 +18728,7 @@ function create_if_block_9(ctx) {
 }
 
 // (751:4) {#each active_items as item, i (item.screenshots.desktop.url)}
-function create_each_block_8(key_1, ctx) {
+function create_each_block_7(key_1, ctx) {
 	let div2;
 	let button0;
 	let img;
@@ -18976,22 +18970,22 @@ function create_if_block_8(ctx) {
 	let mounted;
 	let dispose;
 	icon = new Component$1({ props: { icon: "bi:x-lg" } });
-	let each_value_7 = /*cart*/ ctx[8];
+	let each_value_6 = /*cart*/ ctx[8];
 	let each_blocks_1 = [];
 
-	for (let i = 0; i < each_value_7.length; i += 1) {
-		each_blocks_1[i] = create_each_block_7(get_each_context_7(ctx, each_value_7, i));
+	for (let i = 0; i < each_value_6.length; i += 1) {
+		each_blocks_1[i] = create_each_block_6(get_each_context_6(ctx, each_value_6, i));
 	}
 
 	const out = i => transition_out(each_blocks_1[i], 1, 1, () => {
 		each_blocks_1[i] = null;
 	});
 
-	let each_value_6 = /*cart*/ ctx[8];
+	let each_value_5 = /*cart*/ ctx[8];
 	let each_blocks = [];
 
-	for (let i = 0; i < each_value_6.length; i += 1) {
-		each_blocks[i] = create_each_block_6(get_each_context_6(ctx, each_value_6, i));
+	for (let i = 0; i < each_value_5.length; i += 1) {
+		each_blocks[i] = create_each_block_5(get_each_context_5(ctx, each_value_5, i));
 	}
 
 	return {
@@ -19159,17 +19153,17 @@ function create_if_block_8(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty[0] & /*remove_from_cart, cart*/ 2097408) {
-				each_value_7 = /*cart*/ ctx[8];
+				each_value_6 = /*cart*/ ctx[8];
 				let i;
 
-				for (i = 0; i < each_value_7.length; i += 1) {
-					const child_ctx = get_each_context_7(ctx, each_value_7, i);
+				for (i = 0; i < each_value_6.length; i += 1) {
+					const child_ctx = get_each_context_6(ctx, each_value_6, i);
 
 					if (each_blocks_1[i]) {
 						each_blocks_1[i].p(child_ctx, dirty);
 						transition_in(each_blocks_1[i], 1);
 					} else {
-						each_blocks_1[i] = create_each_block_7(child_ctx);
+						each_blocks_1[i] = create_each_block_6(child_ctx);
 						each_blocks_1[i].c();
 						transition_in(each_blocks_1[i], 1);
 						each_blocks_1[i].m(ul, null);
@@ -19178,7 +19172,7 @@ function create_if_block_8(ctx) {
 
 				group_outros();
 
-				for (i = each_value_7.length; i < each_blocks_1.length; i += 1) {
+				for (i = each_value_6.length; i < each_blocks_1.length; i += 1) {
 					out(i);
 				}
 
@@ -19186,16 +19180,16 @@ function create_if_block_8(ctx) {
 			}
 
 			if (dirty[0] & /*cart*/ 256) {
-				each_value_6 = /*cart*/ ctx[8];
+				each_value_5 = /*cart*/ ctx[8];
 				let i;
 
-				for (i = 0; i < each_value_6.length; i += 1) {
-					const child_ctx = get_each_context_6(ctx, each_value_6, i);
+				for (i = 0; i < each_value_5.length; i += 1) {
+					const child_ctx = get_each_context_5(ctx, each_value_5, i);
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
 					} else {
-						each_blocks[i] = create_each_block_6(child_ctx);
+						each_blocks[i] = create_each_block_5(child_ctx);
 						each_blocks[i].c();
 						each_blocks[i].m(form, t5);
 					}
@@ -19205,7 +19199,7 @@ function create_if_block_8(ctx) {
 					each_blocks[i].d(1);
 				}
 
-				each_blocks.length = each_value_6.length;
+				each_blocks.length = each_value_5.length;
 			}
 
 			if (!current || dirty[0] & /*total_cost*/ 32768) set_data(t7, /*total_cost*/ ctx[15]);
@@ -19214,7 +19208,7 @@ function create_if_block_8(ctx) {
 			if (current) return;
 			transition_in(icon.$$.fragment, local);
 
-			for (let i = 0; i < each_value_7.length; i += 1) {
+			for (let i = 0; i < each_value_6.length; i += 1) {
 				transition_in(each_blocks_1[i]);
 			}
 
@@ -19260,7 +19254,7 @@ function create_if_block_8(ctx) {
 }
 
 // (806:10) {#each cart as item}
-function create_each_block_7(ctx) {
+function create_each_block_6(ctx) {
 	let li;
 	let img;
 	let img_src_value;
@@ -19415,7 +19409,7 @@ function create_each_block_7(ctx) {
 }
 
 // (826:10) {#each cart as item}
-function create_each_block_6(ctx) {
+function create_each_block_5(ctx) {
 	let input;
 	let input_name_value;
 	let input_value_value;
@@ -19477,7 +19471,7 @@ function create_if_block_1$2(ctx) {
 	let t4;
 	let t5;
 	let div0;
-	let raw_value = /*active_item*/ ctx[9].description + "";
+	let raw_value = /*active_item*/ ctx[9].description.html + "";
 	let t6;
 	let div1;
 	let a;
@@ -19500,8 +19494,8 @@ function create_if_block_1$2(ctx) {
 	let img1_src_value;
 	let img1_alt_value;
 	let t12;
-	let section0;
-	let h20;
+	let section;
+	let h2;
 	let t13;
 	let t14;
 	let div3;
@@ -19517,15 +19511,9 @@ function create_if_block_1$2(ctx) {
 	let img4_src_value;
 	let img4_alt_value;
 	let t17;
-	let section1;
-	let h21;
 	let t18;
-	let t19;
-	let ul;
-	let t20;
-	let t21;
 	let div5;
-	let t22;
+	let t19;
 	let main_transition;
 	let current;
 	let mounted;
@@ -19549,13 +19537,6 @@ function create_if_block_1$2(ctx) {
 
 	current_block_type_index = select_block_type_2(ctx, [-1, -1, -1]);
 	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-	let each_value_5 = /*detail*/ ctx[5].features;
-	let each_blocks = [];
-
-	for (let i = 0; i < each_value_5.length; i += 1) {
-		each_blocks[i] = create_each_block_5(get_each_context_5(ctx, each_value_5, i));
-	}
-
 	let if_block1 = /*active_item*/ ctx[9].price !== "0" && create_if_block_4$1(ctx);
 	let if_block2 = /*active_item_index*/ ctx[10] !== 0 && create_if_block_3$1(ctx);
 	let if_block3 = /*active_item_index*/ ctx[10] !== /*active_items*/ ctx[16].length - 1 && create_if_block_2$1(ctx);
@@ -19593,8 +19574,8 @@ function create_if_block_1$2(ctx) {
 			t11 = space();
 			img1 = element("img");
 			t12 = space();
-			section0 = element("section");
-			h20 = element("h2");
+			section = element("section");
+			h2 = element("h2");
 			t13 = text("Screenshots");
 			t14 = space();
 			div3 = element("div");
@@ -19604,22 +19585,11 @@ function create_if_block_1$2(ctx) {
 			t16 = space();
 			img4 = element("img");
 			t17 = space();
-			section1 = element("section");
-			h21 = element("h2");
-			t18 = text("Features");
-			t19 = space();
-			ul = element("ul");
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].c();
-			}
-
-			t20 = space();
 			if (if_block1) if_block1.c();
-			t21 = space();
+			t18 = space();
 			div5 = element("div");
 			if (if_block2) if_block2.c();
-			t22 = space();
+			t19 = space();
 			if (if_block3) if_block3.c();
 			this.h();
 		},
@@ -19678,14 +19648,14 @@ function create_if_block_1$2(ctx) {
 			figure_nodes.forEach(detach);
 			header_nodes.forEach(detach);
 			t12 = claim_space(div4_nodes);
-			section0 = claim_element(div4_nodes, "SECTION", { class: true });
-			var section0_nodes = children(section0);
-			h20 = claim_element(section0_nodes, "H2", { class: true });
-			var h20_nodes = children(h20);
-			t13 = claim_text(h20_nodes, "Screenshots");
-			h20_nodes.forEach(detach);
-			t14 = claim_space(section0_nodes);
-			div3 = claim_element(section0_nodes, "DIV", { class: true });
+			section = claim_element(div4_nodes, "SECTION", { class: true });
+			var section_nodes = children(section);
+			h2 = claim_element(section_nodes, "H2", { class: true });
+			var h2_nodes = children(h2);
+			t13 = claim_text(h2_nodes, "Screenshots");
+			h2_nodes.forEach(detach);
+			t14 = claim_space(section_nodes);
+			div3 = claim_element(section_nodes, "DIV", { class: true });
 			var div3_nodes = children(div3);
 			img2 = claim_element(div3_nodes, "IMG", { src: true, alt: true, class: true });
 			t15 = claim_space(div3_nodes);
@@ -19693,32 +19663,15 @@ function create_if_block_1$2(ctx) {
 			t16 = claim_space(div3_nodes);
 			img4 = claim_element(div3_nodes, "IMG", { src: true, alt: true, class: true });
 			div3_nodes.forEach(detach);
-			section0_nodes.forEach(detach);
+			section_nodes.forEach(detach);
 			t17 = claim_space(div4_nodes);
-			section1 = claim_element(div4_nodes, "SECTION", { class: true });
-			var section1_nodes = children(section1);
-			h21 = claim_element(section1_nodes, "H2", { class: true });
-			var h21_nodes = children(h21);
-			t18 = claim_text(h21_nodes, "Features");
-			h21_nodes.forEach(detach);
-			t19 = claim_space(section1_nodes);
-			ul = claim_element(section1_nodes, "UL", { class: true });
-			var ul_nodes = children(ul);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(ul_nodes);
-			}
-
-			ul_nodes.forEach(detach);
-			section1_nodes.forEach(detach);
-			t20 = claim_space(div4_nodes);
 			if (if_block1) if_block1.l(div4_nodes);
 			div4_nodes.forEach(detach);
-			t21 = claim_space(main_nodes);
+			t18 = claim_space(main_nodes);
 			div5 = claim_element(main_nodes, "DIV", { class: true });
 			var div5_nodes = children(div5);
 			if (if_block2) if_block2.l(div5_nodes);
-			t22 = claim_space(div5_nodes);
+			t19 = claim_space(div5_nodes);
 			if (if_block3) if_block3.l(div5_nodes);
 			div5_nodes.forEach(detach);
 			main_nodes.forEach(detach);
@@ -19745,7 +19698,7 @@ function create_if_block_1$2(ctx) {
 			attr(img1, "alt", img1_alt_value = /*active_item*/ ctx[9].screenshots.mobile.alt);
 			attr(figure, "class", "svelte-jzgfhg");
 			attr(header, "class", "svelte-jzgfhg");
-			attr(h20, "class", "svelte-jzgfhg");
+			attr(h2, "class", "svelte-jzgfhg");
 			if (!src_url_equal(img2.src, img2_src_value = /*active_item*/ ctx[9].screenshots.mobile.url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*active_item*/ ctx[9].screenshots.mobile.alt);
 			attr(img2, "class", "svelte-jzgfhg");
@@ -19756,10 +19709,7 @@ function create_if_block_1$2(ctx) {
 			attr(img4, "alt", img4_alt_value = /*active_item*/ ctx[9].screenshots.desktop.alt);
 			attr(img4, "class", "svelte-jzgfhg");
 			attr(div3, "class", "screenshots svelte-jzgfhg");
-			attr(section0, "class", "section svelte-jzgfhg");
-			attr(h21, "class", "svelte-jzgfhg");
-			attr(ul, "class", "svelte-jzgfhg");
-			attr(section1, "class", "section svelte-jzgfhg");
+			attr(section, "class", "section svelte-jzgfhg");
 			attr(div4, "class", "inner section-container svelte-jzgfhg");
 			attr(div5, "class", "arrow-buttons section-container svelte-jzgfhg");
 			attr(main, "id", "modal");
@@ -19798,35 +19748,22 @@ function create_if_block_1$2(ctx) {
 			append_hydration(figure, t11);
 			append_hydration(figure, img1);
 			append_hydration(div4, t12);
-			append_hydration(div4, section0);
-			append_hydration(section0, h20);
-			append_hydration(h20, t13);
-			append_hydration(section0, t14);
-			append_hydration(section0, div3);
+			append_hydration(div4, section);
+			append_hydration(section, h2);
+			append_hydration(h2, t13);
+			append_hydration(section, t14);
+			append_hydration(section, div3);
 			append_hydration(div3, img2);
 			append_hydration(div3, t15);
 			append_hydration(div3, img3);
 			append_hydration(div3, t16);
 			append_hydration(div3, img4);
 			append_hydration(div4, t17);
-			append_hydration(div4, section1);
-			append_hydration(section1, h21);
-			append_hydration(h21, t18);
-			append_hydration(section1, t19);
-			append_hydration(section1, ul);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				if (each_blocks[i]) {
-					each_blocks[i].m(ul, null);
-				}
-			}
-
-			append_hydration(div4, t20);
 			if (if_block1) if_block1.m(div4, null);
-			append_hydration(main, t21);
+			append_hydration(main, t18);
 			append_hydration(main, div5);
 			if (if_block2) if_block2.m(div5, null);
-			append_hydration(div5, t22);
+			append_hydration(div5, t19);
 			if (if_block3) if_block3.m(div5, null);
 			current = true;
 
@@ -19845,7 +19782,7 @@ function create_if_block_1$2(ctx) {
 			: "Free") + "")) set_data(t2, t2_value);
 
 			if ((!current || dirty[0] & /*active_item*/ 512) && t4_value !== (t4_value = /*active_item*/ ctx[9].name + "")) set_data(t4, t4_value);
-			if ((!current || dirty[0] & /*active_item*/ 512) && raw_value !== (raw_value = /*active_item*/ ctx[9].description + "")) div0.innerHTML = raw_value;
+			if ((!current || dirty[0] & /*active_item*/ 512) && raw_value !== (raw_value = /*active_item*/ ctx[9].description.html + "")) div0.innerHTML = raw_value;
 			if (!current || dirty[0] & /*active_item*/ 512 && a_href_value !== (a_href_value = /*active_item*/ ctx[9].preview_url)) {
 				attr(a, "href", a_href_value);
 			}
@@ -19916,29 +19853,6 @@ function create_if_block_1$2(ctx) {
 				attr(img4, "alt", img4_alt_value);
 			}
 
-			if (dirty[0] & /*detail*/ 32) {
-				each_value_5 = /*detail*/ ctx[5].features;
-				let i;
-
-				for (i = 0; i < each_value_5.length; i += 1) {
-					const child_ctx = get_each_context_5(ctx, each_value_5, i);
-
-					if (each_blocks[i]) {
-						each_blocks[i].p(child_ctx, dirty);
-					} else {
-						each_blocks[i] = create_each_block_5(child_ctx);
-						each_blocks[i].c();
-						each_blocks[i].m(ul, null);
-					}
-				}
-
-				for (; i < each_blocks.length; i += 1) {
-					each_blocks[i].d(1);
-				}
-
-				each_blocks.length = each_value_5.length;
-			}
-
 			if (/*active_item*/ ctx[9].price !== "0") {
 				if (if_block1) {
 					if_block1.p(ctx, dirty);
@@ -19973,7 +19887,7 @@ function create_if_block_1$2(ctx) {
 					if_block2 = create_if_block_3$1(ctx);
 					if_block2.c();
 					transition_in(if_block2, 1);
-					if_block2.m(div5, t22);
+					if_block2.m(div5, t19);
 				}
 			} else if (if_block2) {
 				group_outros();
@@ -20041,7 +19955,6 @@ function create_if_block_1$2(ctx) {
 			destroy_component(icon0);
 			destroy_component(icon1);
 			if_blocks[current_block_type_index].d();
-			destroy_each(each_blocks, detaching);
 			if (if_block1) if_block1.d();
 			if (if_block2) if_block2.d();
 			if (if_block3) if_block3.d();
@@ -20258,71 +20171,6 @@ function create_if_block_6$1(ctx) {
 			destroy_component(icon);
 			mounted = false;
 			dispose();
-		}
-	};
-}
-
-// (913:10) {#each detail.features as item}
-function create_each_block_5(ctx) {
-	let li;
-	let span;
-	let strong;
-	let t0_value = /*item*/ ctx[53].title + "";
-	let t0;
-	let t1;
-	let t2;
-	let t3_value = /*item*/ ctx[53].description + "";
-	let t3;
-	let t4;
-
-	return {
-		c() {
-			li = element("li");
-			span = element("span");
-			strong = element("strong");
-			t0 = text(t0_value);
-			t1 = text(" -");
-			t2 = space();
-			t3 = text(t3_value);
-			t4 = space();
-			this.h();
-		},
-		l(nodes) {
-			li = claim_element(nodes, "LI", { class: true });
-			var li_nodes = children(li);
-			span = claim_element(li_nodes, "SPAN", {});
-			var span_nodes = children(span);
-			strong = claim_element(span_nodes, "STRONG", {});
-			var strong_nodes = children(strong);
-			t0 = claim_text(strong_nodes, t0_value);
-			t1 = claim_text(strong_nodes, " -");
-			strong_nodes.forEach(detach);
-			t2 = claim_space(span_nodes);
-			t3 = claim_text(span_nodes, t3_value);
-			span_nodes.forEach(detach);
-			t4 = claim_space(li_nodes);
-			li_nodes.forEach(detach);
-			this.h();
-		},
-		h() {
-			attr(li, "class", "svelte-jzgfhg");
-		},
-		m(target, anchor) {
-			insert_hydration(target, li, anchor);
-			append_hydration(li, span);
-			append_hydration(span, strong);
-			append_hydration(strong, t0);
-			append_hydration(strong, t1);
-			append_hydration(span, t2);
-			append_hydration(span, t3);
-			append_hydration(li, t4);
-		},
-		p(ctx, dirty) {
-			if (dirty[0] & /*detail*/ 32 && t0_value !== (t0_value = /*item*/ ctx[53].title + "")) set_data(t0, t0_value);
-			if (dirty[0] & /*detail*/ 32 && t3_value !== (t3_value = /*item*/ ctx[53].description + "")) set_data(t3, t3_value);
-		},
-		d(detaching) {
-			if (detaching) detach(li);
 		}
 	};
 }
@@ -21586,13 +21434,13 @@ function create_fragment$3(ctx) {
 
 	let current_block_type = select_block_type(ctx);
 	let if_block0 = current_block_type && current_block_type(ctx);
-	let each_value_8 = /*active_items*/ ctx[16];
+	let each_value_7 = /*active_items*/ ctx[16];
 	const get_key = ctx => /*item*/ ctx[53].screenshots.desktop.url;
 
-	for (let i = 0; i < each_value_8.length; i += 1) {
-		let child_ctx = get_each_context_8(ctx, each_value_8, i);
+	for (let i = 0; i < each_value_7.length; i += 1) {
+		let child_ctx = get_each_context_7(ctx, each_value_7, i);
 		let key = get_key(child_ctx);
-		each0_lookup.set(key, each_blocks_2[i] = create_each_block_8(key, child_ctx));
+		each0_lookup.set(key, each_blocks_2[i] = create_each_block_7(key, child_ctx));
 	}
 
 	let if_block1 = /*showing_cart*/ ctx[11] && create_if_block_8(ctx);
@@ -21770,9 +21618,9 @@ function create_fragment$3(ctx) {
 			}
 
 			if (dirty[0] & /*fetch_and_download, active_items, downloaded, remove_from_cart, cart, add_to_cart, set_item*/ 7540992) {
-				each_value_8 = /*active_items*/ ctx[16];
+				each_value_7 = /*active_items*/ ctx[16];
 				group_outros();
-				each_blocks_2 = update_keyed_each(each_blocks_2, dirty, get_key, 1, ctx, each_value_8, each0_lookup, div1, outro_and_destroy_block, create_each_block_8, null, get_each_context_8);
+				each_blocks_2 = update_keyed_each(each_blocks_2, dirty, get_key, 1, ctx, each_value_7, each0_lookup, div1, outro_and_destroy_block, create_each_block_7, null, get_each_context_7);
 				check_outros();
 			}
 
@@ -21894,7 +21742,7 @@ function create_fragment$3(ctx) {
 		i(local) {
 			if (current) return;
 
-			for (let i = 0; i < each_value_8.length; i += 1) {
+			for (let i = 0; i < each_value_7.length; i += 1) {
 				transition_in(each_blocks_2[i]);
 			}
 
@@ -23332,42 +23180,9 @@ function create_fragment$6(ctx) {
 					}
 				],
 				detail: {
-					"faq": [
-						{
-							"title": "Dolor quis incididunt",
-							"description": {
-								"html": "<h1 id=\"thisissomemarkdown\">This is some markdown</h1>",
-								"markdown": "# This is some markdown"
-							}
-						},
-						{
-							"title": "Do est excepteur",
-							"description": {
-								"html": "<h1 id=\"thisissomemarkdown\">This is some markdown</h1>",
-								"markdown": "# This is some markdown"
-							}
-						}
-					],
-					"features": [
-						{
-							"title": "Tempor enim eiusmod",
-							"description": "Exercitation dolore anim"
-						},
-						{
-							"title": "Proident voluptate esse",
-							"description": "Consectetur exercitation consequat"
-						}
-					],
-					"included": [
-						{
-							"title": "Enim nostrud voluptate",
-							"description": "Consequat lorem laboris"
-						},
-						{
-							"title": "Culpa magna incididunt",
-							"description": "Aliqua ex cupidatat"
-						}
-					]
+					"faq": [],
+					"features": [],
+					"included": []
 				},
 				complete: {
 					"heading": "Enim culpa elit",
@@ -23418,7 +23233,10 @@ function create_fragment$6(ctx) {
 						"link": { "url": "/", "label": "Open Source" }
 					},
 					{
-						"link": { "url": "/", "label": "Terms of Service" }
+						"link": {
+							"url": "https://primosites.vercel.app/primo-landing-page",
+							"label": "Terms of Service"
+						}
 					}
 				],
 				social: [

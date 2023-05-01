@@ -3,7 +3,7 @@
 
 <head>
     <meta name="generator" content="Primo" />
-    <title>Primo</title><!-- HEAD_svelte-125viaz_START -->
+    <title>Primo</title><!-- HEAD_svelte-2h93ap_START -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/jpg" href="https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png">
@@ -80,7 +80,6 @@
             align-items: center;
             gap: 0.25rem;
             color: var(--button-color);
-            background: var(--button-background);
             border: var(--button-border);
             border-radius: 6px;
             padding: var(--button-padding);
@@ -95,7 +94,7 @@
         }
 
         .button.is-primary {
-            border-color: var(--color-accent);
+            border: 1px solid var(--color-accent);
         }
 
         .button.small {
@@ -329,7 +328,7 @@
             display: flex;
             justify-content: center;
         }
-    </style><!-- HEAD_svelte-125viaz_END -->
+    </style><!-- HEAD_svelte-2h93ap_END -->
     <style>
         .banner.svelte-1wjl1ph.svelte-1wjl1ph {
             background: var(--color-accent);
@@ -816,6 +815,59 @@
             text-align: var(--heading-align)
         }
 
+        .svelte-l5vjov.svelte-l5vjov {
+            --button-border: 0;
+            --button-background: #333;
+            --button-hover-background: var(--color-primored)
+        }
+
+        .card.svelte-l5vjov.svelte-l5vjov {
+            background: #1A1A1A;
+            color: var(--color-white);
+            border-radius: var(--border-radius);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto auto;
+            padding: 4rem 2rem
+        }
+
+        .heading.svelte-l5vjov.svelte-l5vjov {
+            font-size: 32px;
+            line-height: var(--heading-line-height, 1);
+            font-weight: var(--heading-font-weight, 700);
+            color: var(--color-white);
+            text-align: center
+        }
+
+        h3.svelte-l5vjov.svelte-l5vjov {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #cecece
+        }
+
+        .buttons.svelte-l5vjov.svelte-l5vjov {
+            display: flex;
+            flex-wrap: wrap
+        }
+
+        .buttons.svelte-l5vjov .button.svelte-l5vjov {
+            margin: 0.5rem
+        }
+
+        .buttons.svelte-l5vjov .button i.svelte-l5vjov {
+            margin-right: 0.25rem
+        }
+
+        @media(min-width: 900px) {
+            .card.svelte-l5vjov.svelte-l5vjov {
+                padding: 3rem 5rem
+            }
+        }
+
         .section-container.svelte-gif1i0.svelte-gif1i0 {
             display: grid;
             gap: 2rem;
@@ -1222,6 +1274,21 @@
             </div>
         </div>
     </div>
+    <div class="section svelte-l5vjov" id="section-560b4c34-4f7c-43ef-b30a-a5858512ae29">
+        <div class="component svelte-l5vjov">
+            <section class="section-container svelte-l5vjov">
+                <div class="card svelte-l5vjov">
+                    <h2 class="heading svelte-l5vjov">Ready to get your sites live?</h2>
+                    <h3 class="subheading svelte-l5vjov"><!-- HTML_TAG_START -->
+                        <h1 id="getyourselfhostedserverupandrunninginunder5minuteswithastepbystepvideoguide">Get your self-hosted server up and running in under 5 minutes with a step-by-step video guide.</h1><!-- HTML_TAG_END -->
+                    </h3>
+                    <div class="buttons svelte-l5vjov"><a href="https://docs.primocms.org/getting-started" class="button is-primary svelte-l5vjov"><i class=" svelte-l5vjov"></i>
+                            <span class="svelte-l5vjov">Get Started</span>
+                        </a></div>
+                </div>
+            </section>
+        </div>
+    </div>
     <div class="section" id="section-6e2a693b-787b-48b2-bbed-0c3d73d0371e">
         <div class="component">
             <section class="svelte-gif1i0">
@@ -1294,7 +1361,7 @@
         <div class="component">
             <footer class="svelte-9dgfd5">
                 <div class="section-container svelte-9dgfd5">
-                    <nav class="svelte-9dgfd5"><a href="/" class="svelte-9dgfd5">Changelog</a><a href="/" class="svelte-9dgfd5">Open Source</a><a href="/" class="svelte-9dgfd5">Terms of Service</a></nav>
+                    <nav class="svelte-9dgfd5"><a href="/" class="svelte-9dgfd5">Changelog</a><a href="/" class="svelte-9dgfd5">Open Source</a><a href="https://primosites.vercel.app/primo-landing-page" class="svelte-9dgfd5">Terms of Service</a></nav>
                     <div style="font-weight:500"><span><a href="https://primocms.org" style="color: rgb(53, 217, 148);">Primo</a> Powered</span></div>
                     <ul class="svelte-9dgfd5">
                         <li><a href="https://forum.primo.so" aria-label="Forum" class="svelte-9dgfd5"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="0.88em" height="1em" viewBox="0 0 448 512" class="iconify iconify--fa6-brands"><!-- HTML_TAG_START -->
