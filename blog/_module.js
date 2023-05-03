@@ -5139,6 +5139,13 @@ function create_fragment$5(ctx) {
 							"active": false
 						},
 						"links": []
+					},
+					{
+						"link": {
+							"url": "/primo-cloud-waitlist",
+							"label": "Cloud"
+						},
+						"links": []
 					}
 				]
 			}
@@ -5189,14 +5196,14 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
-						"link": { "url": "/", "label": "Changelog" }
-					},
-					{
-						"link": { "url": "/", "label": "Open Source" }
+						"link": {
+							"url": "/changelog",
+							"label": "Changelog"
+						}
 					},
 					{
 						"link": {
-							"url": "https://primosites.vercel.app/primo-landing-page",
+							"url": "/changelog",
 							"label": "Terms of Service"
 						}
 					}

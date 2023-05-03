@@ -9294,6 +9294,13 @@ function create_fragment$5(ctx) {
 							"active": false
 						},
 						"links": []
+					},
+					{
+						"link": {
+							"url": "/primo-cloud-waitlist",
+							"label": "Cloud"
+						},
+						"links": []
 					}
 				]
 			}
@@ -9311,7 +9318,7 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "Primo Cloud Waitlist",
 				subheading: {
-					"html": "<p>Benefits of primo cloud, we will open primo cloud for a limited number of customers. Sign up to receive an exclusive invite. &nbsp;</p>",
+					"html": "<p>Benefits of primo cloud, we will open primo cloud for a limited number of customers. Sign up to receive an exclusive invite.</p>",
 					"markdown": "Benefits of primo cloud, we will open primo cloud for a limited number of customers. Sign up to receive an exclusive invite.\n\n"
 				},
 				list_items: [
@@ -9349,13 +9356,14 @@ function create_fragment$5(ctx) {
 							"placeholder": "Client work, personal projects, etc"
 						}
 					],
+					"form_endpoint": "https://getform.io/f/9bc06d6d-8d59-4f6d-919f-5270f9e2b98b",
 					"submission_error": {
-						"html": "<h1 id=\"thisissomemarkdown\">This is some markdown</h1>",
-						"markdown": "# This is some markdown"
+						"html": "<p>Something went wrong… sorry about that.</p>",
+						"markdown": "Something went wrong... sorry about that."
 					},
 					"submission_confirmation": {
-						"html": "<h1 id=\"thisissomemarkdown\">This is some markdown</h1>",
-						"markdown": "# This is some markdown"
+						"html": "<p>Thanks for joining the waitlist! We'll be in touch soon.</p>",
+						"markdown": "Thanks for joining the waitlist! We'll be in touch soon."
 					}
 				}
 			}
@@ -9373,14 +9381,14 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
-						"link": { "url": "/", "label": "Changelog" }
-					},
-					{
-						"link": { "url": "/", "label": "Open Source" }
+						"link": {
+							"url": "/changelog",
+							"label": "Changelog"
+						}
 					},
 					{
 						"link": {
-							"url": "https://primosites.vercel.app/primo-landing-page",
+							"url": "/changelog",
 							"label": "Terms of Service"
 						}
 					}

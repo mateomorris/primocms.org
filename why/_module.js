@@ -5269,6 +5269,13 @@ function create_fragment$6(ctx) {
 							"active": false
 						},
 						"links": []
+					},
+					{
+						"link": {
+							"url": "/primo-cloud-waitlist",
+							"label": "Cloud"
+						},
+						"links": []
 					}
 				]
 			}
@@ -5327,14 +5334,14 @@ function create_fragment$6(ctx) {
 				test: "THE TEST VALUE",
 				footer_nav: [
 					{
-						"link": { "url": "/", "label": "Changelog" }
-					},
-					{
-						"link": { "url": "/", "label": "Open Source" }
+						"link": {
+							"url": "/changelog",
+							"label": "Changelog"
+						}
 					},
 					{
 						"link": {
-							"url": "https://primosites.vercel.app/primo-landing-page",
+							"url": "/changelog",
 							"label": "Terms of Service"
 						}
 					}
