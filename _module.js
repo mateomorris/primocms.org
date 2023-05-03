@@ -16835,7 +16835,10 @@ function create_fragment$8(ctx) {
 							"size": null
 						},
 						"title": "Static Sites",
-						"description": "Your websites are secure, scalable to millions, and fast-loading - no fancy plugins necessary."
+						"description": {
+							"html": "<p>Your websites are secure, scalable to millions, and fast-loading - no fancy plugins necessary.</p>",
+							"markdown": "Your websites are secure, scalable to millions, and fast-loading - no fancy plugins necessary."
+						}
 					},
 					{
 						"icon": "mdi:users-group",
@@ -16846,7 +16849,10 @@ function create_fragment$8(ctx) {
 							"size": null
 						},
 						"title": "Real-time collaboration",
-						"description": "Invite any number of collaborators as developers or content editors and edit your pages together."
+						"description": {
+							"html": "<p>Invite any number of collaborators as developers or content editors and edit your pages together. </p>",
+							"markdown": "Invite any number of collaborators as developers or content editors and edit your pages together. "
+						}
 					},
 					{
 						"icon": "fluent-mdl2:locale-language",
@@ -16857,7 +16863,10 @@ function create_fragment$8(ctx) {
 							"size": null
 						},
 						"title": "Internationalization",
-						"description": "Easily manage content for over 60 locales and build each as a static version so you can rule your SEO."
+						"description": {
+							"html": "<p>Easily manage content for over 60 locales and build each as a static version so you can rule your SEO.</p>",
+							"markdown": "Easily manage content for over 60 locales and build each as a static version so you can rule your SEO."
+						}
 					},
 					{
 						"icon": "gg:website",
@@ -16902,7 +16911,7 @@ function create_fragment$8(ctx) {
 						}
 					}
 				],
-				link: { "url": "", "label": "", "active": false }
+				link: { "url": "/", "label": "qui" }
 			}
 		});
 
