@@ -9274,8 +9274,8 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "Primo Cloud Waitlist",
 				subheading: {
-					"html": "<p></p>",
-					"markdown": "Benefits of primo cloud, we will open primo cloud for a limited number of customers. Sign up to receive an exclusive invite.\n\n"
+					"html": "<p>Join the waitlist to be notified when Primo Cloud becomes available so you can build and publish sites sites with dependable support &amp; without having to manage your own server.</p>",
+					"markdown": "Join the waitlist to be notified when Primo Cloud becomes available so you can build and publish sites sites with dependable support & without having to manage your own server."
 				},
 				list_items: [
 					{
