@@ -8756,7 +8756,7 @@ function instance$3($$self, $$props, $$invalidate) {
 
 	async function submit_form(e) {
 		const form_data = get_form_data(e.target);
-		const { data } = await axios.post(form_endpoint, form_data).catch(e => ({ data: null }));
+		const { data } = await axios.post(form.endpoint, form_data).catch(e => ({ data: null }));
 
 		if (data) {
 			$$invalidate(5, submitted = true);
@@ -9349,7 +9349,7 @@ function create_fragment$5(ctx) {
 							"placeholder": "Client work, personal projects, etc"
 						}
 					],
-					"form_endpoint": "https://getform.io/f/9bc06d6d-8d59-4f6d-919f-5270f9e2b98b",
+					"endpoint": "https://getform.io/f/9bc06d6d-8d59-4f6d-919f-5270f9e2b98b",
 					"submission_error": {
 						"html": "<p>Something went wrong… sorry about that.</p>",
 						"markdown": "Something went wrong... sorry about that."
