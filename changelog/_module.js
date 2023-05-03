@@ -1094,6 +1094,8 @@ function create_fragment(ctx) {
 	let link_href_value;
 	let title_value;
 	let meta2;
+	let script;
+	let script_src_value;
 	let style;
 	let t;
 	document.title = title_value = /*title*/ ctx[0];
@@ -1104,19 +1106,23 @@ function create_fragment(ctx) {
 			meta1 = element("meta");
 			link = element("link");
 			meta2 = element("meta");
+			script = element("script");
 			style = element("style");
-			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1.5px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1.5px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			this.h();
 		},
 		l(nodes) {
-			const head_nodes = head_selector('svelte-2h93ap', document.head);
+			const head_nodes = head_selector('svelte-1ou479e', document.head);
 			meta0 = claim_element(head_nodes, "META", { name: true, content: true });
 			meta1 = claim_element(head_nodes, "META", { charset: true });
 			link = claim_element(head_nodes, "LINK", { rel: true, type: true, href: true });
 			meta2 = claim_element(head_nodes, "META", { name: true, content: true });
+			script = claim_element(head_nodes, "SCRIPT", { "data-domain": true, src: true });
+			var script_nodes = children(script);
+			script_nodes.forEach(detach);
 			style = claim_element(head_nodes, "STYLE", {});
 			var style_nodes = children(style);
-			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1.5px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1.5px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			style_nodes.forEach(detach);
 			head_nodes.forEach(detach);
 			this.h();
@@ -1130,12 +1136,16 @@ function create_fragment(ctx) {
 			attr(link, "href", link_href_value = /*favicon*/ ctx[1].url);
 			attr(meta2, "name", "description");
 			attr(meta2, "content", /*description*/ ctx[2]);
+			script.defer = true;
+			attr(script, "data-domain", "primocms.org");
+			if (!src_url_equal(script.src, script_src_value = "https://plausible.io/js/script.js")) attr(script, "src", script_src_value);
 		},
 		m(target, anchor) {
 			append_hydration(document.head, meta0);
 			append_hydration(document.head, meta1);
 			append_hydration(document.head, link);
 			append_hydration(document.head, meta2);
+			append_hydration(document.head, script);
 			append_hydration(document.head, style);
 			append_hydration(style, t);
 		},
@@ -1159,6 +1169,7 @@ function create_fragment(ctx) {
 			detach(meta1);
 			detach(link);
 			detach(meta2);
+			detach(script);
 			detach(style);
 		}
 	};
@@ -3087,7 +3098,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (244:14) {#if banner.label}
+// (246:14) {#if banner.label}
 function create_if_block_5(ctx) {
 	let div1;
 	let div0;
@@ -3120,8 +3131,8 @@ function create_if_block_5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "memo-content svelte-1wjl1ph");
-			attr(div1, "class", "banner svelte-1wjl1ph");
+			attr(div0, "class", "memo-content svelte-d3ch18");
+			attr(div1, "class", "banner svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3153,7 +3164,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (248:6) {#if banner.cta.label}
+// (250:6) {#if banner.cta.label}
 function create_if_block_6(ctx) {
 	let a;
 	let t_value = /*banner*/ ctx[0].cta.label + "";
@@ -3175,7 +3186,7 @@ function create_if_block_6(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*banner*/ ctx[0].cta.url);
-			attr(a, "class", "svelte-1wjl1ph");
+			attr(a, "class", "svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3194,7 +3205,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (271:10) {#if featured}
+// (273:10) {#if featured}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3213,7 +3224,7 @@ function create_if_block_4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "featured-pill svelte-1wjl1ph");
+			attr(span, "class", "featured-pill svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span, anchor);
@@ -3225,7 +3236,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (277:10) {:else}
+// (279:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3247,7 +3258,7 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-1wjl1ph");
+			attr(a, "class", "link svelte-d3ch18");
 			toggle_class(a, "active", /*link*/ ctx[9].url === window.location.pathname);
 		},
 		m(target, anchor) {
@@ -3273,7 +3284,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (274:10) {#if hasDropdown}
+// (276:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
 	let t0_value = /*link*/ ctx[9].label + "";
@@ -3309,8 +3320,8 @@ function create_if_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-1wjl1ph");
-			attr(span1, "class", "icon svelte-1wjl1ph");
+			attr(span0, "class", "svelte-d3ch18");
+			attr(span1, "class", "icon svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span0, anchor);
@@ -3341,7 +3352,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (284:8) {#if hasDropdown}
+// (286:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
 	let each_value_3 = /*links*/ ctx[10];
@@ -3373,7 +3384,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "dropdown svelte-1wjl1ph");
+			attr(div, "class", "dropdown svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3415,7 +3426,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (286:12) {#each links as { link }}
+// (288:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3437,7 +3448,7 @@ function create_each_block_3(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-1wjl1ph");
+			attr(a, "class", "link svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3456,7 +3467,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (267:4) {#each nav as { link, links, featured }}
+// (269:4) {#each nav as { link, links, featured }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3504,8 +3515,8 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-1wjl1ph");
-			attr(div1, "class", "nav-item svelte-1wjl1ph");
+			attr(div0, "class", "top-link svelte-d3ch18");
+			attr(div1, "class", "nav-item svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3586,7 +3597,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (297:2) {#if mobileNavOpen}
+// (299:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3643,9 +3654,9 @@ function create_if_block$1(ctx) {
 		h() {
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-1wjl1ph");
+			attr(button, "class", "svelte-d3ch18");
 			attr(nav_1, "id", "mobile-nav");
-			attr(nav_1, "class", "svelte-1wjl1ph");
+			attr(nav_1, "class", "svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav_1, anchor);
@@ -3719,7 +3730,7 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (305:8) {:else}
+// (307:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3741,7 +3752,7 @@ function create_else_block$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-1wjl1ph");
+			attr(a, "class", "link svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3760,7 +3771,7 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (301:8) {#if hasDropdown}
+// (303:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*links*/ ctx[10];
@@ -3825,7 +3836,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (302:10) {#each links as { link }}
+// (304:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3847,7 +3858,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-1wjl1ph");
+			attr(a, "class", "link svelte-d3ch18");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3866,7 +3877,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (299:6) {#each nav as { link, links }}
+// (301:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
@@ -4051,19 +4062,19 @@ function create_fragment$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-1wjl1ph");
+			attr(span0, "class", "svelte-d3ch18");
 			html_tag.a = null;
 			attr(a0, "href", "/");
-			attr(a0, "class", "logo svelte-1wjl1ph");
-			attr(span1, "class", "svelte-1wjl1ph");
-			attr(a1, "class", "link pill svelte-1wjl1ph");
+			attr(a0, "class", "logo svelte-d3ch18");
+			attr(span1, "class", "svelte-d3ch18");
+			attr(a1, "class", "link pill svelte-d3ch18");
 			attr(a1, "href", "https://github.com/primocms/primo");
 			attr(a1, "aria-label", "Github repo");
-			attr(div0, "class", "menu-icon svelte-1wjl1ph");
+			attr(div0, "class", "menu-icon svelte-d3ch18");
 			attr(button, "id", "open");
-			attr(button, "class", "svelte-1wjl1ph");
-			attr(nav_1, "class", "svelte-1wjl1ph");
-			attr(header, "class", "section-container svelte-1wjl1ph");
+			attr(button, "class", "svelte-d3ch18");
+			attr(nav_1, "class", "svelte-d3ch18");
+			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
 			attr(div2, "id", "section-fde29d82-d7ea-4ba0-803f-7100cbf2a7d0");
@@ -4616,13 +4627,13 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-62zch6");
-			attr(h3, "class", "subheading content svelte-62zch6");
-			attr(div0, "class", "inner-content svelte-62zch6");
+			attr(h2, "class", "heading svelte-l19rlb");
+			attr(h3, "class", "subheading content svelte-l19rlb");
+			attr(div0, "class", "inner-content svelte-l19rlb");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-62zch6");
+			attr(input0, "class", "form-control svelte-l19rlb");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -4633,9 +4644,9 @@ function create_fragment$4(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-62zch6");
+			attr(input1, "class", "svelte-l19rlb");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "button primary svelte-62zch6");
+			attr(button0, "class", "button primary svelte-l19rlb");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
 			attr(span, "class", "sr-only");
 			button1.disabled = "disabled";
@@ -4646,8 +4657,8 @@ function create_fragment$4(ctx) {
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-62zch6");
-			attr(form, "class", "ml-block-form svelte-62zch6");
+			attr(input2, "class", "svelte-l19rlb");
+			attr(form, "class", "ml-block-form svelte-l19rlb");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -4674,8 +4685,8 @@ function create_fragment$4(ctx) {
 			attr(div12, "class", "form");
 			if (!src_url_equal(script1.src, script1_src_value = "https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c")) attr(script1, "src", script1_src_value);
 			attr(script1, "type", "text/javascript");
-			attr(div13, "class", "section-container svelte-62zch6");
-			attr(section, "class", "svelte-62zch6");
+			attr(div13, "class", "section-container svelte-l19rlb");
+			attr(section, "class", "svelte-l19rlb");
 			attr(link, "rel", "stylesheet");
 			attr(link, "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
 			attr(link, "integrity", "sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==");
@@ -4797,7 +4808,7 @@ function get_each_context_1$1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (90:6) {#each footer_nav as { link }}
+// (110:8) {#each footer_nav as { link }}
 function create_each_block_1$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -4819,7 +4830,7 @@ function create_each_block_1$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "svelte-9dgfd5");
+			attr(a, "class", "svelte-13um1f6");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -4838,7 +4849,7 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (99:6) {#each social as { link, icon }}
+// (121:6) {#each social as { link, icon }}
 function create_each_block$1(ctx) {
 	let li;
 	let a;
@@ -4877,7 +4888,7 @@ function create_each_block$1(ctx) {
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
 			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[9].label);
-			attr(a, "class", "svelte-9dgfd5");
+			attr(a, "class", "svelte-13um1f6");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -4920,13 +4931,13 @@ function create_fragment$5(ctx) {
 	let div2;
 	let footer;
 	let div1;
-	let nav;
-	let t0;
 	let div0;
 	let span;
+	let t0;
 	let a;
 	let t1;
 	let t2;
+	let nav;
 	let t3;
 	let ul;
 	let current;
@@ -4954,18 +4965,18 @@ function create_fragment$5(ctx) {
 			div2 = element("div");
 			footer = element("footer");
 			div1 = element("div");
+			div0 = element("div");
+			span = element("span");
+			t0 = text("Sponsored by ");
+			a = element("a");
+			t1 = text("Breezly");
+			t2 = space();
 			nav = element("nav");
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
 				each_blocks_1[i].c();
 			}
 
-			t0 = space();
-			div0 = element("div");
-			span = element("span");
-			a = element("a");
-			t1 = text("Primo");
-			t2 = text(" Powered");
 			t3 = space();
 			ul = element("ul");
 
@@ -4984,7 +4995,18 @@ function create_fragment$5(ctx) {
 			var footer_nodes = children(footer);
 			div1 = claim_element(footer_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			nav = claim_element(div1_nodes, "NAV", { class: true });
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			span = claim_element(div0_nodes, "SPAN", { class: true });
+			var span_nodes = children(span);
+			t0 = claim_text(span_nodes, "Sponsored by ");
+			a = claim_element(span_nodes, "A", { href: true, class: true });
+			var a_nodes = children(a);
+			t1 = claim_text(a_nodes, "Breezly");
+			a_nodes.forEach(detach);
+			span_nodes.forEach(detach);
+			t2 = claim_space(div0_nodes);
+			nav = claim_element(div0_nodes, "NAV", { class: true });
 			var nav_nodes = children(nav);
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
@@ -4992,17 +5014,6 @@ function create_fragment$5(ctx) {
 			}
 
 			nav_nodes.forEach(detach);
-			t0 = claim_space(div1_nodes);
-			div0 = claim_element(div1_nodes, "DIV", { style: true });
-			var div0_nodes = children(div0);
-			span = claim_element(div0_nodes, "SPAN", {});
-			var span_nodes = children(span);
-			a = claim_element(span_nodes, "A", { href: true, style: true });
-			var a_nodes = children(a);
-			t1 = claim_text(a_nodes, "Primo");
-			a_nodes.forEach(detach);
-			t2 = claim_text(span_nodes, " Powered");
-			span_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t3 = claim_space(div1_nodes);
 			ul = claim_element(div1_nodes, "UL", { class: true });
@@ -5020,13 +5031,14 @@ function create_fragment$5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(nav, "class", "svelte-9dgfd5");
-			attr(a, "href", "https://primocms.org");
-			set_style(a, "color", "rgb(53, 217, 148)");
-			set_style(div0, "font-weight", "500");
-			attr(ul, "class", "svelte-9dgfd5");
-			attr(div1, "class", "section-container svelte-9dgfd5");
-			attr(footer, "class", "svelte-9dgfd5");
+			attr(a, "href", "https://breezly.io");
+			attr(a, "class", "svelte-13um1f6");
+			attr(span, "class", "breezly svelte-13um1f6");
+			attr(nav, "class", "svelte-13um1f6");
+			attr(div0, "class", "container svelte-13um1f6");
+			attr(ul, "class", "svelte-13um1f6");
+			attr(div1, "class", "section-container svelte-13um1f6");
+			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
 			attr(div3, "id", "section-f88bc967-cd57-4f4a-aaf2-68809a4b2e3d");
@@ -5036,7 +5048,13 @@ function create_fragment$5(ctx) {
 			append_hydration(div3, div2);
 			append_hydration(div2, footer);
 			append_hydration(footer, div1);
-			append_hydration(div1, nav);
+			append_hydration(div1, div0);
+			append_hydration(div0, span);
+			append_hydration(span, t0);
+			append_hydration(span, a);
+			append_hydration(a, t1);
+			append_hydration(div0, t2);
+			append_hydration(div0, nav);
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
 				if (each_blocks_1[i]) {
@@ -5044,12 +5062,6 @@ function create_fragment$5(ctx) {
 				}
 			}
 
-			append_hydration(div1, t0);
-			append_hydration(div1, div0);
-			append_hydration(div0, span);
-			append_hydration(span, a);
-			append_hydration(a, t1);
-			append_hydration(span, t2);
 			append_hydration(div1, t3);
 			append_hydration(div1, ul);
 
@@ -5269,6 +5281,13 @@ function create_fragment$6(ctx) {
 							"active": false
 						},
 						"links": []
+					},
+					{
+						"link": {
+							"url": "/primo-cloud-waitlist",
+							"label": "Cloud"
+						},
+						"links": []
 					}
 				]
 			}
@@ -5328,7 +5347,7 @@ function create_fragment$6(ctx) {
 				footer_nav: [
 					{
 						"link": {
-							"url": "https://primosites.vercel.app/changelog",
+							"url": "/changelog",
 							"label": "Changelog"
 						}
 					},
