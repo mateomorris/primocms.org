@@ -413,14 +413,6 @@ function set_data(text, data) {
         return;
     text.data = data;
 }
-function set_style(node, key, value, important) {
-    if (value === null) {
-        node.style.removeProperty(key);
-    }
-    else {
-        node.style.setProperty(key, value, important ? 'important' : '');
-    }
-}
 function toggle_class(element, name, toggle) {
     element.classList[toggle ? 'add' : 'remove'](name);
 }
@@ -4341,7 +4333,7 @@ function get_each_context_1$1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (89:6) {#each footer_nav as { link }}
+// (109:8) {#each footer_nav as { link }}
 function create_each_block_1$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -4363,7 +4355,7 @@ function create_each_block_1$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "svelte-9dgfd5");
+			attr(a, "class", "svelte-13um1f6");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -4382,7 +4374,7 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (98:6) {#each social as { link, icon }}
+// (120:6) {#each social as { link, icon }}
 function create_each_block$1(ctx) {
 	let li;
 	let a;
@@ -4421,7 +4413,7 @@ function create_each_block$1(ctx) {
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
 			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[8].label);
-			attr(a, "class", "svelte-9dgfd5");
+			attr(a, "class", "svelte-13um1f6");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -4464,13 +4456,13 @@ function create_fragment$4(ctx) {
 	let div2;
 	let footer;
 	let div1;
-	let nav;
-	let t0;
 	let div0;
 	let span;
+	let t0;
 	let a;
 	let t1;
 	let t2;
+	let nav;
 	let t3;
 	let ul;
 	let current;
@@ -4498,18 +4490,18 @@ function create_fragment$4(ctx) {
 			div2 = element("div");
 			footer = element("footer");
 			div1 = element("div");
+			div0 = element("div");
+			span = element("span");
+			t0 = text("Sponsored by ");
+			a = element("a");
+			t1 = text("Breezly");
+			t2 = space();
 			nav = element("nav");
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
 				each_blocks_1[i].c();
 			}
 
-			t0 = space();
-			div0 = element("div");
-			span = element("span");
-			a = element("a");
-			t1 = text("Primo");
-			t2 = text(" Powered");
 			t3 = space();
 			ul = element("ul");
 
@@ -4528,7 +4520,18 @@ function create_fragment$4(ctx) {
 			var footer_nodes = children(footer);
 			div1 = claim_element(footer_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			nav = claim_element(div1_nodes, "NAV", { class: true });
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			span = claim_element(div0_nodes, "SPAN", { class: true });
+			var span_nodes = children(span);
+			t0 = claim_text(span_nodes, "Sponsored by ");
+			a = claim_element(span_nodes, "A", { href: true, class: true });
+			var a_nodes = children(a);
+			t1 = claim_text(a_nodes, "Breezly");
+			a_nodes.forEach(detach);
+			span_nodes.forEach(detach);
+			t2 = claim_space(div0_nodes);
+			nav = claim_element(div0_nodes, "NAV", { class: true });
 			var nav_nodes = children(nav);
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
@@ -4536,17 +4539,6 @@ function create_fragment$4(ctx) {
 			}
 
 			nav_nodes.forEach(detach);
-			t0 = claim_space(div1_nodes);
-			div0 = claim_element(div1_nodes, "DIV", { style: true });
-			var div0_nodes = children(div0);
-			span = claim_element(div0_nodes, "SPAN", {});
-			var span_nodes = children(span);
-			a = claim_element(span_nodes, "A", { href: true, style: true });
-			var a_nodes = children(a);
-			t1 = claim_text(a_nodes, "Primo");
-			a_nodes.forEach(detach);
-			t2 = claim_text(span_nodes, " Powered");
-			span_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t3 = claim_space(div1_nodes);
 			ul = claim_element(div1_nodes, "UL", { class: true });
@@ -4564,13 +4556,14 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(nav, "class", "svelte-9dgfd5");
-			attr(a, "href", "https://primocms.org");
-			set_style(a, "color", "rgb(53, 217, 148)");
-			set_style(div0, "font-weight", "500");
-			attr(ul, "class", "svelte-9dgfd5");
-			attr(div1, "class", "section-container svelte-9dgfd5");
-			attr(footer, "class", "svelte-9dgfd5");
+			attr(a, "href", "https://breezly.io");
+			attr(a, "class", "svelte-13um1f6");
+			attr(span, "class", "breezly svelte-13um1f6");
+			attr(nav, "class", "svelte-13um1f6");
+			attr(div0, "class", "container svelte-13um1f6");
+			attr(ul, "class", "svelte-13um1f6");
+			attr(div1, "class", "section-container svelte-13um1f6");
+			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
 			attr(div3, "id", "section-55d92088-5552-414a-b757-a3f83832d37d");
@@ -4580,7 +4573,13 @@ function create_fragment$4(ctx) {
 			append_hydration(div3, div2);
 			append_hydration(div2, footer);
 			append_hydration(footer, div1);
-			append_hydration(div1, nav);
+			append_hydration(div1, div0);
+			append_hydration(div0, span);
+			append_hydration(span, t0);
+			append_hydration(span, a);
+			append_hydration(a, t1);
+			append_hydration(div0, t2);
+			append_hydration(div0, nav);
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
 				if (each_blocks_1[i]) {
@@ -4588,12 +4587,6 @@ function create_fragment$4(ctx) {
 				}
 			}
 
-			append_hydration(div1, t0);
-			append_hydration(div1, div0);
-			append_hydration(div0, span);
-			append_hydration(span, a);
-			append_hydration(a, t1);
-			append_hydration(span, t2);
 			append_hydration(div1, t3);
 			append_hydration(div1, ul);
 
@@ -4840,16 +4833,13 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
-						"link": {
-							"url": "/changelog",
-							"label": "Changelog"
-						}
+						"link": { "url": "/", "label": "Changelog" }
 					},
 					{
-						"link": {
-							"url": "/changelog",
-							"label": "Terms of Service"
-						}
+						"link": { "url": "/", "label": "Open Source" }
+					},
+					{
+						"link": { "url": "/", "label": "Terms of Service" }
 					}
 				],
 				social: [
@@ -4862,24 +4852,15 @@ function create_fragment$5(ctx) {
 					},
 					{
 						"icon": "fa6-brands:discord",
-						"link": {
-							"url": "https://discord.gg/vzSFTS9",
-							"label": "Discord"
-						}
+						"link": { "url": "/", "label": "Discord" }
 					},
 					{
 						"icon": "fa6-brands:youtube",
-						"link": {
-							"url": "https://www.youtube.com/@primocms",
-							"label": "Youtube"
-						}
+						"link": { "url": "/", "label": "Youtube" }
 					},
 					{
 						"icon": "fa6-brands:github",
-						"link": {
-							"url": "https://github.com/primocms/primo",
-							"label": "Github"
-						}
+						"link": { "url": "/", "label": "Github" }
 					}
 				]
 			}
