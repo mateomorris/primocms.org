@@ -4616,13 +4616,13 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-gif1i0");
-			attr(h3, "class", "subheading content svelte-gif1i0");
-			attr(div0, "class", "inner-content svelte-gif1i0");
+			attr(h2, "class", "heading svelte-62zch6");
+			attr(h3, "class", "subheading content svelte-62zch6");
+			attr(div0, "class", "inner-content svelte-62zch6");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-gif1i0");
+			attr(input0, "class", "form-control svelte-62zch6");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -4633,9 +4633,9 @@ function create_fragment$4(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-gif1i0");
+			attr(input1, "class", "svelte-62zch6");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "button primary svelte-gif1i0");
+			attr(button0, "class", "button primary svelte-62zch6");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
 			attr(span, "class", "sr-only");
 			button1.disabled = "disabled";
@@ -4646,8 +4646,8 @@ function create_fragment$4(ctx) {
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-gif1i0");
-			attr(form, "class", "ml-block-form svelte-gif1i0");
+			attr(input2, "class", "svelte-62zch6");
+			attr(form, "class", "ml-block-form svelte-62zch6");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -4674,8 +4674,8 @@ function create_fragment$4(ctx) {
 			attr(div12, "class", "form");
 			if (!src_url_equal(script1.src, script1_src_value = "https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c")) attr(script1, "src", script1_src_value);
 			attr(script1, "type", "text/javascript");
-			attr(div13, "class", "section-container svelte-gif1i0");
-			attr(section, "class", "svelte-gif1i0");
+			attr(div13, "class", "section-container svelte-62zch6");
+			attr(section, "class", "svelte-62zch6");
 			attr(link, "rel", "stylesheet");
 			attr(link, "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
 			attr(link, "integrity", "sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==");
