@@ -277,6 +277,14 @@ function attr(node, attribute, value) {
     else if (node.getAttribute(attribute) !== value)
         node.setAttribute(attribute, value);
 }
+/**
+ * List of attributes that should always be set through the attr method,
+ * because updating them through the property setter doesn't work reliably.
+ * In the example of `width`/`height`, the problem is that the setter only
+ * accepts numeric values, but the attribute can also be set to a string like `50%`.
+ * If this list becomes too big, rethink this approach.
+ */
+const always_set_through_set_attribute = ['width', 'height'];
 function set_attributes(node, attributes) {
     // @ts-ignore
     const descriptors = Object.getOwnPropertyDescriptors(node.__proto__);
@@ -290,7 +298,7 @@ function set_attributes(node, attributes) {
         else if (key === '__value') {
             node.value = node[key] = attributes[key];
         }
-        else if (descriptors[key] && descriptors[key].set) {
+        else if (descriptors[key] && descriptors[key].set && always_set_through_set_attribute.indexOf(key) === -1) {
             node[key] = attributes[key];
         }
         else {
@@ -431,7 +439,7 @@ function set_data(text, data) {
     text.data = data;
 }
 function set_style(node, key, value, important) {
-    if (value === null) {
+    if (value == null) {
         node.style.removeProperty(key);
     }
     else {
@@ -23012,21 +23020,21 @@ function create_fragment$6(ctx) {
 						"screenshots": {
 							"mobile": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.30%20AM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.30%20AM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382061592Screenshot%202023-05-06%20at%2010.07.33%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382061592Screenshot%202023-05-06%20at%2010.07.33%20AM.png",
+								"size": 105
 							},
 							"tablet": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.19%20AM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.19%20AM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382048286Screenshot%202023-05-06%20at%2010.07.23%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382048286Screenshot%202023-05-06%20at%2010.07.23%20AM.png",
+								"size": 87
 							},
 							"desktop": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.10%20AM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screenshot%202022-12-17%20at%2012.17.10%20AM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382029702Screenshot%202023-05-06%20at%2010.07.04%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382029702Screenshot%202023-05-06%20at%2010.07.04%20AM.png",
+								"size": 156
 							}
 						},
 						"template_id": "startup-theme"
@@ -23046,21 +23054,21 @@ function create_fragment$6(ctx) {
 						"screenshots": {
 							"mobile": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.40.08%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.40.08%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382265302Screenshot%202023-05-06%20at%2010.10.59%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382265302Screenshot%202023-05-06%20at%2010.10.59%20AM.png",
+								"size": 500
 							},
 							"tablet": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.39.07%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.39.07%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382226362Screenshot%202023-05-06%20at%2010.10.20%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382226362Screenshot%202023-05-06%20at%2010.10.20%20AM.png",
+								"size": 461
 							},
 							"desktop": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.38.37%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2010.38.37%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382215300Screenshot%202023-05-06%20at%2010.10.10%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382215300Screenshot%202023-05-06%20at%2010.10.10%20AM.png",
+								"size": 509
 							}
 						},
 						"template_id": ""
@@ -23080,21 +23088,21 @@ function create_fragment$6(ctx) {
 						"screenshots": {
 							"mobile": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.12.59%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.12.59%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382159904Screenshot%202023-05-06%20at%2010.09.14%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382159904Screenshot%202023-05-06%20at%2010.09.14%20AM.png",
+								"size": 264
 							},
 							"tablet": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.11.29%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.11.29%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382151193Screenshot%202023-05-06%20at%2010.09.06%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382151193Screenshot%202023-05-06%20at%2010.09.06%20AM.png",
+								"size": 454
 							},
 							"desktop": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.10.58%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-02%20at%2011.10.58%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382141503Screenshot%202023-05-06%20at%2010.08.56%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382141503Screenshot%202023-05-06%20at%2010.08.56%20AM.png",
+								"size": 502
 							}
 						},
 						"template_id": ""
@@ -23114,21 +23122,21 @@ function create_fragment$6(ctx) {
 						"screenshots": {
 							"mobile": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-16%20at%202.54.36%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-16%20at%202.54.36%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382357596Screenshot%202023-05-06%20at%2010.12.32%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382357596Screenshot%202023-05-06%20at%2010.12.32%20AM.png",
+								"size": 67
 							},
 							"tablet": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-16%20at%202.53.50%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-16%20at%202.53.50%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382348974Screenshot%202023-05-06%20at%2010.12.23%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382348974Screenshot%202023-05-06%20at%2010.12.23%20AM.png",
+								"size": 69
 							},
 							"desktop": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-16%20at%202.52.28%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-16%20at%202.52.28%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382338025Screenshot%202023-05-06%20at%2010.12.12%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382338025Screenshot%202023-05-06%20at%2010.12.12%20AM.png",
+								"size": 89
 							}
 						},
 						"template_id": ""
@@ -23148,21 +23156,21 @@ function create_fragment$6(ctx) {
 						"screenshots": {
 							"mobile": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-24%20at%2012.51.41%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-24%20at%2012.51.41%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382789060Screenshot%202023-05-06%20at%2010.19.44%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382789060Screenshot%202023-05-06%20at%2010.19.44%20AM.png",
+								"size": 238
 							},
 							"tablet": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-24%20at%2012.51.27%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-11-24%20at%2012.51.27%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382780746Screenshot%202023-05-06%20at%2010.19.35%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382780746Screenshot%202023-05-06%20at%2010.19.35%20AM.png",
+								"size": 420
 							},
 							"desktop": {
 								"alt": "",
-								"src": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-04%20at%201.04.49%20PM.png",
-								"url": "https://jbbjtodsvhsgjappwopg.supabase.co/storage/v1/object/public/sites/primo-landing-page/assets/Screen%20Shot%202022-12-04%20at%201.04.49%20PM.png",
-								"size": null
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382769650Screenshot%202023-05-06%20at%2010.19.24%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683382769650Screenshot%202023-05-06%20at%2010.19.24%20AM.png",
+								"size": 311
 							}
 						},
 						"template_id": ""
