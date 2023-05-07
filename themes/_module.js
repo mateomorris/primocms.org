@@ -23001,7 +23001,7 @@ function create_fragment$6(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "Themes",
 				components_subheading: "Qui est pariatur",
-				templates_subheading: "Get up and running in seconds - just download a theme and select duplicate from primo.json when creating a site.",
+				templates_subheading: "Every site in Primo can be instantly saved and duplicated from a single JSON file & Primo blocks can be used across all your sites.",
 				components: [],
 				packs: [],
 				templates: [
