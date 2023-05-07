@@ -18746,7 +18746,7 @@ function create_if_block_9(ctx) {
 	};
 }
 
-// (756:4) {#each active_items as item, i (item.screenshots.desktop.url)}
+// (756:4) {#each active_items as item, i (item.name)}
 function create_each_block_7(key_1, ctx) {
 	let div2;
 	let button0;
@@ -21454,7 +21454,7 @@ function create_fragment$3(ctx) {
 	let current_block_type = select_block_type(ctx);
 	let if_block0 = current_block_type && current_block_type(ctx);
 	let each_value_7 = /*active_items*/ ctx[16];
-	const get_key = ctx => /*item*/ ctx[53].screenshots.desktop.url;
+	const get_key = ctx => /*item*/ ctx[53].name;
 
 	for (let i = 0; i < each_value_7.length; i += 1) {
 		let child_ctx = get_each_context_7(ctx, each_value_7, i);
@@ -23007,6 +23007,68 @@ function create_fragment$6(ctx) {
 				templates: [
 					{
 						"id": "",
+						"name": "Minimal",
+						"repo": "mateomorris/theme-minimal",
+						"price": "0",
+						"price_id": "",
+						"available": true,
+						"description": { "html": "", "markdown": "" },
+						"preview_url": "",
+						"screenshots": {
+							"mobile": {
+								"alt": "",
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438280856Screenshot%202023-05-07%20at%201.44.35%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438280856Screenshot%202023-05-07%20at%201.44.35%20AM.png",
+								"size": 67
+							},
+							"tablet": {
+								"alt": "",
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438272930Screenshot%202023-05-07%20at%201.44.27%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438272930Screenshot%202023-05-07%20at%201.44.27%20AM.png",
+								"size": 66
+							},
+							"desktop": {
+								"alt": "",
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438261409Screenshot%202023-05-07%20at%201.44.16%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438261409Screenshot%202023-05-07%20at%201.44.16%20AM.png",
+								"size": 73
+							}
+						},
+						"template_id": ""
+					},
+					{
+						"id": "",
+						"name": "Blog",
+						"repo": "mateomorris/theme-blog",
+						"price": "0",
+						"price_id": "",
+						"available": true,
+						"description": { "html": "", "markdown": "" },
+						"preview_url": "",
+						"screenshots": {
+							"mobile": {
+								"alt": "",
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438334982Screenshot%202023-05-07%20at%201.45.30%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438334982Screenshot%202023-05-07%20at%201.45.30%20AM.png",
+								"size": 73
+							},
+							"tablet": {
+								"alt": "",
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438312013Screenshot%202023-05-07%20at%201.45.08%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438312013Screenshot%202023-05-07%20at%201.45.08%20AM.png",
+								"size": 137
+							},
+							"desktop": {
+								"alt": "",
+								"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438299908Screenshot%202023-05-07%20at%201.44.53%20AM.png",
+								"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1683438299908Screenshot%202023-05-07%20at%201.44.53%20AM.png",
+								"size": 143
+							}
+						},
+						"template_id": ""
+					},
+					{
+						"id": "",
 						"name": "Startup",
 						"repo": "mateomorris/Theme-Startup",
 						"price": "0",
@@ -23262,12 +23324,6 @@ function create_fragment$6(ctx) {
 					},
 					{
 						"link": {
-							"url": "/legal/terms-of-service",
-							"label": "Terms of Service"
-						}
-					},
-					{
-						"link": {
 							"url": "/privacy-policy",
 							"label": "Privacy Policy"
 						}
@@ -23283,24 +23339,22 @@ function create_fragment$6(ctx) {
 					},
 					{
 						"icon": "fa6-brands:discord",
-						"link": {
-							"url": "https://discord.gg/vzSFTS9",
-							"label": "Discord"
-						}
+						"link": { "url": "/", "label": "Discord" }
 					},
 					{
 						"icon": "fa6-brands:youtube",
+						"link": { "url": "/", "label": "Youtube" }
+					},
+					{
+						"icon": "fa6-brands:twitter",
 						"link": {
-							"url": "https://www.youtube.com/@primocms",
-							"label": "Youtube"
+							"url": "https://twitter.com/primodotso",
+							"label": "Twitter"
 						}
 					},
 					{
 						"icon": "fa6-brands:github",
-						"link": {
-							"url": "https://github.com/primocms/primo",
-							"label": "Github"
-						}
+						"link": { "url": "/", "label": "Github" }
 					}
 				]
 			}

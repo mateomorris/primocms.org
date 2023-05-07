@@ -5361,12 +5361,6 @@ function create_fragment$6(ctx) {
 					},
 					{
 						"link": {
-							"url": "/legal/terms-of-service",
-							"label": "Terms of Service"
-						}
-					},
-					{
-						"link": {
 							"url": "/privacy-policy",
 							"label": "Privacy Policy"
 						}
@@ -5382,24 +5376,22 @@ function create_fragment$6(ctx) {
 					},
 					{
 						"icon": "fa6-brands:discord",
-						"link": {
-							"url": "https://discord.gg/vzSFTS9",
-							"label": "Discord"
-						}
+						"link": { "url": "/", "label": "Discord" }
 					},
 					{
 						"icon": "fa6-brands:youtube",
+						"link": { "url": "/", "label": "Youtube" }
+					},
+					{
+						"icon": "fa6-brands:twitter",
 						"link": {
-							"url": "https://www.youtube.com/@primocms",
-							"label": "Youtube"
+							"url": "https://twitter.com/primodotso",
+							"label": "Twitter"
 						}
 					},
 					{
 						"icon": "fa6-brands:github",
-						"link": {
-							"url": "https://github.com/primocms/primo",
-							"label": "Github"
-						}
+						"link": { "url": "/", "label": "Github" }
 					}
 				]
 			}
