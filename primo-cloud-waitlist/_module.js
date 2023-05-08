@@ -9345,44 +9345,43 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
-						"link": {
-							"url": "/changelog",
-							"label": "Changelog"
-						}
+						"link": { "url": "/", "label": "Changelog" }
 					},
 					{
-						"link": {
-							"url": "/privacy-policy",
-							"label": "Privacy Policy"
-						}
+						"link": { "url": "/", "label": "Open Source" }
+					},
+					{
+						"link": { "url": "/", "label": "Terms of Service" }
 					}
 				],
 				social: [
 					{
-						"icon": "fa6-brands:discourse",
 						"link": {
 							"url": "https://forum.primo.so",
 							"label": "Forum"
-						}
+						},
+						"icon": "fa6-brands:discourse"
 					},
 					{
-						"icon": "fa6-brands:discord",
-						"link": { "url": "/", "label": "Discord" }
-					},
-					{
-						"icon": "fa6-brands:youtube",
-						"link": { "url": "/", "label": "Youtube" }
-					},
-					{
-						"icon": "fa6-brands:twitter",
 						"link": {
-							"url": "https://twitter.com/primodotso",
-							"label": "Twitter"
-						}
+							"url": "https://discord.gg/DMQshmek8m",
+							"label": "Discord"
+						},
+						"icon": "fa6-brands:discord"
 					},
 					{
-						"icon": "fa6-brands:github",
-						"link": { "url": "/", "label": "Github" }
+						"link": {
+							"url": "https://www.youtube.com/@primocms",
+							"label": "Youtube"
+						},
+						"icon": "fa6-brands:youtube"
+					},
+					{
+						"link": {
+							"url": "https://github.com/primocms/primo",
+							"label": "Github"
+						},
+						"icon": "fa6-brands:github"
 					}
 				]
 			}
