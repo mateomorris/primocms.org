@@ -23013,7 +23013,7 @@ function create_fragment$6(ctx) {
 						"price_id": "",
 						"available": true,
 						"description": { "html": "", "markdown": "" },
-						"preview_url": "",
+						"preview_url": "https://theme-minimal.vercel.app/",
 						"screenshots": {
 							"mobile": {
 								"alt": "",
@@ -23044,7 +23044,7 @@ function create_fragment$6(ctx) {
 						"price_id": "",
 						"available": true,
 						"description": { "html": "", "markdown": "" },
-						"preview_url": "",
+						"preview_url": "https://theme-blog-chi.vercel.app/",
 						"screenshots": {
 							"mobile": {
 								"alt": "",
