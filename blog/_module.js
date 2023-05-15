@@ -4817,13 +4817,8 @@ function create_fragment$4(ctx) {
 	let footer;
 	let div1;
 	let div0;
-	let span;
-	let t0;
-	let a;
-	let t1;
-	let t2;
 	let nav;
-	let t3;
+	let t;
 	let ul;
 	let current;
 	let each_value_1 = /*footer_nav*/ ctx[0];
@@ -4851,18 +4846,13 @@ function create_fragment$4(ctx) {
 			footer = element("footer");
 			div1 = element("div");
 			div0 = element("div");
-			span = element("span");
-			t0 = text("Sponsored by ");
-			a = element("a");
-			t1 = text("Breezly");
-			t2 = space();
 			nav = element("nav");
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
 				each_blocks_1[i].c();
 			}
 
-			t3 = space();
+			t = space();
 			ul = element("ul");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -4882,15 +4872,6 @@ function create_fragment$4(ctx) {
 			var div1_nodes = children(div1);
 			div0 = claim_element(div1_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
-			span = claim_element(div0_nodes, "SPAN", { class: true });
-			var span_nodes = children(span);
-			t0 = claim_text(span_nodes, "Sponsored by ");
-			a = claim_element(span_nodes, "A", { href: true, class: true });
-			var a_nodes = children(a);
-			t1 = claim_text(a_nodes, "Breezly");
-			a_nodes.forEach(detach);
-			span_nodes.forEach(detach);
-			t2 = claim_space(div0_nodes);
 			nav = claim_element(div0_nodes, "NAV", { class: true });
 			var nav_nodes = children(nav);
 
@@ -4900,7 +4881,7 @@ function create_fragment$4(ctx) {
 
 			nav_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
-			t3 = claim_space(div1_nodes);
+			t = claim_space(div1_nodes);
 			ul = claim_element(div1_nodes, "UL", { class: true });
 			var ul_nodes = children(ul);
 
@@ -4916,9 +4897,6 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", "https://breezly.io");
-			attr(a, "class", "svelte-13um1f6");
-			attr(span, "class", "breezly svelte-13um1f6");
 			attr(nav, "class", "svelte-13um1f6");
 			attr(div0, "class", "container svelte-13um1f6");
 			attr(ul, "class", "svelte-13um1f6");
@@ -4934,11 +4912,6 @@ function create_fragment$4(ctx) {
 			append_hydration(div2, footer);
 			append_hydration(footer, div1);
 			append_hydration(div1, div0);
-			append_hydration(div0, span);
-			append_hydration(span, t0);
-			append_hydration(span, a);
-			append_hydration(a, t1);
-			append_hydration(div0, t2);
 			append_hydration(div0, nav);
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
@@ -4947,7 +4920,7 @@ function create_fragment$4(ctx) {
 				}
 			}
 
-			append_hydration(div1, t3);
+			append_hydration(div1, t);
 			append_hydration(div1, ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -5209,9 +5182,6 @@ function create_fragment$5(ctx) {
 				footer_nav: [
 					{
 						"link": { "url": "/", "label": "Changelog" }
-					},
-					{
-						"link": { "url": "/", "label": "Open Source" }
 					},
 					{
 						"link": { "url": "/", "label": "Terms of Service" }
