@@ -14395,19 +14395,15 @@ function create_fragment$3(ctx) {
 	let t6;
 	let div2;
 	let a3;
-	let span;
 	let t7;
-	let t8;
-	let a4;
-	let t9;
 	let icon3;
-	let t10;
+	let t8;
 	let div4;
 	let figure;
 	let iframe;
 	let iframe_src_value;
-	let t11;
-	let t12;
+	let t9;
+	let t10;
 	let current;
 
 	icon0 = new Component$1({
@@ -14465,19 +14461,15 @@ function create_fragment$3(ctx) {
 			t6 = space();
 			div2 = element("div");
 			a3 = element("a");
-			span = element("span");
-			t7 = text("Try it");
-			t8 = space();
-			a4 = element("a");
-			t9 = text("Get Started\n        ");
+			t7 = text("Get Started\n        ");
 			create_component(icon3.$$.fragment);
-			t10 = space();
+			t8 = space();
 			div4 = element("div");
 			figure = element("figure");
 			iframe = element("iframe");
-			t11 = space();
+			t9 = space();
 			if (if_block1) if_block1.c();
-			t12 = space();
+			t10 = space();
 			if (if_block2) if_block2.c();
 			this.h();
 		},
@@ -14529,27 +14521,12 @@ function create_fragment$3(ctx) {
 			});
 
 			var a3_nodes = children(a3);
-			span = claim_element(a3_nodes, "SPAN", { class: true });
-			var span_nodes = children(span);
-			t7 = claim_text(span_nodes, "Try it");
-			span_nodes.forEach(detach);
+			t7 = claim_text(a3_nodes, "Get Started\n        ");
+			claim_component(icon3.$$.fragment, a3_nodes);
 			a3_nodes.forEach(detach);
-			t8 = claim_space(div2_nodes);
-
-			a4 = claim_element(div2_nodes, "A", {
-				href: true,
-				class: true,
-				target: true,
-				rel: true
-			});
-
-			var a4_nodes = children(a4);
-			t9 = claim_text(a4_nodes, "Get Started\n        ");
-			claim_component(icon3.$$.fragment, a4_nodes);
-			a4_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
-			t10 = claim_space(header_nodes);
+			t8 = claim_space(header_nodes);
 			div4 = claim_element(header_nodes, "DIV", { class: true });
 			var div4_nodes = children(div4);
 			figure = claim_element(div4_nodes, "FIGURE", { class: true });
@@ -14569,9 +14546,9 @@ function create_fragment$3(ctx) {
 			figure_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
 			header_nodes.forEach(detach);
-			t11 = claim_space(div5_nodes);
+			t9 = claim_space(div5_nodes);
 			if (if_block1) if_block1.l(div5_nodes);
-			t12 = claim_space(div5_nodes);
+			t10 = claim_space(div5_nodes);
 			if (if_block2) if_block2.l(div5_nodes);
 			div5_nodes.forEach(detach);
 			div6_nodes.forEach(detach);
@@ -14590,15 +14567,10 @@ function create_fragment$3(ctx) {
 			attr(a2, "target", "blank");
 			attr(a2, "class", "svelte-17457rs");
 			attr(div1, "class", "subheading svelte-17457rs");
-			attr(span, "class", "svelte-17457rs");
-			attr(a3, "href", "http://try.primocms.org/Theme-nonprofit");
-			attr(a3, "class", "button svelte-17457rs");
+			attr(a3, "href", "https://docs.primocms.org/getting-started");
+			attr(a3, "class", "button primary svelte-17457rs");
 			attr(a3, "target", "_blank");
 			attr(a3, "rel", "noreferrer");
-			attr(a4, "href", "https://docs.primocms.org/getting-started");
-			attr(a4, "class", "button primary svelte-17457rs");
-			attr(a4, "target", "_blank");
-			attr(a4, "rel", "noreferrer");
 			attr(div2, "class", "buttons svelte-17457rs");
 			attr(div3, "class", "top svelte-17457rs");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*video_id*/ ctx[2] + "?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479")) attr(iframe, "src", iframe_src_value);
@@ -14641,19 +14613,15 @@ function create_fragment$3(ctx) {
 			append_hydration(div3, t6);
 			append_hydration(div3, div2);
 			append_hydration(div2, a3);
-			append_hydration(a3, span);
-			append_hydration(span, t7);
-			append_hydration(div2, t8);
-			append_hydration(div2, a4);
-			append_hydration(a4, t9);
-			mount_component(icon3, a4, null);
-			append_hydration(header, t10);
+			append_hydration(a3, t7);
+			mount_component(icon3, a3, null);
+			append_hydration(header, t8);
 			append_hydration(header, div4);
 			append_hydration(div4, figure);
 			append_hydration(figure, iframe);
-			append_hydration(div5, t11);
+			append_hydration(div5, t9);
 			if (if_block1) if_block1.m(div5, null);
-			append_hydration(div5, t12);
+			append_hydration(div5, t10);
 			if (if_block2) if_block2.m(div5, null);
 			current = true;
 		},
@@ -14687,7 +14655,7 @@ function create_fragment$3(ctx) {
 					if_block1 = create_if_block_4$1(ctx);
 					if_block1.c();
 					transition_in(if_block1, 1);
-					if_block1.m(div5, t12);
+					if_block1.m(div5, t10);
 				}
 			} else if (if_block1) {
 				group_outros();
