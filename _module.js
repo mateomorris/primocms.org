@@ -13553,7 +13553,7 @@ function create_if_block_5$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "subheading svelte-17457rs");
+			attr(h2, "class", "subheading svelte-x40fj3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, h2, anchor);
@@ -13574,7 +13574,7 @@ function create_if_block_5$1(ctx) {
 	};
 }
 
-// (480:0) {#if videoModalVisible}
+// (481:0) {#if videoModalVisible}
 function create_if_block_4$1(ctx) {
 	let div3;
 	let div0;
@@ -13625,7 +13625,7 @@ function create_if_block_4$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "bg svelte-17457rs");
+			attr(div0, "class", "bg svelte-x40fj3");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/777551197?h=4342f0b1c9&badge=0&autopause=0&player_id=0&app_id=58479")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
@@ -13636,12 +13636,12 @@ function create_if_block_4$1(ctx) {
 			set_style(iframe, "width", "100%");
 			set_style(iframe, "height", "100%");
 			attr(iframe, "title", "Primo Walkthrough");
-			attr(iframe, "class", "svelte-17457rs");
+			attr(iframe, "class", "svelte-x40fj3");
 			set_style(div1, "padding", "62.5% 0 0 0");
 			set_style(div1, "position", "relative");
-			attr(div2, "class", "container has-video svelte-17457rs");
+			attr(div2, "class", "container has-video svelte-x40fj3");
 			attr(div3, "id", "modal");
-			attr(div3, "class", "svelte-17457rs");
+			attr(div3, "class", "svelte-x40fj3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -13687,7 +13687,7 @@ function create_if_block_4$1(ctx) {
 	};
 }
 
-// (488:0) {#if modalVisible}
+// (489:0) {#if modalVisible}
 function create_if_block$2(ctx) {
 	let div3;
 	let div0;
@@ -13760,13 +13760,13 @@ function create_if_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "bg svelte-17457rs");
-			attr(span, "class", "svelte-17457rs");
+			attr(div0, "class", "bg svelte-x40fj3");
+			attr(span, "class", "svelte-x40fj3");
 			html_tag.a = null;
-			attr(div1, "class", "title svelte-17457rs");
-			attr(div2, "class", "container svelte-17457rs");
+			attr(div1, "class", "title svelte-x40fj3");
+			attr(div2, "class", "container svelte-x40fj3");
 			attr(div3, "id", "modal");
-			attr(div3, "class", "svelte-17457rs");
+			attr(div3, "class", "svelte-x40fj3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -13836,7 +13836,7 @@ function create_if_block$2(ctx) {
 	};
 }
 
-// (520:4) {:else}
+// (521:4) {:else}
 function create_else_block$2(ctx) {
 	let div0;
 	let raw_value = /*modal*/ ctx[3].downloading_content + "";
@@ -14042,11 +14042,11 @@ function create_else_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "content svelte-17457rs");
+			attr(div0, "class", "content svelte-x40fj3");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-17457rs");
+			attr(input0, "class", "form-control svelte-x40fj3");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -14057,21 +14057,21 @@ function create_else_block$2(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-17457rs");
+			attr(input1, "class", "svelte-x40fj3");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "primary button svelte-17457rs");
+			attr(button0, "class", "primary button svelte-x40fj3");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
-			attr(span, "class", "sr-only svelte-17457rs");
+			attr(span, "class", "sr-only svelte-x40fj3");
 			button1.disabled = "disabled";
 			set_style(button1, "display", "none");
 			attr(button1, "type", "button");
-			attr(button1, "class", "loading svelte-17457rs");
+			attr(button1, "class", "loading svelte-x40fj3");
 			attr(div5, "class", "ml-form-embedSubmit");
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-17457rs");
-			attr(form, "class", "ml-block-form svelte-17457rs");
+			attr(input2, "class", "svelte-x40fj3");
+			attr(form, "class", "ml-block-form svelte-x40fj3");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -14159,7 +14159,7 @@ function create_else_block$2(ctx) {
 	};
 }
 
-// (496:4) {#if !downloading}
+// (497:4) {#if !downloading}
 function create_if_block_1$2(ctx) {
 	let div;
 	let raw_value = /*modal*/ ctx[3].content + "";
@@ -14191,7 +14191,7 @@ function create_if_block_1$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "content svelte-17457rs");
+			attr(div, "class", "content svelte-x40fj3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -14241,7 +14241,7 @@ function create_if_block_1$2(ctx) {
 	};
 }
 
-// (498:6) {#if currentPlatform.description}
+// (499:6) {#if currentPlatform.description}
 function create_if_block_3$1(ctx) {
 	let div;
 	let raw_value = /*currentPlatform*/ ctx[7].description + "";
@@ -14258,7 +14258,7 @@ function create_if_block_3$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "content svelte-17457rs");
+			attr(div, "class", "content svelte-x40fj3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -14272,7 +14272,7 @@ function create_if_block_3$1(ctx) {
 	};
 }
 
-// (509:6) {#if !currentPlatform.disabled}
+// (510:6) {#if !currentPlatform.disabled}
 function create_if_block_2$1(ctx) {
 	let a;
 	let span;
@@ -14327,7 +14327,7 @@ function create_if_block_2$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-17457rs");
+			attr(span, "class", "svelte-x40fj3");
 			attr(path, "d", "M18.75 13.75H13.5352L11.7676 15.5176C11.2969 15.9883 10.668 16.25 10 16.25C9.33203 16.25 8.70469 15.99 8.23242 15.5176L6.46484 13.75H1.25C0.559766 13.75 0 14.3098 0 15V18.75C0 19.4402 0.559766 20 1.25 20H18.75C19.4402 20 20 19.4402 20 18.75V15C20 14.3086 19.4414 13.75 18.75 13.75ZM16.875 17.8125C16.3594 17.8125 15.9375 17.3906 15.9375 16.875C15.9375 16.3594 16.3594 15.9375 16.875 15.9375C17.3906 15.9375 17.8125 16.3594 17.8125 16.875C17.8125 17.3906 17.3906 17.8125 16.875 17.8125ZM9.11719 14.6328C9.35938 14.8789 9.67969 15 10 15C10.3203 15 10.6398 14.8779 10.8836 14.6338L15.8836 9.63379C16.3715 9.14551 16.3715 8.35449 15.8836 7.86621C15.3953 7.37793 14.6039 7.37793 14.116 7.86621L11.25 10.7344V1.25C11.25 0.559766 10.6902 0 10 0C9.30859 0 8.75 0.559766 8.75 1.25V10.7344L5.88281 7.86719C5.39492 7.37891 4.60352 7.37891 4.11523 7.86719C3.62734 8.35547 3.62734 9.14648 4.11523 9.63477L9.11719 14.6328Z");
 			attr(path, "fill", "#E6E6E6");
 			attr(svg, "width", "20");
@@ -14335,7 +14335,7 @@ function create_if_block_2$1(ctx) {
 			attr(svg, "viewBox", "0 0 20 20");
 			attr(svg, "fill", "none");
 			attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-			attr(a, "class", "button svelte-17457rs");
+			attr(a, "class", "button svelte-x40fj3");
 			attr(a, "href", a_href_value = /*currentPlatform*/ ctx[7].download_link);
 			attr(a, "download", "");
 			toggle_class(a, "disabled", !consented);
@@ -14396,14 +14396,17 @@ function create_fragment$3(ctx) {
 	let div2;
 	let a3;
 	let t7;
-	let icon3;
 	let t8;
+	let a4;
+	let t9;
+	let icon3;
+	let t10;
 	let div4;
 	let figure;
 	let iframe;
 	let iframe_src_value;
-	let t9;
-	let t10;
+	let t11;
+	let t12;
 	let current;
 
 	icon0 = new Component$1({
@@ -14461,15 +14464,18 @@ function create_fragment$3(ctx) {
 			t6 = space();
 			div2 = element("div");
 			a3 = element("a");
-			t7 = text("Get Started\n        ");
-			create_component(icon3.$$.fragment);
+			t7 = text("Try it");
 			t8 = space();
+			a4 = element("a");
+			t9 = text("Get Started\n        ");
+			create_component(icon3.$$.fragment);
+			t10 = space();
 			div4 = element("div");
 			figure = element("figure");
 			iframe = element("iframe");
-			t9 = space();
+			t11 = space();
 			if (if_block1) if_block1.c();
-			t10 = space();
+			t12 = space();
 			if (if_block2) if_block2.c();
 			this.h();
 		},
@@ -14521,12 +14527,24 @@ function create_fragment$3(ctx) {
 			});
 
 			var a3_nodes = children(a3);
-			t7 = claim_text(a3_nodes, "Get Started\n        ");
-			claim_component(icon3.$$.fragment, a3_nodes);
+			t7 = claim_text(a3_nodes, "Try it");
 			a3_nodes.forEach(detach);
+			t8 = claim_space(div2_nodes);
+
+			a4 = claim_element(div2_nodes, "A", {
+				href: true,
+				class: true,
+				target: true,
+				rel: true
+			});
+
+			var a4_nodes = children(a4);
+			t9 = claim_text(a4_nodes, "Get Started\n        ");
+			claim_component(icon3.$$.fragment, a4_nodes);
+			a4_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
-			t8 = claim_space(header_nodes);
+			t10 = claim_space(header_nodes);
 			div4 = claim_element(header_nodes, "DIV", { class: true });
 			var div4_nodes = children(div4);
 			figure = claim_element(div4_nodes, "FIGURE", { class: true });
@@ -14546,33 +14564,37 @@ function create_fragment$3(ctx) {
 			figure_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
 			header_nodes.forEach(detach);
-			t9 = claim_space(div5_nodes);
+			t11 = claim_space(div5_nodes);
 			if (if_block1) if_block1.l(div5_nodes);
-			t10 = claim_space(div5_nodes);
+			t12 = claim_space(div5_nodes);
 			if (if_block2) if_block2.l(div5_nodes);
 			div5_nodes.forEach(detach);
 			div6_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "gradient svelte-17457rs");
-			attr(h1, "class", "heading svelte-17457rs");
+			attr(div0, "class", "gradient svelte-x40fj3");
+			attr(h1, "class", "heading svelte-x40fj3");
 			attr(a0, "href", "https://svelte.dev");
 			attr(a0, "target", "blank");
-			attr(a0, "class", "svelte-17457rs");
+			attr(a0, "class", "svelte-x40fj3");
 			attr(a1, "href", "https://supabase.com");
 			attr(a1, "target", "blank");
-			attr(a1, "class", "svelte-17457rs");
+			attr(a1, "class", "svelte-x40fj3");
 			attr(a2, "href", "https://github.com");
 			attr(a2, "target", "blank");
-			attr(a2, "class", "svelte-17457rs");
-			attr(div1, "class", "subheading svelte-17457rs");
-			attr(a3, "href", "https://docs.primocms.org/getting-started");
-			attr(a3, "class", "button primary svelte-17457rs");
+			attr(a2, "class", "svelte-x40fj3");
+			attr(div1, "class", "subheading svelte-x40fj3");
+			attr(a3, "href", "http://try.primocms.org/Theme-nonprofit");
+			attr(a3, "class", "button svelte-x40fj3");
 			attr(a3, "target", "_blank");
 			attr(a3, "rel", "noreferrer");
-			attr(div2, "class", "buttons svelte-17457rs");
-			attr(div3, "class", "top svelte-17457rs");
+			attr(a4, "href", "https://docs.primocms.org/getting-started");
+			attr(a4, "class", "button primary svelte-x40fj3");
+			attr(a4, "target", "_blank");
+			attr(a4, "rel", "noreferrer");
+			attr(div2, "class", "buttons svelte-x40fj3");
+			attr(div3, "class", "top svelte-x40fj3");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*video_id*/ ctx[2] + "?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "width", "2304");
 			attr(iframe, "height", "1440");
@@ -14580,10 +14602,10 @@ function create_fragment$3(ctx) {
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
 			iframe.allowFullscreen = true;
 			attr(iframe, "title", "Landing Page Demo");
-			attr(iframe, "class", "svelte-17457rs");
-			attr(figure, "class", "svelte-17457rs");
-			attr(div4, "class", "right svelte-17457rs");
-			attr(header, "class", "section-container svelte-17457rs");
+			attr(iframe, "class", "svelte-x40fj3");
+			attr(figure, "class", "svelte-x40fj3");
+			attr(div4, "class", "right svelte-x40fj3");
+			attr(header, "class", "section-container svelte-x40fj3");
 			attr(div5, "class", "component");
 			attr(div6, "class", "section");
 			attr(div6, "id", "section-885d7628-0612-43ce-8832-6dce430b0e83");
@@ -14614,14 +14636,17 @@ function create_fragment$3(ctx) {
 			append_hydration(div3, div2);
 			append_hydration(div2, a3);
 			append_hydration(a3, t7);
-			mount_component(icon3, a3, null);
-			append_hydration(header, t8);
+			append_hydration(div2, t8);
+			append_hydration(div2, a4);
+			append_hydration(a4, t9);
+			mount_component(icon3, a4, null);
+			append_hydration(header, t10);
 			append_hydration(header, div4);
 			append_hydration(div4, figure);
 			append_hydration(figure, iframe);
-			append_hydration(div5, t9);
+			append_hydration(div5, t11);
 			if (if_block1) if_block1.m(div5, null);
-			append_hydration(div5, t10);
+			append_hydration(div5, t12);
 			if (if_block2) if_block2.m(div5, null);
 			current = true;
 		},
@@ -14655,7 +14680,7 @@ function create_fragment$3(ctx) {
 					if_block1 = create_if_block_4$1(ctx);
 					if_block1.c();
 					transition_in(if_block1, 1);
-					if_block1.m(div5, t10);
+					if_block1.m(div5, t12);
 				}
 			} else if (if_block1) {
 				group_outros();
