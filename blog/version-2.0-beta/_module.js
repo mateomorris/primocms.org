@@ -4080,7 +4080,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-a1fe3266-50c2-4393-8822-d12ea46f6dcf");
+			attr(div2, "id", "section-a1fe3266");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4316,7 +4316,7 @@ function create_fragment$3(ctx) {
 			attr(div0, "class", "section-container svelte-30av69");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-d02d3203-e4ae-495c-8849-f6271151555f");
+			attr(div2, "id", "section-d02d3203");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4408,7 +4408,7 @@ function create_fragment$4(ctx) {
 
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-aa0a9ed8-2ba6-44dc-98e5-a758ae6c888d");
+			attr(div2, "id", "section-aa0a9ed8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4512,7 +4512,7 @@ function create_fragment$5(ctx) {
 			attr(div0, "class", "section-container svelte-989pfk");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-b2fc5bfc-9bd8-4d2d-ad6f-2ac8e63730ba");
+			attr(div2, "id", "section-b2fc5bfc");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -5155,7 +5155,7 @@ function create_fragment$6(ctx) {
 			attr(section, "class", "section-container svelte-1ko0fol");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-8ccbe514-ded8-4ade-b186-c57d94bd2068");
+			attr(div2, "id", "section-8ccbe514");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -5909,7 +5909,7 @@ function create_fragment$7(ctx) {
 			attr(section, "class", "section-container svelte-1ko0fol");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-a972a22a-983b-44dd-bc61-a7df084d20f0");
+			attr(div2, "id", "section-a972a22a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -6106,7 +6106,7 @@ function create_fragment$8(ctx) {
 
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-995637a6-a60a-4868-9e81-031fb3014a28");
+			attr(div2, "id", "section-995637a6");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -6341,7 +6341,7 @@ function create_fragment$9(ctx) {
 			attr(section, "class", "section-container svelte-l5vjov");
 			attr(div2, "class", "component svelte-l5vjov");
 			attr(div3, "class", "section svelte-l5vjov");
-			attr(div3, "id", "section-560b4c34-4f7c-43ef-b30a-a5858512ae29");
+			attr(div3, "id", "section-560b4c34");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -6770,7 +6770,7 @@ function create_fragment$a(ctx) {
 			attr(link, "referrerpolicy", "no-referrer");
 			attr(div14, "class", "component");
 			attr(div15, "class", "section");
-			attr(div15, "id", "section-6e2a693b-787b-48b2-bbed-0c3d73d0371e");
+			attr(div15, "id", "section-6e2a693b");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div15, anchor);
@@ -7092,7 +7092,7 @@ function create_fragment$b(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-a0440e48-f9bd-4f5a-ab33-cb3b46967af6");
+			attr(div3, "id", "section-a0440e48");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -7314,8 +7314,7 @@ function create_fragment$c(ctx) {
 					{
 						"link": {
 							"url": "https://docs.primocms.org",
-							"label": "Docs",
-							"active": false
+							"label": "Docs"
 						},
 						"links": []
 					},

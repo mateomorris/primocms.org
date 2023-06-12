@@ -4069,7 +4069,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-184d9b0c-41a5-4de2-986c-357070212de5");
+			attr(div2, "id", "section-184d9b0c");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4290,7 +4290,7 @@ function create_fragment$3(ctx) {
 
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-cf39569f-f164-4ecb-b73d-3ca057ce4e43");
+			attr(div2, "id", "section-cf39569f");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4571,7 +4571,7 @@ function create_fragment$4(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-16fa7fb9-bd8b-49f7-bb79-d5b2e1abcc04");
+			attr(div3, "id", "section-16fa7fb9");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -4779,8 +4779,7 @@ function create_fragment$5(ctx) {
 					{
 						"link": {
 							"url": "https://docs.primocms.org",
-							"label": "Docs",
-							"active": false
+							"label": "Docs"
 						},
 						"links": []
 					},

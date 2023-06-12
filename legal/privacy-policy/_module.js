@@ -4085,7 +4085,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-84203fcb-2e20-4c74-8a84-7c0234f4c478");
+			attr(div2, "id", "section-84203fcb");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4319,7 +4319,7 @@ function create_fragment$3(ctx) {
 
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-51f79736-8e87-4280-846a-dd046e4754b3");
+			attr(div2, "id", "section-51f79736");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4702,7 +4702,7 @@ function create_fragment$4(ctx) {
 			attr(link, "referrerpolicy", "no-referrer");
 			attr(div14, "class", "component");
 			attr(div15, "class", "section");
-			attr(div15, "id", "section-2326b151-e61e-4ffd-adcf-0c5355d00749");
+			attr(div15, "id", "section-2326b151");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div15, anchor);
@@ -5027,7 +5027,7 @@ function create_fragment$5(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-2761ea9b-7279-468e-9f84-df62300767f2");
+			attr(div3, "id", "section-2761ea9b");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -5250,8 +5250,7 @@ function create_fragment$6(ctx) {
 					{
 						"link": {
 							"url": "https://docs.primocms.org",
-							"label": "Docs",
-							"active": false
+							"label": "Docs"
 						},
 						"links": []
 					},
