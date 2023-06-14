@@ -7800,7 +7800,7 @@ function get_each_context$1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (96:2) {#if root_page}
+// (99:2) {#if root_page}
 function create_if_block_2$1(ctx) {
 	let div;
 	let t;
@@ -7834,7 +7834,7 @@ function create_if_block_2$1(ctx) {
 	};
 }
 
-// (118:4) {:catch error}
+// (121:4) {:catch error}
 function create_catch_block(ctx) {
 	let span;
 	let t;
@@ -7863,7 +7863,7 @@ function create_catch_block(ctx) {
 	};
 }
 
-// (102:4) {:then pages}
+// (105:4) {:then pages}
 function create_then_block(ctx) {
 	let ul;
 	let each_value = /*pages*/ ctx[6];
@@ -7939,7 +7939,7 @@ function create_then_block(ctx) {
 	};
 }
 
-// (107:12) {#if get_title(page) || get_description(page)}
+// (110:12) {#if get_title(page) || get_description(page)}
 function create_if_block$2(ctx) {
 	let div1;
 	let show_if = get_title(/*page*/ ctx[7]);
@@ -7988,7 +7988,7 @@ function create_if_block$2(ctx) {
 	};
 }
 
-// (109:16) {#if get_title(page)}
+// (112:16) {#if get_title(page)}
 function create_if_block_1$2(ctx) {
 	let div;
 	let raw_value = get_title(/*page*/ ctx[7]) + "";
@@ -8018,7 +8018,7 @@ function create_if_block_1$2(ctx) {
 	};
 }
 
-// (104:8) {#each pages as page}
+// (107:8) {#each pages as page}
 function create_each_block$1(ctx) {
 	let li;
 	let a;
@@ -8080,7 +8080,7 @@ function create_each_block$1(ctx) {
 	};
 }
 
-// (100:24)        <Icon width="50" icon="line-md:loading-twotone-loop" />     {:then pages}
+// (103:24)        <Icon width="50" icon="line-md:loading-twotone-loop" />     {:then pages}
 function create_pending_block(ctx) {
 	let icon;
 	let current;
@@ -8119,7 +8119,7 @@ function create_pending_block(ctx) {
 	};
 }
 
-// (99:2) {#key root_page}
+// (102:2) {#key root_page}
 function create_key_block(ctx) {
 	let await_block_anchor;
 	let promise;
@@ -8293,7 +8293,11 @@ function instance$3($$self, $$props, $$invalidate) {
 	let parent_page = {};
 
 	async function get_pages() {
-		const data = await axios.get("/primo.json").then(res => res.data);
+		const data = await axios.get("/primo.json").then(res => {
+			console.log(res);
+			return res.data;
+		});
+
 		console.log({ data });
 		$$invalidate(1, parent_page = data.pages.find(page => page.name === root_page));
 
