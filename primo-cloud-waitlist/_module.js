@@ -4076,7 +4076,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-eb84aa2a");
+			attr(div2, "id", "section-eb84aa2a-95c3-4b72-be1d-4bced38b8007");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -8683,7 +8683,7 @@ function create_fragment$3(ctx) {
 			attr(section, "class", "svelte-1p6usxc");
 			attr(div4, "class", "component");
 			attr(div5, "class", "section");
-			attr(div5, "id", "section-87073b95");
+			attr(div5, "id", "section-87073b95-5a23-48a4-941a-e5fb4c43b4e9");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div5, anchor);
@@ -9130,7 +9130,7 @@ function create_fragment$4(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-65799d76");
+			attr(div3, "id", "section-65799d76-1c21-4854-a6da-eee08fc001ed");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);

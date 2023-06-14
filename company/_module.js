@@ -4069,7 +4069,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-184d9b0c");
+			attr(div2, "id", "section-184d9b0c-41a5-4de2-986c-357070212de5");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4283,14 +4283,14 @@ function create_fragment$3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "section-container content svelte-3los8l");
+			attr(div0, "class", "section-container content svelte-1n46rsv");
 
 			attr(div0, "style", div0_style_value = `
 --heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`);
 
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-cf39569f");
+			attr(div2, "id", "section-cf39569f-f164-4ecb-b73d-3ca057ce4e43");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4571,7 +4571,7 @@ function create_fragment$4(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-16fa7fb9");
+			attr(div3, "id", "section-16fa7fb9-bd8b-49f7-bb79-d5b2e1abcc04");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -4813,8 +4813,8 @@ function create_fragment$5(ctx) {
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				content: {
-					"html": "<h1>the people behind Primo</h1><p>Courtney and Mateo are a Designer/Developer married couple who have been working on Primo together since 2019. They ran a coding bootcamp for refugees together called Cairo Codes, where they saw first-hand the need for a more approachable way to build for the web, which inspired them to work on Primo. </p>",
-					"markdown": "# the people behind Primo\n\nCourtney and Mateo are a Designer/Developer married couple who have been working on Primo together since 2019.\n\n"
+					"html": "<h1>The people behind Primo</h1><p>Courtney and Mateo are a Designer/Developer married couple who have been working on Primo together for the last three years. In 2019, they ran a coding bootcamp for refugees called Cairo Codes, where they saw first-hand the need for a more approachable way to build for the web. </p>",
+					"markdown": "# The people behind Primo\n\nCourtney and Mateo are a Designer/Developer married couple who have been working on Primo together for the last three years. In 2019, they ran a coding bootcamp for refugees called Cairo Codes, where they saw first-hand the need for a more approachable way to build for the web.\n\n"
 				},
 				style: { "center_heading": "" }
 			}

@@ -4077,7 +4077,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-caf0af11");
+			attr(div2, "id", "section-caf0af11-e039-41a5-a9b8-242e7785befc");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -14608,7 +14608,7 @@ function create_fragment$3(ctx) {
 			attr(header, "class", "section-container svelte-x40fj3");
 			attr(div5, "class", "component");
 			attr(div6, "class", "section");
-			attr(div6, "id", "section-885d7628");
+			attr(div6, "id", "section-885d7628-0612-43ce-8832-6dce430b0e83");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div6, anchor);
@@ -15204,7 +15204,7 @@ function create_fragment$4(ctx) {
 			attr(section, "class", "section-container svelte-klxdzx");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-ddd59217");
+			attr(div2, "id", "section-ddd59217-6212-4e8b-84ad-036c1b5285d5");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -15699,7 +15699,7 @@ function create_fragment$5(ctx) {
 			attr(section, "class", "section-container svelte-b58jhf");
 			attr(div0, "class", "component");
 			attr(div1, "class", "section");
-			attr(div1, "id", "section-d294b81b");
+			attr(div1, "id", "section-d294b81b-78a4-4285-8347-c9d078edaec9");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -16163,7 +16163,7 @@ function create_fragment$6(ctx) {
 			attr(link, "referrerpolicy", "no-referrer");
 			attr(div14, "class", "component");
 			attr(div15, "class", "section");
-			attr(div15, "id", "section-b18b744b");
+			attr(div15, "id", "section-b18b744b-92ba-4bf9-96fd-4d86c0a842b8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div15, anchor);
@@ -16485,7 +16485,7 @@ function create_fragment$7(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-48a7ea62");
+			attr(div3, "id", "section-48a7ea62-7557-43b8-bf58-34e02c928c5e");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -16961,8 +16961,8 @@ function create_fragment$8(ctx) {
 				signup_form: {
 					"heading": "Hear about future updates, including:",
 					"subheading": {
-						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique sites, pages, and blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
+						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
 					}
 				}
 			}

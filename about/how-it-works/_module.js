@@ -4085,7 +4085,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-91445a50");
+			attr(div2, "id", "section-84b75474-4558-41a5-8d49-d4ff81fa9623");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4312,14 +4312,14 @@ function create_fragment$3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "section-container content svelte-3los8l");
+			attr(div0, "class", "section-container content svelte-1n46rsv");
 
 			attr(div0, "style", div0_style_value = `
 --heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`);
 
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-e489592d");
+			attr(div2, "id", "section-9980257d-ee6a-42fb-9571-3f3192d385d8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4702,7 +4702,7 @@ function create_fragment$4(ctx) {
 			attr(link, "referrerpolicy", "no-referrer");
 			attr(div14, "class", "component");
 			attr(div15, "class", "section");
-			attr(div15, "id", "section-cf6aadf2");
+			attr(div15, "id", "section-153455ec-e2c7-44c9-9e5d-9b6986d77e9d");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div15, anchor);
@@ -5027,7 +5027,7 @@ function create_fragment$5(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-f158f1ce");
+			attr(div3, "id", "section-225b32e4-9904-4d0c-aea9-30f626533673");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -5285,8 +5285,8 @@ function create_fragment$6(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
 				content: {
-					"html": "<h1>Why Primo</h1><p>Traditional monolithic CMSs like WordPress, Drupal, and Joomla enable quick setup and easy content editing, but rely on antiquated and heavy development practices (often relying on plugins and third-party services to customize the site and add new components). Headless CMSs have popped up to modernize the view layer with modern development practices and frameworks, but have a poor content editing experience due to their full separation from the site's presentation.</p><p>Primo is a modern approach to the monolithic CMS that builds on the traditional monolith's benefits of a quick setup and easy content editing alongside the flexibility of modern development. These combine into a web publishing tool that is significantly easier to use for both technical and non-technical users and enables both to build faster, more secure, more unique websites.</p>",
-					"markdown": "# Why Primo\n\nTraditional monolithic CMSs like WordPress, Drupal, and Joomla enable quick setup and easy content editing, but rely on antiquated and heavy development practices (often relying on plugins and third-party services to customize the site and add new components). Headless CMSs have popped up to modernize the view layer with modern development practices and frameworks, but have a poor content editing experience due to their full separation from the site's presentation.\n\nPrimo is a modern approach to the monolithic CMS that builds on the traditional monolith's benefits of a quick setup and easy content editing alongside the flexibility of modern development. These combine into a web publishing tool that is significantly easier to use for both technical and non-technical users and enables both to build faster, more secure, more unique websites.\n\n"
+					"html": "<h1>How it works</h1><p>Primo is a <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://kit.svelte.dev/\">SvelteKit</a> application which uses <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://supabase.com/\">Supabase</a> as a backend for authentication, a database, and file storage. Sites, pages, blocks, and block instances (i.e. pages sections) are all stored in a <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://www.postgresql.org/\">Postgres</a> database as individual rows containing code, fields, and content.</p><p>On-page editing works by matching a block's field values to text, link, and image values or explicitly set <code>data-key</code> attributes within the block's rendered HTML. Editable text is powered by <code>contentEditable = true</code> and a <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://tiptap.dev/\">TipTap</a>/<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://prosemirror.net/\">ProseMirror</a> editor for <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://www.markdownguide.org/\">Markdown</a> fields. The dev environment is powered by <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://codemirror.net/\">CodeMirror</a>.</p><p>Rollup and the Svelte compiler are used to compile page blocks into Svelte components (alongside PostCSS for nesting) and to build the static files for the deployed website, which Primo then uploads to Github via its REST API.</p><p></p><h2>special thanks to</h2><ul><li><p>Rich Harris</p></li><li><p>Marijn Haverbeke</p></li><li><p>Paul Copplestone &amp; Antony <strong><mark>LastName</mark></strong></p></li><li><p><strong><mark>Creators of TipTap</mark></strong></p></li></ul>",
+					"markdown": "# How it works\n\nPrimo is a [SvelteKit](<https://kit.svelte.dev/>) application which uses [Supabase](<https://supabase.com/>) as a backend for authentication, a database, and file storage. Sites, pages, blocks, and block instances (i.e. pages sections) are all stored in a [Postgres](<https://www.postgresql.org/>) database as individual rows containing code, fields, and content.\n\nOn-page editing works by matching a block's field values to text, link, and image values or explicitly set `data-key` attributes within the block's rendered HTML. Editable text is powered by `contentEditable = true` and a [TipTap](<https://tiptap.dev/>)/[ProseMirror](<https://prosemirror.net/>) editor for [Markdown](<https://www.markdownguide.org/>) fields. The dev environment is powered by [CodeMirror](<https://codemirror.net/>).\n\nRollup and the Svelte compiler are used to compile page blocks into Svelte components (alongside PostCSS for nesting) and to build the static files for the deployed website, which Primo then uploads to Github via its REST API.\n\n\n\n## special thanks to\n\n- Rich Harris\n\n- Marijn Haverbeke\n\n- Paul Copplestone & Antony **<mark>LastName</mark>\n\n    **\n\n- **<mark>Creators of TipTap</mark>\n\n    **\n\n\n<!-- -->\n\n"
 				},
 				style: { "center_heading": "" }
 			}
@@ -5306,8 +5306,8 @@ function create_fragment$6(ctx) {
 				signup_form: {
 					"heading": "Hear about future updates, including:",
 					"subheading": {
-						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique sites, pages, and blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
+						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
 					}
 				}
 			}

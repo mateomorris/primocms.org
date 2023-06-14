@@ -39,6 +39,9 @@ function exclude_internal_props(props) {
             result[k] = props[k];
     return result;
 }
+function null_to_empty(value) {
+    return value == null ? '' : value;
+}
 
 const is_client = typeof window !== 'undefined';
 let now = is_client
@@ -1187,28 +1190,20 @@ function instance($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
-	let { test } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('title' in $$props) $$invalidate(0, title = $$props.title);
 		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(2, description = $$props.description);
-		if ('test' in $$props) $$invalidate(3, test = $$props.test);
 	};
 
-	return [title, favicon, description, test];
+	return [title, favicon, description];
 }
 
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance, create_fragment, safe_not_equal, {
-			title: 0,
-			favicon: 1,
-			description: 2,
-			test: 3
-		});
+		init(this, options, instance, create_fragment, safe_not_equal, { title: 0, favicon: 1, description: 2 });
 	}
 }
 
@@ -3077,36 +3072,36 @@ class Component$1 extends SvelteComponent {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
-	child_ctx[10] = list[i].links;
-	const constants_0 = /*links*/ child_ctx[10].length > 0;
-	child_ctx[11] = constants_0;
+	child_ctx[8] = list[i].link;
+	child_ctx[9] = list[i].links;
+	const constants_0 = /*links*/ child_ctx[9].length > 0;
+	child_ctx[10] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
+	child_ctx[8] = list[i].link;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
-	child_ctx[10] = list[i].links;
-	child_ctx[16] = list[i].featured;
-	const constants_0 = /*links*/ child_ctx[10].length > 0;
-	child_ctx[11] = constants_0;
+	child_ctx[8] = list[i].link;
+	child_ctx[9] = list[i].links;
+	child_ctx[15] = list[i].featured;
+	const constants_0 = /*links*/ child_ctx[9].length > 0;
+	child_ctx[10] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_3(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
+	child_ctx[8] = list[i].link;
 	return child_ctx;
 }
 
-// (246:14) {#if banner.label}
+// (245:14) {#if banner.label}
 function create_if_block_5(ctx) {
 	let div1;
 	let div0;
@@ -3172,7 +3167,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (250:6) {#if banner.cta.label}
+// (249:6) {#if banner.cta.label}
 function create_if_block_6(ctx) {
 	let a;
 	let t_value = /*banner*/ ctx[0].cta.label + "";
@@ -3213,7 +3208,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (273:10) {#if featured}
+// (272:10) {#if featured}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3244,10 +3239,10 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (279:10) {:else}
+// (278:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[9].label + "";
+	let t_value = /*link*/ ctx[8].label + "";
 	let t;
 	let a_href_value;
 
@@ -3265,23 +3260,23 @@ function create_else_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
 			attr(a, "class", "link svelte-d3ch18");
-			toggle_class(a, "active", /*link*/ ctx[9].url === window.location.pathname);
+			toggle_class(a, "active", /*link*/ ctx[8].url === window.location.pathname);
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[9].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
 				attr(a, "href", a_href_value);
 			}
 
 			if (dirty & /*nav, window*/ 4) {
-				toggle_class(a, "active", /*link*/ ctx[9].url === window.location.pathname);
+				toggle_class(a, "active", /*link*/ ctx[8].url === window.location.pathname);
 			}
 		},
 		i: noop,
@@ -3292,10 +3287,10 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (276:10) {#if hasDropdown}
+// (275:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
-	let t0_value = /*link*/ ctx[9].label + "";
+	let t0_value = /*link*/ ctx[8].label + "";
 	let t0;
 	let t1;
 	let span1;
@@ -3340,7 +3335,7 @@ function create_if_block_3(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if ((!current || dirty & /*nav*/ 4) && t0_value !== (t0_value = /*link*/ ctx[9].label + "")) set_data(t0, t0_value);
+			if ((!current || dirty & /*nav*/ 4) && t0_value !== (t0_value = /*link*/ ctx[8].label + "")) set_data(t0, t0_value);
 		},
 		i(local) {
 			if (current) return;
@@ -3360,10 +3355,10 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (286:8) {#if hasDropdown}
+// (285:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
-	let each_value_3 = /*links*/ ctx[10];
+	let each_value_3 = /*links*/ ctx[9];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_3.length; i += 1) {
@@ -3405,7 +3400,7 @@ function create_if_block_2(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*nav*/ 4) {
-				each_value_3 = /*links*/ ctx[10];
+				each_value_3 = /*links*/ ctx[9];
 				let i;
 
 				for (i = 0; i < each_value_3.length; i += 1) {
@@ -3434,10 +3429,10 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (288:12) {#each links as { link }}
+// (287:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[9].label + "";
+	let t_value = /*link*/ ctx[8].label + "";
 	let t;
 	let a_href_value;
 
@@ -3455,7 +3450,7 @@ function create_each_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
 			attr(a, "class", "link svelte-d3ch18");
 		},
 		m(target, anchor) {
@@ -3463,9 +3458,9 @@ function create_each_block_3(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[9].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3475,7 +3470,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (269:4) {#each nav as { link, links, featured }}
+// (268:4) {#each nav as { link, links, featured }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3484,18 +3479,18 @@ function create_each_block_2(ctx) {
 	let if_block1;
 	let t1;
 	let current;
-	let if_block0 = /*featured*/ ctx[16] && create_if_block_4();
+	let if_block0 = /*featured*/ ctx[15] && create_if_block_4();
 	const if_block_creators = [create_if_block_3, create_else_block_1];
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*hasDropdown*/ ctx[11]) return 0;
+		if (/*hasDropdown*/ ctx[10]) return 0;
 		return 1;
 	}
 
 	current_block_type_index = select_block_type(ctx);
 	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-	let if_block2 = /*hasDropdown*/ ctx[11] && create_if_block_2(ctx);
+	let if_block2 = /*hasDropdown*/ ctx[10] && create_if_block_2(ctx);
 
 	return {
 		c() {
@@ -3537,7 +3532,7 @@ function create_each_block_2(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*featured*/ ctx[16]) {
+			if (/*featured*/ ctx[15]) {
 				if (if_block0) ; else {
 					if_block0 = create_if_block_4();
 					if_block0.c();
@@ -3574,7 +3569,7 @@ function create_each_block_2(ctx) {
 				if_block1.m(div0, null);
 			}
 
-			if (/*hasDropdown*/ ctx[11]) {
+			if (/*hasDropdown*/ ctx[10]) {
 				if (if_block2) {
 					if_block2.p(ctx, dirty);
 				} else {
@@ -3605,7 +3600,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (299:2) {#if mobileNavOpen}
+// (298:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3738,10 +3733,10 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (307:8) {:else}
+// (306:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[9].label + "";
+	let t_value = /*link*/ ctx[8].label + "";
 	let t;
 	let a_href_value;
 
@@ -3759,7 +3754,7 @@ function create_else_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
 			attr(a, "class", "link svelte-d3ch18");
 		},
 		m(target, anchor) {
@@ -3767,9 +3762,9 @@ function create_else_block$1(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[9].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3779,10 +3774,10 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (303:8) {#if hasDropdown}
+// (302:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
-	let each_value_1 = /*links*/ ctx[10];
+	let each_value_1 = /*links*/ ctx[9];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -3815,7 +3810,7 @@ function create_if_block_1$1(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*nav*/ 4) {
-				each_value_1 = /*links*/ ctx[10];
+				each_value_1 = /*links*/ ctx[9];
 				let i;
 
 				for (i = 0; i < each_value_1.length; i += 1) {
@@ -3844,10 +3839,10 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (304:10) {#each links as { link }}
+// (303:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[9].label + "";
+	let t_value = /*link*/ ctx[8].label + "";
 	let t;
 	let a_href_value;
 
@@ -3865,7 +3860,7 @@ function create_each_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
 			attr(a, "class", "link svelte-d3ch18");
 		},
 		m(target, anchor) {
@@ -3873,9 +3868,9 @@ function create_each_block_1(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[9].label + "")) set_data(t, t_value);
+			if (dirty & /*nav*/ 4 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (dirty & /*nav*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -3885,12 +3880,12 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (301:6) {#each nav as { link, links }}
+// (300:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
 	function select_block_type_1(ctx, dirty) {
-		if (/*hasDropdown*/ ctx[11]) return create_if_block_1$1;
+		if (/*hasDropdown*/ ctx[10]) return create_if_block_1$1;
 		return create_else_block$1;
 	}
 
@@ -4085,7 +4080,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-84203fcb-2e20-4c74-8a84-7c0234f4c478");
+			attr(div2, "id", "section-c8f8348c-ee71-4d15-a1c9-a6b869d2c7a2");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4234,7 +4229,6 @@ function instance$2($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
-	let { test } = $$props;
 	let { banner } = $$props;
 	let { logo } = $$props;
 	let { nav } = $$props;
@@ -4248,23 +4242,12 @@ function instance$2($$self, $$props, $$invalidate) {
 		if ('title' in $$props) $$invalidate(5, title = $$props.title);
 		if ('favicon' in $$props) $$invalidate(6, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(7, description = $$props.description);
-		if ('test' in $$props) $$invalidate(8, test = $$props.test);
 		if ('banner' in $$props) $$invalidate(0, banner = $$props.banner);
 		if ('logo' in $$props) $$invalidate(1, logo = $$props.logo);
 		if ('nav' in $$props) $$invalidate(2, nav = $$props.nav);
 	};
 
-	return [
-		banner,
-		logo,
-		nav,
-		mobileNavOpen,
-		toggleMobileNav,
-		title,
-		favicon,
-		description,
-		test
-	];
+	return [banner, logo, nav, mobileNavOpen, toggleMobileNav, title, favicon, description];
 }
 
 class Component$2 extends SvelteComponent {
@@ -4275,7 +4258,6 @@ class Component$2 extends SvelteComponent {
 			title: 5,
 			favicon: 6,
 			description: 7,
-			test: 8,
 			banner: 0,
 			logo: 1,
 			nav: 2
@@ -4286,6 +4268,113 @@ class Component$2 extends SvelteComponent {
 /* generated by Svelte v3.58.0 */
 
 function create_fragment$3(ctx) {
+	let div2;
+	let div1;
+	let div0;
+	let h1;
+	let t0;
+	let t1;
+	let span;
+	let t2;
+
+	return {
+		c() {
+			div2 = element("div");
+			div1 = element("div");
+			div0 = element("div");
+			h1 = element("h1");
+			t0 = text(/*heading*/ ctx[0]);
+			t1 = space();
+			span = element("span");
+			t2 = text(/*date*/ ctx[1]);
+			this.h();
+		},
+		l(nodes) {
+			div2 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div2_nodes = children(div2);
+			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			h1 = claim_element(div0_nodes, "H1", { class: true });
+			var h1_nodes = children(h1);
+			t0 = claim_text(h1_nodes, /*heading*/ ctx[0]);
+			h1_nodes.forEach(detach);
+			t1 = claim_space(div0_nodes);
+			span = claim_element(div0_nodes, "SPAN", { class: true });
+			var span_nodes = children(span);
+			t2 = claim_text(span_nodes, /*date*/ ctx[1]);
+			span_nodes.forEach(detach);
+			div0_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			div2_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(h1, "class", "heading svelte-30av69");
+			attr(span, "class", "date");
+			attr(div0, "class", "section-container svelte-30av69");
+			attr(div1, "class", "component");
+			attr(div2, "class", "section");
+			attr(div2, "id", "section-bc4bbc90-efce-4242-874c-73570c9f9208");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div2, anchor);
+			append_hydration(div2, div1);
+			append_hydration(div1, div0);
+			append_hydration(div0, h1);
+			append_hydration(h1, t0);
+			append_hydration(div0, t1);
+			append_hydration(div0, span);
+			append_hydration(span, t2);
+		},
+		p(ctx, [dirty]) {
+			if (dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
+			if (dirty & /*date*/ 2) set_data(t2, /*date*/ ctx[1]);
+		},
+		i: noop,
+		o: noop,
+		d(detaching) {
+			if (detaching) detach(div2);
+		}
+	};
+}
+
+function instance$3($$self, $$props, $$invalidate) {
+	let { title } = $$props;
+	let { favicon } = $$props;
+	let { description } = $$props;
+	let { heading } = $$props;
+	let { date } = $$props;
+
+	$$self.$$set = $$props => {
+		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
+		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
+		if ('date' in $$props) $$invalidate(1, date = $$props.date);
+	};
+
+	return [heading, date, title, favicon, description];
+}
+
+class Component$3 extends SvelteComponent {
+	constructor(options) {
+		super();
+
+		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
+			title: 2,
+			favicon: 3,
+			description: 4,
+			heading: 0,
+			date: 1
+		});
+	}
+}
+
+/* generated by Svelte v3.58.0 */
+
+function create_fragment$4(ctx) {
 	let div2;
 	let div1;
 	let div0;
@@ -4319,7 +4408,7 @@ function create_fragment$3(ctx) {
 
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-51f79736-8e87-4280-846a-dd046e4754b3");
+			attr(div2, "id", "section-87662dc4-6968-4fef-9530-870d9633865b");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4342,11 +4431,10 @@ function create_fragment$3(ctx) {
 	};
 }
 
-function instance$3($$self, $$props, $$invalidate) {
+function instance$4($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
-	let { test } = $$props;
 	let { content } = $$props;
 	let { style } = $$props;
 
@@ -4354,23 +4442,21 @@ function instance$3($$self, $$props, $$invalidate) {
 		if ('title' in $$props) $$invalidate(2, title = $$props.title);
 		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(4, description = $$props.description);
-		if ('test' in $$props) $$invalidate(5, test = $$props.test);
 		if ('content' in $$props) $$invalidate(0, content = $$props.content);
 		if ('style' in $$props) $$invalidate(1, style = $$props.style);
 	};
 
-	return [content, style, title, favicon, description, test];
+	return [content, style, title, favicon, description];
 }
 
-class Component$3 extends SvelteComponent {
+class Component$4 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
+		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
 			title: 2,
 			favicon: 3,
 			description: 4,
-			test: 5,
 			content: 0,
 			style: 1
 		});
@@ -4379,7 +4465,382 @@ class Component$3 extends SvelteComponent {
 
 /* generated by Svelte v3.58.0 */
 
-function create_fragment$4(ctx) {
+function create_fragment$5(ctx) {
+	let div2;
+	let div1;
+	let div0;
+	let raw_value = /*content*/ ctx[0].html + "";
+	let div0_style_value;
+
+	return {
+		c() {
+			div2 = element("div");
+			div1 = element("div");
+			div0 = element("div");
+			this.h();
+		},
+		l(nodes) {
+			div2 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div2_nodes = children(div2);
+			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			div0 = claim_element(div1_nodes, "DIV", { class: true, style: true });
+			var div0_nodes = children(div0);
+			div0_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			div2_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(div0, "class", "section-container content svelte-1n46rsv");
+
+			attr(div0, "style", div0_style_value = `
+--heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`);
+
+			attr(div1, "class", "component");
+			attr(div2, "class", "section");
+			attr(div2, "id", "section-0e679720-2bae-4949-ae54-5b46592af1d8");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div2, anchor);
+			append_hydration(div2, div1);
+			append_hydration(div1, div0);
+			div0.innerHTML = raw_value;
+		},
+		p(ctx, [dirty]) {
+			if (dirty & /*content*/ 1 && raw_value !== (raw_value = /*content*/ ctx[0].html + "")) div0.innerHTML = raw_value;
+			if (dirty & /*style*/ 2 && div0_style_value !== (div0_style_value = `
+--heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`)) {
+				attr(div0, "style", div0_style_value);
+			}
+		},
+		i: noop,
+		o: noop,
+		d(detaching) {
+			if (detaching) detach(div2);
+		}
+	};
+}
+
+function instance$5($$self, $$props, $$invalidate) {
+	let { title } = $$props;
+	let { favicon } = $$props;
+	let { description } = $$props;
+	let { content } = $$props;
+	let { style } = $$props;
+
+	$$self.$$set = $$props => {
+		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
+		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+		if ('content' in $$props) $$invalidate(0, content = $$props.content);
+		if ('style' in $$props) $$invalidate(1, style = $$props.style);
+	};
+
+	return [content, style, title, favicon, description];
+}
+
+class Component$5 extends SvelteComponent {
+	constructor(options) {
+		super();
+
+		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
+			title: 2,
+			favicon: 3,
+			description: 4,
+			content: 0,
+			style: 1
+		});
+	}
+}
+
+/* generated by Svelte v3.58.0 */
+
+function get_each_context$1(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[6] = list[i];
+	return child_ctx;
+}
+
+// (71:4) {#if content.html}
+function create_if_block$2(ctx) {
+	let h3;
+	let raw_value = /*content*/ ctx[1].html + "";
+
+	return {
+		c() {
+			h3 = element("h3");
+			this.h();
+		},
+		l(nodes) {
+			h3 = claim_element(nodes, "H3", { class: true });
+			var h3_nodes = children(h3);
+			h3_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(h3, "class", "subheading svelte-l5vjov");
+		},
+		m(target, anchor) {
+			insert_hydration(target, h3, anchor);
+			h3.innerHTML = raw_value;
+		},
+		p(ctx, dirty) {
+			if (dirty & /*content*/ 2 && raw_value !== (raw_value = /*content*/ ctx[1].html + "")) h3.innerHTML = raw_value;		},
+		d(detaching) {
+			if (detaching) detach(h3);
+		}
+	};
+}
+
+// (75:6) {#each buttons as button}
+function create_each_block$1(ctx) {
+	let a;
+	let i;
+	let i_class_value;
+	let t0;
+	let span;
+	let t1_value = /*button*/ ctx[6].link.label + "";
+	let t1;
+	let t2;
+	let a_href_value;
+
+	return {
+		c() {
+			a = element("a");
+			i = element("i");
+			t0 = space();
+			span = element("span");
+			t1 = text(t1_value);
+			t2 = space();
+			this.h();
+		},
+		l(nodes) {
+			a = claim_element(nodes, "A", { href: true, class: true });
+			var a_nodes = children(a);
+			i = claim_element(a_nodes, "I", { class: true });
+			children(i).forEach(detach);
+			t0 = claim_space(a_nodes);
+			span = claim_element(a_nodes, "SPAN", { class: true });
+			var span_nodes = children(span);
+			t1 = claim_text(span_nodes, t1_value);
+			span_nodes.forEach(detach);
+			t2 = claim_space(a_nodes);
+			a_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(i, "class", i_class_value = "" + (null_to_empty(/*button*/ ctx[6].icon) + " svelte-l5vjov"));
+			attr(span, "class", "svelte-l5vjov");
+			attr(a, "href", a_href_value = /*button*/ ctx[6].link.url);
+			attr(a, "class", "button is-primary svelte-l5vjov");
+		},
+		m(target, anchor) {
+			insert_hydration(target, a, anchor);
+			append_hydration(a, i);
+			append_hydration(a, t0);
+			append_hydration(a, span);
+			append_hydration(span, t1);
+			append_hydration(a, t2);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*buttons*/ 4 && i_class_value !== (i_class_value = "" + (null_to_empty(/*button*/ ctx[6].icon) + " svelte-l5vjov"))) {
+				attr(i, "class", i_class_value);
+			}
+
+			if (dirty & /*buttons*/ 4 && t1_value !== (t1_value = /*button*/ ctx[6].link.label + "")) set_data(t1, t1_value);
+
+			if (dirty & /*buttons*/ 4 && a_href_value !== (a_href_value = /*button*/ ctx[6].link.url)) {
+				attr(a, "href", a_href_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(a);
+		}
+	};
+}
+
+function create_fragment$6(ctx) {
+	let div3;
+	let div2;
+	let section;
+	let div1;
+	let h2;
+	let t0;
+	let t1;
+	let t2;
+	let div0;
+	let if_block = /*content*/ ctx[1].html && create_if_block$2(ctx);
+	let each_value = /*buttons*/ ctx[2];
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+	}
+
+	return {
+		c() {
+			div3 = element("div");
+			div2 = element("div");
+			section = element("section");
+			div1 = element("div");
+			h2 = element("h2");
+			t0 = text(/*heading*/ ctx[0]);
+			t1 = space();
+			if (if_block) if_block.c();
+			t2 = space();
+			div0 = element("div");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			this.h();
+		},
+		l(nodes) {
+			div3 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div3_nodes = children(div3);
+			div2 = claim_element(div3_nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			section = claim_element(div2_nodes, "SECTION", { class: true });
+			var section_nodes = children(section);
+			div1 = claim_element(section_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			h2 = claim_element(div1_nodes, "H2", { class: true });
+			var h2_nodes = children(h2);
+			t0 = claim_text(h2_nodes, /*heading*/ ctx[0]);
+			h2_nodes.forEach(detach);
+			t1 = claim_space(div1_nodes);
+			if (if_block) if_block.l(div1_nodes);
+			t2 = claim_space(div1_nodes);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].l(div0_nodes);
+			}
+
+			div0_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			section_nodes.forEach(detach);
+			div2_nodes.forEach(detach);
+			div3_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(h2, "class", "heading svelte-l5vjov");
+			attr(div0, "class", "buttons svelte-l5vjov");
+			attr(div1, "class", "card svelte-l5vjov");
+			attr(section, "class", "section-container svelte-l5vjov");
+			attr(div2, "class", "component svelte-l5vjov");
+			attr(div3, "class", "section svelte-l5vjov");
+			attr(div3, "id", "section-c14942c6-59c7-4ee3-868c-9573f4b99728");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div3, anchor);
+			append_hydration(div3, div2);
+			append_hydration(div2, section);
+			append_hydration(section, div1);
+			append_hydration(div1, h2);
+			append_hydration(h2, t0);
+			append_hydration(div1, t1);
+			if (if_block) if_block.m(div1, null);
+			append_hydration(div1, t2);
+			append_hydration(div1, div0);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				if (each_blocks[i]) {
+					each_blocks[i].m(div0, null);
+				}
+			}
+		},
+		p(ctx, [dirty]) {
+			if (dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
+
+			if (/*content*/ ctx[1].html) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+				} else {
+					if_block = create_if_block$2(ctx);
+					if_block.c();
+					if_block.m(div1, t2);
+				}
+			} else if (if_block) {
+				if_block.d(1);
+				if_block = null;
+			}
+
+			if (dirty & /*buttons*/ 4) {
+				each_value = /*buttons*/ ctx[2];
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block$1(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		i: noop,
+		o: noop,
+		d(detaching) {
+			if (detaching) detach(div3);
+			if (if_block) if_block.d();
+			destroy_each(each_blocks, detaching);
+		}
+	};
+}
+
+function instance$6($$self, $$props, $$invalidate) {
+	let { title } = $$props;
+	let { favicon } = $$props;
+	let { description } = $$props;
+	let { heading } = $$props;
+	let { content } = $$props;
+	let { buttons } = $$props;
+
+	$$self.$$set = $$props => {
+		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(4, favicon = $$props.favicon);
+		if ('description' in $$props) $$invalidate(5, description = $$props.description);
+		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
+		if ('content' in $$props) $$invalidate(1, content = $$props.content);
+		if ('buttons' in $$props) $$invalidate(2, buttons = $$props.buttons);
+	};
+
+	return [heading, content, buttons, title, favicon, description];
+}
+
+class Component$6 extends SvelteComponent {
+	constructor(options) {
+		super();
+
+		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
+			title: 3,
+			favicon: 4,
+			description: 5,
+			heading: 0,
+			content: 1,
+			buttons: 2
+		});
+	}
+}
+
+/* generated by Svelte v3.58.0 */
+
+function create_fragment$7(ctx) {
 	let div15;
 	let div14;
 	let section;
@@ -4702,7 +5163,7 @@ function create_fragment$4(ctx) {
 			attr(link, "referrerpolicy", "no-referrer");
 			attr(div14, "class", "component");
 			attr(div15, "class", "section");
-			attr(div15, "id", "section-2326b151-e61e-4ffd-adcf-0c5355d00749");
+			attr(div15, "id", "section-43239219-0c93-45c7-938b-c77bfdaa7767");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div15, anchor);
@@ -4769,33 +5230,30 @@ function create_fragment$4(ctx) {
 	};
 }
 
-function instance$4($$self, $$props, $$invalidate) {
+function instance$7($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
-	let { test } = $$props;
 	let { signup_form } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('title' in $$props) $$invalidate(1, title = $$props.title);
 		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(3, description = $$props.description);
-		if ('test' in $$props) $$invalidate(4, test = $$props.test);
 		if ('signup_form' in $$props) $$invalidate(0, signup_form = $$props.signup_form);
 	};
 
-	return [signup_form, title, favicon, description, test];
+	return [signup_form, title, favicon, description];
 }
 
-class Component$4 extends SvelteComponent {
+class Component$7 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
+		init(this, options, instance$7, create_fragment$7, safe_not_equal, {
 			title: 1,
 			favicon: 2,
 			description: 3,
-			test: 4,
 			signup_form: 0
 		});
 	}
@@ -4803,23 +5261,23 @@ class Component$4 extends SvelteComponent {
 
 /* generated by Svelte v3.58.0 */
 
-function get_each_context$1(ctx, list, i) {
+function get_each_context$2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
-	child_ctx[10] = list[i].icon;
+	child_ctx[8] = list[i].link;
+	child_ctx[9] = list[i].icon;
 	return child_ctx;
 }
 
 function get_each_context_1$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i].link;
+	child_ctx[8] = list[i].link;
 	return child_ctx;
 }
 
-// (110:8) {#each footer_nav as { link }}
+// (109:8) {#each footer_nav as { link }}
 function create_each_block_1$1(ctx) {
 	let a;
-	let t_value = /*link*/ ctx[9].label + "";
+	let t_value = /*link*/ ctx[8].label + "";
 	let t;
 	let a_href_value;
 
@@ -4837,7 +5295,7 @@ function create_each_block_1$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
 			attr(a, "class", "svelte-13um1f6");
 		},
 		m(target, anchor) {
@@ -4845,9 +5303,9 @@ function create_each_block_1$1(ctx) {
 			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*footer_nav*/ 1 && t_value !== (t_value = /*link*/ ctx[9].label + "")) set_data(t, t_value);
+			if (dirty & /*footer_nav*/ 1 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
 
-			if (dirty & /*footer_nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (dirty & /*footer_nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -4857,8 +5315,8 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (121:6) {#each social as { link, icon }}
-function create_each_block$1(ctx) {
+// (120:6) {#each social as { link, icon }}
+function create_each_block$2(ctx) {
 	let li;
 	let a;
 	let icon;
@@ -4866,7 +5324,7 @@ function create_each_block$1(ctx) {
 	let a_aria_label_value;
 	let t;
 	let current;
-	icon = new Component$1({ props: { icon: /*icon*/ ctx[10] } });
+	icon = new Component$1({ props: { icon: /*icon*/ ctx[9] } });
 
 	return {
 		c() {
@@ -4894,8 +5352,8 @@ function create_each_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[9].label);
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
+			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[8].label);
 			attr(a, "class", "svelte-13um1f6");
 		},
 		m(target, anchor) {
@@ -4907,14 +5365,14 @@ function create_each_block$1(ctx) {
 		},
 		p(ctx, dirty) {
 			const icon_changes = {};
-			if (dirty & /*social*/ 2) icon_changes.icon = /*icon*/ ctx[10];
+			if (dirty & /*social*/ 2) icon_changes.icon = /*icon*/ ctx[9];
 			icon.$set(icon_changes);
 
-			if (!current || dirty & /*social*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[9].url)) {
+			if (!current || dirty & /*social*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
 				attr(a, "href", a_href_value);
 			}
 
-			if (!current || dirty & /*social*/ 2 && a_aria_label_value !== (a_aria_label_value = /*link*/ ctx[9].label)) {
+			if (!current || dirty & /*social*/ 2 && a_aria_label_value !== (a_aria_label_value = /*link*/ ctx[8].label)) {
 				attr(a, "aria-label", a_aria_label_value);
 			}
 		},
@@ -4934,7 +5392,7 @@ function create_each_block$1(ctx) {
 	};
 }
 
-function create_fragment$5(ctx) {
+function create_fragment$8(ctx) {
 	let div3;
 	let div2;
 	let footer;
@@ -4955,7 +5413,7 @@ function create_fragment$5(ctx) {
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
 	}
 
 	const out = i => transition_out(each_blocks[i], 1, 1, () => {
@@ -5027,7 +5485,7 @@ function create_fragment$5(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-2761ea9b-7279-468e-9f84-df62300767f2");
+			attr(div3, "id", "section-a8e108c0-e411-429c-9171-bd76891ee569");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -5083,13 +5541,13 @@ function create_fragment$5(ctx) {
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context$1(ctx, each_value, i);
+					const child_ctx = get_each_context$2(ctx, each_value, i);
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
 						transition_in(each_blocks[i], 1);
 					} else {
-						each_blocks[i] = create_each_block$1(child_ctx);
+						each_blocks[i] = create_each_block$2(child_ctx);
 						each_blocks[i].c();
 						transition_in(each_blocks[i], 1);
 						each_blocks[i].m(ul, null);
@@ -5131,11 +5589,10 @@ function create_fragment$5(ctx) {
 	};
 }
 
-function instance$5($$self, $$props, $$invalidate) {
+function instance$8($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
-	let { test } = $$props;
 	let { footer_nav } = $$props;
 	let { social } = $$props;
 
@@ -5143,23 +5600,21 @@ function instance$5($$self, $$props, $$invalidate) {
 		if ('title' in $$props) $$invalidate(2, title = $$props.title);
 		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(4, description = $$props.description);
-		if ('test' in $$props) $$invalidate(5, test = $$props.test);
 		if ('footer_nav' in $$props) $$invalidate(0, footer_nav = $$props.footer_nav);
 		if ('social' in $$props) $$invalidate(1, social = $$props.social);
 	};
 
-	return [footer_nav, social, title, favicon, description, test];
+	return [footer_nav, social, title, favicon, description];
 }
 
-class Component$5 extends SvelteComponent {
+class Component$8 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
+		init(this, options, instance$8, create_fragment$8, safe_not_equal, {
 			title: 2,
 			favicon: 3,
 			description: 4,
-			test: 5,
 			footer_nav: 0,
 			social: 1
 		});
@@ -5168,38 +5623,30 @@ class Component$5 extends SvelteComponent {
 
 /* generated by Svelte v3.58.0 */
 
-function instance$6($$self, $$props, $$invalidate) {
+function instance$9($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
-	let { test } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('title' in $$props) $$invalidate(0, title = $$props.title);
 		if ('favicon' in $$props) $$invalidate(1, favicon = $$props.favicon);
 		if ('description' in $$props) $$invalidate(2, description = $$props.description);
-		if ('test' in $$props) $$invalidate(3, test = $$props.test);
 	};
 
-	return [title, favicon, description, test];
+	return [title, favicon, description];
 }
 
-class Component$6 extends SvelteComponent {
+class Component$9 extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance$6, null, safe_not_equal, {
-			title: 0,
-			favicon: 1,
-			description: 2,
-			test: 3
-		});
+		init(this, options, instance$9, null, safe_not_equal, { title: 0, favicon: 1, description: 2 });
 	}
 }
 
 /* generated by Svelte v3.58.0 */
 
-function create_fragment$6(ctx) {
+function create_fragment$9(ctx) {
 	let component_0;
 	let t0;
 	let component_1;
@@ -5211,6 +5658,12 @@ function create_fragment$6(ctx) {
 	let component_4;
 	let t4;
 	let component_5;
+	let t5;
+	let component_6;
+	let t6;
+	let component_7;
+	let t7;
+	let component_8;
 	let current;
 
 	component_0 = new Component({
@@ -5222,8 +5675,7 @@ function create_fragment$6(ctx) {
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE"
+				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time."
 			}
 		});
 
@@ -5237,7 +5689,6 @@ function create_fragment$6(ctx) {
 					"size": 8
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE",
 				banner: {
 					"cta": { "url": "", "label": "", "active": false },
 					"label": ""
@@ -5283,12 +5734,8 @@ function create_fragment$6(ctx) {
 					"size": 8
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE",
-				content: {
-					"html": "<h1>Privacy Policy</h1><p>Effective date: March 5, 2022</p><p><strong>Primo Creative LLC</strong> (“us”, “we”, or “our”) operates the <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"http://primo.so\">primo.so</a> website, primo desktop app and primo server.</p><p>This page informs you of our policies regarding the collection, use and disclosure of usage data when you use our desktop application, server software, or <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"http://primo.so\">primo.so</a> website (Services).</p><h2>Definitions</h2><p>Services</p><ul><li><p>primo desktop app, primo server, and <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"https://primo.so\">https://primo.so</a> website</p></li></ul><p><br class=\"ProseMirror-trailingBreak\"></p><h4>Usage Data</h4><ul><li><p>Usage Data is data collected automatically either generated by the use of the Services or from the Services infrastructure itself (for example, number of components added to the page).</p><p><br class=\"ProseMirror-trailingBreak\"></p></li></ul><h4>Personal Data</h4><p>Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</p><p><br class=\"ProseMirror-trailingBreak\"></p><h4>Data Controller</h4><ul><li><p>Data Controller means the natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal information are, or are to be, processed.</p></li><li><p>For the purpose of this Privacy Policy, we are a Data Controller of your Personal Data.</p><p><br class=\"ProseMirror-trailingBreak\"></p></li></ul><h4>Data Processors (or Service Providers)</h4><ul><li><p>Data Processor (or Service Provider) means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.</p></li></ul><h4><br class=\"ProseMirror-trailingBreak\"></h4><h2>Information Collection and Use</h2><h4>Personal Data</h4><p>While using our primo website, we may ask you to provide us with certain personally identifiable information when you sign up to receive newsletters and features updates (\"Personal Data\"). Personally identifiable information includes your <strong>email address </strong>and <strong>country</strong>.</p><p>We may use this Personal Data to contact you with newsletters or promotional material that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by contacting us.&nbsp;</p><h2>Use of Data</h2><p>Primo uses the collected data for various purposes:</p><ul><li><p>To provide and maintain our Services</p></li><li><p>To notify you about changes to our Services</p></li><li><p>To gather analysis or valuable information so that we can improve our Services</p></li><li><p>To monitor the usage of our Services</p></li><li><p>To detect, prevent and address technical issues</p></li><li><p>To provide you with news, special offers and general information about other goods and services related to primo Services</p></li></ul><h2>Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)</h2><p>Primo can process your Personal Data because:&nbsp;</p><ul><li><p>We need to perform a contract with you</p></li><li><p>You have given us permission to do so</p></li><li><p>The processing is in our legitimate interests and it is not overridden by your rights</p></li><li><p>To comply with the law</p></li></ul><h2>Retention of Data</h2><p>Primo will retain your Personal Data (email address) only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes and enforce our legal agreements and policies.</p><p>Primo will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of our Services, or we are legally obligated to retain this data for longer periods.</p><h2>Transfer of Data</h2><p>Your information, including Personal Data, may be transferred to - and maintained on - computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p><p>If you are located outside the United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.</p><p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p><p>Primo will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p><h2>Security of Data</h2><p>The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p><h2>Your Data Protection Rights under the General Data Protection Regulation (GDPR)</h2><p>If you are a resident of the European Economic Area (EEA), you have certain data protection rights. Primo aims to take reasonable steps to allow you to correct, amend, delete or limit the use of your Personal Data.</p><p>If you wish to be informed about what Personal Data we hold about you and if you want it to be removed from our systems, please contact us.</p><p>In certain circumstances, you have the following data protection rights:</p><ul><li><p><strong>The right to access, update or delete the information we have on you.</strong> Whenever made possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.</p></li><li><p><strong>The right of rectification.</strong> You have the right to have your information rectified if that information is inaccurate or incomplete.</p></li><li><p><strong>The right to object.</strong> You have the right to object to our processing of your Personal Data.</p></li><li><p><strong>The right of restriction.</strong> You have the right to request that we restrict the processing of your personal information.</p></li><li><p><strong>The right to data portability.</strong> You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.</p></li><li><p><strong>The right to withdraw consent.</strong> You also have the right to withdraw your consent at any time where Primo relied on your consent to process your personal information.</p></li></ul><p>Please note that we may ask you to verify your identity before responding to such requests.</p><p>You have the right to complain to a Data Protection Authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA).</p><h2>Service Providers</h2><p>We may employ third party companies and individuals to facilitate our Services (\"Service Providers\"), provide the Services on our behalf, perform Services-related services or assist us in analyzing how our Services is used.</p><p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p><h4>Mailer Lite</h4><h4>Supabase</h4><h4>Simple Analytics</h4><h2>Changes to This Privacy Policy</h2><p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p><p>We will let you know via email and/or a prominent notice on our Services, prior to the change becoming effective and update the \"effective date\" at the top of this Privacy Policy.</p><p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p><h2>Contact Us</h2><p>If you have any questions about this Privacy Policy, please contact us by email: <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link link link link\" href=\"mailto:contact@primo.so\"><strong>contact@primo.so</strong></a></p>",
-					"markdown": "# Privacy Policy\n\nEffective date: March 5, 2022\n\n**Primo Creative LLC** (“us”, “we”, or “our”) operates the [primo.so](<http://primo.so>) website, primo desktop app and primo server.\n\nThis page informs you of our policies regarding the collection, use and disclosure of usage data when you use our desktop application, server software, or [primo.so](<http://primo.so>) website (Services).\n\n## Definitions\n\nServices\n\n- primo desktop app, primo server, and [https://primo.so](<https://primo.so>) website\n\n\n<!-- -->\n\n<br class=\"ProseMirror-trailingBreak\">\n\n#### Usage Data\n\n- Usage Data is data collected automatically either generated by the use of the Services or from the Services infrastructure itself (for example, number of components added to the page).\n\n    <br class=\"ProseMirror-trailingBreak\">\n\n\n<!-- -->\n\n#### Personal Data\n\nPersonal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).\n\n<br class=\"ProseMirror-trailingBreak\">\n\n#### Data Controller\n\n- Data Controller means the natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal information are, or are to be, processed.\n\n- For the purpose of this Privacy Policy, we are a Data Controller of your Personal Data.\n\n    <br class=\"ProseMirror-trailingBreak\">\n\n\n<!-- -->\n\n#### Data Processors (or Service Providers)\n\n- Data Processor (or Service Provider) means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.\n\n\n<!-- -->\n\n#### <br class=\"ProseMirror-trailingBreak\">\n\n\n\n## Information Collection and Use\n\n#### Personal Data\n\nWhile using our primo website, we may ask you to provide us with certain personally identifiable information when you sign up to receive newsletters and features updates (\"Personal Data\"). Personally identifiable information includes your **email address **and **country**.\n\nWe may use this Personal Data to contact you with newsletters or promotional material that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by contacting us.\n\n## Use of Data\n\nPrimo uses the collected data for various purposes:\n\n- To provide and maintain our Services\n\n- To notify you about changes to our Services\n\n- To gather analysis or valuable information so that we can improve our Services\n\n- To monitor the usage of our Services\n\n- To detect, prevent and address technical issues\n\n- To provide you with news, special offers and general information about other goods and services related to primo Services\n\n\n<!-- -->\n\n## Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)\n\nPrimo can process your Personal Data because:\n\n- We need to perform a contract with you\n\n- You have given us permission to do so\n\n- The processing is in our legitimate interests and it is not overridden by your rights\n\n- To comply with the law\n\n\n<!-- -->\n\n## Retention of Data\n\nPrimo will retain your Personal Data (email address) only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes and enforce our legal agreements and policies.\n\nPrimo will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of our Services, or we are legally obligated to retain this data for longer periods.\n\n## Transfer of Data\n\nYour information, including Personal Data, may be transferred to - and maintained on - computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.\n\nIf you are located outside the United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.\n\nYour consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.\n\nPrimo will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.\n\n## Security of Data\n\nThe security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.\n\n## Your Data Protection Rights under the General Data Protection Regulation (GDPR)\n\nIf you are a resident of the European Economic Area (EEA), you have certain data protection rights. Primo aims to take reasonable steps to allow you to correct, amend, delete or limit the use of your Personal Data.\n\nIf you wish to be informed about what Personal Data we hold about you and if you want it to be removed from our systems, please contact us.\n\nIn certain circumstances, you have the following data protection rights:\n\n- **The right to access, update or delete the information we have on you.** Whenever made possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.\n\n- **The right of rectification.** You have the right to have your information rectified if that information is inaccurate or incomplete.\n\n- **The right to object.** You have the right to object to our processing of your Personal Data.\n\n- **The right of restriction.** You have the right to request that we restrict the processing of your personal information.\n\n- **The right to data portability.** You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.\n\n- **The right to withdraw consent.** You also have the right to withdraw your consent at any time where Primo relied on your consent to process your personal information.\n\n\n<!-- -->\n\nPlease note that we may ask you to verify your identity before responding to such requests.\n\nYou have the right to complain to a Data Protection Authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA).\n\n## Service Providers\n\nWe may employ third party companies and individuals to facilitate our Services (\"Service Providers\"), provide the Services on our behalf, perform Services-related services or assist us in analyzing how our Services is used.\n\nThese third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.\n\n#### Mailer Lite\n\n#### Supabase\n\n#### Simple Analytics\n\n## Changes to This Privacy Policy\n\nWe may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.\n\nWe will let you know via email and/or a prominent notice on our Services, prior to the change becoming effective and update the \"effective date\" at the top of this Privacy Policy.\n\nYou are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.\n\n## Contact Us\n\nIf you have any questions about this Privacy Policy, please contact us by email: [**contact@primo.so**](<mailto:contact@primo.so>)\n\n"
-				},
-				style: { "center_heading": "" }
+				heading: "Introducing hyperstatic websites",
+				date: "June 14, 2023"
 			}
 		});
 
@@ -5302,14 +5749,11 @@ function create_fragment$6(ctx) {
 					"size": 8
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE",
-				signup_form: {
-					"heading": "Hear about future updates, including:",
-					"subheading": {
-						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
-					}
-				}
+				content: {
+					"html": "<p>But there are already a million ways to describe an HTML file being created, surely one of those encompasses this? Why the need to introduce another one?</p>",
+					"markdown": "But there are already a million ways to describe an HTML file being created, surely one of those encompasses this? Why the need to introduce another one?\n\n"
+				},
+				style: { "center_heading": "" }
 			}
 		});
 
@@ -5323,7 +5767,71 @@ function create_fragment$6(ctx) {
 					"size": 8
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE",
+				content: {
+					"html": "<p>Two reasons:</p><ol><li><p>Why not</p></li><li><p>No paradigm emphasizes the same objectives or describes it the same way. The closest thing is \"islands architecture\", but that's different for a reason I'll get into.</p></li></ol><p></p><h3>Isn't this just \"islands architecture\"?</h3><p>Islands architecture emphasises \"islands\" where you can have dynamic data and particularly interactivity. In other words, having apps (server-side rendered) within your documents (statically rendered).</p><p>Where hyperstatic differs in philosophy is that the line between app and document is even more blurred than that, and that a lot of times documents are dynamic and apps are static. For this reason it doesn't view interactivity as simply patches across a page, but embedded to various degrees on any piece of it. Interactivity is treated like a gradient, not a black or white.</p><p>What happens when a piece that was static suddenly needs just a little bit of interactivity, is it suddenly an app, or server-side rendered?</p><p></p><h3>How it works</h3><ul><li><p>Content that is being pulled from somewhere else should be loaded on the client</p></li><li><p>All code should be static - layout, components, etc.</p></li><li><p>Content that originates on the page should be static</p></li></ul><h3>For example</h3><ul><li><p>A 'Blog Posts' page listing all the blog posts on the site. The content of the list does not originate on the page, so it should be dynamically loaded in order to always be up to date if a blog post title or url changes, a post gets deleted, or posts get added.</p><ul><li><p><strong>SSR</strong> would server-side render an HTML file for every visitor, recreating 90% of the same HTML in order to generate the 10% on the fly to get the latest information.</p></li><li><p><strong>SSG</strong> would have to run ever time the data changed, and either track data relationships across pages or re-generate every page when <em>any</em> data changes.</p></li><li><p><strong>CSR</strong> would be up do date like SSR, but provide a much slower experience by rendering the entire page with JavaScript compared to receiving it as HTML.</p></li><li><p><strong>ISR</strong> is close to an ideal solution, except that it would have to run once an hour every hour until the end of time, possibly building the same page again and again.</p></li></ul></li></ul><h3>Upsides</h3><ul><li><p>Speed/scalability/price/simplicity benefits of static pages</p></li><li><p>All dynamic content is always up to date</p></li><li><p>Simple communication between pages</p></li></ul><h3>Downsides</h3><ul><li><p>Not fully static, slower &amp; maybe worse SEO</p></li><li><p>Not fully SSR, so doesn't receive static</p></li><li><p>Bad for broken JS (but could maybe be mitigated)</p></li></ul><p></p><h3>How Primo takes it up a notch</h3><p>You could create a Hyperstatic site with most modern frontend frameworks just by prerendering/generating your pages and updating the dynamic stuff on the client. But with Primo, you can quickly and easily access your site in its entirety by fetching your site file (which lives alongside your site). The file, which contains your entire site, is usually no larger than an image and can be used to hydrate any page and block across your site with information about other pages. That way, the file is the source of truth, pages can be rebuilt only when they need to be. It's a simple approach without too many moving parts, which makes it useful for a lot of things.</p>",
+					"markdown": "Two reasons:\n\n1. Why not\n\n2. No paradigm emphasizes the same objectives or describes it the same way. The closest thing is \"islands architecture\", but that's different for a reason I'll get into.\n\n\n<!-- -->\n\n\n\n### Isn't this just \"islands architecture\"?\n\nIslands architecture emphasises \"islands\" where you can have dynamic data and particularly interactivity. In other words, having apps (server-side rendered) within your documents (statically rendered).\n\nWhere hyperstatic differs in philosophy is that the line between app and document is even more blurred than that, and that a lot of times documents are dynamic and apps are static. For this reason it doesn't view interactivity as simply patches across a page, but embedded to various degrees on any piece of it. Interactivity is treated like a gradient, not a black or white.\n\nWhat happens when a piece that was static suddenly needs just a little bit of interactivity, is it suddenly an app, or server-side rendered?\n\n\n\n### How it works\n\n- Content that is being pulled from somewhere else should be loaded on the client\n\n- All code should be static - layout, components, etc.\n\n- Content that originates on the page should be static\n\n\n<!-- -->\n\n### For example\n\n- A 'Blog Posts' page listing all the blog posts on the site. The content of the list does not originate on the page, so it should be dynamically loaded in order to always be up to date if a blog post title or url changes, a post gets deleted, or posts get added.\n\n    - **SSR** would server-side render an HTML file for every visitor, recreating 90% of the same HTML in order to generate the 10% on the fly to get the latest information.\n\n    - **SSG** would have to run ever time the data changed, and either track data relationships across pages or re-generate every page when *any* data changes.\n\n    - **CSR** would be up do date like SSR, but provide a much slower experience by rendering the entire page with JavaScript compared to receiving it as HTML.\n\n    - **ISR** is close to an ideal solution, except that it would have to run once an hour every hour until the end of time, possibly building the same page again and again.\n\n    <!-- -->\n\n\n<!-- -->\n\n### Upsides\n\n- Speed/scalability/price/simplicity benefits of static pages\n\n- All dynamic content is always up to date\n\n- Simple communication between pages\n\n\n<!-- -->\n\n### Downsides\n\n- Not fully static, slower & maybe worse SEO\n\n- Not fully SSR, so doesn't receive static\n\n- Bad for broken JS (but could maybe be mitigated)\n\n\n<!-- -->\n\n\n\n### How Primo takes it up a notch\n\nYou could create a Hyperstatic site with most modern frontend frameworks just by prerendering/generating your pages and updating the dynamic stuff on the client. But with Primo, you can quickly and easily access your site in its entirety by fetching your site file (which lives alongside your site). The file, which contains your entire site, is usually no larger than an image and can be used to hydrate any page and block across your site with information about other pages. That way, the file is the source of truth, pages can be rebuilt only when they need to be. It's a simple approach without too many moving parts, which makes it useful for a lot of things.\n\n"
+				},
+				style: { "center_heading": "" }
+			}
+		});
+
+	component_5 = new Component$6({
+			props: {
+				title: "Primo",
+				favicon: {
+					"alt": "",
+					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"size": 8
+				},
+				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
+				heading: "Ready to get your sites live?",
+				content: {
+					"html": "<h1 id=\"getyourselfhostedserverupandrunninginunder5minuteswithastepbystepvideoguide\">Get your self-hosted server up and running in under 5 minutes with a step-by-step video guide.</h1>",
+					"markdown": "# Get your self-hosted server up and running in under 5 minutes with a step-by-step video guide.\n\n"
+				},
+				buttons: [
+					{
+						"icon": "",
+						"link": {
+							"url": "https://docs.primocms.org/getting-started",
+							"label": "Get Started"
+						}
+					}
+				]
+			}
+		});
+
+	component_6 = new Component$7({
+			props: {
+				title: "Primo",
+				favicon: {
+					"alt": "",
+					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"size": 8
+				},
+				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
+				signup_form: {
+					"heading": "Hear about future updates, including:",
+					"subheading": {
+						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
+					}
+				}
+			}
+		});
+
+	component_7 = new Component$8({
+			props: {
+				title: "Primo",
+				favicon: {
+					"alt": "",
+					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
+					"size": 8
+				},
+				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
 						"link": { "url": "/", "label": "Changelog" }
@@ -5365,7 +5873,7 @@ function create_fragment$6(ctx) {
 			}
 		});
 
-	component_5 = new Component$6({
+	component_8 = new Component$9({
 			props: {
 				title: "Primo",
 				favicon: {
@@ -5374,8 +5882,7 @@ function create_fragment$6(ctx) {
 					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
 					"size": 8
 				},
-				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE"
+				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time."
 			}
 		});
 
@@ -5392,6 +5899,12 @@ function create_fragment$6(ctx) {
 			create_component(component_4.$$.fragment);
 			t4 = space();
 			create_component(component_5.$$.fragment);
+			t5 = space();
+			create_component(component_6.$$.fragment);
+			t6 = space();
+			create_component(component_7.$$.fragment);
+			t7 = space();
+			create_component(component_8.$$.fragment);
 		},
 		l(nodes) {
 			claim_component(component_0.$$.fragment, nodes);
@@ -5405,6 +5918,12 @@ function create_fragment$6(ctx) {
 			claim_component(component_4.$$.fragment, nodes);
 			t4 = claim_space(nodes);
 			claim_component(component_5.$$.fragment, nodes);
+			t5 = claim_space(nodes);
+			claim_component(component_6.$$.fragment, nodes);
+			t6 = claim_space(nodes);
+			claim_component(component_7.$$.fragment, nodes);
+			t7 = claim_space(nodes);
+			claim_component(component_8.$$.fragment, nodes);
 		},
 		m(target, anchor) {
 			mount_component(component_0, target, anchor);
@@ -5418,6 +5937,12 @@ function create_fragment$6(ctx) {
 			mount_component(component_4, target, anchor);
 			insert_hydration(target, t4, anchor);
 			mount_component(component_5, target, anchor);
+			insert_hydration(target, t5, anchor);
+			mount_component(component_6, target, anchor);
+			insert_hydration(target, t6, anchor);
+			mount_component(component_7, target, anchor);
+			insert_hydration(target, t7, anchor);
+			mount_component(component_8, target, anchor);
 			current = true;
 		},
 		p: noop,
@@ -5429,6 +5954,9 @@ function create_fragment$6(ctx) {
 			transition_in(component_3.$$.fragment, local);
 			transition_in(component_4.$$.fragment, local);
 			transition_in(component_5.$$.fragment, local);
+			transition_in(component_6.$$.fragment, local);
+			transition_in(component_7.$$.fragment, local);
+			transition_in(component_8.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -5438,6 +5966,9 @@ function create_fragment$6(ctx) {
 			transition_out(component_3.$$.fragment, local);
 			transition_out(component_4.$$.fragment, local);
 			transition_out(component_5.$$.fragment, local);
+			transition_out(component_6.$$.fragment, local);
+			transition_out(component_7.$$.fragment, local);
+			transition_out(component_8.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -5452,15 +5983,21 @@ function create_fragment$6(ctx) {
 			destroy_component(component_4, detaching);
 			if (detaching) detach(t4);
 			destroy_component(component_5, detaching);
+			if (detaching) detach(t5);
+			destroy_component(component_6, detaching);
+			if (detaching) detach(t6);
+			destroy_component(component_7, detaching);
+			if (detaching) detach(t7);
+			destroy_component(component_8, detaching);
 		}
 	};
 }
 
-class Component$7 extends SvelteComponent {
+class Component$a extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment$6, safe_not_equal, {});
+		init(this, options, null, create_fragment$9, safe_not_equal, {});
 	}
 }
 
-export default Component$7;
+export default Component$a;

@@ -4364,7 +4364,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-39970d76");
+			attr(div2, "id", "section-39970d76-774c-405e-8204-ffb9122cbf29");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -21576,7 +21576,7 @@ function create_fragment$3(ctx) {
 			attr(section, "class", "section-container svelte-18ii6qu");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-ff5c3e56");
+			attr(div3, "id", "section-ff5c3e56-690b-4220-abe9-9f02a74e1599");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -22406,7 +22406,7 @@ function create_fragment$4(ctx) {
 			attr(link, "referrerpolicy", "no-referrer");
 			attr(div14, "class", "component");
 			attr(div15, "class", "section");
-			attr(div15, "id", "section-20a47c0d");
+			attr(div15, "id", "section-20a47c0d-3dfc-4780-8a11-4cca16928675");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div15, anchor);
@@ -22728,7 +22728,7 @@ function create_fragment$5(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-7c589019");
+			attr(div3, "id", "section-7c589019-74fd-4af6-90be-d6d63ccb5712");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -23270,8 +23270,8 @@ function create_fragment$6(ctx) {
 				signup_form: {
 					"heading": "Hear about future updates, including:",
 					"subheading": {
-						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique sites, pages, and blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
+						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
 					}
 				}
 			}
