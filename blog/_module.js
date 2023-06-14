@@ -8055,7 +8055,11 @@ function create_each_block$1(ctx) {
 		},
 		h() {
 			attr(a, "class", "link underlined svelte-s4zn24");
-			attr(a, "href", a_href_value = "$" + /*parent_page*/ ctx[1].url + "/" + /*page*/ ctx[7].url);
+
+			attr(a, "href", a_href_value = /*parent_page*/ ctx[1]
+			? `${/*parent_page*/ ctx[1].url}/${/*page*/ ctx[7].url}`
+			: `/${/*page*/ ctx[7].url}`);
+
 			attr(li, "class", "svelte-s4zn24");
 		},
 		m(target, anchor) {
@@ -8067,7 +8071,9 @@ function create_each_block$1(ctx) {
 			append_hydration(li, t2);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*parent_page*/ 2 && a_href_value !== (a_href_value = "$" + /*parent_page*/ ctx[1].url + "/" + /*page*/ ctx[7].url)) {
+			if (dirty & /*parent_page*/ 2 && a_href_value !== (a_href_value = /*parent_page*/ ctx[1]
+			? `${/*parent_page*/ ctx[1].url}/${/*page*/ ctx[7].url}`
+			: `/${/*page*/ ctx[7].url}`)) {
 				attr(a, "href", a_href_value);
 			}
 
