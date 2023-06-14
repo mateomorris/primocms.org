@@ -7907,7 +7907,7 @@ function create_then_block(ctx) {
 			}
 		},
 		p(ctx, dirty) {
-			if (dirty & /*get_description, get_pages, get_title*/ 2) {
+			if (dirty & /*get_description, get_pages, get_title, parent_page*/ 6) {
 				each_value = /*pages*/ ctx[6];
 				let i;
 
@@ -8055,7 +8055,7 @@ function create_each_block$1(ctx) {
 		},
 		h() {
 			attr(a, "class", "link underlined svelte-s4zn24");
-			attr(a, "href", a_href_value = "/" + /*page*/ ctx[7].url);
+			attr(a, "href", a_href_value = "$" + /*parent_page*/ ctx[1].url + "/" + /*page*/ ctx[7].url);
 			attr(li, "class", "svelte-s4zn24");
 		},
 		m(target, anchor) {
@@ -8067,6 +8067,10 @@ function create_each_block$1(ctx) {
 			append_hydration(li, t2);
 		},
 		p(ctx, dirty) {
+			if (dirty & /*parent_page*/ 2 && a_href_value !== (a_href_value = "$" + /*parent_page*/ ctx[1].url + "/" + /*page*/ ctx[7].url)) {
+				attr(a, "href", a_href_value);
+			}
+
 			if (show_if) if_block.p(ctx, dirty);
 		},
 		d(detaching) {
@@ -8134,7 +8138,7 @@ function create_key_block(ctx) {
 		blocks: [,,,]
 	};
 
-	handle_promise(promise = /*get_pages*/ ctx[1](), info);
+	handle_promise(promise = /*get_pages*/ ctx[2](), info);
 
 	return {
 		c() {
@@ -8286,10 +8290,11 @@ function instance$3($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { description } = $$props;
 	let { root_page } = $$props;
+	let parent_page = {};
 
 	async function get_pages() {
 		const data = await axios.get("/primo.json").then(res => res.data);
-		const parent_page = data.pages.find(page => page.name === root_page);
+		$$invalidate(1, parent_page = data.pages.find(page => page.name === root_page));
 
 		// console.log(data);
 		if (root_page) {
@@ -8306,13 +8311,13 @@ function instance$3($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$set = $$props => {
-		if ('title' in $$props) $$invalidate(2, title = $$props.title);
-		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
-		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+		if ('favicon' in $$props) $$invalidate(4, favicon = $$props.favicon);
+		if ('description' in $$props) $$invalidate(5, description = $$props.description);
 		if ('root_page' in $$props) $$invalidate(0, root_page = $$props.root_page);
 	};
 
-	return [root_page, get_pages, title, favicon, description];
+	return [root_page, parent_page, get_pages, title, favicon, description];
 }
 
 class Component$3 extends SvelteComponent {
@@ -8320,9 +8325,9 @@ class Component$3 extends SvelteComponent {
 		super();
 
 		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
-			title: 2,
-			favicon: 3,
-			description: 4,
+			title: 3,
+			favicon: 4,
+			description: 5,
 			root_page: 0
 		});
 	}
