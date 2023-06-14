@@ -9277,7 +9277,7 @@ function create_fragment$6(ctx) {
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
-				root_page: "About\npromise was rejected"
+				root_page: "About"
 			}
 		});
 
