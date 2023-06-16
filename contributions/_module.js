@@ -9351,10 +9351,7 @@ function create_fragment$5(ctx) {
 						"links": []
 					},
 					{
-						"link": {
-							"url": "/primo-cloud-waitlist",
-							"label": "Cloud"
-						},
+						"link": { "url": "/cloud", "label": "Cloud" },
 						"links": []
 					}
 				]
