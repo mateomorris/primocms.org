@@ -4076,7 +4076,7 @@ function create_fragment$2(ctx) {
 			attr(header, "class", "section-container svelte-d3ch18");
 			attr(div1, "class", "component");
 			attr(div2, "class", "section");
-			attr(div2, "id", "section-eb84aa2a-95c3-4b72-be1d-4bced38b8007");
+			attr(div2, "id", "section-324956f2-6719-4942-a1fe-eb01dca029f3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -8683,7 +8683,7 @@ function create_fragment$3(ctx) {
 			attr(section, "class", "svelte-1p6usxc");
 			attr(div4, "class", "component");
 			attr(div5, "class", "section");
-			attr(div5, "id", "section-87073b95-5a23-48a4-941a-e5fb4c43b4e9");
+			attr(div5, "id", "section-641f74dc-c7f5-4bf8-a476-3c4e9859300a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div5, anchor);
@@ -9130,7 +9130,7 @@ function create_fragment$4(ctx) {
 			attr(footer, "class", "svelte-13um1f6");
 			attr(div2, "class", "component");
 			attr(div3, "class", "section");
-			attr(div3, "id", "section-65799d76-1c21-4854-a6da-eee08fc001ed");
+			attr(div3, "id", "section-c4362905-513b-4ce8-8901-25a792751860");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -9371,10 +9371,10 @@ function create_fragment$5(ctx) {
 					"size": 8
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				heading: "Primo Cloud Waitlist",
+				heading: "Primo Cloud",
 				subheading: {
-					"html": "<p>Join the waitlist to be notified when Primo Cloud becomes available so you can build and publish sites with dependable support &amp; without having to manage your own server.</p>",
-					"markdown": "Join the waitlist to be notified when Primo Cloud becomes available so you can build and publish sites with dependable support & without having to manage your own server.\n\n"
+					"html": "<p>Request an invite to join the Primo Cloud closed beta. You can build and publish sites with dependable support &amp; without having to manage your own server.</p>",
+					"markdown": "Request an invite to join the Primo Cloud closed beta. You can build and publish sites with dependable support & without having to manage your own server.\n\n"
 				},
 				list_items: [
 					{

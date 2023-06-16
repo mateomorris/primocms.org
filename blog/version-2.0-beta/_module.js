@@ -7348,7 +7348,7 @@ function create_fragment$c(ctx) {
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "Announcing Primo Version 2",
-				date: "April 28, 2023"
+				date: "June, 2023"
 			}
 		});
 
