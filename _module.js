@@ -812,6 +812,70 @@ function transition_out(block, local, detach, callback) {
     }
 }
 const null_transition = { duration: 0 };
+function create_in_transition(node, fn, params) {
+    const options = { direction: 'in' };
+    let config = fn(node, params, options);
+    let running = false;
+    let animation_name;
+    let task;
+    let uid = 0;
+    function cleanup() {
+        if (animation_name)
+            delete_rule(node, animation_name);
+    }
+    function go() {
+        const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+        if (css)
+            animation_name = create_rule(node, 0, 1, duration, delay, easing, css, uid++);
+        tick(0, 1);
+        const start_time = now() + delay;
+        const end_time = start_time + duration;
+        if (task)
+            task.abort();
+        running = true;
+        add_render_callback(() => dispatch(node, true, 'start'));
+        task = loop(now => {
+            if (running) {
+                if (now >= end_time) {
+                    tick(1, 0);
+                    dispatch(node, true, 'end');
+                    cleanup();
+                    return running = false;
+                }
+                if (now >= start_time) {
+                    const t = easing((now - start_time) / duration);
+                    tick(t, 1 - t);
+                }
+            }
+            return running;
+        });
+    }
+    let started = false;
+    return {
+        start() {
+            if (started)
+                return;
+            started = true;
+            delete_rule(node);
+            if (is_function(config)) {
+                config = config(options);
+                wait().then(go);
+            }
+            else {
+                go();
+            }
+        },
+        invalidate() {
+            started = false;
+        },
+        end() {
+            if (running) {
+                cleanup();
+                running = false;
+            }
+        }
+    };
+}
 function create_bidirectional_transition(node, fn, params, intro) {
     const options = { direction: 'both' };
     let config = fn(node, params, options);
@@ -1116,11 +1180,11 @@ function create_fragment(ctx) {
 			meta2 = element("meta");
 			script = element("script");
 			style = element("style");
-			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1.5px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1.5px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = text("@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: clamp(1rem, 10vw, 2.25rem);\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1.5px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1.5px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			this.h();
 		},
 		l(nodes) {
-			const head_nodes = head_selector('svelte-1ou479e', document.head);
+			const head_nodes = head_selector('svelte-9qh3np', document.head);
 			meta0 = claim_element(head_nodes, "META", { name: true, content: true });
 			meta1 = claim_element(head_nodes, "META", { charset: true });
 			link = claim_element(head_nodes, "LINK", { rel: true, type: true, href: true });
@@ -1130,7 +1194,7 @@ function create_fragment(ctx) {
 			script_nodes.forEach(detach);
 			style = claim_element(head_nodes, "STYLE", {});
 			var style_nodes = children(style);
-			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: 2.25rem;\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1.5px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1.5px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
+			t = claim_text(style_nodes, "@import url(\"https://unpkg.com/tailwindcss@2.2.15/dist/base.css\");\n@import url(https://fonts.bunny.net/css?family=archivo:200,300,300i,400,400i,500,500i,600,600i,700,700i);\n\n#page {\n  --color-primored: #35d994;\n  --color-gray: #262626;\n  --color-black: #121212;\n  --color-white: #ffff;\n  --color-accent: var(--color-primored);\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);\n\n  --padding-left: 2rem;\n  --padding-right: 2rem;\n\n  --color: #F3F3F3;\n  --background: var(--color-black);\n  --max-width: 1000px;\n  --border-color: var(--color-gray);\n  --border: 2px solid var(--border-color);\n  --border-radius: 5px;\n\n  --heading-font-size: clamp(1rem, 10vw, 2.25rem);\n  --heading-color: #FDFDFD;\n  --heading-font-weight: 600;\n  --subheading-color: #DADADA;\n  --body-color: #CECECE;\n\n  --transition-time: 0.1s;\n  --transition: var(--transition-time) color,\n    var(--transition-time) background-color, var(--transition-time) background,\n    var(--transition-time) border-color,\n    var(--transition-time) text-decoration-color,\n    var(--transition-time) box-shadow, var(--transition-time) transform;\n\n  --button-color: var(--body-color);\n  --button-background: var(--background);\n  --button-border: 1px solid white;\n  --button-hover-background: var(--color-primored);\n  --button-padding: 8px 20px;\n  --button-border-radius: 5px;\n\n  --padding: 2rem;\n\n  color: var(--body-color);\n  background: var(--background);\n  font-family: \"Inter\", system-ui, sans-serif;\n  transition: var(--transition);\n}\n\n#page[lang=\"ar\"] {\n    direction: rtl;\n  }\n\n#page{\n  font-weight: 300;\n}\n\n.section-container {\n  max-width: var(--max-width);\n  margin: 0 auto;\n  padding-left: var(--padding);\n  padding-right: var(--padding);\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n}\n\n.button {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  color: var(--button-color);\n  border: var(--button-border);\n  border-radius: 6px;\n  padding: var(--button-padding);\n  transition: var(--transition);\n  transform: translateY(0);\n}\n\n.button.secondary {\n    border: 0;\n    color: var(--color-white);\n    background: var(--color-gray);\n  }\n\n.button.is-primary {\n    border: 1.5px solid var(--color-accent);\n  }\n\n.button.small {\n    color: var(--color);\n    padding: 0.25rem 0.75rem 0.25rem 0.25rem;\n    font-size: 0.75rem;\n    background: transparent;\n    border: 1.5px solid var(--border-color);\n    display: flex;\n    margin-bottom: 1rem;\n  }\n\n.button.small svg {\n      width: 1rem;\n      height: 1rem;\n    }\n\n.button:hover {\n    border-color: transparent;\n    background: var(--color-background);\n    color: white;\n    box-shadow: 0 0 0 2px var(--color-accent);\n  }\n\n.button.disabled {\n    cursor: disabled;\n    opacity: 0.5;\n    pointer-events: none;\n  }\n\n.heading {\n  font-family: \"Archivo\", system-ui, sans-serif;\n  font-size: var(--heading-font-size, 49px);\n  line-height: var(--heading-line-height, 1.15);\n  font-weight: var(--heading-font-weight, 500);\n  color: var(--heading-color, #252428);\n  text-align: center;\n  text-wrap: balance;\n}\n\nh2.heading {\n  line-height: 1.15;\n  font-size: 2.5rem;\n}\n\n.subheading {\n  text-align: center;\n  font-size: 1.125rem;\n}\n\n.link {\n  transition: border-color 0.1s;\n}\n\n.link:hover {\n    border-color: transparent;\n  }\n\n.link.underlined {\n    border-bottom: 2px solid var(--color-accent, #154bf4);\n  }\n\n.link.underlined:hover {\n      border-color: transparent;\n    }\n\n.link.arrow {\n    display: inline-flex;\n    align-items: center;\n    color: var(--color-accent);\n    font-weight: 500;\n  }\n\n.link.arrow svg {\n      transition: 0.1s transform;\n      transform: translateX(0);\n      position: relative;\n      top: 2px;\n    }\n\n.link.arrow span {\n      margin-right: 0.5rem;\n    }\n\n.link.arrow:hover svg {\n      transform: translateX(4px);\n    }\n\n.content {\n  margin: 0 auto;\n  padding: 4rem var(--padding);\n}\n\n.content blockquote {\n    padding: 2rem;\n    border-left: 5px solid var(--border-color);\n    margin: 2rem 0;\n    font-size: 1.5rem;\n  }\n\n.content h1 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.5rem;\n    font-weight: 600;\n    margin-bottom: 1rem;\n    font-weight: 700;\n    letter-spacing: -0.01em;\n  }\n\n.content h2 {\n    font-family: \"Archivo\", system-ui, sans-serif;\n    color: var(--color);\n    font-size: 2.25rem;\n    font-weight: 600;\n    line-height: 1.3;\n    margin-top: 3rem;\n    margin-bottom: 1rem;\n  }\n\n.content h2 + h3 {\n    margin-top: 0;\n  }\n\n.content h3 {\n    font-size: 1.75rem;\n    font-weight: 600;\n    padding-bottom: .5rem;\n    margin-top: 2rem;\n  }\n\n.content h4 {\n    font-size: 1.25rem;\n    font-weight: 600;\n    line-height: 1;\n    margin-bottom: .5rem;\n  }\n\n.content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n  }\n\n.content p {\n    line-height: 1.6;\n    font-size: 1.125rem;\n    font-weight: 300;\n  }\n\n.content p:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n\n.content ol {\n    list-style: decimal;\n    padding-left: 1.25rem;\n  }\n\n.content ul {\n    list-style: disc;\n    padding-left: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n.content ul li {\n      padding: 0.25rem 0;\n    }\n\n.content strong {\n    font-weight: 500;\n    color: #35\n  }\n\n.content hr {\n    border-color: var(--border-color); \n    margin-block: 5rem; \n  }\n\n.content a {\n    border-bottom: 2px solid var(--color-accent);\n  }\n\nform {\n  display: grid;\n  gap: 1rem;\n}\n\nform label {\n    display: grid;\n    gap: 0.25rem;\n  }\n\nform label span {\n      font-size: 0.75rem;\n      font-weight: 500;\n    }\n\nform label input,\n    form label textarea {\n      padding: 0.5rem;\n      outline-color: transparent;\n      color: #222;\n      transition: var(--transition, 0.1s outline-color);\n      border: 1.5px solid var(--border-color, #eee);\n      border-radius: var(--border-radius);\n    }\n\nform label input:focus, form label textarea:focus {\n        outline-color: var(--color-accent, rebeccapurple);\n      }\n\nform label input::-moz-placeholder, form label textarea::-moz-placeholder {\n        font-weight: 300;\n      }\n\nform label input:-ms-input-placeholder, form label textarea:-ms-input-placeholder {\n        font-weight: 300;\n      }\n\nform label input::placeholder, form label textarea::placeholder {\n        font-weight: 300;\n      }\n\nform .button {\n    margin-top: 0.5rem;\n    display: flex;\n    justify-content: center; \n  }");
 			style_nodes.forEach(detach);
 			head_nodes.forEach(detach);
 			this.h();
@@ -1204,6 +1268,11 @@ class Component extends SvelteComponent {
 	}
 }
 
+function cubicOut(t) {
+    const f = t - 1.0;
+    return f * f * f + 1.0;
+}
+
 function fade(node, { delay = 0, duration = 400, easing = identity } = {}) {
     const o = +getComputedStyle(node).opacity;
     return {
@@ -1211,6 +1280,34 @@ function fade(node, { delay = 0, duration = 400, easing = identity } = {}) {
         duration,
         easing,
         css: t => `opacity: ${t * o}`
+    };
+}
+function slide(node, { delay = 0, duration = 400, easing = cubicOut, axis = 'y' } = {}) {
+    const style = getComputedStyle(node);
+    const opacity = +style.opacity;
+    const primary_property = axis === 'y' ? 'height' : 'width';
+    const primary_property_value = parseFloat(style[primary_property]);
+    const secondary_properties = axis === 'y' ? ['top', 'bottom'] : ['left', 'right'];
+    const capitalized_secondary_properties = secondary_properties.map((e) => `${e[0].toUpperCase()}${e.slice(1)}`);
+    const padding_start_value = parseFloat(style[`padding${capitalized_secondary_properties[0]}`]);
+    const padding_end_value = parseFloat(style[`padding${capitalized_secondary_properties[1]}`]);
+    const margin_start_value = parseFloat(style[`margin${capitalized_secondary_properties[0]}`]);
+    const margin_end_value = parseFloat(style[`margin${capitalized_secondary_properties[1]}`]);
+    const border_width_start_value = parseFloat(style[`border${capitalized_secondary_properties[0]}Width`]);
+    const border_width_end_value = parseFloat(style[`border${capitalized_secondary_properties[1]}Width`]);
+    return {
+        delay,
+        duration,
+        easing,
+        css: t => 'overflow: hidden;' +
+            `opacity: ${Math.min(t * 20, 1) * opacity};` +
+            `${primary_property}: ${t * primary_property_value}px;` +
+            `padding-${secondary_properties[0]}: ${t * padding_start_value}px;` +
+            `padding-${secondary_properties[1]}: ${t * padding_end_value}px;` +
+            `margin-${secondary_properties[0]}: ${t * margin_start_value}px;` +
+            `margin-${secondary_properties[1]}: ${t * margin_end_value}px;` +
+            `border-${secondary_properties[0]}-width: ${t * border_width_start_value}px;` +
+            `border-${secondary_properties[1]}-width: ${t * border_width_end_value}px;`
     };
 }
 
@@ -3098,7 +3195,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (245:14) {#if banner.label}
+// (244:12) {#if banner.label}
 function create_if_block_5(ctx) {
 	let div1;
 	let div0;
@@ -3164,7 +3261,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (249:6) {#if banner.cta.label}
+// (248:6) {#if banner.cta.label}
 function create_if_block_6(ctx) {
 	let a;
 	let t_value = /*banner*/ ctx[0].cta.label + "";
@@ -3205,7 +3302,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (272:10) {#if featured}
+// (271:10) {#if featured}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3236,7 +3333,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (278:10) {:else}
+// (277:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3284,7 +3381,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (275:10) {#if hasDropdown}
+// (274:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
 	let t0_value = /*link*/ ctx[8].label + "";
@@ -3352,7 +3449,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (285:8) {#if hasDropdown}
+// (284:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
 	let each_value_3 = /*links*/ ctx[9];
@@ -3426,7 +3523,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (287:12) {#each links as { link }}
+// (286:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3467,7 +3564,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (268:4) {#each nav as { link, links, featured }}
+// (267:4) {#each nav as { link, links, featured }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3597,7 +3694,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (298:2) {#if mobileNavOpen}
+// (297:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3730,7 +3827,7 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (306:8) {:else}
+// (305:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3771,7 +3868,7 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (302:8) {#if hasDropdown}
+// (301:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*links*/ ctx[9];
@@ -3836,7 +3933,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (303:10) {#each links as { link }}
+// (302:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3877,7 +3974,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (300:6) {#each nav as { link, links }}
+// (299:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
@@ -3923,7 +4020,6 @@ function create_each_block(ctx) {
 }
 
 function create_fragment$2(ctx) {
-	let div2;
 	let div1;
 	let t0;
 	let header;
@@ -3972,7 +4068,6 @@ function create_fragment$2(ctx) {
 
 	return {
 		c() {
-			div2 = element("div");
 			div1 = element("div");
 			if (if_block0) if_block0.c();
 			t0 = space();
@@ -4004,9 +4099,7 @@ function create_fragment$2(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div2 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div2_nodes = children(div2);
-			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			div1 = claim_element(nodes, "DIV", { class: true, id: true });
 			var div1_nodes = children(div1);
 			if (if_block0) if_block0.l(div1_nodes);
 			t0 = claim_space(div1_nodes);
@@ -4058,7 +4151,6 @@ function create_fragment$2(ctx) {
 			if (if_block1) if_block1.l(header_nodes);
 			header_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
-			div2_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
@@ -4075,13 +4167,11 @@ function create_fragment$2(ctx) {
 			attr(button, "class", "svelte-d3ch18");
 			attr(nav_1, "class", "svelte-d3ch18");
 			attr(header, "class", "section-container svelte-d3ch18");
-			attr(div1, "class", "component");
-			attr(div2, "class", "section");
-			attr(div2, "id", "section-caf0af11-e039-41a5-a9b8-242e7785befc");
+			attr(div1, "class", "section");
+			attr(div1, "id", "section-caf0af11");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div2, anchor);
-			append_hydration(div2, div1);
+			insert_hydration(target, div1, anchor);
 			if (if_block0) if_block0.m(div1, null);
 			append_hydration(div1, t0);
 			append_hydration(div1, header);
@@ -4210,7 +4300,7 @@ function create_fragment$2(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div2);
+			if (detaching) detach(div1);
 			if (if_block0) if_block0.d();
 			destroy_component(icon0);
 			destroy_each(each_blocks, detaching);
@@ -13553,7 +13643,7 @@ function create_if_block_5$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "subheading svelte-x40fj3");
+			attr(h2, "class", "subheading svelte-vcman");
 		},
 		m(target, anchor) {
 			insert_hydration(target, h2, anchor);
@@ -13574,7 +13664,7 @@ function create_if_block_5$1(ctx) {
 	};
 }
 
-// (481:0) {#if videoModalVisible}
+// (482:0) {#if videoModalVisible}
 function create_if_block_4$1(ctx) {
 	let div3;
 	let div0;
@@ -13625,7 +13715,7 @@ function create_if_block_4$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "bg svelte-x40fj3");
+			attr(div0, "class", "bg svelte-vcman");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/777551197?h=4342f0b1c9&badge=0&autopause=0&player_id=0&app_id=58479")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
@@ -13636,12 +13726,12 @@ function create_if_block_4$1(ctx) {
 			set_style(iframe, "width", "100%");
 			set_style(iframe, "height", "100%");
 			attr(iframe, "title", "Primo Walkthrough");
-			attr(iframe, "class", "svelte-x40fj3");
+			attr(iframe, "class", "svelte-vcman");
 			set_style(div1, "padding", "62.5% 0 0 0");
 			set_style(div1, "position", "relative");
-			attr(div2, "class", "container has-video svelte-x40fj3");
+			attr(div2, "class", "container has-video svelte-vcman");
 			attr(div3, "id", "modal");
-			attr(div3, "class", "svelte-x40fj3");
+			attr(div3, "class", "svelte-vcman");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -13687,7 +13777,7 @@ function create_if_block_4$1(ctx) {
 	};
 }
 
-// (489:0) {#if modalVisible}
+// (490:0) {#if modalVisible}
 function create_if_block$2(ctx) {
 	let div3;
 	let div0;
@@ -13760,13 +13850,13 @@ function create_if_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "bg svelte-x40fj3");
-			attr(span, "class", "svelte-x40fj3");
+			attr(div0, "class", "bg svelte-vcman");
+			attr(span, "class", "svelte-vcman");
 			html_tag.a = null;
-			attr(div1, "class", "title svelte-x40fj3");
-			attr(div2, "class", "container svelte-x40fj3");
+			attr(div1, "class", "title svelte-vcman");
+			attr(div2, "class", "container svelte-vcman");
 			attr(div3, "id", "modal");
-			attr(div3, "class", "svelte-x40fj3");
+			attr(div3, "class", "svelte-vcman");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -13836,7 +13926,7 @@ function create_if_block$2(ctx) {
 	};
 }
 
-// (521:4) {:else}
+// (522:4) {:else}
 function create_else_block$2(ctx) {
 	let div0;
 	let raw_value = /*modal*/ ctx[3].downloading_content + "";
@@ -14042,11 +14132,11 @@ function create_else_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "content svelte-x40fj3");
+			attr(div0, "class", "content svelte-vcman");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-x40fj3");
+			attr(input0, "class", "form-control svelte-vcman");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -14057,21 +14147,21 @@ function create_else_block$2(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-x40fj3");
+			attr(input1, "class", "svelte-vcman");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "primary button svelte-x40fj3");
+			attr(button0, "class", "primary button svelte-vcman");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
-			attr(span, "class", "sr-only svelte-x40fj3");
+			attr(span, "class", "sr-only svelte-vcman");
 			button1.disabled = "disabled";
 			set_style(button1, "display", "none");
 			attr(button1, "type", "button");
-			attr(button1, "class", "loading svelte-x40fj3");
+			attr(button1, "class", "loading svelte-vcman");
 			attr(div5, "class", "ml-form-embedSubmit");
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-x40fj3");
-			attr(form, "class", "ml-block-form svelte-x40fj3");
+			attr(input2, "class", "svelte-vcman");
+			attr(form, "class", "ml-block-form svelte-vcman");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -14159,7 +14249,7 @@ function create_else_block$2(ctx) {
 	};
 }
 
-// (497:4) {#if !downloading}
+// (498:4) {#if !downloading}
 function create_if_block_1$2(ctx) {
 	let div;
 	let raw_value = /*modal*/ ctx[3].content + "";
@@ -14191,7 +14281,7 @@ function create_if_block_1$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "content svelte-x40fj3");
+			attr(div, "class", "content svelte-vcman");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -14241,7 +14331,7 @@ function create_if_block_1$2(ctx) {
 	};
 }
 
-// (499:6) {#if currentPlatform.description}
+// (500:6) {#if currentPlatform.description}
 function create_if_block_3$1(ctx) {
 	let div;
 	let raw_value = /*currentPlatform*/ ctx[7].description + "";
@@ -14258,7 +14348,7 @@ function create_if_block_3$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "content svelte-x40fj3");
+			attr(div, "class", "content svelte-vcman");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -14272,7 +14362,7 @@ function create_if_block_3$1(ctx) {
 	};
 }
 
-// (510:6) {#if !currentPlatform.disabled}
+// (511:6) {#if !currentPlatform.disabled}
 function create_if_block_2$1(ctx) {
 	let a;
 	let span;
@@ -14327,7 +14417,7 @@ function create_if_block_2$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-x40fj3");
+			attr(span, "class", "svelte-vcman");
 			attr(path, "d", "M18.75 13.75H13.5352L11.7676 15.5176C11.2969 15.9883 10.668 16.25 10 16.25C9.33203 16.25 8.70469 15.99 8.23242 15.5176L6.46484 13.75H1.25C0.559766 13.75 0 14.3098 0 15V18.75C0 19.4402 0.559766 20 1.25 20H18.75C19.4402 20 20 19.4402 20 18.75V15C20 14.3086 19.4414 13.75 18.75 13.75ZM16.875 17.8125C16.3594 17.8125 15.9375 17.3906 15.9375 16.875C15.9375 16.3594 16.3594 15.9375 16.875 15.9375C17.3906 15.9375 17.8125 16.3594 17.8125 16.875C17.8125 17.3906 17.3906 17.8125 16.875 17.8125ZM9.11719 14.6328C9.35938 14.8789 9.67969 15 10 15C10.3203 15 10.6398 14.8779 10.8836 14.6338L15.8836 9.63379C16.3715 9.14551 16.3715 8.35449 15.8836 7.86621C15.3953 7.37793 14.6039 7.37793 14.116 7.86621L11.25 10.7344V1.25C11.25 0.559766 10.6902 0 10 0C9.30859 0 8.75 0.559766 8.75 1.25V10.7344L5.88281 7.86719C5.39492 7.37891 4.60352 7.37891 4.11523 7.86719C3.62734 8.35547 3.62734 9.14648 4.11523 9.63477L9.11719 14.6328Z");
 			attr(path, "fill", "#E6E6E6");
 			attr(svg, "width", "20");
@@ -14335,7 +14425,7 @@ function create_if_block_2$1(ctx) {
 			attr(svg, "viewBox", "0 0 20 20");
 			attr(svg, "fill", "none");
 			attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-			attr(a, "class", "button svelte-x40fj3");
+			attr(a, "class", "button svelte-vcman");
 			attr(a, "href", a_href_value = /*currentPlatform*/ ctx[7].download_link);
 			attr(a, "download", "");
 			toggle_class(a, "disabled", !consented);
@@ -14372,7 +14462,6 @@ function create_if_block_2$1(ctx) {
 }
 
 function create_fragment$3(ctx) {
-	let div6;
 	let div5;
 	let header;
 	let div0;
@@ -14441,7 +14530,6 @@ function create_fragment$3(ctx) {
 
 	return {
 		c() {
-			div6 = element("div");
 			div5 = element("div");
 			header = element("header");
 			div0 = element("div");
@@ -14480,9 +14568,7 @@ function create_fragment$3(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div6 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div6_nodes = children(div6);
-			div5 = claim_element(div6_nodes, "DIV", { class: true });
+			div5 = claim_element(nodes, "DIV", { class: true, id: true });
 			var div5_nodes = children(div5);
 			header = claim_element(div5_nodes, "HEADER", { class: true });
 			var header_nodes = children(header);
@@ -14552,8 +14638,6 @@ function create_fragment$3(ctx) {
 
 			iframe = claim_element(figure_nodes, "IFRAME", {
 				src: true,
-				width: true,
-				height: true,
 				frameborder: true,
 				allow: true,
 				title: true,
@@ -14569,50 +14653,45 @@ function create_fragment$3(ctx) {
 			t12 = claim_space(div5_nodes);
 			if (if_block2) if_block2.l(div5_nodes);
 			div5_nodes.forEach(detach);
-			div6_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "gradient svelte-x40fj3");
-			attr(h1, "class", "heading svelte-x40fj3");
+			attr(div0, "class", "gradient svelte-vcman");
+			attr(h1, "class", "heading svelte-vcman");
 			attr(a0, "href", "https://svelte.dev");
 			attr(a0, "target", "blank");
-			attr(a0, "class", "svelte-x40fj3");
+			attr(a0, "class", "svelte-vcman");
 			attr(a1, "href", "https://supabase.com");
 			attr(a1, "target", "blank");
-			attr(a1, "class", "svelte-x40fj3");
+			attr(a1, "class", "svelte-vcman");
 			attr(a2, "href", "https://github.com");
 			attr(a2, "target", "blank");
-			attr(a2, "class", "svelte-x40fj3");
-			attr(div1, "class", "subheading svelte-x40fj3");
+			attr(a2, "class", "svelte-vcman");
+			attr(div1, "class", "subheading svelte-vcman");
 			attr(a3, "href", "http://try.primocms.org/Theme-nonprofit");
-			attr(a3, "class", "button svelte-x40fj3");
+			attr(a3, "class", "button svelte-vcman");
 			attr(a3, "target", "_blank");
 			attr(a3, "rel", "noreferrer");
 			attr(a4, "href", "https://docs.primocms.org/getting-started");
-			attr(a4, "class", "button primary svelte-x40fj3");
+			attr(a4, "class", "button primary svelte-vcman");
 			attr(a4, "target", "_blank");
 			attr(a4, "rel", "noreferrer");
-			attr(div2, "class", "buttons svelte-x40fj3");
-			attr(div3, "class", "top svelte-x40fj3");
+			attr(div2, "class", "buttons svelte-vcman");
+			attr(div3, "class", "top svelte-vcman");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*video_id*/ ctx[2] + "?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479")) attr(iframe, "src", iframe_src_value);
-			attr(iframe, "width", "2304");
-			attr(iframe, "height", "1440");
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
 			iframe.allowFullscreen = true;
 			attr(iframe, "title", "Landing Page Demo");
-			attr(iframe, "class", "svelte-x40fj3");
-			attr(figure, "class", "svelte-x40fj3");
-			attr(div4, "class", "right svelte-x40fj3");
-			attr(header, "class", "section-container svelte-x40fj3");
-			attr(div5, "class", "component");
-			attr(div6, "class", "section");
-			attr(div6, "id", "section-885d7628-0612-43ce-8832-6dce430b0e83");
+			attr(iframe, "class", "svelte-vcman");
+			attr(figure, "class", "svelte-vcman");
+			attr(div4, "class", "right svelte-vcman");
+			attr(header, "class", "section-container svelte-vcman");
+			attr(div5, "class", "section");
+			attr(div5, "id", "section-885d7628");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div6, anchor);
-			append_hydration(div6, div5);
+			insert_hydration(target, div5, anchor);
 			append_hydration(div5, header);
 			append_hydration(header, div0);
 			append_hydration(header, t0);
@@ -14735,7 +14814,7 @@ function create_fragment$3(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div6);
+			if (detaching) detach(div5);
 			destroy_component(icon0);
 			destroy_component(icon1);
 			destroy_component(icon2);
@@ -14880,7 +14959,7 @@ function get_each_context$1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (124:10) {#if teaser.link.label}
+// (123:10) {#if teaser.link.label}
 function create_if_block_1$3(ctx) {
 	let a;
 	let t_value = /*teaser*/ ctx[6].link.label + "";
@@ -14921,7 +15000,7 @@ function create_if_block_1$3(ctx) {
 	};
 }
 
-// (137:10) {:else}
+// (136:10) {:else}
 function create_else_block$3(ctx) {
 	let img;
 	let img_src_value;
@@ -14958,7 +15037,7 @@ function create_else_block$3(ctx) {
 	};
 }
 
-// (131:10) {#if teaser.video}
+// (130:10) {#if teaser.video}
 function create_if_block$3(ctx) {
 	let iframe;
 	let iframe_src_value;
@@ -15001,7 +15080,7 @@ function create_if_block$3(ctx) {
 	};
 }
 
-// (119:4) {#each teasers as teaser}
+// (118:4) {#each teasers as teaser}
 function create_each_block$1(ctx) {
 	let div2;
 	let div1;
@@ -15125,7 +15204,6 @@ function create_each_block$1(ctx) {
 }
 
 function create_fragment$4(ctx) {
-	let div2;
 	let div1;
 	let section;
 	let header;
@@ -15145,7 +15223,6 @@ function create_fragment$4(ctx) {
 
 	return {
 		c() {
-			div2 = element("div");
 			div1 = element("div");
 			section = element("section");
 			header = element("header");
@@ -15164,9 +15241,7 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div2 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div2_nodes = children(div2);
-			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			div1 = claim_element(nodes, "DIV", { class: true, id: true });
 			var div1_nodes = children(div1);
 			section = claim_element(div1_nodes, "SECTION", { class: true });
 			var section_nodes = children(section);
@@ -15193,7 +15268,6 @@ function create_fragment$4(ctx) {
 			div0_nodes.forEach(detach);
 			section_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
-			div2_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
@@ -15202,13 +15276,11 @@ function create_fragment$4(ctx) {
 			attr(header, "class", "svelte-klxdzx");
 			attr(div0, "class", "teasers svelte-klxdzx");
 			attr(section, "class", "section-container svelte-klxdzx");
-			attr(div1, "class", "component");
-			attr(div2, "class", "section");
-			attr(div2, "id", "section-ddd59217-6212-4e8b-84ad-036c1b5285d5");
+			attr(div1, "class", "section");
+			attr(div1, "id", "section-ddd59217");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div2, anchor);
-			append_hydration(div2, div1);
+			insert_hydration(target, div1, anchor);
 			append_hydration(div1, section);
 			append_hydration(section, header);
 			append_hydration(header, h2);
@@ -15255,7 +15327,7 @@ function create_fragment$4(ctx) {
 		i: noop,
 		o: noop,
 		d(detaching) {
-			if (detaching) detach(div2);
+			if (detaching) detach(div1);
 			destroy_each(each_blocks, detaching);
 		}
 	};
@@ -15300,12 +15372,12 @@ class Component$4 extends SvelteComponent {
 
 function get_each_context$2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[12] = list[i];
-	child_ctx[14] = i;
+	child_ctx[9] = list[i];
+	child_ctx[11] = i;
 	return child_ctx;
 }
 
-// (176:2) {#if heading}
+// (135:2) {#if heading}
 function create_if_block_2$2(ctx) {
 	let header;
 	let div;
@@ -15339,7 +15411,7 @@ function create_if_block_2$2(ctx) {
 		h() {
 			attr(div, "class", "heading");
 			attr(h3, "class", "subheading");
-			attr(header, "class", "svelte-b58jhf");
+			attr(header, "class", "svelte-16gpcp4");
 		},
 		m(target, anchor) {
 			insert_hydration(target, header, anchor);
@@ -15358,10 +15430,10 @@ function create_if_block_2$2(ctx) {
 	};
 }
 
-// (188:10) {:else}
+// (147:10) {:else}
 function create_else_block$4(ctx) {
 	let html_tag;
-	let raw_value = /*item*/ ctx[12].svg + "";
+	let raw_value = /*item*/ ctx[9].svg + "";
 	let html_anchor;
 
 	return {
@@ -15383,7 +15455,7 @@ function create_else_block$4(ctx) {
 			insert_hydration(target, html_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*items*/ 4 && raw_value !== (raw_value = /*item*/ ctx[12].svg + "")) html_tag.p(raw_value);
+			if (dirty & /*visible_items*/ 8 && raw_value !== (raw_value = /*item*/ ctx[9].svg + "")) html_tag.p(raw_value);
 		},
 		i: noop,
 		o: noop,
@@ -15394,11 +15466,11 @@ function create_else_block$4(ctx) {
 	};
 }
 
-// (186:10) {#if item.icon}
+// (145:10) {#if item.icon}
 function create_if_block_1$4(ctx) {
 	let icon;
 	let current;
-	icon = new Component$1({ props: { icon: /*item*/ ctx[12].icon } });
+	icon = new Component$1({ props: { icon: /*item*/ ctx[9].icon } });
 
 	return {
 		c() {
@@ -15413,7 +15485,7 @@ function create_if_block_1$4(ctx) {
 		},
 		p(ctx, dirty) {
 			const icon_changes = {};
-			if (dirty & /*items*/ 4) icon_changes.icon = /*item*/ ctx[12].icon;
+			if (dirty & /*visible_items*/ 8) icon_changes.icon = /*item*/ ctx[9].icon;
 			icon.$set(icon_changes);
 		},
 		i(local) {
@@ -15431,7 +15503,7 @@ function create_if_block_1$4(ctx) {
 	};
 }
 
-// (183:4) {#each items as item, i}
+// (142:4) {#each visible_items as item, i}
 function create_each_block$2(ctx) {
 	let li;
 	let h3;
@@ -15439,18 +15511,19 @@ function create_each_block$2(ctx) {
 	let if_block;
 	let t0;
 	let span;
-	let raw0_value = /*item*/ ctx[12].title + "";
+	let raw0_value = /*item*/ ctx[9].title + "";
 	let t1;
 	let div;
-	let raw1_value = /*item*/ ctx[12].description.html + "";
+	let raw1_value = /*item*/ ctx[9].description.html + "";
 	let div_data_key_value;
 	let t2;
+	let li_intro;
 	let current;
 	const if_block_creators = [create_if_block_1$4, create_else_block$4];
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*item*/ ctx[12].icon) return 0;
+		if (/*item*/ ctx[9].icon) return 0;
 		return 1;
 	}
 
@@ -15489,10 +15562,10 @@ function create_each_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "title svelte-b58jhf");
-			attr(div, "class", "description svelte-b58jhf");
-			attr(div, "data-key", div_data_key_value = "items[" + /*i*/ ctx[14] + "].description");
-			attr(li, "class", "svelte-b58jhf");
+			attr(h3, "class", "title svelte-16gpcp4");
+			attr(div, "class", "description svelte-16gpcp4");
+			attr(div, "data-key", div_data_key_value = "items[" + /*i*/ ctx[11] + "].description");
+			attr(li, "class", "svelte-16gpcp4");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -15534,10 +15607,18 @@ function create_each_block$2(ctx) {
 				if_block.m(h3, t0);
 			}
 
-			if ((!current || dirty & /*items*/ 4) && raw0_value !== (raw0_value = /*item*/ ctx[12].title + "")) span.innerHTML = raw0_value;			if ((!current || dirty & /*items*/ 4) && raw1_value !== (raw1_value = /*item*/ ctx[12].description.html + "")) div.innerHTML = raw1_value;		},
+			if ((!current || dirty & /*visible_items*/ 8) && raw0_value !== (raw0_value = /*item*/ ctx[9].title + "")) span.innerHTML = raw0_value;			if ((!current || dirty & /*visible_items*/ 8) && raw1_value !== (raw1_value = /*item*/ ctx[9].description.html + "")) div.innerHTML = raw1_value;		},
 		i(local) {
 			if (current) return;
 			transition_in(if_block);
+
+			if (!li_intro) {
+				add_render_callback(() => {
+					li_intro = create_in_transition(li, slide, {});
+					li_intro.start();
+				});
+			}
+
 			current = true;
 		},
 		o(local) {
@@ -15551,96 +15632,77 @@ function create_each_block$2(ctx) {
 	};
 }
 
-// (197:2) {#if link.label}
+// (158:2) {#if !showing_all}
 function create_if_block$4(ctx) {
-	let a;
-	let span;
-	let t0_value = /*link*/ ctx[3].label + "";
-	let t0;
-	let t1;
-	let svg;
-	let path;
-	let a_href_value;
+	let button;
+	let div;
+	let icon;
+	let current;
+	let mounted;
+	let dispose;
+	icon = new Component$1({ props: { icon: "tabler:chevron-down" } });
 
 	return {
 		c() {
-			a = element("a");
-			span = element("span");
-			t0 = text(t0_value);
-			t1 = space();
-			svg = svg_element("svg");
-			path = svg_element("path");
+			button = element("button");
+			div = element("div");
+			create_component(icon.$$.fragment);
 			this.h();
 		},
 		l(nodes) {
-			a = claim_element(nodes, "A", { class: true, href: true });
-			var a_nodes = children(a);
-			span = claim_element(a_nodes, "SPAN", { class: true });
-			var span_nodes = children(span);
-			t0 = claim_text(span_nodes, t0_value);
-			span_nodes.forEach(detach);
-			t1 = claim_space(a_nodes);
-
-			svg = claim_svg_element(a_nodes, "svg", {
-				width: true,
-				height: true,
-				viewBox: true,
-				fill: true,
-				xmlns: true,
-				class: true
-			});
-
-			var svg_nodes = children(svg);
-			path = claim_svg_element(svg_nodes, "path", { d: true, fill: true });
-			children(path).forEach(detach);
-			svg_nodes.forEach(detach);
-			a_nodes.forEach(detach);
+			button = claim_element(nodes, "BUTTON", { class: true, "aria-label": true });
+			var button_nodes = children(button);
+			div = claim_element(button_nodes, "DIV", { class: true });
+			var div_nodes = children(div);
+			claim_component(icon.$$.fragment, div_nodes);
+			div_nodes.forEach(detach);
+			button_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-b58jhf");
-			attr(path, "d", "M6.81566 0.190662L6.19694 0.809381C6.0505 0.955818 6.0505 1.19326 6.19694 1.33972L11.0448 6.1875H0.375C0.167906 6.1875 0 6.35541 0 6.5625V7.4375C0 7.6446 0.167906 7.8125 0.375 7.8125H11.0448L6.19694 12.6603C6.0505 12.8068 6.0505 13.0442 6.19694 13.1907L6.81566 13.8094C6.96209 13.9558 7.19953 13.9558 7.346 13.8094L13.8902 7.26519C14.0366 7.11875 14.0366 6.88132 13.8902 6.73485L7.34597 0.190662C7.19953 0.0441934 6.96209 0.0441934 6.81566 0.190662Z");
-			attr(path, "fill", "currentColor");
-			attr(svg, "width", "14");
-			attr(svg, "height", "14");
-			attr(svg, "viewBox", "0 0 14 14");
-			attr(svg, "fill", "none");
-			attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-			attr(svg, "class", "svelte-b58jhf");
-			attr(a, "class", "arrow-link svelte-b58jhf");
-			attr(a, "href", a_href_value = /*link*/ ctx[3].url);
+			attr(div, "class", "icon svelte-16gpcp4");
+			attr(button, "class", "show-more svelte-16gpcp4");
+			attr(button, "aria-label", "Show more");
 		},
 		m(target, anchor) {
-			insert_hydration(target, a, anchor);
-			append_hydration(a, span);
-			append_hydration(span, t0);
-			append_hydration(a, t1);
-			append_hydration(a, svg);
-			append_hydration(svg, path);
-		},
-		p(ctx, dirty) {
-			if (dirty & /*link*/ 8 && t0_value !== (t0_value = /*link*/ ctx[3].label + "")) set_data(t0, t0_value);
+			insert_hydration(target, button, anchor);
+			append_hydration(button, div);
+			mount_component(icon, div, null);
+			current = true;
 
-			if (dirty & /*link*/ 8 && a_href_value !== (a_href_value = /*link*/ ctx[3].url)) {
-				attr(a, "href", a_href_value);
+			if (!mounted) {
+				dispose = listen(button, "click", /*click_handler*/ ctx[8]);
+				mounted = true;
 			}
 		},
+		p: noop,
+		i(local) {
+			if (current) return;
+			transition_in(icon.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(icon.$$.fragment, local);
+			current = false;
+		},
 		d(detaching) {
-			if (detaching) detach(a);
+			if (detaching) detach(button);
+			destroy_component(icon);
+			mounted = false;
+			dispose();
 		}
 	};
 }
 
 function create_fragment$5(ctx) {
-	let div1;
-	let div0;
+	let div;
 	let section;
 	let t0;
 	let ul;
 	let t1;
 	let current;
 	let if_block0 = /*heading*/ ctx[0] && create_if_block_2$2(ctx);
-	let each_value = /*items*/ ctx[2];
+	let each_value = /*visible_items*/ ctx[3];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -15651,12 +15713,11 @@ function create_fragment$5(ctx) {
 		each_blocks[i] = null;
 	});
 
-	let if_block1 = /*link*/ ctx[3].label && create_if_block$4(ctx);
+	let if_block1 = !/*showing_all*/ ctx[2] && create_if_block$4(ctx);
 
 	return {
 		c() {
-			div1 = element("div");
-			div0 = element("div");
+			div = element("div");
 			section = element("section");
 			if (if_block0) if_block0.c();
 			t0 = space();
@@ -15671,11 +15732,9 @@ function create_fragment$5(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div1 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div1_nodes = children(div1);
-			div0 = claim_element(div1_nodes, "DIV", { class: true });
-			var div0_nodes = children(div0);
-			section = claim_element(div0_nodes, "SECTION", { class: true });
+			div = claim_element(nodes, "DIV", { class: true, id: true });
+			var div_nodes = children(div);
+			section = claim_element(div_nodes, "SECTION", { class: true });
 			var section_nodes = children(section);
 			if (if_block0) if_block0.l(section_nodes);
 			t0 = claim_space(section_nodes);
@@ -15690,21 +15749,18 @@ function create_fragment$5(ctx) {
 			t1 = claim_space(section_nodes);
 			if (if_block1) if_block1.l(section_nodes);
 			section_nodes.forEach(detach);
-			div0_nodes.forEach(detach);
-			div1_nodes.forEach(detach);
+			div_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(ul, "class", "svelte-b58jhf");
-			attr(section, "class", "section-container svelte-b58jhf");
-			attr(div0, "class", "component");
-			attr(div1, "class", "section");
-			attr(div1, "id", "section-d294b81b-78a4-4285-8347-c9d078edaec9");
+			attr(ul, "class", "svelte-16gpcp4");
+			attr(section, "class", "section-container svelte-16gpcp4");
+			attr(div, "class", "section");
+			attr(div, "id", "section-d294b81b");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div1, anchor);
-			append_hydration(div1, div0);
-			append_hydration(div0, section);
+			insert_hydration(target, div, anchor);
+			append_hydration(div, section);
 			if (if_block0) if_block0.m(section, null);
 			append_hydration(section, t0);
 			append_hydration(section, ul);
@@ -15733,8 +15789,8 @@ function create_fragment$5(ctx) {
 				if_block0 = null;
 			}
 
-			if (dirty & /*items*/ 4) {
-				each_value = /*items*/ ctx[2];
+			if (dirty & /*visible_items*/ 8) {
+				each_value = /*visible_items*/ ctx[3];
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -15760,17 +15816,27 @@ function create_fragment$5(ctx) {
 				check_outros();
 			}
 
-			if (/*link*/ ctx[3].label) {
+			if (!/*showing_all*/ ctx[2]) {
 				if (if_block1) {
 					if_block1.p(ctx, dirty);
+
+					if (dirty & /*showing_all*/ 4) {
+						transition_in(if_block1, 1);
+					}
 				} else {
 					if_block1 = create_if_block$4(ctx);
 					if_block1.c();
+					transition_in(if_block1, 1);
 					if_block1.m(section, null);
 				}
 			} else if (if_block1) {
-				if_block1.d(1);
-				if_block1 = null;
+				group_outros();
+
+				transition_out(if_block1, 1, 1, () => {
+					if_block1 = null;
+				});
+
+				check_outros();
 			}
 		},
 		i(local) {
@@ -15780,6 +15846,7 @@ function create_fragment$5(ctx) {
 				transition_in(each_blocks[i]);
 			}
 
+			transition_in(if_block1);
 			current = true;
 		},
 		o(local) {
@@ -15789,10 +15856,11 @@ function create_fragment$5(ctx) {
 				transition_out(each_blocks[i]);
 			}
 
+			transition_out(if_block1);
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div1);
+			if (detaching) detach(div);
 			if (if_block0) if_block0.d();
 			destroy_each(each_blocks, detaching);
 			if (if_block1) if_block1.d();
@@ -15801,13 +15869,15 @@ function create_fragment$5(ctx) {
 }
 
 function instance$5($$self, $$props, $$invalidate) {
+	let visible_items;
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
 	let { heading } = $$props;
 	let { subheading } = $$props;
 	let { items } = $$props;
-	let { link } = $$props;
+	let showing_all = false;
+	const click_handler = () => $$invalidate(2, showing_all = true);
 
 	$$self.$$set = $$props => {
 		if ('title' in $$props) $$invalidate(4, title = $$props.title);
@@ -15815,11 +15885,26 @@ function instance$5($$self, $$props, $$invalidate) {
 		if ('description' in $$props) $$invalidate(6, description = $$props.description);
 		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
 		if ('subheading' in $$props) $$invalidate(1, subheading = $$props.subheading);
-		if ('items' in $$props) $$invalidate(2, items = $$props.items);
-		if ('link' in $$props) $$invalidate(3, link = $$props.link);
+		if ('items' in $$props) $$invalidate(7, items = $$props.items);
 	};
 
-	return [heading, subheading, items, link, title, favicon, description];
+	$$self.$$.update = () => {
+		if ($$self.$$.dirty & /*showing_all, items*/ 132) {
+			 $$invalidate(3, visible_items = showing_all ? items : items.slice(0, 6));
+		}
+	};
+
+	return [
+		heading,
+		subheading,
+		showing_all,
+		visible_items,
+		title,
+		favicon,
+		description,
+		items,
+		click_handler
+	];
 }
 
 class Component$5 extends SvelteComponent {
@@ -15832,8 +15917,7 @@ class Component$5 extends SvelteComponent {
 			description: 6,
 			heading: 0,
 			subheading: 1,
-			items: 2,
-			link: 3
+			items: 7
 		});
 	}
 }
@@ -15841,7 +15925,6 @@ class Component$5 extends SvelteComponent {
 /* generated by Svelte v3.58.0 */
 
 function create_fragment$6(ctx) {
-	let div15;
 	let div14;
 	let section;
 	let div13;
@@ -15899,7 +15982,6 @@ function create_fragment$6(ctx) {
 
 	return {
 		c() {
-			div15 = element("div");
 			div14 = element("div");
 			section = element("section");
 			div13 = element("div");
@@ -15953,9 +16035,7 @@ function create_fragment$6(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div15 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div15_nodes = children(div15);
-			div14 = claim_element(div15_nodes, "DIV", { class: true });
+			div14 = claim_element(nodes, "DIV", { class: true, id: true });
 			var div14_nodes = children(div14);
 			section = claim_element(div14_nodes, "SECTION", { class: true });
 			var section_nodes = children(section);
@@ -16092,7 +16172,6 @@ function create_fragment$6(ctx) {
 			});
 
 			div14_nodes.forEach(detach);
-			div15_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
@@ -16161,13 +16240,11 @@ function create_fragment$6(ctx) {
 			attr(link, "integrity", "sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==");
 			attr(link, "crossorigin", "anonymous");
 			attr(link, "referrerpolicy", "no-referrer");
-			attr(div14, "class", "component");
-			attr(div15, "class", "section");
-			attr(div15, "id", "section-b18b744b-92ba-4bf9-96fd-4d86c0a842b8");
+			attr(div14, "class", "section");
+			attr(div14, "id", "section-b18b744b");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div15, anchor);
-			append_hydration(div15, div14);
+			insert_hydration(target, div14, anchor);
 			append_hydration(div14, section);
 			append_hydration(section, div13);
 			append_hydration(div13, div0);
@@ -16225,7 +16302,7 @@ function create_fragment$6(ctx) {
 		i: noop,
 		o: noop,
 		d(detaching) {
-			if (detaching) detach(div15);
+			if (detaching) detach(div14);
 		}
 	};
 }
@@ -16274,7 +16351,7 @@ function get_each_context_1$1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (109:8) {#each footer_nav as { link }}
+// (108:8) {#each footer_nav as { link }}
 function create_each_block_1$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -16315,7 +16392,7 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (120:6) {#each social as { link, icon }}
+// (119:6) {#each social as { link, icon }}
 function create_each_block$3(ctx) {
 	let li;
 	let a;
@@ -16393,7 +16470,6 @@ function create_each_block$3(ctx) {
 }
 
 function create_fragment$7(ctx) {
-	let div3;
 	let div2;
 	let footer;
 	let div1;
@@ -16422,7 +16498,6 @@ function create_fragment$7(ctx) {
 
 	return {
 		c() {
-			div3 = element("div");
 			div2 = element("div");
 			footer = element("footer");
 			div1 = element("div");
@@ -16443,9 +16518,7 @@ function create_fragment$7(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div3 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div3_nodes = children(div3);
-			div2 = claim_element(div3_nodes, "DIV", { class: true });
+			div2 = claim_element(nodes, "DIV", { class: true, id: true });
 			var div2_nodes = children(div2);
 			footer = claim_element(div2_nodes, "FOOTER", { class: true });
 			var footer_nodes = children(footer);
@@ -16474,7 +16547,6 @@ function create_fragment$7(ctx) {
 			div1_nodes.forEach(detach);
 			footer_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
-			div3_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
@@ -16483,13 +16555,11 @@ function create_fragment$7(ctx) {
 			attr(ul, "class", "svelte-13um1f6");
 			attr(div1, "class", "section-container svelte-13um1f6");
 			attr(footer, "class", "svelte-13um1f6");
-			attr(div2, "class", "component");
-			attr(div3, "class", "section");
-			attr(div3, "id", "section-48a7ea62-7557-43b8-bf58-34e02c928c5e");
+			attr(div2, "class", "section");
+			attr(div2, "id", "section-48a7ea62");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div3, anchor);
-			append_hydration(div3, div2);
+			insert_hydration(target, div2, anchor);
 			append_hydration(div2, footer);
 			append_hydration(footer, div1);
 			append_hydration(div1, div0);
@@ -16582,7 +16652,7 @@ function create_fragment$7(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div3);
+			if (detaching) detach(div2);
 			destroy_each(each_blocks_1, detaching);
 			destroy_each(each_blocks, detaching);
 		}
@@ -16735,7 +16805,7 @@ function create_fragment$8(ctx) {
 				},
 				subheading: { "html": "", "markdown": "" },
 				footer: "Esse veniam nulla",
-				video_id: "820725171",
+				video_id: "838469641",
 				modal: {
 					"title": "Cillum qui culpa",
 					"content": {
@@ -16854,16 +16924,10 @@ function create_fragment$8(ctx) {
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "",
-				subheading: "\n",
+				subheading: "",
 				items: [
 					{
 						"icon": "ph:files-fill",
-						"image": {
-							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
-							"size": null
-						},
 						"title": "Static Sites",
 						"description": {
 							"html": "<p>Your websites are secure, scalable to millions, and fast-loading - no fancy plugins necessary.</p>",
@@ -16872,12 +16936,6 @@ function create_fragment$8(ctx) {
 					},
 					{
 						"icon": "mdi:users-group",
-						"image": {
-							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
-							"size": null
-						},
 						"title": "Real-time collaboration",
 						"description": {
 							"html": "<p>Invite any number of collaborators as developers or content editors and edit your pages together. </p>",
@@ -16886,12 +16944,6 @@ function create_fragment$8(ctx) {
 					},
 					{
 						"icon": "fluent-mdl2:locale-language",
-						"image": {
-							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
-							"size": null
-						},
 						"title": "Internationalization",
 						"description": {
 							"html": "<p>Easily manage content for over 60 locales and build each as a static version so you can rule your SEO.</p>",
@@ -16900,12 +16952,6 @@ function create_fragment$8(ctx) {
 					},
 					{
 						"icon": "gg:website",
-						"image": {
-							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
-							"size": null
-						},
 						"title": "Multisite to the max",
 						"description": {
 							"html": "<h1>Create an unlimited number of websites on a single server and start new sites in seconds.</h1>",
@@ -16913,35 +16959,70 @@ function create_fragment$8(ctx) {
 						}
 					},
 					{
-						"icon": "clarity:blocks-group-solid",
-						"image": {
-							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
-							"size": null
-						},
-						"title": "Themes & blocks",
+						"icon": "gg:website",
+						"title": "\nThemes\n",
 						"description": {
-							"html": "<p>Hit the ground running with Primo's free themes and blocks that can be used on any Primo site.</p>",
-							"markdown": "Hit the ground running with Primo's free themes and blocks that can be used on any Primo site.\n\n"
+							"html": "<p>Hit the ground running with one of Primo's free themes and customize it in seconds using CSS variables.</p>",
+							"markdown": "Hit the ground running with one of Primo's free themes and customize it in seconds using CSS variables.\n\n"
+						}
+					},
+					{
+						"icon": "solar:library-bold",
+						"title": "Primo Library",
+						"description": {
+							"html": "<p>Access a growing library of pre-built blocks which automatically adapt to your site's design.</p>",
+							"markdown": "Access a growing library of pre-built blocks which automatically adapt to your site's design.\n\n"
 						}
 					},
 					{
 						"icon": "mdi:github",
-						"image": {
-							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
-							"size": null
-						},
 						"title": "Deploy to Github",
 						"description": {
-							"html": "<h1 id=\"deployyoursitetoagithubrepositoryfromwhereyoucaneasilydeployittoanywebhost\">Deploy your site to a Github repository, from where you can easily deploy it to any web host.</h1>",
-							"markdown": "# Deploy your site to a Github repository, from where you can easily deploy it to any web host.\n\n"
+							"html": "<h1 id=\"deployyoursitetoagithubrepositoryfromthereyoucaneasilydeployittoanywebhost\">Deploy your site to a Github repository. From there you can easily deploy it to any web host.</h1>",
+							"markdown": "# Deploy your site to a Github repository. From there you can easily deploy it to any web host.\n\n"
+						}
+					},
+					{
+						"icon": "file-icons:svelte",
+						"title": "Build with Svelte",
+						"description": {
+							"html": "<p>All of your page blocks are written with Svelte - so they're reactive, their styles are encapsulated, and they're basically just HTML, CSS, and JavaScript. </p>",
+							"markdown": "All of your page blocks are written with Svelte - so they're reactive, their styles are encapsulated, and they're basically just HTML, CSS, and JavaScript. "
+						}
+					},
+					{
+						"icon": "lucide:file-json",
+						"title": "\nStatic API\n",
+						"description": {
+							"html": "<p>Access every page, section, and component on your site from a simple json file that lives alonside your website. Use it to dynamically fetch content or share content between sites.</p>",
+							"markdown": "Access every page, section, and component on your site from a simple json file that lives alonside your website. Use it to dynamically fetch content or share content between sites.\n\n"
+						}
+					},
+					{
+						"icon": "game-icons:guillotine",
+						"title": "Headless optional",
+						"description": {
+							"html": "<p>Use Primo's static API to access all your site content from your favorite frameworks.</p>",
+							"markdown": "Use Primo's static API to access all your site content from your favorite frameworks."
+						}
+					},
+					{
+						"icon": "fa6-brands:css3",
+						"title": "Nested CSS & Autoprefixer",
+						"description": {
+							"html": "<p>Primo uses PostCSS under the hood to enable nested styles and auto-prefix your CSS so it stays neat and tidy. </p>",
+							"markdown": "Primo uses PostCSS under the hood to enable nested styles and auto-prefix your CSS so it stays neat and tidy. "
+						}
+					},
+					{
+						"icon": "simple-icons:javascript",
+						"title": "Import JS libraries",
+						"description": {
+							"html": "<p>Import JavaScript libraries without needing to install them first. Primo bundles your dependencies with Rollup, so you don't have to worry about things breaking in production.</p>",
+							"markdown": "Import JavaScript libraries without needing to install them first. Primo bundles your dependencies with Rollup, so you don't have to worry about things breaking in production."
 						}
 					}
-				],
-				link: { "url": "/", "label": "" }
+				]
 			}
 		});
 
