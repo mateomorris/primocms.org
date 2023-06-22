@@ -3,7 +3,7 @@
 
 <head>
     <meta name="generator" content="Primo" />
-    <title>Primo</title><!-- HEAD_svelte-9qh3np_START -->
+    <title>Primo</title><!-- HEAD_svelte-mvdddf_START -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/jpg" href="https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png">
@@ -34,8 +34,10 @@
             --heading-font-size: clamp(1rem, 10vw, 2.25rem);
             --heading-color: #FDFDFD;
             --heading-font-weight: 600;
+            --heading-line-height: 1.3;
             --subheading-color: #DADADA;
             --body-color: #CECECE;
+            --heading-line-height: 1.3;
 
             --transition-time: 0.1s;
             --transition: var(--transition-time) color,
@@ -44,7 +46,7 @@
                 var(--transition-time) text-decoration-color,
                 var(--transition-time) box-shadow, var(--transition-time) transform;
 
-            --button-color: var(--body-color);
+            --button-color: white;
             --button-background: var(--background);
             --button-border: 1px solid white;
             --button-hover-background: var(--color-primored);
@@ -79,6 +81,7 @@
         .button {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.25rem;
             color: var(--button-color);
             border: var(--button-border);
@@ -86,6 +89,7 @@
             padding: var(--button-padding);
             transition: var(--transition);
             transform: translateY(0);
+            font-weight: 400;
         }
 
         .button.secondary {
@@ -133,7 +137,6 @@
             font-weight: var(--heading-font-weight, 500);
             color: var(--heading-color, #252428);
             text-align: center;
-            text-wrap: balance;
         }
 
         h2.heading {
@@ -328,8 +331,9 @@
             margin-top: 0.5rem;
             display: flex;
             justify-content: center;
+            font-weight: 400;
         }
-    </style><!-- HEAD_svelte-9qh3np_END -->
+    </style><!-- HEAD_svelte-mvdddf_END -->
     <style></style>
 </head>
 

@@ -3,7 +3,7 @@
 
 <head>
     <meta name="generator" content="Primo" />
-    <title>Primo</title><!-- HEAD_svelte-9qh3np_START -->
+    <title>Primo</title><!-- HEAD_svelte-mvdddf_START -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/jpg" href="https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png">
@@ -34,8 +34,10 @@
             --heading-font-size: clamp(1rem, 10vw, 2.25rem);
             --heading-color: #FDFDFD;
             --heading-font-weight: 600;
+            --heading-line-height: 1.3;
             --subheading-color: #DADADA;
             --body-color: #CECECE;
+            --heading-line-height: 1.3;
 
             --transition-time: 0.1s;
             --transition: var(--transition-time) color,
@@ -44,7 +46,7 @@
                 var(--transition-time) text-decoration-color,
                 var(--transition-time) box-shadow, var(--transition-time) transform;
 
-            --button-color: var(--body-color);
+            --button-color: white;
             --button-background: var(--background);
             --button-border: 1px solid white;
             --button-hover-background: var(--color-primored);
@@ -79,6 +81,7 @@
         .button {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.25rem;
             color: var(--button-color);
             border: var(--button-border);
@@ -86,6 +89,7 @@
             padding: var(--button-padding);
             transition: var(--transition);
             transform: translateY(0);
+            font-weight: 400;
         }
 
         .button.secondary {
@@ -133,7 +137,6 @@
             font-weight: var(--heading-font-weight, 500);
             color: var(--heading-color, #252428);
             text-align: center;
-            text-wrap: balance;
         }
 
         h2.heading {
@@ -328,10 +331,11 @@
             margin-top: 0.5rem;
             display: flex;
             justify-content: center;
+            font-weight: 400;
         }
-    </style><!-- HEAD_svelte-9qh3np_END -->
+    </style><!-- HEAD_svelte-mvdddf_END -->
     <style>
-        .banner.svelte-d3ch18.svelte-d3ch18 {
+        .banner.svelte-tkncv2.svelte-tkncv2 {
             background: var(--color-accent);
             padding: 0.6rem;
             text-align: center;
@@ -340,7 +344,7 @@
                     #35d994 100%)
         }
 
-        .banner.svelte-d3ch18 .memo-content.svelte-d3ch18 {
+        .banner.svelte-tkncv2 .memo-content.svelte-tkncv2 {
             display: flex;
             gap: 1.25rem;
             color: white;
@@ -349,39 +353,39 @@
             align-items: center
         }
 
-        .banner.svelte-d3ch18 .memo-content.svelte-d3ch18 a {
+        .banner.svelte-tkncv2 .memo-content.svelte-tkncv2 a {
             text-decoration: underline
         }
 
-        .banner.svelte-d3ch18 .memo-content a.svelte-d3ch18 {
+        .banner.svelte-tkncv2 .memo-content a.svelte-tkncv2 {
             font-weight: 400;
             border: 1.5px solid white;
             border-radius: var(--button-border-radius);
             padding: 2.75px 10px
         }
 
-        header.svelte-d3ch18.svelte-d3ch18 {
+        header.svelte-tkncv2.svelte-tkncv2 {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1rem;
+            padding-top: 2rem;
             padding-bottom: 1rem
         }
 
-        .link.svelte-d3ch18.svelte-d3ch18 {
+        .link.svelte-tkncv2.svelte-tkncv2 {
             border-color: transparent
         }
 
-        .link.svelte-d3ch18.svelte-d3ch18:hover {
+        .link.svelte-tkncv2.svelte-tkncv2:hover {
             border-color: var(--color-accent)
         }
 
-        .logo.svelte-d3ch18 svg {
+        .logo.svelte-tkncv2 svg {
             color: var(--color-white);
             width: 120px
         }
 
-        .logo.svelte-d3ch18 span.svelte-d3ch18 {
+        .logo.svelte-tkncv2 span.svelte-tkncv2 {
             border: 0 !important;
             clip: rect(1px, 1px, 1px, 1px) !important;
             -webkit-clip-path: inset(50%) !important;
@@ -395,7 +399,7 @@
             white-space: nowrap !important
         }
 
-        a.pill.svelte-d3ch18.svelte-d3ch18 {
+        a.pill.svelte-tkncv2.svelte-tkncv2 {
             transition: 0.1s box-shadow;
             fill: white;
             font-size: 1.25rem;
@@ -409,21 +413,21 @@
             padding: 0.25rem 0.75rem
         }
 
-        a.pill.svelte-d3ch18 span.svelte-d3ch18 {
+        a.pill.svelte-tkncv2 span.svelte-tkncv2 {
             display: none
         }
 
         @media(min-width: 500px) {
-            a.pill.svelte-d3ch18 span.svelte-d3ch18 {
+            a.pill.svelte-tkncv2 span.svelte-tkncv2 {
                 display: inline
             }
         }
 
-        button#open.svelte-d3ch18.svelte-d3ch18 {
+        button#open.svelte-tkncv2.svelte-tkncv2 {
             font-size: 3rem
         }
 
-        nav.svelte-d3ch18.svelte-d3ch18 {
+        nav.svelte-tkncv2.svelte-tkncv2 {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -431,28 +435,28 @@
         }
 
         @media(min-width: 700px) {
-            nav.svelte-d3ch18.svelte-d3ch18 {
+            nav.svelte-tkncv2.svelte-tkncv2 {
                 gap: 1.5rem
             }
         }
 
-        nav.svelte-d3ch18 select {
+        nav.svelte-tkncv2 select {
             background: transparent
         }
 
-        nav.svelte-d3ch18 .menu-icon.svelte-d3ch18 {
+        nav.svelte-tkncv2 .menu-icon.svelte-tkncv2 {
             font-size: 2rem
         }
 
-        nav.svelte-d3ch18 button#close.svelte-d3ch18 {
+        nav.svelte-tkncv2 button#close.svelte-tkncv2 {
             display: none
         }
 
-        nav.svelte-d3ch18 .nav-item.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item.svelte-tkncv2 {
             position: relative
         }
 
-        nav.svelte-d3ch18 .nav-item .top-link.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item .top-link.svelte-tkncv2 {
             display: none;
             align-items: center;
             gap: 0.5rem;
@@ -461,37 +465,39 @@
             font-weight: 400
         }
 
-        nav.svelte-d3ch18 .nav-item .top-link span.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item .top-link span.svelte-tkncv2 {
             border-bottom: 2px solid transparent
         }
 
-        nav.svelte-d3ch18 .nav-item .top-link .icon.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item .top-link .icon.svelte-tkncv2 {
             font-size: .9rem
         }
 
-        nav.svelte-d3ch18 .nav-item .top-link a.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item .top-link a.svelte-tkncv2 {
             border-bottom: 2px solid transparent
         }
 
-        nav.svelte-d3ch18 .nav-item .top-link a.svelte-d3ch18:hover,
-        nav.svelte-d3ch18 .nav-item .top-link a.active.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item .top-link a.svelte-tkncv2:hover,
+        nav.svelte-tkncv2 .nav-item .top-link a.active.svelte-tkncv2 {
             border-color: var(--color-accent);
             color: white
         }
 
-        nav.svelte-d3ch18 .nav-item .top-link .featured-pill.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item .top-link .featured-pill.svelte-tkncv2 {
             position: absolute;
             left: calc(100% - 9px);
-            bottom: calc(100% - 4px);
+            bottom: calc(100% - 1px);
             font-size: 10px;
             background: var(--color-accent);
-            padding-inline: 5px;
+            padding-inline: 6px;
+            padding-block: 2px 0px;
             border-radius: 12px;
             color: #111;
-            font-weight: 600
+            font-weight: 600;
+            line-height: 1.3
         }
 
-        nav.svelte-d3ch18 .nav-item .dropdown.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item .dropdown.svelte-tkncv2 {
             top: 100%;
             position: absolute;
             display: none;
@@ -503,13 +509,13 @@
             box-shadow: var(--box-shadow)
         }
 
-        nav.svelte-d3ch18 .nav-item:hover .dropdown.svelte-d3ch18 {
+        nav.svelte-tkncv2 .nav-item:hover .dropdown.svelte-tkncv2 {
             display: grid;
             place-items: flex-start;
             gap: 0.25rem
         }
 
-        nav#mobile-nav.svelte-d3ch18.svelte-d3ch18 {
+        nav#mobile-nav.svelte-tkncv2.svelte-tkncv2 {
             position: absolute;
             flex-direction: column;
             text-align: center;
@@ -523,11 +529,11 @@
             padding: 2rem
         }
 
-        nav#mobile-nav.svelte-d3ch18 a.link.svelte-d3ch18 {
+        nav#mobile-nav.svelte-tkncv2 a.link.svelte-tkncv2 {
             display: block
         }
 
-        nav#mobile-nav.svelte-d3ch18 button#close.svelte-d3ch18 {
+        nav#mobile-nav.svelte-tkncv2 button#close.svelte-tkncv2 {
             display: block;
             position: absolute;
             right: 1rem;
@@ -538,12 +544,12 @@
 
         @media(min-width: 700px) {
 
-            #open.svelte-d3ch18.svelte-d3ch18,
-            #mobile-nav.svelte-d3ch18.svelte-d3ch18 {
+            #open.svelte-tkncv2.svelte-tkncv2,
+            #mobile-nav.svelte-tkncv2.svelte-tkncv2 {
                 display: none
             }
 
-            nav.svelte-d3ch18 .nav-item .top-link.svelte-d3ch18 {
+            nav.svelte-tkncv2 .nav-item .top-link.svelte-tkncv2 {
                 display: flex
             }
         }
@@ -745,7 +751,7 @@
 <body id="page">
 
     <div class="section" id="section-cbaf559a">
-        <header class="section-container svelte-d3ch18"><a href="/" class="logo svelte-d3ch18"><span class="svelte-d3ch18">primo</span>
+        <header class="section-container svelte-tkncv2"><a href="/" class="logo svelte-tkncv2"><span class="svelte-tkncv2">primo</span>
                 <!-- HTML_TAG_START --><svg viewBox="0 0 871 198" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_250_527)">
                         <path d="M814.062 159.924C782.686 159.924 757.171 134.408 757.171 103.032C757.171 71.6567 782.686 46.1408 814.062 46.1408C845.438 46.1408 870.954 71.6567 870.954 103.032C870.954 134.408 845.438 159.924 814.062 159.924ZM814.062 70.3186C796.021 70.3186 781.395 84.9914 781.395 102.986C781.395 120.981 796.067 135.654 814.062 135.654C832.057 135.654 846.73 120.981 846.73 102.986C846.73 84.9914 832.057 70.3186 814.062 70.3186Z" fill="#FDFDFD" />
@@ -772,31 +778,31 @@
                         </clipPath>
                     </defs>
                 </svg><!-- HTML_TAG_END --></a>
-            <nav class="svelte-d3ch18"><a class="link pill svelte-d3ch18" href="https://github.com/primocms/primo" aria-label="Github repo"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--ic"><!-- HTML_TAG_START -->
+            <nav class="svelte-tkncv2"><a class="link pill svelte-tkncv2" href="https://github.com/primocms/primo" aria-label="Github repo"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--ic"><!-- HTML_TAG_START -->
                         <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" /><!-- HTML_TAG_END -->
                     </svg>
-                    <span class="svelte-d3ch18">Star on Github</span></a>
+                    <span class="svelte-tkncv2">Star on Github</span></a>
 
-                <div class="nav-item svelte-d3ch18">
-                    <div class="top-link svelte-d3ch18">
-                        <a href="https://docs.primocms.org" class="link svelte-d3ch18">Docs</a>
+                <div class="nav-item svelte-tkncv2">
+                    <div class="top-link svelte-tkncv2">
+                        <a href="https://docs.primocms.org" class="link svelte-tkncv2">Docs</a>
                     </div>
 
                 </div>
-                <div class="nav-item svelte-d3ch18">
-                    <div class="top-link svelte-d3ch18">
-                        <a href="/themes" class="link svelte-d3ch18">Themes</a>
+                <div class="nav-item svelte-tkncv2">
+                    <div class="top-link svelte-tkncv2">
+                        <a href="/themes" class="link svelte-tkncv2">Themes</a>
                     </div>
 
                 </div>
-                <div class="nav-item svelte-d3ch18">
-                    <div class="top-link svelte-d3ch18">
-                        <a href="/cloud" class="link svelte-d3ch18">Cloud</a>
+                <div class="nav-item svelte-tkncv2">
+                    <div class="top-link svelte-tkncv2"><span class="featured-pill svelte-tkncv2">New </span>
+                        <a href="/cloud" class="link svelte-tkncv2">Cloud</a>
                     </div>
 
                 </div>
-                <button id="open" class="svelte-d3ch18">
-                    <div class="menu-icon svelte-d3ch18"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START -->
+                <button id="open" class="svelte-tkncv2">
+                    <div class="menu-icon svelte-tkncv2"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START -->
                             <g id="iconifySvelte0">
                                 <g id="iconifySvelte1">
                                     <g id="iconifySvelte2" fill="currentColor">
