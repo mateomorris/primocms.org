@@ -16055,11 +16055,11 @@ function create_fragment$6(ctx) {
 			div1 = element("div");
 			a0 = element("a");
 			create_component(icon0.$$.fragment);
-			t3 = text(" \n         Self-host");
+			t3 = text("\n        Self-host");
 			t4 = space();
 			a1 = element("a");
 			create_component(icon1.$$.fragment);
-			t5 = text(" \n        Primo Cloud");
+			t5 = text("\n        Primo Cloud");
 			this.h();
 		},
 		l(nodes) {
@@ -16080,30 +16080,16 @@ function create_fragment$6(ctx) {
 			t2 = claim_space(div2_nodes);
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-
-			a0 = claim_element(div1_nodes, "A", {
-				href: true,
-				class: true,
-				target: true,
-				rel: true
-			});
-
+			a0 = claim_element(div1_nodes, "A", { href: true, class: true });
 			var a0_nodes = children(a0);
 			claim_component(icon0.$$.fragment, a0_nodes);
-			t3 = claim_text(a0_nodes, " \n         Self-host");
+			t3 = claim_text(a0_nodes, "\n        Self-host");
 			a0_nodes.forEach(detach);
 			t4 = claim_space(div1_nodes);
-
-			a1 = claim_element(div1_nodes, "A", {
-				href: true,
-				class: true,
-				target: true,
-				rel: true
-			});
-
+			a1 = claim_element(div1_nodes, "A", { href: true, class: true });
 			var a1_nodes = children(a1);
 			claim_component(icon1.$$.fragment, a1_nodes);
-			t5 = claim_text(a1_nodes, " \n        Primo Cloud");
+			t5 = claim_text(a1_nodes, "\n        Primo Cloud");
 			a1_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
@@ -16114,14 +16100,10 @@ function create_fragment$6(ctx) {
 		h() {
 			attr(h2, "class", "heading svelte-paj5et");
 			attr(div0, "class", "body svelte-paj5et");
-			attr(a0, "href", "http://try.primocms.org/Theme-nonprofit");
+			attr(a0, "href", "https://docs.primocms.org/getting-started");
 			attr(a0, "class", "button svelte-paj5et");
-			attr(a0, "target", "_blank");
-			attr(a0, "rel", "noreferrer");
-			attr(a1, "href", "https://docs.primocms.org/getting-started");
+			attr(a1, "href", "/cloud");
 			attr(a1, "class", "button primary svelte-paj5et");
-			attr(a1, "target", "_blank");
-			attr(a1, "rel", "noreferrer");
 			attr(div1, "class", "buttons svelte-paj5et");
 			attr(div2, "class", "card svelte-paj5et");
 			attr(section, "class", "section-container svelte-paj5et");
