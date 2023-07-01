@@ -18206,7 +18206,7 @@ function create_fragment$a(ctx) {
 						}
 					},
 					{
-						"title": "Can I use Primo with SvelteKit? Next, Nuxt, Nixt?",
+						"title": "Can I use Primo with SvelteKit? Next, Nuxt, Astro?",
 						"description": {
 							"html": "<p>You can <a href=\"https://docs.primocms.org/guides/how-to-use-primo-headless\">use Primo headless</a> by consuming your Primo site's data from your favorite framework, or <a href=\"https://docs.primocms.org/guides/how-to-serve-primo-pages-from-sveltekit\">serve generated Primo pages from SvelteKit</a>. </p>",
 							"markdown": "You can [use Primo headless](https://docs.primocms.org/guides/how-to-use-primo-headless) by consuming your Primo site's data from your favorite framework, or [serve generated Primo pages from SvelteKit](https://docs.primocms.org/guides/how-to-serve-primo-pages-from-sveltekit). "
