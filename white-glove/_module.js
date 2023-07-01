@@ -9332,7 +9332,10 @@ function create_fragment$5(ctx) {
 						"featured": false
 					},
 					{
-						"link": { "url": "/", "label": "White Glove" },
+						"link": {
+							"url": "/white-glove",
+							"label": "White Glove"
+						},
 						"links": [],
 						"featured": false
 					},
@@ -9357,8 +9360,8 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "White Glove Service",
 				subheading: {
-					"html": "<p>Get personal design &amp; development from the creators of Primo for $150/hour.</p>",
-					"markdown": "Get personal design & development from the creators of Primo for $150/hour.\n\n"
+					"html": "<p>Need a slick custom landing page or a custom Block library? Whatever you need, get personal design &amp; dev help from the creators of Primo for $120/hour.</p>",
+					"markdown": "Need a slick custom landing page or a custom Block library? Whatever you need, get personal design & dev help from the creators of Primo for $120/hour.\n\n"
 				},
 				list_items: [
 					{
@@ -9390,9 +9393,9 @@ function create_fragment$5(ctx) {
 						},
 						{
 							"type": "textarea",
-							"label": "What you'll use it for",
+							"label": "What can we help with?",
 							"required": "",
-							"placeholder": "Client work, personal projects, etc"
+							"placeholder": ""
 						}
 					],
 					"endpoint": "https://getform.io/f/9bc06d6d-8d59-4f6d-919f-5270f9e2b98b",

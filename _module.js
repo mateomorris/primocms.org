@@ -17896,7 +17896,10 @@ function create_fragment$a(ctx) {
 						"featured": false
 					},
 					{
-						"link": { "url": "/", "label": "White Glove" },
+						"link": {
+							"url": "/white-glove",
+							"label": "White Glove"
+						},
 						"links": [],
 						"featured": false
 					},

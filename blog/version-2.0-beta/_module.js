@@ -7259,7 +7259,10 @@ function create_fragment$c(ctx) {
 						"featured": false
 					},
 					{
-						"link": { "url": "/", "label": "White Glove" },
+						"link": {
+							"url": "/white-glove",
+							"label": "White Glove"
+						},
 						"links": [],
 						"featured": false
 					},
