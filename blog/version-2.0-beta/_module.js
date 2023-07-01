@@ -7259,6 +7259,11 @@ function create_fragment$c(ctx) {
 						"featured": false
 					},
 					{
+						"link": { "url": "/", "label": "White Glove" },
+						"links": [],
+						"featured": false
+					},
+					{
 						"link": { "url": "/cloud", "label": "Cloud" },
 						"links": [],
 						"featured": true
