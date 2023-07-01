@@ -9360,8 +9360,8 @@ function create_fragment$5(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				heading: "White Glove Service",
 				subheading: {
-					"html": "<p>Need a slick custom landing page or a custom Block library? Whatever you need, get personal design &amp; dev help from the creators of Primo for $120/hour.</p>",
-					"markdown": "Need a slick custom landing page or a custom Block library? Whatever you need, get personal design & dev help from the creators of Primo for $120/hour.\n\n"
+					"html": "<p>Get personal design &amp; development help from the creators of Primo for $120/hour. Whether you need a slick custom landing page or a custom Block library, let us know and we'll get back to you ASAP.</p>",
+					"markdown": "Get personal design & development help from the creators of Primo for $120/hour. Whether you need a slick custom landing page or a custom Block library, let us know and we'll get back to you ASAP.\n\n"
 				},
 				list_items: [
 					{
