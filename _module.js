@@ -16673,6 +16673,7 @@ function create_if_block_1$5(ctx) {
 function create_if_block$5(ctx) {
 	let div;
 	let raw_value = /*item*/ ctx[8].description.html + "";
+	let div_data_key_value;
 	let div_transition;
 	let current;
 
@@ -16682,13 +16683,14 @@ function create_if_block$5(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div = claim_element(nodes, "DIV", { class: true });
+			div = claim_element(nodes, "DIV", { class: true, "data-key": true });
 			var div_nodes = children(div);
 			div_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
 			attr(div, "class", "description content svelte-lu3muw");
+			attr(div, "data-key", div_data_key_value = "items[" + /*i*/ ctx[10] + "].description");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -16696,7 +16698,11 @@ function create_if_block$5(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if ((!current || dirty & /*items*/ 2) && raw_value !== (raw_value = /*item*/ ctx[8].description.html + "")) div.innerHTML = raw_value;		},
+			if ((!current || dirty & /*items*/ 2) && raw_value !== (raw_value = /*item*/ ctx[8].description.html + "")) div.innerHTML = raw_value;
+			if (!current || dirty & /*items*/ 2 && div_data_key_value !== (div_data_key_value = "items[" + /*i*/ ctx[10] + "].description")) {
+				attr(div, "data-key", div_data_key_value);
+			}
+		},
 		i(local) {
 			if (current) return;
 
@@ -16727,6 +16733,7 @@ function create_each_block$3(key_1, ctx) {
 	let span0;
 	let t0_value = /*item*/ ctx[8].title + "";
 	let t0;
+	let span0_data_key_value;
 	let t1;
 	let span1;
 	let icon;
@@ -16766,7 +16773,7 @@ function create_each_block$3(key_1, ctx) {
 			var div1_nodes = children(div1);
 			button = claim_element(div1_nodes, "BUTTON", { class: true });
 			var button_nodes = children(button);
-			span0 = claim_element(button_nodes, "SPAN", { class: true });
+			span0 = claim_element(button_nodes, "SPAN", { "data-key": true, class: true });
 			var span0_nodes = children(span0);
 			t0 = claim_text(span0_nodes, t0_value);
 			span0_nodes.forEach(detach);
@@ -16784,6 +16791,7 @@ function create_each_block$3(key_1, ctx) {
 			this.h();
 		},
 		h() {
+			attr(span0, "data-key", span0_data_key_value = "items[" + /*i*/ ctx[10] + "].title");
 			attr(span0, "class", "svelte-lu3muw");
 			attr(span1, "class", "icon svelte-lu3muw");
 			attr(button, "class", "svelte-lu3muw");
@@ -16813,6 +16821,10 @@ function create_each_block$3(key_1, ctx) {
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
 			if ((!current || dirty & /*items*/ 2) && t0_value !== (t0_value = /*item*/ ctx[8].title + "")) set_data(t0, t0_value);
+
+			if (!current || dirty & /*items*/ 2 && span0_data_key_value !== (span0_data_key_value = "items[" + /*i*/ ctx[10] + "].title")) {
+				attr(span0, "data-key", span0_data_key_value);
+			}
 
 			if (/*activeItem*/ ctx[2] === /*i*/ ctx[10]) {
 				if (if_block) {
@@ -18182,8 +18194,8 @@ function create_fragment$a(ctx) {
 					{
 						"title": "Is Primo open-core? VC-funded open source? Side project?",
 						"description": {
-							"html": "<p>We're in the process of creating an non-profit organization to put control of Primo under. Any funds generated from Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
-							"markdown": "We're in the process of creating an non-profit organization to put control of Primo under. Any funds generated from Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
+							"html": "<p>We're in the process of creating an non-profit organization for Primo. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
+							"markdown": "We're in the process of creating an non-profit organization for Primo. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
 						}
 					},
 					{
@@ -18217,8 +18229,8 @@ function create_fragment$a(ctx) {
 					{
 						"title": "How much will it cost to host or use Primo?",
 						"description": {
-							"html": "<p>You can <a href=\"https://docs.primocms.org/getting-started\">host your own Primo server</a> on a modern web host like <a href=\"https://vercel.com\">Vercel</a>, <a href=\"https://netlify.com\">Netlify</a>, or <a href=\"https://render.com\">Render</a>, use <a href=\"https://supabase.com\">Supabase</a> as backend, and deploy your sites to <a href=\"https://github.com\">Github</a> and the same web host. Since all those services have generous free tiers, you can publish a whole lot of sites and only pay for the domain names. </p>",
-							"markdown": "You can [host your own Primo server](https://docs.primocms.org/getting-started) on a modern web host like [Vercel](https://vercel.com), [Netlify](https://netlify.com), or [Render](https://render.com), use [Supabase](https://supabase.com) as backend, and deploy your sites to [Github](https://github.com) and the same web host. Since all those services have generous free tiers, you can publish a whole lot of sites and only pay for the domain names. "
+							"html": "<p>You can <a href=\"https://docs.primocms.org/getting-started\">host your own Primo server</a> on a modern web host like <a href=\"https://vercel.com\">Vercel</a>, <a href=\"https://netlify.com\">Netlify</a>, or <a href=\"https://render.com\">Render</a>, use <a href=\"https://supabase.com\">Supabase</a> as backend, and deploy your sites to <a href=\"https://github.com\">Github</a> and the same web host. Since all those services have generous free tiers, you can publish a whole lot of sites and only pay for the domain names.</p>",
+							"markdown": "You can [host your own Primo server](https://docs.primocms.org/getting-started) on a modern web host like [Vercel](https://vercel.com), [Netlify](https://netlify.com), or [Render](https://render.com), use [Supabase](https://supabase.com) as backend, and deploy your sites to [Github](https://github.com) and the same web host. Since all those services have generous free tiers, you can publish a whole lot of sites and only pay for the domain names."
 						}
 					}
 				]
