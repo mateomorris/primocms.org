@@ -13726,7 +13726,7 @@ function create_if_block_6$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "subheading svelte-yv5tcj");
+			attr(h2, "class", "subheading svelte-553sor");
 		},
 		m(target, anchor) {
 			insert_hydration(target, h2, anchor);
@@ -13788,8 +13788,8 @@ function create_if_block_5$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-yv5tcj");
-			attr(button, "class", "pill-button svelte-yv5tcj");
+			attr(span, "class", "svelte-553sor");
+			attr(button, "class", "pill-button svelte-553sor");
 		},
 		m(target, anchor) {
 			insert_hydration(target, button, anchor);
@@ -13872,16 +13872,16 @@ function create_if_block_4$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "bg svelte-yv5tcj");
+			attr(div0, "class", "bg svelte-553sor");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://www.youtube-nocookie.com/embed/ThInVXgxJ1Q")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "title", "YouTube video player");
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
 			iframe.allowFullscreen = true;
-			attr(iframe, "class", "svelte-yv5tcj");
-			attr(div1, "class", "container has-video svelte-yv5tcj");
+			attr(iframe, "class", "svelte-553sor");
+			attr(div1, "class", "container has-video svelte-553sor");
 			attr(div2, "id", "modal");
-			attr(div2, "class", "svelte-yv5tcj");
+			attr(div2, "class", "svelte-553sor");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -13999,13 +13999,13 @@ function create_if_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "bg svelte-yv5tcj");
-			attr(span, "class", "svelte-yv5tcj");
+			attr(div0, "class", "bg svelte-553sor");
+			attr(span, "class", "svelte-553sor");
 			html_tag.a = null;
-			attr(div1, "class", "title svelte-yv5tcj");
-			attr(div2, "class", "container svelte-yv5tcj");
+			attr(div1, "class", "title svelte-553sor");
+			attr(div2, "class", "container svelte-553sor");
 			attr(div3, "id", "modal");
-			attr(div3, "class", "svelte-yv5tcj");
+			attr(div3, "class", "svelte-553sor");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -14281,11 +14281,11 @@ function create_else_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "content svelte-yv5tcj");
+			attr(div0, "class", "content svelte-553sor");
 			attr(input0, "aria-label", "email");
 			attr(input0, "aria-required", "true");
 			attr(input0, "type", "email");
-			attr(input0, "class", "form-control svelte-yv5tcj");
+			attr(input0, "class", "form-control svelte-553sor");
 			attr(input0, "data-inputmask", "");
 			attr(input0, "name", "fields[email]");
 			attr(input0, "placeholder", "Email");
@@ -14296,21 +14296,21 @@ function create_else_block$2(ctx) {
 			attr(input1, "type", "hidden");
 			attr(input1, "name", "ml-submit");
 			input1.value = "1";
-			attr(input1, "class", "svelte-yv5tcj");
+			attr(input1, "class", "svelte-553sor");
 			attr(button0, "type", "submit");
-			attr(button0, "class", "primary button svelte-yv5tcj");
+			attr(button0, "class", "primary button svelte-553sor");
 			attr(div4, "class", "ml-form-embedSubmitLoad");
-			attr(span, "class", "sr-only svelte-yv5tcj");
+			attr(span, "class", "sr-only svelte-553sor");
 			button1.disabled = "disabled";
 			set_style(button1, "display", "none");
 			attr(button1, "type", "button");
-			attr(button1, "class", "loading svelte-yv5tcj");
+			attr(button1, "class", "loading svelte-553sor");
 			attr(div5, "class", "ml-form-embedSubmit");
 			attr(input2, "type", "hidden");
 			attr(input2, "name", "anticsrf");
 			input2.value = "true";
-			attr(input2, "class", "svelte-yv5tcj");
-			attr(form, "class", "ml-block-form svelte-yv5tcj");
+			attr(input2, "class", "svelte-553sor");
+			attr(form, "class", "ml-block-form svelte-553sor");
 			attr(form, "action", "https://static.mailerlite.com/webforms/submit/j2m2z7");
 			attr(form, "data-code", "j2m2z7");
 			attr(form, "method", "post");
@@ -14430,7 +14430,7 @@ function create_if_block_1$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "content svelte-yv5tcj");
+			attr(div, "class", "content svelte-553sor");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -14497,7 +14497,7 @@ function create_if_block_3$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "content svelte-yv5tcj");
+			attr(div, "class", "content svelte-553sor");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -14566,7 +14566,7 @@ function create_if_block_2$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-yv5tcj");
+			attr(span, "class", "svelte-553sor");
 			attr(path, "d", "M18.75 13.75H13.5352L11.7676 15.5176C11.2969 15.9883 10.668 16.25 10 16.25C9.33203 16.25 8.70469 15.99 8.23242 15.5176L6.46484 13.75H1.25C0.559766 13.75 0 14.3098 0 15V18.75C0 19.4402 0.559766 20 1.25 20H18.75C19.4402 20 20 19.4402 20 18.75V15C20 14.3086 19.4414 13.75 18.75 13.75ZM16.875 17.8125C16.3594 17.8125 15.9375 17.3906 15.9375 16.875C15.9375 16.3594 16.3594 15.9375 16.875 15.9375C17.3906 15.9375 17.8125 16.3594 17.8125 16.875C17.8125 17.3906 17.3906 17.8125 16.875 17.8125ZM9.11719 14.6328C9.35938 14.8789 9.67969 15 10 15C10.3203 15 10.6398 14.8779 10.8836 14.6338L15.8836 9.63379C16.3715 9.14551 16.3715 8.35449 15.8836 7.86621C15.3953 7.37793 14.6039 7.37793 14.116 7.86621L11.25 10.7344V1.25C11.25 0.559766 10.6902 0 10 0C9.30859 0 8.75 0.559766 8.75 1.25V10.7344L5.88281 7.86719C5.39492 7.37891 4.60352 7.37891 4.11523 7.86719C3.62734 8.35547 3.62734 9.14648 4.11523 9.63477L9.11719 14.6328Z");
 			attr(path, "fill", "#E6E6E6");
 			attr(svg, "width", "20");
@@ -14574,7 +14574,7 @@ function create_if_block_2$1(ctx) {
 			attr(svg, "viewBox", "0 0 20 20");
 			attr(svg, "fill", "none");
 			attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-			attr(a, "class", "button svelte-yv5tcj");
+			attr(a, "class", "button svelte-553sor");
 			attr(a, "href", a_href_value = /*currentPlatform*/ ctx[8].download_link);
 			attr(a, "download", "");
 			toggle_class(a, "disabled", !consented);
@@ -14611,66 +14611,35 @@ function create_if_block_2$1(ctx) {
 }
 
 function create_fragment$3(ctx) {
-	let div6;
+	let div5;
 	let header;
 	let div0;
 	let t0;
-	let div3;
+	let div2;
 	let h1;
 	let raw_value = /*heading*/ ctx[0].html + "";
 	let t1;
-	let div1;
 	let t2;
+	let div1;
 	let a0;
-	let icon0;
 	let t3;
-	let a1;
-	let icon1;
 	let t4;
-	let a2;
-	let icon2;
+	let a1;
 	let t5;
+	let icon;
 	let t6;
-	let div2;
-	let a3;
-	let t7;
-	let t8;
-	let a4;
-	let t9;
-	let icon3;
-	let t10;
-	let div5;
+	let div4;
 	let figure;
 	let iframe;
 	let iframe_src_value;
-	let t11;
-	let div4;
-	let t12;
-	let t13;
+	let t7;
+	let div3;
+	let t8;
+	let t9;
 	let current;
-
-	icon0 = new Component$1({
-			props: { icon: "logos:svelte-icon", inline: true }
-		});
-
-	icon1 = new Component$1({
-			props: {
-				icon: "logos:supabase-icon",
-				inline: true
-			}
-		});
-
-	icon2 = new Component$1({
-			props: {
-				color: "white",
-				icon: "mdi:github",
-				inline: true
-			}
-		});
-
 	let if_block0 = /*subheading*/ ctx[1].html && create_if_block_6$1(ctx);
 
-	icon3 = new Component$1({
+	icon = new Component$1({
 			props: {
 				icon: "material-symbols:arrow-forward-rounded"
 			}
@@ -14682,113 +14651,83 @@ function create_fragment$3(ctx) {
 
 	return {
 		c() {
-			div6 = element("div");
+			div5 = element("div");
 			header = element("header");
 			div0 = element("div");
 			t0 = space();
-			div3 = element("div");
+			div2 = element("div");
 			h1 = element("h1");
 			t1 = space();
-			div1 = element("div");
-			t2 = text("Powered by ");
-			a0 = element("a");
-			create_component(icon0.$$.fragment);
-			t3 = text(", ");
-			a1 = element("a");
-			create_component(icon1.$$.fragment);
-			t4 = text(", and ");
-			a2 = element("a");
-			create_component(icon2.$$.fragment);
-			t5 = space();
 			if (if_block0) if_block0.c();
+			t2 = space();
+			div1 = element("div");
+			a0 = element("a");
+			t3 = text("Try it");
+			t4 = space();
+			a1 = element("a");
+			t5 = text("Get Started\n        ");
+			create_component(icon.$$.fragment);
 			t6 = space();
-			div2 = element("div");
-			a3 = element("a");
-			t7 = text("Try it");
-			t8 = space();
-			a4 = element("a");
-			t9 = text("Get Started\n        ");
-			create_component(icon3.$$.fragment);
-			t10 = space();
-			div5 = element("div");
+			div4 = element("div");
 			figure = element("figure");
 			iframe = element("iframe");
-			t11 = space();
-			div4 = element("div");
+			t7 = space();
+			div3 = element("div");
 			if (if_block1) if_block1.c();
-			t12 = space();
+			t8 = space();
 			if (if_block2) if_block2.c();
-			t13 = space();
+			t9 = space();
 			if (if_block3) if_block3.c();
 			this.h();
 		},
 		l(nodes) {
-			div6 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div6_nodes = children(div6);
-			header = claim_element(div6_nodes, "HEADER", { class: true });
+			div5 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div5_nodes = children(div5);
+			header = claim_element(div5_nodes, "HEADER", { class: true });
 			var header_nodes = children(header);
 			div0 = claim_element(header_nodes, "DIV", { class: true });
 			children(div0).forEach(detach);
 			t0 = claim_space(header_nodes);
-			div3 = claim_element(header_nodes, "DIV", { class: true });
-			var div3_nodes = children(div3);
-			h1 = claim_element(div3_nodes, "H1", { class: true });
+			div2 = claim_element(header_nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			h1 = claim_element(div2_nodes, "H1", { class: true });
 			var h1_nodes = children(h1);
 			h1_nodes.forEach(detach);
-			t1 = claim_space(div3_nodes);
-			div1 = claim_element(div3_nodes, "DIV", { class: true });
+			t1 = claim_space(div2_nodes);
+			if (if_block0) if_block0.l(div2_nodes);
+			t2 = claim_space(div2_nodes);
+			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			t2 = claim_text(div1_nodes, "Powered by ");
-			a0 = claim_element(div1_nodes, "A", { href: true, target: true, class: true });
+
+			a0 = claim_element(div1_nodes, "A", {
+				href: true,
+				class: true,
+				target: true,
+				rel: true
+			});
+
 			var a0_nodes = children(a0);
-			claim_component(icon0.$$.fragment, a0_nodes);
+			t3 = claim_text(a0_nodes, "Try it");
 			a0_nodes.forEach(detach);
-			t3 = claim_text(div1_nodes, ", ");
-			a1 = claim_element(div1_nodes, "A", { href: true, target: true, class: true });
+			t4 = claim_space(div1_nodes);
+
+			a1 = claim_element(div1_nodes, "A", {
+				href: true,
+				class: true,
+				target: true,
+				rel: true
+			});
+
 			var a1_nodes = children(a1);
-			claim_component(icon1.$$.fragment, a1_nodes);
+			t5 = claim_text(a1_nodes, "Get Started\n        ");
+			claim_component(icon.$$.fragment, a1_nodes);
 			a1_nodes.forEach(detach);
-			t4 = claim_text(div1_nodes, ", and ");
-			a2 = claim_element(div1_nodes, "A", { href: true, target: true, class: true });
-			var a2_nodes = children(a2);
-			claim_component(icon2.$$.fragment, a2_nodes);
-			a2_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
-			t5 = claim_space(div3_nodes);
-			if (if_block0) if_block0.l(div3_nodes);
-			t6 = claim_space(div3_nodes);
-			div2 = claim_element(div3_nodes, "DIV", { class: true });
-			var div2_nodes = children(div2);
-
-			a3 = claim_element(div2_nodes, "A", {
-				href: true,
-				class: true,
-				target: true,
-				rel: true
-			});
-
-			var a3_nodes = children(a3);
-			t7 = claim_text(a3_nodes, "Try it");
-			a3_nodes.forEach(detach);
-			t8 = claim_space(div2_nodes);
-
-			a4 = claim_element(div2_nodes, "A", {
-				href: true,
-				class: true,
-				target: true,
-				rel: true
-			});
-
-			var a4_nodes = children(a4);
-			t9 = claim_text(a4_nodes, "Get Started\n        ");
-			claim_component(icon3.$$.fragment, a4_nodes);
-			a4_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
-			div3_nodes.forEach(detach);
-			t10 = claim_space(header_nodes);
-			div5 = claim_element(header_nodes, "DIV", { class: true });
-			var div5_nodes = children(div5);
-			figure = claim_element(div5_nodes, "FIGURE", { class: true });
+			t6 = claim_space(header_nodes);
+			div4 = claim_element(header_nodes, "DIV", { class: true });
+			var div4_nodes = children(div4);
+			figure = claim_element(div4_nodes, "FIGURE", { class: true });
 			var figure_nodes = children(figure);
 
 			iframe = claim_element(figure_nodes, "IFRAME", {
@@ -14801,96 +14740,75 @@ function create_fragment$3(ctx) {
 
 			children(iframe).forEach(detach);
 			figure_nodes.forEach(detach);
-			t11 = claim_space(div5_nodes);
-			div4 = claim_element(div5_nodes, "DIV", { class: true });
-			var div4_nodes = children(div4);
-			if (if_block1) if_block1.l(div4_nodes);
+			t7 = claim_space(div4_nodes);
+			div3 = claim_element(div4_nodes, "DIV", { class: true });
+			var div3_nodes = children(div3);
+			if (if_block1) if_block1.l(div3_nodes);
+			div3_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
-			div5_nodes.forEach(detach);
 			header_nodes.forEach(detach);
-			t12 = claim_space(div6_nodes);
-			if (if_block2) if_block2.l(div6_nodes);
-			t13 = claim_space(div6_nodes);
-			if (if_block3) if_block3.l(div6_nodes);
-			div6_nodes.forEach(detach);
+			t8 = claim_space(div5_nodes);
+			if (if_block2) if_block2.l(div5_nodes);
+			t9 = claim_space(div5_nodes);
+			if (if_block3) if_block3.l(div5_nodes);
+			div5_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "gradient svelte-yv5tcj");
-			attr(h1, "class", "heading svelte-yv5tcj");
-			attr(a0, "href", "https://svelte.dev");
-			attr(a0, "target", "blank");
-			attr(a0, "class", "svelte-yv5tcj");
-			attr(a1, "href", "https://supabase.com");
-			attr(a1, "target", "blank");
-			attr(a1, "class", "svelte-yv5tcj");
-			attr(a2, "href", "https://github.com");
-			attr(a2, "target", "blank");
-			attr(a2, "class", "svelte-yv5tcj");
-			attr(div1, "class", "subheading svelte-yv5tcj");
-			attr(a3, "href", "http://try.primocms.org/Theme-nonprofit");
-			attr(a3, "class", "button svelte-yv5tcj");
-			attr(a3, "target", "_blank");
-			attr(a3, "rel", "noreferrer");
-			attr(a4, "href", "https://docs.primocms.org/getting-started");
-			attr(a4, "class", "button primary svelte-yv5tcj");
-			attr(a4, "target", "_blank");
-			attr(a4, "rel", "noreferrer");
-			attr(div2, "class", "buttons svelte-yv5tcj");
-			attr(div3, "class", "top svelte-yv5tcj");
+			attr(div0, "class", "gradient svelte-553sor");
+			attr(h1, "class", "heading svelte-553sor");
+			attr(a0, "href", "http://try.primocms.org/Theme-nonprofit");
+			attr(a0, "class", "button svelte-553sor");
+			attr(a0, "target", "_blank");
+			attr(a0, "rel", "noreferrer");
+			attr(a1, "href", "https://docs.primocms.org/getting-started");
+			attr(a1, "class", "button primary svelte-553sor");
+			attr(a1, "target", "_blank");
+			attr(a1, "rel", "noreferrer");
+			attr(div1, "class", "buttons svelte-553sor");
+			attr(div2, "class", "top svelte-553sor");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*video_id*/ ctx[2] + "?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
 			iframe.allowFullscreen = true;
 			attr(iframe, "title", "Landing Page Demo");
-			attr(iframe, "class", "svelte-yv5tcj");
-			attr(figure, "class", "svelte-yv5tcj");
-			attr(div4, "class", "buttons svelte-yv5tcj");
-			attr(div5, "class", "right svelte-yv5tcj");
-			attr(header, "class", "section-container svelte-yv5tcj");
-			attr(div6, "class", "section");
-			attr(div6, "id", "section-885d7628");
+			attr(iframe, "class", "svelte-553sor");
+			attr(figure, "class", "svelte-553sor");
+			attr(div3, "class", "buttons svelte-553sor");
+			attr(div4, "class", "right svelte-553sor");
+			attr(header, "class", "section-container svelte-553sor");
+			attr(div5, "class", "section");
+			attr(div5, "id", "section-885d7628");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div6, anchor);
-			append_hydration(div6, header);
+			insert_hydration(target, div5, anchor);
+			append_hydration(div5, header);
 			append_hydration(header, div0);
 			append_hydration(header, t0);
-			append_hydration(header, div3);
-			append_hydration(div3, h1);
+			append_hydration(header, div2);
+			append_hydration(div2, h1);
 			h1.innerHTML = raw_value;
-			append_hydration(div3, t1);
-			append_hydration(div3, div1);
-			append_hydration(div1, t2);
+			append_hydration(div2, t1);
+			if (if_block0) if_block0.m(div2, null);
+			append_hydration(div2, t2);
+			append_hydration(div2, div1);
 			append_hydration(div1, a0);
-			mount_component(icon0, a0, null);
-			append_hydration(div1, t3);
-			append_hydration(div1, a1);
-			mount_component(icon1, a1, null);
+			append_hydration(a0, t3);
 			append_hydration(div1, t4);
-			append_hydration(div1, a2);
-			mount_component(icon2, a2, null);
-			append_hydration(div3, t5);
-			if (if_block0) if_block0.m(div3, null);
-			append_hydration(div3, t6);
-			append_hydration(div3, div2);
-			append_hydration(div2, a3);
-			append_hydration(a3, t7);
-			append_hydration(div2, t8);
-			append_hydration(div2, a4);
-			append_hydration(a4, t9);
-			mount_component(icon3, a4, null);
-			append_hydration(header, t10);
-			append_hydration(header, div5);
-			append_hydration(div5, figure);
+			append_hydration(div1, a1);
+			append_hydration(a1, t5);
+			mount_component(icon, a1, null);
+			append_hydration(header, t6);
+			append_hydration(header, div4);
+			append_hydration(div4, figure);
 			append_hydration(figure, iframe);
-			append_hydration(div5, t11);
-			append_hydration(div5, div4);
-			if (if_block1) if_block1.m(div4, null);
-			append_hydration(div6, t12);
-			if (if_block2) if_block2.m(div6, null);
-			append_hydration(div6, t13);
-			if (if_block3) if_block3.m(div6, null);
+			append_hydration(div4, t7);
+			append_hydration(div4, div3);
+			if (if_block1) if_block1.m(div3, null);
+			append_hydration(div5, t8);
+			if (if_block2) if_block2.m(div5, null);
+			append_hydration(div5, t9);
+			if (if_block3) if_block3.m(div5, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -14901,7 +14819,7 @@ function create_fragment$3(ctx) {
 				} else {
 					if_block0 = create_if_block_6$1(ctx);
 					if_block0.c();
-					if_block0.m(div3, t6);
+					if_block0.m(div2, t2);
 				}
 			} else if (if_block0) {
 				if_block0.d(1);
@@ -14923,7 +14841,7 @@ function create_fragment$3(ctx) {
 					if_block1 = create_if_block_5$1(ctx);
 					if_block1.c();
 					transition_in(if_block1, 1);
-					if_block1.m(div4, null);
+					if_block1.m(div3, null);
 				}
 			} else if (if_block1) {
 				group_outros();
@@ -14946,7 +14864,7 @@ function create_fragment$3(ctx) {
 					if_block2 = create_if_block_4$1(ctx);
 					if_block2.c();
 					transition_in(if_block2, 1);
-					if_block2.m(div6, t13);
+					if_block2.m(div5, t9);
 				}
 			} else if (if_block2) {
 				group_outros();
@@ -14969,7 +14887,7 @@ function create_fragment$3(ctx) {
 					if_block3 = create_if_block$2(ctx);
 					if_block3.c();
 					transition_in(if_block3, 1);
-					if_block3.m(div6, null);
+					if_block3.m(div5, null);
 				}
 			} else if (if_block3) {
 				group_outros();
@@ -14983,32 +14901,23 @@ function create_fragment$3(ctx) {
 		},
 		i(local) {
 			if (current) return;
-			transition_in(icon0.$$.fragment, local);
-			transition_in(icon1.$$.fragment, local);
-			transition_in(icon2.$$.fragment, local);
-			transition_in(icon3.$$.fragment, local);
+			transition_in(icon.$$.fragment, local);
 			transition_in(if_block1);
 			transition_in(if_block2);
 			transition_in(if_block3);
 			current = true;
 		},
 		o(local) {
-			transition_out(icon0.$$.fragment, local);
-			transition_out(icon1.$$.fragment, local);
-			transition_out(icon2.$$.fragment, local);
-			transition_out(icon3.$$.fragment, local);
+			transition_out(icon.$$.fragment, local);
 			transition_out(if_block1);
 			transition_out(if_block2);
 			transition_out(if_block3);
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div6);
-			destroy_component(icon0);
-			destroy_component(icon1);
-			destroy_component(icon2);
+			if (detaching) detach(div5);
 			if (if_block0) if_block0.d();
-			destroy_component(icon3);
+			destroy_component(icon);
 			if (if_block1) if_block1.d();
 			if (if_block2) if_block2.d();
 			if (if_block3) if_block3.d();
@@ -18194,8 +18103,8 @@ function create_fragment$a(ctx) {
 					{
 						"title": "Is Primo open-core? VC-funded open source? Side project?",
 						"description": {
-							"html": "<p>We're in the process of creating an non-profit organization for Primo. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
-							"markdown": "We're in the process of creating an non-profit organization for Primo. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
+							"html": "<p>Primo is under full-time development under a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
+							"markdown": "Primo is under full-time development under a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
 						}
 					},
 					{
@@ -18250,8 +18159,8 @@ function create_fragment$a(ctx) {
 				signup_form: {
 					"heading": "Hear about future updates, including:",
 					"subheading": {
-						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique sites, pages, and blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
+						"html": "<ul>\n<li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li>\n<li><p><strong>Design fields</strong> to give content editors style options.</p></li>\n<li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li>\n</ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n"
 					}
 				}
 			}

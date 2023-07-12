@@ -5394,8 +5394,8 @@ function create_fragment$7(ctx) {
 				signup_form: {
 					"heading": "Hear about future updates, including:",
 					"subheading": {
-						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Leveraging GPT4</strong> to create unique sites, pages, and blocks with a prompt.</p></li><li><p><strong>Design fields</strong> to give content editors style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Leveraging GPT4** to create unique sites, pages, and blocks with a prompt.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
+						"html": "<ul>\n<li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li>\n<li><p><strong>Design fields</strong> to give content editors style options.</p></li>\n<li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li>\n</ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n"
 					}
 				}
 			}
