@@ -3139,8 +3139,8 @@ function create_if_block_5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "memo-content svelte-tkncv2");
-			attr(div1, "class", "banner svelte-tkncv2");
+			attr(div0, "class", "memo-content svelte-13p0my8");
+			attr(div1, "class", "banner svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3194,7 +3194,7 @@ function create_if_block_6(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*banner*/ ctx[0].cta.url);
-			attr(a, "class", "svelte-tkncv2");
+			attr(a, "class", "svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3232,7 +3232,7 @@ function create_if_block_4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "featured-pill svelte-tkncv2");
+			attr(span, "class", "featured-pill svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span, anchor);
@@ -3266,7 +3266,7 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 			toggle_class(a, "active", /*link*/ ctx[9].url === window.location.pathname);
 		},
 		m(target, anchor) {
@@ -3328,8 +3328,8 @@ function create_if_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-tkncv2");
-			attr(span1, "class", "icon svelte-tkncv2");
+			attr(span0, "class", "svelte-13p0my8");
+			attr(span1, "class", "icon svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span0, anchor);
@@ -3392,7 +3392,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "dropdown svelte-tkncv2");
+			attr(div, "class", "dropdown svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3456,7 +3456,7 @@ function create_each_block_3(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3523,8 +3523,8 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-tkncv2");
-			attr(div1, "class", "nav-item svelte-tkncv2");
+			attr(div0, "class", "top-link svelte-13p0my8");
+			attr(div1, "class", "nav-item svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3662,9 +3662,9 @@ function create_if_block$1(ctx) {
 		h() {
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-tkncv2");
+			attr(button, "class", "svelte-13p0my8");
 			attr(nav_1, "id", "mobile-nav");
-			attr(nav_1, "class", "svelte-tkncv2");
+			attr(nav_1, "class", "svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav_1, anchor);
@@ -3760,7 +3760,7 @@ function create_else_block$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3866,7 +3866,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -4065,19 +4065,19 @@ function create_fragment$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-tkncv2");
+			attr(span0, "class", "svelte-13p0my8");
 			html_tag.a = null;
 			attr(a0, "href", "/");
-			attr(a0, "class", "logo svelte-tkncv2");
-			attr(span1, "class", "svelte-tkncv2");
-			attr(a1, "class", "link pill svelte-tkncv2");
+			attr(a0, "class", "logo svelte-13p0my8");
+			attr(span1, "class", "svelte-13p0my8");
+			attr(a1, "class", "link pill svelte-13p0my8");
 			attr(a1, "href", "https://github.com/primocms/primo");
 			attr(a1, "aria-label", "Github repo");
-			attr(div0, "class", "menu-icon svelte-tkncv2");
+			attr(div0, "class", "menu-icon svelte-13p0my8");
 			attr(button, "id", "open");
-			attr(button, "class", "svelte-tkncv2");
-			attr(nav_1, "class", "svelte-tkncv2");
-			attr(header, "class", "section-container svelte-tkncv2");
+			attr(button, "class", "svelte-13p0my8");
+			attr(nav_1, "class", "svelte-13p0my8");
+			attr(header, "class", "section-container svelte-13p0my8");
 			attr(div1, "class", "section");
 			attr(div1, "id", "section-289be17b");
 		},
@@ -4306,7 +4306,7 @@ function create_fragment$3(ctx) {
 --heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`);
 
 			attr(div1, "class", "section");
-			attr(div1, "id", "section-497b7901");
+			attr(div1, "id", "section-8dce10cb");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -4366,93 +4366,6 @@ class Component$3 extends SvelteComponent {
 /* generated by Svelte v3.58.0 */
 
 function create_fragment$4(ctx) {
-	let div1;
-	let div0;
-	let raw_value = /*content*/ ctx[0].html + "";
-	let div0_style_value;
-
-	return {
-		c() {
-			div1 = element("div");
-			div0 = element("div");
-			this.h();
-		},
-		l(nodes) {
-			div1 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div1_nodes = children(div1);
-			div0 = claim_element(div1_nodes, "DIV", { class: true, style: true });
-			var div0_nodes = children(div0);
-			div0_nodes.forEach(detach);
-			div1_nodes.forEach(detach);
-			this.h();
-		},
-		h() {
-			attr(div0, "class", "section-container content svelte-1n46rsv");
-
-			attr(div0, "style", div0_style_value = `
---heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`);
-
-			attr(div1, "class", "section");
-			attr(div1, "id", "section-8dce10cb");
-		},
-		m(target, anchor) {
-			insert_hydration(target, div1, anchor);
-			append_hydration(div1, div0);
-			div0.innerHTML = raw_value;
-		},
-		p(ctx, [dirty]) {
-			if (dirty & /*content*/ 1 && raw_value !== (raw_value = /*content*/ ctx[0].html + "")) div0.innerHTML = raw_value;
-			if (dirty & /*style*/ 2 && div0_style_value !== (div0_style_value = `
---heading-align: ${/*style*/ ctx[1].center_heading ? 'center' : 'left'}`)) {
-				attr(div0, "style", div0_style_value);
-			}
-		},
-		i: noop,
-		o: noop,
-		d(detaching) {
-			if (detaching) detach(div1);
-		}
-	};
-}
-
-function instance$4($$self, $$props, $$invalidate) {
-	let { title } = $$props;
-	let { favicon } = $$props;
-	let { description } = $$props;
-	let { test } = $$props;
-	let { content } = $$props;
-	let { style } = $$props;
-
-	$$self.$$set = $$props => {
-		if ('title' in $$props) $$invalidate(2, title = $$props.title);
-		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
-		if ('description' in $$props) $$invalidate(4, description = $$props.description);
-		if ('test' in $$props) $$invalidate(5, test = $$props.test);
-		if ('content' in $$props) $$invalidate(0, content = $$props.content);
-		if ('style' in $$props) $$invalidate(1, style = $$props.style);
-	};
-
-	return [content, style, title, favicon, description, test];
-}
-
-class Component$4 extends SvelteComponent {
-	constructor(options) {
-		super();
-
-		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
-			title: 2,
-			favicon: 3,
-			description: 4,
-			test: 5,
-			content: 0,
-			style: 1
-		});
-	}
-}
-
-/* generated by Svelte v3.58.0 */
-
-function create_fragment$5(ctx) {
 	let div14;
 	let section;
 	let div13;
@@ -4835,7 +4748,7 @@ function create_fragment$5(ctx) {
 	};
 }
 
-function instance$5($$self, $$props, $$invalidate) {
+function instance$4($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
@@ -4853,11 +4766,11 @@ function instance$5($$self, $$props, $$invalidate) {
 	return [signup_form, title, favicon, description, test];
 }
 
-class Component$5 extends SvelteComponent {
+class Component$4 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
+		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
 			title: 1,
 			favicon: 2,
 			description: 3,
@@ -5000,7 +4913,7 @@ function create_each_block$1(ctx) {
 	};
 }
 
-function create_fragment$6(ctx) {
+function create_fragment$5(ctx) {
 	let div2;
 	let footer;
 	let div1;
@@ -5190,7 +5103,7 @@ function create_fragment$6(ctx) {
 	};
 }
 
-function instance$6($$self, $$props, $$invalidate) {
+function instance$5($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
@@ -5210,11 +5123,11 @@ function instance$6($$self, $$props, $$invalidate) {
 	return [footer_nav, social, title, favicon, description, test];
 }
 
-class Component$6 extends SvelteComponent {
+class Component$5 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
+		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
 			title: 2,
 			favicon: 3,
 			description: 4,
@@ -5227,7 +5140,7 @@ class Component$6 extends SvelteComponent {
 
 /* generated by Svelte v3.58.0 */
 
-function instance$7($$self, $$props, $$invalidate) {
+function instance$6($$self, $$props, $$invalidate) {
 	let { title } = $$props;
 	let { favicon } = $$props;
 	let { description } = $$props;
@@ -5243,11 +5156,11 @@ function instance$7($$self, $$props, $$invalidate) {
 	return [title, favicon, description, test];
 }
 
-class Component$7 extends SvelteComponent {
+class Component$6 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$7, null, safe_not_equal, {
+		init(this, options, instance$6, null, safe_not_equal, {
 			title: 0,
 			favicon: 1,
 			description: 2,
@@ -5258,7 +5171,7 @@ class Component$7 extends SvelteComponent {
 
 /* generated by Svelte v3.58.0 */
 
-function create_fragment$7(ctx) {
+function create_fragment$6(ctx) {
 	let component_0;
 	let t0;
 	let component_1;
@@ -5270,8 +5183,6 @@ function create_fragment$7(ctx) {
 	let component_4;
 	let t4;
 	let component_5;
-	let t5;
-	let component_6;
 	let current;
 
 	component_0 = new Component({
@@ -5308,6 +5219,30 @@ function create_fragment$7(ctx) {
 					"title": "primo"
 				},
 				nav: [
+					{
+						"link": { "url": "/about", "label": "About" },
+						"links": [
+							{
+								"link": {
+									"url": "/about/why",
+									"label": "Why Primo"
+								}
+							},
+							{
+								"link": {
+									"url": "/about/mission",
+									"label": "Mission"
+								}
+							},
+							{
+								"link": {
+									"url": "/about/how-it-works",
+									"label": "How it Works"
+								}
+							}
+						],
+						"featured": ""
+					},
 					{
 						"link": {
 							"url": "https://docs.primocms.org",
@@ -5354,8 +5289,8 @@ function create_fragment$7(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
 				content: {
-					"html": "<h1>Mission</h1><p>Primo is an open-source CMS, but can be better thought of as an <mark>all-in-one web publishing and development tool</mark>. It’s arguably the most approachable way to publish websites and enables anyone, regardless of technical ability, to create and [begin to] develop websites <mark>without the obstacles that exist in the modern web development landscape</mark>.</p>",
-					"markdown": "# Mission\n\nPrimo is an open-source CMS, but can be better thought of as an <mark>all-in-one web publishing and development tool</mark>\n\n. It’s arguably the most approachable way to publish websites and enables anyone, regardless of technical ability, to create and [begin to] develop websites <mark>without the obstacles that exist in the modern web development landscape</mark>\n\n.\n\n"
+					"html": "<h1>Mission</h1><p>Primo is an open-source CMS, but can be better thought of as an all-in-one web publishing and development tool. It’s arguably the most approachable way to publish websites and enables anyone, regardless of technical ability, to create and [begin to] develop websites without the obstacles that exist in the modern web development landscape.</p><p>The world wide web is the most powerful, accessible, and democratic tool ever created for free communication between anybody in the world, particularly on a mass scale. It’s instantly accessible by anyone, on any device, without gatekeepers, and has been heavily invested in by individuals who believed in its potential to be a liberating and creative tool.</p><p>But since its creation, monopolistic forces have risen to centralize the web and its benefits into proprietary platforms that remove the control and access from individuals. The days of personal blogs and normal people writing HTML and CSS to express themselves are all but gone; the web of today is largely generic, ad-ridden, and dominated by a handful of platforms that mean well but have to bend to expectant shareholders and tyrannical governments at the end of the day.</p><p>The services that <em>do </em>exist to enable easier access to web publishing do so on a monthly, often prohibitively expensive basis, and keep publishers under the guise of “no-code” which limits them severely in their ability to write custom software and locks them into proprietary platforms. Without naming names, site builders rhyming with OoebPhlow, Wicks, and Wiiblee don't let you take your content with you.</p><p>Holdovers from the free age of the web still exist in the form of open-source publishing tools like <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://wordpress.org/\">WordPress</a>, <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://www.drupal.org/\">Drupal</a>, and <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link link\" href=\"https://www.joomla.org/\">Joomla</a>, but these are antiquated in their approaches and severely limit accessibility to code, not to mention their security and maintenance issues.</p><p>Finally, there’s the world of modern development - web frameworks like SvelteKit, NextJS, and Laravel have made great strides to enable more powerful web application development, but were ultimately designed as professional tools for professional software engineers building enterprise software. The barriers they present just to get started make them unviable for the large majority of individuals and prohibitive for people just getting started with web development. But more importantly, they don’t concern themselves with actual content management, but instead rely on headless CMSs (which are primarily suited for enterprise customers), making them only half of the answer.</p><p>Primo puts the power of the web back into the hands of individuals by giving them direct access to publish their <em>own </em>websites, regardless of their technical ability.<strong> </strong>It enables people to build and edit websites modularly (or “one block at a time”) by combining <em>both </em>the content and code abilities into the same tool. Primo builds on the integrated approach of traditional monolithic CMSs, but goes further by integrating a development environment alongside the content editing environment. With this approach, it enables the accessible content management of traditional CMSs and no-code site builders without their lack of code access, as well as the power of HTML, CSS, and JavaScript without the learning curve of the modern development toolkit.</p><p>Primo sites can be created and published within minutes from the same server, and avoid the security, maintenance, and scalability issues of monolithic CMSs by deploying as static files. They can be collaborated on with nontechnical users by hiding the options to access the blocks’ code. And developers can access their site's code right from the CMS with a single click on any given block, giving them access the full power of the web platform to do everything from forms to stores to CRUD applications, with a clear path to growing into something more powerful.</p><p>Our vision is that Primo would create a pathway for people around the world, regardless of their technical background, to truly own their online presence and have the ability to directly access the web as a publishing and creative platform - <strong>without the middlemen standing in the way</strong>.</p>",
+					"markdown": "# Mission\n\nPrimo is an open-source CMS, but can be better thought of as an all-in-one web publishing and development tool. It’s arguably the most approachable way to publish websites and enables anyone, regardless of technical ability, to create and [begin to] develop websites without the obstacles that exist in the modern web development landscape.\n\nThe world wide web is the most powerful, accessible, and democratic tool ever created for free communication between anybody in the world, particularly on a mass scale. It’s instantly accessible by anyone, on any device, without gatekeepers, and has been heavily invested in by individuals who believed in its potential to be a liberating and creative tool.\n\nBut since its creation, monopolistic forces have risen to centralize the web and its benefits into proprietary platforms that remove the control and access from individuals. The days of personal blogs and normal people writing HTML and CSS to express themselves are all but gone; the web of today is largely generic, ad-ridden, and dominated by a handful of platforms that mean well but have to bend to expectant shareholders and tyrannical governments at the end of the day.\n\nThe services that *do *exist to enable easier access to web publishing do so on a monthly, often prohibitively expensive basis, and keep publishers under the guise of “no-code” which limits them severely in their ability to write custom software and locks them into proprietary platforms. Without naming names, site builders rhyming with OoebPhlow, Wicks, and Wiiblee don't let you take your content with you.\n\nHoldovers from the free age of the web still exist in the form of open-source publishing tools like [WordPress](<https://wordpress.org/>), [Drupal](<https://www.drupal.org/>), and [Joomla](<https://www.joomla.org/>), but these are antiquated in their approaches and severely limit accessibility to code, not to mention their security and maintenance issues.\n\nFinally, there’s the world of modern development - web frameworks like SvelteKit, NextJS, and Laravel have made great strides to enable more powerful web application development, but were ultimately designed as professional tools for professional software engineers building enterprise software. The barriers they present just to get started make them unviable for the large majority of individuals and prohibitive for people just getting started with web development. But more importantly, they don’t concern themselves with actual content management, but instead rely on headless CMSs (which are primarily suited for enterprise customers), making them only half of the answer.\n\nPrimo puts the power of the web back into the hands of individuals by giving them direct access to publish their *own *websites, regardless of their technical ability.** **It enables people to build and edit websites modularly (or “one block at a time”) by combining *both *the content and code abilities into the same tool. Primo builds on the integrated approach of traditional monolithic CMSs, but goes further by integrating a development environment alongside the content editing environment. With this approach, it enables the accessible content management of traditional CMSs and no-code site builders without their lack of code access, as well as the power of HTML, CSS, and JavaScript without the learning curve of the modern development toolkit.\n\nPrimo sites can be created and published within minutes from the same server, and avoid the security, maintenance, and scalability issues of monolithic CMSs by deploying as static files. They can be collaborated on with nontechnical users by hiding the options to access the blocks’ code. And developers can access their site's code right from the CMS with a single click on any given block, giving them access the full power of the web platform to do everything from forms to stores to CRUD applications, with a clear path to growing into something more powerful.\n\nOur vision is that Primo would create a pathway for people around the world, regardless of their technical background, to truly own their online presence and have the ability to directly access the web as a publishing and creative platform - **without the middlemen standing in the way**.\n\n"
 				},
 				style: { "center_heading": "" }
 			}
@@ -5372,36 +5307,17 @@ function create_fragment$7(ctx) {
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				test: "THE TEST VALUE",
-				content: {
-					"html": "<p>Primo is an open-source CMS, but can be better thought of as an <mark>all-in-one web publishing and development tool</mark>. It’s arguably the most approachable way to publish websites and enables anyone, regardless of technical ability, to create and [begin to] develop websites <mark>without the obstacles that exist in the modern web development landscape</mark>.</p><p>The world wide web is the most powerful, accessible, and democratic tool ever created for free communication between anybody in the world, particularly on a mass scale. It’s instantly accessible by anyone, on any device, without gatekeepers, and has been heavily invested in by individuals who believed in its potential to be a liberating and creative tool.</p><p>But since its creation, <mark>monopolistic forces have risen to centralize the web</mark> and its benefits into proprietary platforms that remove the control and access from individuals. The days of personal blogs and normal people writing HTML and CSS to express themselves are all but gon<mark>e; the web of today is largely generic, ad-ridden, and dominated by a handful of platforms</mark> that mean well but have to bend to expectant shareholders and tyrannical governments at the end of the day.</p><p>The services that <em>do </em>exist to enable easier access to web publishing do so on a monthly, often prohibitively expensive basis, and keep publishers under the guise of “no-code” which limits them severely in their ability to write custom software and locks them into proprietary platforms. Without naming names, site builders rhyming with OoebPhlow, Wicks, and Wiiblee don't let you take your content with you.</p><p>Holdovers from the free age of the web still exist in the form of open-source publishing tools like <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link\" href=\"https://wordpress.org/\">WordPress</a>, <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link\" href=\"https://www.drupal.org/\">Drupal</a>, and <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link link link\" href=\"https://www.joomla.org/\">Joomla</a>, but these are antiquated in their approaches and severely limit accessibility to code, not to mention their security and maintenance issues.</p><p>Finally, there’s the world of modern development - web frameworks like SvelteKit, NextJS, and Laravel have made great strides to enable more powerful web application development, but were ultimately designed as professional tools for professional software engineers building enterprise software. The barriers they present just to get started make them unviable for the large majority of individuals and prohibitive for people just getting started with web development. But more importantly, they don’t concern themselves with actual content management, but instead rely on headless CMSs (which are primarily suited for enterprise customers), making them only half of the answer.</p><p><mark>Primo puts the power of the web back into the hands of individuals by giving them direct access to publish their </mark><em><mark>own </mark></em><mark>websites, regardless of their technical ability.</mark><strong> </strong>It enables people to build and edit websites modularly (or “one block at a time”) by combining <em>both </em>the content and code abilities into the same tool. Primo builds on the integrated approach of traditional monolithic CMSs, but goes further by integrating a development environment alongside the content editing environment. With this approach, it enables the accessible content management of traditional CMSs and no-code site builders without their lack of code access, as well as the power of HTML, CSS, and JavaScript without the learning curve of the modern development toolkit.</p><p>Primo sites can be <mark>created and published within minutes</mark> from the same server, and <mark>avoid the security, maintenance, and scalability issues of monolithic CMSs</mark> by deploying as <mark>static files</mark>. They can be collaborated on with nontechnical users by hiding the options to access the blocks’ code. And developers can access their site's code right from the CMS with a single click on any given block, giving them access the full power of the web platform to do everything from forms to stores to CRUD applications, with a clear path to growing into something more powerful.</p><p><mark>Our vision is that Primo would create a pathway</mark> for people around the world, regardless of their technical background, to truly own their online presence and have the ability to <mark>directly access the web</mark> as a publishing and creative platform - <strong>without the middlemen standing in the way</strong>.</p>",
-					"markdown": "Primo is an open-source CMS, but can be better thought of as an <mark>all-in-one web publishing and development tool</mark>\n\n. It’s arguably the most approachable way to publish websites and enables anyone, regardless of technical ability, to create and [begin to] develop websites <mark>without the obstacles that exist in the modern web development landscape</mark>\n\n.\n\nThe world wide web is the most powerful, accessible, and democratic tool ever created for free communication between anybody in the world, particularly on a mass scale. It’s instantly accessible by anyone, on any device, without gatekeepers, and has been heavily invested in by individuals who believed in its potential to be a liberating and creative tool.\n\nBut since its creation, <mark>monopolistic forces have risen to centralize the web</mark>\n\n and its benefits into proprietary platforms that remove the control and access from individuals. The days of personal blogs and normal people writing HTML and CSS to express themselves are all but gon<mark>e; the web of today is largely generic, ad-ridden, and dominated by a handful of platforms</mark>\n\n that mean well but have to bend to expectant shareholders and tyrannical governments at the end of the day.\n\nThe services that *do *exist to enable easier access to web publishing do so on a monthly, often prohibitively expensive basis, and keep publishers under the guise of “no-code” which limits them severely in their ability to write custom software and locks them into proprietary platforms. Without naming names, site builders rhyming with OoebPhlow, Wicks, and Wiiblee don't let you take your content with you.\n\nHoldovers from the free age of the web still exist in the form of open-source publishing tools like [WordPress](<https://wordpress.org/>), [Drupal](<https://www.drupal.org/>), and [Joomla](<https://www.joomla.org/>), but these are antiquated in their approaches and severely limit accessibility to code, not to mention their security and maintenance issues.\n\nFinally, there’s the world of modern development - web frameworks like SvelteKit, NextJS, and Laravel have made great strides to enable more powerful web application development, but were ultimately designed as professional tools for professional software engineers building enterprise software. The barriers they present just to get started make them unviable for the large majority of individuals and prohibitive for people just getting started with web development. But more importantly, they don’t concern themselves with actual content management, but instead rely on headless CMSs (which are primarily suited for enterprise customers), making them only half of the answer.\n\n<mark>Primo puts the power of the web back into the hands of individuals by giving them direct access to publish their </mark>\n\n*<mark>own </mark>\n\n*<mark>websites, regardless of their technical ability.</mark>\n\n** **It enables people to build and edit websites modularly (or “one block at a time”) by combining *both *the content and code abilities into the same tool. Primo builds on the integrated approach of traditional monolithic CMSs, but goes further by integrating a development environment alongside the content editing environment. With this approach, it enables the accessible content management of traditional CMSs and no-code site builders without their lack of code access, as well as the power of HTML, CSS, and JavaScript without the learning curve of the modern development toolkit.\n\nPrimo sites can be <mark>created and published within minutes</mark>\n\n from the same server, and <mark>avoid the security, maintenance, and scalability issues of monolithic CMSs</mark>\n\n by deploying as <mark>static files</mark>\n\n. They can be collaborated on with nontechnical users by hiding the options to access the blocks’ code. And developers can access their site's code right from the CMS with a single click on any given block, giving them access the full power of the web platform to do everything from forms to stores to CRUD applications, with a clear path to growing into something more powerful.\n\n<mark>Our vision is that Primo would create a pathway</mark>\n\n for people around the world, regardless of their technical background, to truly own their online presence and have the ability to <mark>directly access the web</mark>\n\n as a publishing and creative platform - **without the middlemen standing in the way**.\n\n"
-				},
-				style: { "center_heading": "" }
-			}
-		});
-
-	component_4 = new Component$5({
-			props: {
-				title: "Primo",
-				favicon: {
-					"alt": "",
-					"src": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
-					"url": "https://dbfnrqvkgwkjkzqgnfrd.supabase.co/storage/v1/object/public/images/1a9f29e7-b37e-4a46-adcf-49d3b854ed8a/1680814436263_p_%20Mark%20in%20App%20Icon.png",
-					"size": 8
-				},
-				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				test: "THE TEST VALUE",
 				signup_form: {
 					"heading": "Hear about future updates, including:",
 					"subheading": {
-						"html": "<ul>\n<li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li>\n<li><p><strong>Design fields</strong> to give content editors style options.</p></li>\n<li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li>\n</ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n"
+						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Design fields</strong> to give content editors predefined style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Design fields** to give content editors predefined style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
 					}
 				}
 			}
 		});
 
-	component_5 = new Component$6({
+	component_4 = new Component$5({
 			props: {
 				title: "Primo",
 				favicon: {
@@ -5453,7 +5369,7 @@ function create_fragment$7(ctx) {
 			}
 		});
 
-	component_6 = new Component$7({
+	component_5 = new Component$6({
 			props: {
 				title: "Primo",
 				favicon: {
@@ -5480,8 +5396,6 @@ function create_fragment$7(ctx) {
 			create_component(component_4.$$.fragment);
 			t4 = space();
 			create_component(component_5.$$.fragment);
-			t5 = space();
-			create_component(component_6.$$.fragment);
 		},
 		l(nodes) {
 			claim_component(component_0.$$.fragment, nodes);
@@ -5495,8 +5409,6 @@ function create_fragment$7(ctx) {
 			claim_component(component_4.$$.fragment, nodes);
 			t4 = claim_space(nodes);
 			claim_component(component_5.$$.fragment, nodes);
-			t5 = claim_space(nodes);
-			claim_component(component_6.$$.fragment, nodes);
 		},
 		m(target, anchor) {
 			mount_component(component_0, target, anchor);
@@ -5510,8 +5422,6 @@ function create_fragment$7(ctx) {
 			mount_component(component_4, target, anchor);
 			insert_hydration(target, t4, anchor);
 			mount_component(component_5, target, anchor);
-			insert_hydration(target, t5, anchor);
-			mount_component(component_6, target, anchor);
 			current = true;
 		},
 		p: noop,
@@ -5523,7 +5433,6 @@ function create_fragment$7(ctx) {
 			transition_in(component_3.$$.fragment, local);
 			transition_in(component_4.$$.fragment, local);
 			transition_in(component_5.$$.fragment, local);
-			transition_in(component_6.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -5533,7 +5442,6 @@ function create_fragment$7(ctx) {
 			transition_out(component_3.$$.fragment, local);
 			transition_out(component_4.$$.fragment, local);
 			transition_out(component_5.$$.fragment, local);
-			transition_out(component_6.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -5548,17 +5456,15 @@ function create_fragment$7(ctx) {
 			destroy_component(component_4, detaching);
 			if (detaching) detach(t4);
 			destroy_component(component_5, detaching);
-			if (detaching) detach(t5);
-			destroy_component(component_6, detaching);
 		}
 	};
 }
 
-class Component$8 extends SvelteComponent {
+class Component$7 extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment$7, safe_not_equal, {});
+		init(this, options, null, create_fragment$6, safe_not_equal, {});
 	}
 }
 
-export default Component$8;
+export default Component$7;

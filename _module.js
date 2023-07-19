@@ -3311,8 +3311,8 @@ function create_if_block_5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "memo-content svelte-tkncv2");
-			attr(div1, "class", "banner svelte-tkncv2");
+			attr(div0, "class", "memo-content svelte-13p0my8");
+			attr(div1, "class", "banner svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3366,7 +3366,7 @@ function create_if_block_6(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*banner*/ ctx[0].cta.url);
-			attr(a, "class", "svelte-tkncv2");
+			attr(a, "class", "svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3404,7 +3404,7 @@ function create_if_block_4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "featured-pill svelte-tkncv2");
+			attr(span, "class", "featured-pill svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span, anchor);
@@ -3438,7 +3438,7 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 			toggle_class(a, "active", /*link*/ ctx[8].url === window.location.pathname);
 		},
 		m(target, anchor) {
@@ -3500,8 +3500,8 @@ function create_if_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-tkncv2");
-			attr(span1, "class", "icon svelte-tkncv2");
+			attr(span0, "class", "svelte-13p0my8");
+			attr(span1, "class", "icon svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span0, anchor);
@@ -3564,7 +3564,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "dropdown svelte-tkncv2");
+			attr(div, "class", "dropdown svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3628,7 +3628,7 @@ function create_each_block_3(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3695,8 +3695,8 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-tkncv2");
-			attr(div1, "class", "nav-item svelte-tkncv2");
+			attr(div0, "class", "top-link svelte-13p0my8");
+			attr(div1, "class", "nav-item svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3834,9 +3834,9 @@ function create_if_block$1(ctx) {
 		h() {
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-tkncv2");
+			attr(button, "class", "svelte-13p0my8");
 			attr(nav_1, "id", "mobile-nav");
-			attr(nav_1, "class", "svelte-tkncv2");
+			attr(nav_1, "class", "svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav_1, anchor);
@@ -3932,7 +3932,7 @@ function create_else_block$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -4038,7 +4038,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "link svelte-tkncv2");
+			attr(a, "class", "link svelte-13p0my8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -4237,19 +4237,19 @@ function create_fragment$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-tkncv2");
+			attr(span0, "class", "svelte-13p0my8");
 			html_tag.a = null;
 			attr(a0, "href", "/");
-			attr(a0, "class", "logo svelte-tkncv2");
-			attr(span1, "class", "svelte-tkncv2");
-			attr(a1, "class", "link pill svelte-tkncv2");
+			attr(a0, "class", "logo svelte-13p0my8");
+			attr(span1, "class", "svelte-13p0my8");
+			attr(a1, "class", "link pill svelte-13p0my8");
 			attr(a1, "href", "https://github.com/primocms/primo");
 			attr(a1, "aria-label", "Github repo");
-			attr(div0, "class", "menu-icon svelte-tkncv2");
+			attr(div0, "class", "menu-icon svelte-13p0my8");
 			attr(button, "id", "open");
-			attr(button, "class", "svelte-tkncv2");
-			attr(nav_1, "class", "svelte-tkncv2");
-			attr(header, "class", "section-container svelte-tkncv2");
+			attr(button, "class", "svelte-13p0my8");
+			attr(nav_1, "class", "svelte-13p0my8");
+			attr(header, "class", "section-container svelte-13p0my8");
 			attr(div1, "class", "section");
 			attr(div1, "id", "section-caf0af11");
 		},
@@ -17800,6 +17800,30 @@ function create_fragment$a(ctx) {
 				},
 				nav: [
 					{
+						"link": { "url": "/about", "label": "About" },
+						"links": [
+							{
+								"link": {
+									"url": "/about/why",
+									"label": "Why Primo"
+								}
+							},
+							{
+								"link": {
+									"url": "/about/mission",
+									"label": "Mission"
+								}
+							},
+							{
+								"link": {
+									"url": "/about/how-it-works",
+									"label": "How it Works"
+								}
+							}
+						],
+						"featured": ""
+					},
+					{
 						"link": {
 							"url": "https://docs.primocms.org",
 							"label": "Docs"
@@ -18159,8 +18183,8 @@ function create_fragment$a(ctx) {
 				signup_form: {
 					"heading": "Hear about future updates, including:",
 					"subheading": {
-						"html": "<ul>\n<li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li>\n<li><p><strong>Design fields</strong> to give content editors style options.</p></li>\n<li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li>\n</ul>",
-						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Design fields** to give content editors style options.\n\n- **Cloud functions** for writing backend code from Primo.\n"
+						"html": "<ul><li><p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p></li><li><p><strong>Design fields</strong> to give content editors predefined style options.</p></li><li><p><strong>Cloud functions</strong> for writing backend code from Primo.</p></li></ul>",
+						"markdown": "- **Using it headless** alongside SvelteKit, NextJS, etc.\n\n- **Design fields** to give content editors predefined style options.\n\n- **Cloud functions** for writing backend code from Primo.\n\n\n<!-- -->\n\n"
 					}
 				}
 			}
