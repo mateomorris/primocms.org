@@ -3193,7 +3193,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (247:12) {#if banner.label}
+// (249:12) {#if banner.label}
 function create_if_block_5(ctx) {
 	let div1;
 	let div0;
@@ -3226,8 +3226,8 @@ function create_if_block_5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "memo-content svelte-13p0my8");
-			attr(div1, "class", "banner svelte-13p0my8");
+			attr(div0, "class", "memo-content svelte-17esy5a");
+			attr(div1, "class", "banner svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3259,7 +3259,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (251:6) {#if banner.cta.label}
+// (253:6) {#if banner.cta.label}
 function create_if_block_6(ctx) {
 	let a;
 	let t_value = /*banner*/ ctx[0].cta.label + "";
@@ -3281,7 +3281,7 @@ function create_if_block_6(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*banner*/ ctx[0].cta.url);
-			attr(a, "class", "svelte-13p0my8");
+			attr(a, "class", "svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3300,7 +3300,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (274:10) {#if featured}
+// (276:10) {#if featured}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3319,7 +3319,7 @@ function create_if_block_4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "featured-pill svelte-13p0my8");
+			attr(span, "class", "featured-pill svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span, anchor);
@@ -3331,7 +3331,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (280:10) {:else}
+// (282:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3353,7 +3353,7 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-13p0my8");
+			attr(a, "class", "link svelte-17esy5a");
 			toggle_class(a, "active", /*link*/ ctx[9].url === window.location.pathname);
 		},
 		m(target, anchor) {
@@ -3379,7 +3379,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (277:10) {#if hasDropdown}
+// (279:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
 	let t0_value = /*link*/ ctx[9].label + "";
@@ -3415,8 +3415,8 @@ function create_if_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-13p0my8");
-			attr(span1, "class", "icon svelte-13p0my8");
+			attr(span0, "class", "svelte-17esy5a");
+			attr(span1, "class", "icon svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span0, anchor);
@@ -3447,7 +3447,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (287:8) {#if hasDropdown}
+// (289:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
 	let each_value_3 = /*links*/ ctx[10];
@@ -3479,7 +3479,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "dropdown svelte-13p0my8");
+			attr(div, "class", "dropdown svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3521,7 +3521,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (289:12) {#each links as { link }}
+// (291:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3543,7 +3543,7 @@ function create_each_block_3(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-13p0my8");
+			attr(a, "class", "link svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3562,7 +3562,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (270:4) {#each nav as { link, links, featured }}
+// (272:4) {#each nav as { link, links, featured }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3610,8 +3610,8 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-13p0my8");
-			attr(div1, "class", "nav-item svelte-13p0my8");
+			attr(div0, "class", "top-link svelte-17esy5a");
+			attr(div1, "class", "nav-item svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3692,7 +3692,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (300:2) {#if mobileNavOpen}
+// (302:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3749,9 +3749,9 @@ function create_if_block$1(ctx) {
 		h() {
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-13p0my8");
+			attr(button, "class", "svelte-17esy5a");
 			attr(nav_1, "id", "mobile-nav");
-			attr(nav_1, "class", "svelte-13p0my8");
+			attr(nav_1, "class", "svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav_1, anchor);
@@ -3825,7 +3825,7 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (308:8) {:else}
+// (310:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3847,7 +3847,7 @@ function create_else_block$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-13p0my8");
+			attr(a, "class", "link svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3866,7 +3866,7 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (304:8) {#if hasDropdown}
+// (306:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*links*/ ctx[10];
@@ -3931,7 +3931,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (305:10) {#each links as { link }}
+// (307:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[9].label + "";
@@ -3953,7 +3953,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[9].url);
-			attr(a, "class", "link svelte-13p0my8");
+			attr(a, "class", "link svelte-17esy5a");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3972,7 +3972,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (302:6) {#each nav as { link, links }}
+// (304:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
@@ -4152,19 +4152,19 @@ function create_fragment$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-13p0my8");
+			attr(span0, "class", "svelte-17esy5a");
 			html_tag.a = null;
 			attr(a0, "href", "/");
-			attr(a0, "class", "logo svelte-13p0my8");
-			attr(span1, "class", "svelte-13p0my8");
-			attr(a1, "class", "link pill svelte-13p0my8");
+			attr(a0, "class", "logo svelte-17esy5a");
+			attr(span1, "class", "svelte-17esy5a");
+			attr(a1, "class", "link pill svelte-17esy5a");
 			attr(a1, "href", "https://github.com/primocms/primo");
 			attr(a1, "aria-label", "Github repo");
-			attr(div0, "class", "menu-icon svelte-13p0my8");
+			attr(div0, "class", "menu-icon svelte-17esy5a");
 			attr(button, "id", "open");
-			attr(button, "class", "svelte-13p0my8");
-			attr(nav_1, "class", "svelte-13p0my8");
-			attr(header, "class", "section-container svelte-13p0my8");
+			attr(button, "class", "svelte-17esy5a");
+			attr(nav_1, "class", "svelte-17esy5a");
+			attr(header, "class", "section-container svelte-17esy5a");
 			attr(div1, "class", "section");
 			attr(div1, "id", "section-90b4c5f1");
 		},
@@ -9334,23 +9334,23 @@ function create_fragment$6(ctx) {
 				],
 				social: [
 					{
+						"icon": "fa6-brands:discourse",
 						"link": {
 							"url": "https://forum.primo.so",
 							"label": "Forum"
-						},
-						"icon": "fa6-brands:discourse"
+						}
 					},
 					{
-						"link": { "url": "/", "label": "Discord" },
-						"icon": "fa6-brands:discord"
+						"icon": "fa6-brands:discord",
+						"link": { "url": "/", "label": "Discord" }
 					},
 					{
-						"link": { "url": "/", "label": "Youtube" },
-						"icon": "fa6-brands:youtube"
+						"icon": "fa6-brands:youtube",
+						"link": { "url": "/", "label": "Youtube" }
 					},
 					{
-						"link": { "url": "/", "label": "Github" },
-						"icon": "fa6-brands:github"
+						"icon": "fa6-brands:github",
+						"link": { "url": "/", "label": "Github" }
 					}
 				]
 			}
