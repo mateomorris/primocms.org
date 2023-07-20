@@ -9326,7 +9326,13 @@ function create_fragment$6(ctx) {
 				test: "THE TEST VALUE",
 				footer_nav: [
 					{
-						"link": { "url": "/", "label": "Changelog" }
+						"link": {
+							"url": "/changelog",
+							"label": "Changelog"
+						}
+					},
+					{
+						"link": { "url": "/roadmap", "label": "Issues" }
 					}
 				],
 				social: [
@@ -9339,24 +9345,15 @@ function create_fragment$6(ctx) {
 					},
 					{
 						"icon": "fa6-brands:discord",
-						"link": {
-							"url": "https://discord.gg/DMQshmek8m",
-							"label": "Discord"
-						}
+						"link": { "url": "/", "label": "Discord" }
 					},
 					{
 						"icon": "fa6-brands:youtube",
-						"link": {
-							"url": "https://www.youtube.com/@primocms",
-							"label": "Youtube"
-						}
+						"link": { "url": "/", "label": "Youtube" }
 					},
 					{
 						"icon": "fa6-brands:github",
-						"link": {
-							"url": "https://github.com/primocms/primo",
-							"label": "Github"
-						}
+						"link": { "url": "/", "label": "Github" }
 					}
 				]
 			}

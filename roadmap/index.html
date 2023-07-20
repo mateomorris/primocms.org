@@ -554,148 +554,119 @@
             }
         }
 
-        section.svelte-1ol9m0j.svelte-1ol9m0j {
-            color: white;
-            background: var(--background)
-        }
-
-        .section-container.svelte-1ol9m0j.svelte-1ol9m0j {
-            width: 100%;
-            display: grid;
-            gap: 4rem
-        }
-
-        @media(min-width: 700px) {
-            .section-container.svelte-1ol9m0j.svelte-1ol9m0j {
-                grid-template-columns: 5fr 4fr
-            }
-        }
-
-        .main.svelte-1ol9m0j.svelte-1ol9m0j {
-            display: grid;
-            gap: 1rem;
-            place-content: start
-        }
-
-        .main.svelte-1ol9m0j .heading.svelte-1ol9m0j {
-            text-align: left
-        }
-
-        .main.svelte-1ol9m0j .subheading.svelte-1ol9m0j {
-            opacity: 0.75;
-            line-height: 1.875rem;
+        .heading.svelte-2tp8nd.svelte-2tp8nd.svelte-2tp8nd {
             text-align: left;
-            margin-bottom: .5rem
+            margin-bottom: 2rem
         }
 
-        .main.svelte-1ol9m0j ul.svelte-1ol9m0j {
-            display: grid;
+        .issues.svelte-2tp8nd.svelte-2tp8nd.svelte-2tp8nd {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
             gap: 1rem
         }
 
-        .main.svelte-1ol9m0j li.svelte-1ol9m0j {
+        .issues.svelte-2tp8nd>li.svelte-2tp8nd.svelte-2tp8nd {
+            display: grid;
+            gap: 0.25rem;
+            padding: 0.75rem 1rem;
+            place-items: start;
+            border: 1px solid #333
+        }
+
+        .issues.svelte-2tp8nd>li ul.labels.svelte-2tp8nd.svelte-2tp8nd {
             display: flex;
-            align-items: center;
+            gap: 0.25rem
+        }
+
+        .issues.svelte-2tp8nd>li ul.labels.svelte-2tp8nd>li.svelte-2tp8nd {
+            border-radius: 1rem;
+            padding: 0.25rem 0.5rem;
+            color: #111;
+            font-size: 0.75rem
+        }
+
+        .issues.svelte-2tp8nd>li .title.svelte-2tp8nd.svelte-2tp8nd {
+            font-weight: 500;
+            text-decoration: underline
+        }
+
+        .issues.svelte-2tp8nd>li .date.svelte-2tp8nd.svelte-2tp8nd {
+            font-size: 0.75rem
+        }
+
+        .section-container.svelte-l19rlb.svelte-l19rlb {
+            display: grid;
+            gap: 2rem;
+            padding-top: 6rem;
+            padding-bottom: 8rem
+        }
+
+        .inner-content.svelte-l19rlb.svelte-l19rlb {
+            display: grid;
+            place-content: flex-start;
             gap: 0.5rem
         }
 
-        .main.svelte-1ol9m0j li .icon.svelte-1ol9m0j {
-            font-size: 1.5rem;
-            color: var(--color-accent)
+        .inner-content.svelte-l19rlb .heading.svelte-l19rlb {
+            font-size: 1.75rem;
+            text-align: left
         }
 
-        .main.svelte-1ol9m0j .label.svelte-1ol9m0j {
-            color: var(--body-color);
-            font-size: 1.1rem
+        .inner-content.svelte-l19rlb .subheading.svelte-l19rlb {
+            text-align: left;
+            color: var(--subheading-color);
+            padding: 0;
+            font-weight: 300
         }
 
-        .card.svelte-1ol9m0j.svelte-1ol9m0j {
-            background: #1A1A1A;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            max-width: 450px
+        form.svelte-l19rlb.svelte-l19rlb {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            box-shadow: var(--box-shadow)
         }
 
-        .card.svelte-1ol9m0j form.svelte-1ol9m0j {
-            display: grid;
-            gap: 1rem
-        }
-
-        .card.svelte-1ol9m0j label.svelte-1ol9m0j {
-            display: grid;
-            gap: 4px;
-            font-weight: 300;
-            color: #9D9D9D
-        }
-
-        .card.svelte-1ol9m0j label span.svelte-1ol9m0j {
-            font-weight: 300;
-            font-size: .875rem
-        }
-
-        .card.svelte-1ol9m0j label.has-textarea.svelte-1ol9m0j {
-            grid-column: var(--wide)
-        }
-
-        .card.svelte-1ol9m0j input.svelte-1ol9m0j,
-        .card.svelte-1ol9m0j textarea.svelte-1ol9m0j {
-            -webkit-appearance: none;
+        form.svelte-l19rlb input.svelte-l19rlb {
+            width: 100%;
             border-radius: 4px;
-            padding: .5rem;
+            border: 1px solid #6E6E6E;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
             background: transparent;
-            transition: 0.1s box-shadow;
-            color: white;
-            border: 1px solid #575757
+            color: var(--color-white)
         }
 
-        .card.svelte-1ol9m0j input.svelte-1ol9m0j::-moz-placeholder,
-        .card.svelte-1ol9m0j textarea.svelte-1ol9m0j::-moz-placeholder {
-            color: #6E6E6E
+        form.svelte-l19rlb .button.svelte-l19rlb {
+            width: 100%
         }
 
-        .card.svelte-1ol9m0j input.svelte-1ol9m0j:-ms-input-placeholder,
-        .card.svelte-1ol9m0j textarea.svelte-1ol9m0j:-ms-input-placeholder {
-            color: #6E6E6E
+        form.svelte-l19rlb .button.primary.svelte-l19rlb {
+            font-weight: 400;
+            border: 1.5px solid #35d994
         }
 
-        .card.svelte-1ol9m0j input.svelte-1ol9m0j::placeholder,
-        .card.svelte-1ol9m0j textarea.svelte-1ol9m0j::placeholder {
-            color: #6E6E6E
+        form.svelte-l19rlb .button.svelte-l19rlb:hover {
+            box-shadow: none;
+            background: #35d994;
+            color: black;
+            font-weight: 500
         }
 
-        .card.svelte-1ol9m0j input.svelte-1ol9m0j:focus-visible,
-        .card.svelte-1ol9m0j textarea.svelte-1ol9m0j:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 1px var(--color-accent)
-        }
+        @media(min-width: 700px) {
+            .section-container.svelte-l19rlb.svelte-l19rlb {
+                grid-template-columns: 2fr 1fr;
+                gap: 7rem
+            }
 
-        .card.svelte-1ol9m0j .file.svelte-1ol9m0j {
-            cursor: pointer
-        }
+            .section-container.svelte-l19rlb .inner-content.svelte-l19rlb {
+                gap: 1rem
+            }
 
-        .card.svelte-1ol9m0j .file .field-item.svelte-1ol9m0j {
-            display: flex;
-            justify-content: space-between;
-            padding: 0
-        }
-
-        .card.svelte-1ol9m0j .file .field-item span.button-left.svelte-1ol9m0j {
-            padding: 1rem;
-            flex: 1;
-            border-radius: 8px 0 0 8px;
-            border-right: none
-        }
-
-        .card.svelte-1ol9m0j .file .field-item span.button-right.svelte-1ol9m0j {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            padding-left: 2rem;
-            border-radius: 0 8px 8px 0
-        }
-
-        .card.svelte-1ol9m0j .file input.svelte-1ol9m0j {
-            display: none
+            .section-container.svelte-l19rlb .inner-content .heading.svelte-l19rlb {
+                text-align: left
+            }
         }
 
         footer.svelte-13um1f6.svelte-13um1f6 {
@@ -750,7 +721,7 @@
 
 <body id="page">
 
-    <div class="section" id="section-cbaf559a">
+    <div class="section" id="section-e52d0a3b">
         <header class="section-container svelte-17esy5a"><a href="/" class="logo svelte-17esy5a"><span class="svelte-17esy5a">primo</span>
                 <!-- HTML_TAG_START --><svg viewBox="0 0 871 198" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_250_527)">
@@ -833,42 +804,76 @@
             </nav>
         </header>
     </div>
-    <div class="section" id="section-a20e0925">
-        <section class="svelte-1ol9m0j">
-            <div class="section-container svelte-1ol9m0j">
-                <div class="main svelte-1ol9m0j">
-                    <h2 class="heading svelte-1ol9m0j">Library Contributions</h2>
-                    <div class="subheading svelte-1ol9m0j"><!-- HTML_TAG_START -->
-                        <p>The Primo Library is an attempt to create all of the common patterns that exist on the web. We're accepting help for anyone who's like to contribute blocks that other people can use on their own sites. </p><!-- HTML_TAG_END -->
-                    </div>
-                    <ul class="svelte-1ol9m0j"></ul>
-                </div>
-                <div class="card svelte-1ol9m0j">
-                    <form class="svelte-1ol9m0j">
-                        <label class="svelte-1ol9m0j"><span class="svelte-1ol9m0j">Name
-                                <span class="required svelte-1ol9m0j">*</span></span>
-                            <input type="text" required name="Name" placeholder="" class="svelte-1ol9m0j">
-                        </label>
-                        <label class="svelte-1ol9m0j"><span class="svelte-1ol9m0j">Email
-                                <span class="required svelte-1ol9m0j">*</span></span>
-                            <input type="text" required name="Email" placeholder="" class="svelte-1ol9m0j">
-                        </label>
-                        <label class="svelte-1ol9m0j"><span class="svelte-1ol9m0j">Github profile
-                            </span>
-                            <input type="text" name="Github profile" placeholder="" class="svelte-1ol9m0j">
-                        </label>
-                        <label class="has-textarea svelte-1ol9m0j"><span class="svelte-1ol9m0j">How you'd like to help
-                            </span>
-                            <textarea name="How you'd like to help" placeholder="Client work, personal projects, etc" class="svelte-1ol9m0j"></textarea>
-                        </label>
-                        <button type="submit" class="button is-primary">
-                            <span class="svelte-1ol9m0j">Submit</span></button>
-                    </form>
-                </div>
-            </div>
+    <div class="section" id="section-3f3ca4fb">
+        <section class="section-container">
+            <h1 class="heading svelte-2tp8nd">Open Issues</h1>
+            <ul class="issues svelte-2tp8nd"></ul>
         </section>
     </div>
-    <div class="section" id="section-009bcd78">
+    <div class="section" id="section-95a3726e">
+        <section class="svelte-l19rlb">
+            <div class="section-container svelte-l19rlb">
+                <div class="inner-content svelte-l19rlb">
+                    <h2 class="heading svelte-l19rlb">Hear about future updates, including:</h2>
+                    <h3 class="subheading content svelte-l19rlb"><!-- HTML_TAG_START -->
+                        <ul>
+                            <li>
+                                <p><strong>Using it headless</strong> alongside SvelteKit, NextJS, etc.</p>
+                            </li>
+                            <li>
+                                <p><strong>Design fields</strong> to give content editors predefined style options.</p>
+                            </li>
+                            <li>
+                                <p><strong>Cloud functions</strong> for writing backend code from Primo.</p>
+                            </li>
+                        </ul><!-- HTML_TAG_END -->
+                    </h3>
+                </div>
+                <div class="form">
+                    <div id="mlb2-5039306" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5039306">
+                        <div class="ml-form-align-center">
+                            <div class="ml-form-embedWrapper embedForm">
+                                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                    <form class="ml-block-form svelte-l19rlb" action="https://static.mailerlite.com/webforms/submit/j2m2z7" data-code="j2m2z7" method="post" target="_blank">
+                                        <div class="ml-form-formContent">
+                                            <div class="ml-form-fieldRow ml-last-item">
+                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required"><input aria-label="email" aria-required="true" type="email" class="form-control svelte-l19rlb" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="ml-submit" value="1" class="svelte-l19rlb">
+                                        <div class="ml-form-embedSubmit"><button type="submit" class="button primary svelte-l19rlb">Subscribe</button>
+                                            <button disabled="disabled" style="display: none" type="button" class="loading">
+                                                <div class="ml-form-embedSubmitLoad"></div>
+                                                <span class="sr-only">Loading...</span>
+                                            </button>
+                                        </div>
+                                        <input type="hidden" name="anticsrf" value="true" class="svelte-l19rlb">
+                                    </form>
+                                </div>
+                                <div class="ml-form-successBody row-success" style="display: none">
+                                    <div class="ml-form-successContent">
+                                        <h4>Thank you!</h4>
+                                        <p>You have successfully joined our subscriber list.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="https://track.mailerlite.com/webforms/o/5039306/j2m2z7?v1637419080" width="1" height="1" style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block; " alt="." border="0">
+                </div>
+                <script>
+                    function ml_webform_success_5039306() {
+                        var r = ml_jQuery || jQuery;
+                        r(".ml-subscribe-form-5039306 .row-success").show(),
+                            r(".ml-subscribe-form-5039306 .row-form").hide();
+                    }
+                </script>
+                <script src="https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c" type="text/javascript"></script>
+            </div>
+        </section>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </div>
+    <div class="section" id="section-21c09aac">
         <footer class="svelte-13um1f6">
             <div class="section-container svelte-13um1f6">
                 <div class="container svelte-13um1f6">
