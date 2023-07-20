@@ -18127,12 +18127,12 @@ function create_fragment$a(ctx) {
 					{
 						"title": "Is Primo open-core? VC-funded open source? Side project?",
 						"description": {
-							"html": "<p>Primo is under full-time development under a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
-							"markdown": "Primo is under full-time development under a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
+							"html": "<p>Primo is under full-time development and is in the process of becoming a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
+							"markdown": "Primo is under full-time development and is in the process of becoming a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
 						}
 					},
 					{
-						"title": "How does this compare to WordPress?",
+						"title": "How does this compare to WordPress?\n\nWordPress has been around for a while, but over that time it's built up a lot of baggage. Primo takes a simpler approach that's easier to spin up & manage. Primo lets you manage any number of sites from a single server (instead of needing to run a server per website), builds static sites by default, and gives you direct access to your site's code.",
 						"description": {
 							"html": "<p>WordPress has been around for a while, but over that time it's built up a lot of baggage. Primo takes a simpler approach that's easier to spin up &amp; manage. Primo lets you manage any number of sites from a single server (instead of needing to run a server per website), builds static sites by default, and gives you direct access to your site's code.</p>",
 							"markdown": "WordPress has been around for a while, but over that time it's built up a lot of baggage. Primo takes a simpler approach that's easier to spin up & manage. Primo lets you manage any number of sites from a single server (instead of needing to run a server per website), builds static sites by default, and gives you direct access to your site's code."
