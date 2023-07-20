@@ -9291,34 +9291,37 @@ function create_fragment$6(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
-						"link": {
-							"url": "/changelog",
-							"label": "Changelog"
-						}
-					},
-					{
-						"link": { "url": "/roadmap", "label": "Issues" }
+						"link": { "url": "/", "label": "Changelog" }
 					}
 				],
 				social: [
 					{
-						"icon": "fa6-brands:discourse",
 						"link": {
-							"url": "https://forum.primo.so",
+							"url": "https://forum.primo.so ",
 							"label": "Forum"
-						}
+						},
+						"icon": "fa6-brands:discourse"
 					},
 					{
-						"icon": "fa6-brands:discord",
-						"link": { "url": "/", "label": "Discord" }
+						"link": {
+							"url": "https://discord.gg/DMQshmek8m ",
+							"label": "Discord"
+						},
+						"icon": "fa6-brands:discord"
 					},
 					{
-						"icon": "fa6-brands:youtube",
-						"link": { "url": "/", "label": "Youtube" }
+						"link": {
+							"url": "https://www.youtube.com/@primocms ",
+							"label": "Youtube"
+						},
+						"icon": "fa6-brands:youtube"
 					},
 					{
-						"icon": "fa6-brands:github",
-						"link": { "url": "/", "label": "Github" }
+						"link": {
+							"url": "https://github.com/primocms/primo ",
+							"label": "Github"
+						},
+						"icon": "fa6-brands:github"
 					}
 				]
 			}
