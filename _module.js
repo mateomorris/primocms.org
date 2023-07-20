@@ -18155,8 +18155,8 @@ function create_fragment$a(ctx) {
 					{
 						"title": "How can I contribute or donate?",
 						"description": {
-							"html": "<p>Fill out the contribution <a href=\"primocms.org/contributions\">form</a> to get notified about contribution opportunities. Sponsor or donate to Primo via our <a href=\"https://opencollective.com/primo\">Open Collective</a></p>",
-							"markdown": "Fill out the contribution [form](<primocms.org/contributions>) to get notified about contribution opportunities. Sponsor or donate to Primo via our [Open Collective](<https://opencollective.com/primo>)\n\n"
+							"html": "<p>Fill out the contribution <a href=\"https://primocms.org/contributions\">form</a> to get notified about contribution opportunities. Sponsor or donate to Primo via our <a href=\"https://opencollective.com/primo\">Open Collective</a></p>",
+							"markdown": "Fill out the contribution [form](<https://primocms.org/contributions>) to get notified about contribution opportunities. Sponsor or donate to Primo via our [Open Collective](<https://opencollective.com/primo>)\n\n"
 						}
 					},
 					{
