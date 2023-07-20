@@ -18132,7 +18132,7 @@ function create_fragment$a(ctx) {
 						}
 					},
 					{
-						"title": "How does this compare to WordPress?\n\nWordPress has been around for a while, but over that time it's built up a lot of baggage. Primo takes a simpler approach that's easier to spin up & manage. Primo lets you manage any number of sites from a single server (instead of needing to run a server per website), builds static sites by default, and gives you direct access to your site's code.",
+						"title": "How does this compare to WordPress?",
 						"description": {
 							"html": "<p>WordPress has been around for a while, but over that time it's built up a lot of baggage. Primo takes a simpler approach that's easier to spin up &amp; manage. Primo lets you manage any number of sites from a single server (instead of needing to run a server per website), builds static sites by default, and gives you direct access to your site's code.</p>",
 							"markdown": "WordPress has been around for a while, but over that time it's built up a lot of baggage. Primo takes a simpler approach that's easier to spin up & manage. Primo lets you manage any number of sites from a single server (instead of needing to run a server per website), builds static sites by default, and gives you direct access to your site's code."
