@@ -9331,32 +9331,32 @@ function create_fragment$6(ctx) {
 				],
 				social: [
 					{
-						"icon": "fa6-brands:discourse",
 						"link": {
 							"url": "https://forum.primo.so ",
 							"label": "Forum"
-						}
+						},
+						"icon": "fa6-brands:discourse"
 					},
 					{
-						"icon": "fa6-brands:discord",
 						"link": {
-							"url": "https://discord.gg/DMQshmek8m ",
+							"url": "https://discord.gg/DMQshmek8m",
 							"label": "Discord"
-						}
+						},
+						"icon": "fa6-brands:discord"
 					},
 					{
-						"icon": "fa6-brands:youtube",
 						"link": {
 							"url": "https://www.youtube.com/@primocms ",
 							"label": "Youtube"
-						}
+						},
+						"icon": "fa6-brands:youtube"
 					},
 					{
-						"icon": "fa6-brands:github",
 						"link": {
 							"url": "https://github.com/primocms/primo ",
 							"label": "Github"
-						}
+						},
+						"icon": "fa6-brands:github"
 					}
 				]
 			}

@@ -18127,8 +18127,8 @@ function create_fragment$a(ctx) {
 					{
 						"title": "Is Primo open-core? VC-funded open source? Side project?",
 						"description": {
-							"html": "<p>Primo is under full-time development and is in the process of becoming a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
-							"markdown": "Primo is under full-time development and is in the process of becoming a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
+							"html": "<p>Primo is <a href=\"https://github.com/primocms/primo/blob/master/LICENSE\">MIT licensed</a>,  under full-time development, and is in the process of moving under a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as <a href=\"https://ghost.org\">Ghost CMS</a>.</p>",
+							"markdown": "Primo is [MIT licensed](https://github.com/primocms/primo/blob/master/LICENSE),  under full-time development, and is in the process of moving under a nonprofit organization. Any funds generated from White Glove and Cloud will go towards funding further development, in the same vein as [Ghost CMS](https://ghost.org)."
 						}
 					},
 					{
@@ -18207,32 +18207,32 @@ function create_fragment$a(ctx) {
 				],
 				social: [
 					{
-						"icon": "fa6-brands:discourse",
 						"link": {
 							"url": "https://forum.primo.so ",
 							"label": "Forum"
-						}
+						},
+						"icon": "fa6-brands:discourse"
 					},
 					{
-						"icon": "fa6-brands:discord",
 						"link": {
-							"url": "https://discord.gg/DMQshmek8m ",
+							"url": "https://discord.gg/DMQshmek8m",
 							"label": "Discord"
-						}
+						},
+						"icon": "fa6-brands:discord"
 					},
 					{
-						"icon": "fa6-brands:youtube",
 						"link": {
 							"url": "https://www.youtube.com/@primocms ",
 							"label": "Youtube"
-						}
+						},
+						"icon": "fa6-brands:youtube"
 					},
 					{
-						"icon": "fa6-brands:github",
 						"link": {
 							"url": "https://github.com/primocms/primo ",
 							"label": "Github"
-						}
+						},
+						"icon": "fa6-brands:github"
 					}
 				]
 			}
