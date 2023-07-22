@@ -17938,8 +17938,8 @@ function create_fragment$a(ctx) {
 				teasers: [
 					{
 						"body": {
-							"html": "<p>Build your site's pages by dragging and dropping your directly blocks onto the page, unencumbered by overwhelming design options.</p>",
-							"markdown": "Build your site's pages by dragging and dropping your directly blocks onto the page, unencumbered by overwhelming design options.\n\n"
+							"html": "<p>Build your site's pages by dragging and dropping your blocks directly onto the page, unencumbered by overwhelming design options.</p>",
+							"markdown": "Build your site's pages by dragging and dropping your blocks directly onto the page, unencumbered by overwhelming design options.\n\n"
 						},
 						"link": { "url": "/", "label": "", "active": false },
 						"image": {
@@ -18146,7 +18146,7 @@ function create_fragment$a(ctx) {
 						}
 					},
 					{
-						"title": "How far along is Primo's development?",
+						"title": "How far along is Primo's development?\n\nPrimo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023. It's stable enough for personal projects (and professional projects if you're brave).",
 						"description": {
 							"html": "<p>Primo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023. It's stable enough for personal projects (and professional projects if you're brave). </p>",
 							"markdown": "Primo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023. It's stable enough for personal projects (and professional projects if you're brave). "
@@ -18207,32 +18207,32 @@ function create_fragment$a(ctx) {
 				],
 				social: [
 					{
+						"icon": "fa6-brands:discourse",
 						"link": {
 							"url": "https://forum.primo.so ",
 							"label": "Forum"
-						},
-						"icon": "fa6-brands:discourse"
+						}
 					},
 					{
+						"icon": "fa6-brands:discord",
 						"link": {
 							"url": "https://discord.gg/DMQshmek8m",
 							"label": "Discord"
-						},
-						"icon": "fa6-brands:discord"
+						}
 					},
 					{
+						"icon": "fa6-brands:youtube",
 						"link": {
 							"url": "https://www.youtube.com/@primocms ",
 							"label": "Youtube"
-						},
-						"icon": "fa6-brands:youtube"
+						}
 					},
 					{
+						"icon": "fa6-brands:github",
 						"link": {
 							"url": "https://github.com/primocms/primo ",
 							"label": "Github"
-						},
-						"icon": "fa6-brands:github"
+						}
 					}
 				]
 			}
