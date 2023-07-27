@@ -18146,10 +18146,10 @@ function create_fragment$a(ctx) {
 						}
 					},
 					{
-						"title": "How far along is Primo's development?\n\nPrimo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023. It's stable enough for personal projects (and professional projects if you're brave).",
+						"title": "How far along is Primo's development?",
 						"description": {
-							"html": "<p>Primo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023. It's stable enough for personal projects (and professional projects if you're brave). </p>",
-							"markdown": "Primo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023. It's stable enough for personal projects (and professional projects if you're brave). "
+							"html": "<p>Primo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023 and is stable enough for personal projects. </p>",
+							"markdown": "Primo has been in full-time development for three years. It entered the public beta of version 2 in June of 2023 and is stable enough for personal projects. "
 						}
 					},
 					{
