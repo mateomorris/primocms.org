@@ -5577,7 +5577,10 @@ function create_fragment$6(ctx) {
 				test: "THE TEST VALUE",
 				footer_nav: [
 					{
-						"link": { "url": "/", "label": "Changelog" }
+						"link": {
+							"url": "/changelog",
+							"label": "Changelog"
+						}
 					}
 				],
 				social: [

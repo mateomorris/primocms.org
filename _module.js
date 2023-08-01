@@ -18202,7 +18202,10 @@ function create_fragment$a(ctx) {
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
 				footer_nav: [
 					{
-						"link": { "url": "/", "label": "Changelog" }
+						"link": {
+							"url": "/changelog",
+							"label": "Changelog"
+						}
 					}
 				],
 				social: [
