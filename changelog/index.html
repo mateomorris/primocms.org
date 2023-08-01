@@ -790,7 +790,6 @@
             <p>With this release, you can drag and drop Symbols in the sidebar to rearrange them. It also improves the reliability of dragging and dropping Symbols from the sidebar onto the page &amp; improves the overall UX of dragging and dropping.</p>
             <h4>Database update</h4>
             <p><strong>This update necessitates a small change in the database</strong> to enable rearranging. You can do it manually by creating a new column in your 'symbols' table called "index", making it a non-null integer, <strong>or preferably</strong> by running the query below.</p>
-            <h4>Database update</h4>
             <ol>
                 <li>
                     <p>From your Supabase dashboard, click 'SQL Editor' in the dashboard</p>
@@ -804,7 +803,6 @@
             </ol>
             <pre><code class="language-sql">alter table symbols
 add column index integer;
-
 </code></pre>
             <hr>
             <h2>V2 Beta 1 - on-page editing, side panel, stability</h2>
@@ -813,7 +811,8 @@ add column index integer;
             <h3>Migrating</h3>
             <p>Set up the new server from scratch, then upload your V1 sites manually. They'll be converted v2 sites in the database.</p>
             <h3>Changes</h3>
-            <p>With the removal of Primo Desktop, the project is now <em>only</em> self-hostable (and goes back to being just called Primo). It's still uses Vercel (or others) as a frontend and Supabase as a backend, but compared to v1 which stored your site as a single JSON file, v2 leverages Supabase's Postgres database to store sites, pages, and blocks as database records - making it possible to have an** unlimited <strong>number of pages</strong> **on a site (theoretically at least). <br><br></p>
+            <p>With the removal of Primo Desktop, the project is now <em>only</em> self-hostable (and goes back to being just called Primo). It's still uses Vercel (or others) as a frontend and Supabase as a backend, but compared to v1 which stored your site as a single JSON file, v2 leverages Supabase's Postgres database to store sites, pages, and blocks as database records - making it possible to have an** unlimited <strong>number of pages</strong> **on a site (theoretically at least). <br></p>
+            <p><br></p>
             <p>V1 had the tedious separation between Component section and Content section - one standard components edited from fields and the other a simple content blocked edited on the page. But with full on-page editing in V2, content sections are done away with and sections are just called blocks (instead of "components", which is a more general term).</p>
             <h3>Features</h3>
             <ul>
@@ -847,7 +846,7 @@ add column index integer;
             <h4>Features</h4>
             <ul>
                 <li>
-                    <p>Complete Svelte language support (thanks to <a target="_blank" rel="noopener noreferrer nofollow" class="link link link link" href="https://github.com/replit/codemirror-lang-svelte">Replit's lang package</a>)</p>
+                    <p>Complete Svelte language support (thanks to <a target="_blank" rel="noopener noreferrer nofollow" class="link link" href="https://github.com/replit/codemirror-lang-svelte">Replit's lang package</a>)</p>
                 </li>
             </ul>
             <ul>
