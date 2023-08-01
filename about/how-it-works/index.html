@@ -554,11 +554,22 @@
             }
         }
 
-        .content.svelte-1n46rsv h1 {
+        .content.svelte-gbuzio h1 {
             text-align: var(--heading-align)
         }
 
-        .content.svelte-1n46rsv p {
+        .content.svelte-gbuzio h2+h3 {
+            margin-top: -1.5rem;
+            padding-bottom: 2rem
+        }
+
+        .content.svelte-gbuzio h2+h3>em {
+            font-size: 1rem;
+            font-weight: 400;
+            font-style: normal
+        }
+
+        .content.svelte-gbuzio p {
             max-width: 700px
         }
 
@@ -771,13 +782,14 @@
         </header>
     </div>
     <div class="section" id="section-9980257d">
-        <div class="section-container content svelte-1n46rsv" style="
+        <div class="section-container content svelte-gbuzio" data-key="content" style="
 --heading-align: left"><!-- HTML_TAG_START -->
             <h1>How it works</h1>
             <p>Primo is a <a target="_blank" rel="noopener noreferrer nofollow" class="link link link link link" href="https://kit.svelte.dev/">SvelteKit</a> application which uses <a target="_blank" rel="noopener noreferrer nofollow" class="link link link link link" href="https://supabase.com/">Supabase</a> as a backend for authentication, a database, and file storage. Sites, pages, blocks, and block instances (i.e. pages sections) are all stored in a <a target="_blank" rel="noopener noreferrer nofollow" class="link link link link link" href="https://www.postgresql.org/">Postgres</a> database as individual rows containing code, fields, and content.</p>
             <p>On-page editing works by matching a block's field values to text, link, and image values or explicitly set <code>data-key</code> attributes within the block's rendered HTML. Editable text is powered by <code>contentEditable = true</code> and a <a target="_blank" rel="noopener noreferrer nofollow" class="link link link link link" href="https://tiptap.dev/">TipTap</a>/<a target="_blank" rel="noopener noreferrer nofollow" class="link link link link link" href="https://prosemirror.net/">ProseMirror</a> editor for <a target="_blank" rel="noopener noreferrer nofollow" class="link link link link link" href="https://www.markdownguide.org/">Markdown</a> fields. The dev environment is powered by <a target="_blank" rel="noopener noreferrer nofollow" class="link link link link link" href="https://codemirror.net/">CodeMirror</a>.</p>
             <p>Rollup and the <a target="_blank" rel="noopener noreferrer nofollow" class="link link" href="https://svelte.dev">Svelte</a> compiler are used to compile page blocks into Svelte components (alongside PostCSS for nesting) and to build the static files for the deployed website, which Primo then uploads to Github via its REST API.</p><!-- HTML_TAG_END -->
         </div>
+        <link type="text/css" href="https://unpkg.com/highlightjs@9.16.2/styles/foundation.css">
     </div>
     <div class="section" id="section-153455ec">
         <section class="svelte-l19rlb">
