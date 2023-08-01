@@ -9688,7 +9688,10 @@ function create_fragment$5(ctx) {
 							"submission_error": { "html": "", "markdown": "" },
 							"submission_confirmation": { "html": "", "markdown": "" }
 						},
-						"price": { "numerator": "", "denominator": "" },
+						"price": {
+							"numerator": "$10",
+							"denominator": "/month"
+						},
 						"title": "Pro",
 						"features": [
 							{
