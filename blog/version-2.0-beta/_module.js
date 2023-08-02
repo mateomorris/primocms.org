@@ -7524,7 +7524,7 @@ function create_fragment$c(ctx) {
 					"size": 8
 				},
 				description: "Primo is a visual CMS that makes it a blast to build pages, manage content, and edit code - one block at a time.",
-				subtitle: "We've significantly simplified Primo under the hood to make it more stable and easier to set up. ",
+				subtitle: "We've significantly simplified Primo under the hood to make it more stable and easier to set up.ﾠ",
 				teasers: [
 					{
 						"body": {
