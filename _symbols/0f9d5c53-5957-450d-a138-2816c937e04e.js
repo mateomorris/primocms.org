@@ -1,4 +1,4 @@
-// Box - Updated August 7, 2023
+// Box - Updated August 8, 2023
 function noop() { }
 function assign(tar, src) {
     // @ts-ignore
@@ -2685,29 +2685,21 @@ function create_fragment$1(ctx) {
 function instance$1($$self, $$props, $$invalidate) {
 	let { props } = $$props;
 	let { body } = $$props;
-	let { buttons } = $$props;
 	let { heading } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(2, props = $$props.props);
 		if ('body' in $$props) $$invalidate(0, body = $$props.body);
-		if ('buttons' in $$props) $$invalidate(3, buttons = $$props.buttons);
 		if ('heading' in $$props) $$invalidate(1, heading = $$props.heading);
 	};
 
-	return [body, heading, props, buttons];
+	return [body, heading, props];
 }
 
 class Component$1 extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance$1, create_fragment$1, safe_not_equal, {
-			props: 2,
-			body: 0,
-			buttons: 3,
-			heading: 1
-		});
+		init(this, options, instance$1, create_fragment$1, safe_not_equal, { props: 2, body: 0, heading: 1 });
 	}
 }
 
