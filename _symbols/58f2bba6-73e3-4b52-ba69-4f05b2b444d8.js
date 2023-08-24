@@ -1,4 +1,4 @@
-// CTA - Updated August 8, 2023
+// CTA - Updated August 24, 2023
 function noop() { }
 function run(fn) {
     return fn();
@@ -539,7 +539,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (68:4) {#if content.html}
+// (67:4) {#if content.html}
 function create_if_block(ctx) {
 	let p;
 	let raw_value = /*content*/ ctx[1].html + "";
@@ -570,7 +570,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (72:6) {#each buttons as button}
+// (71:6) {#each buttons as button}
 function create_each_block(ctx) {
 	let a;
 	let i;
@@ -794,4 +794,4 @@ class Component extends SvelteComponent {
 	}
 }
 
-export default Component;
+export { Component as default };

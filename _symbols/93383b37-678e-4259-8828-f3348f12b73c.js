@@ -1,4 +1,4 @@
-// Teasers - Updated August 8, 2023
+// Teasers - Updated August 24, 2023
 function noop() { }
 function run(fn) {
     return fn();
@@ -544,7 +544,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (119:10) {#if teaser.link.label}
+// (118:10) {#if teaser.link.label}
 function create_if_block_1(ctx) {
 	let a;
 	let t_value = /*teaser*/ ctx[4].link.label + "";
@@ -585,7 +585,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (132:10) {:else}
+// (131:10) {:else}
 function create_else_block(ctx) {
 	let img;
 	let img_src_value;
@@ -622,7 +622,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (126:10) {#if teaser.video}
+// (125:10) {#if teaser.video}
 function create_if_block(ctx) {
 	let iframe;
 	let iframe_src_value;
@@ -665,7 +665,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (114:4) {#each teasers as teaser}
+// (113:4) {#each teasers as teaser}
 function create_each_block(ctx) {
 	let div2;
 	let div1;
@@ -939,4 +939,4 @@ class Component extends SvelteComponent {
 	}
 }
 
-export default Component;
+export { Component as default };

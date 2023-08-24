@@ -1,4 +1,4 @@
-// Issue List - Updated August 8, 2023
+// Issue List - Updated August 24, 2023
 function noop() { }
 function run(fn) {
     return fn();
@@ -550,7 +550,7 @@ function get_each_context_1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (66:10) {#each issue.labels as label}
+// (65:10) {#each issue.labels as label}
 function create_each_block_1(ctx) {
 	let li;
 	let t_value = /*label*/ ctx[6].name + "";
@@ -591,7 +591,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (63:4) {#each issues as issue}
+// (62:4) {#each issues as issue}
 function create_each_block(ctx) {
 	let li;
 	let ul;
@@ -848,4 +848,4 @@ class Component extends SvelteComponent {
 	}
 }
 
-export default Component;
+export { Component as default };

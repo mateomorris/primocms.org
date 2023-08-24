@@ -1,4 +1,4 @@
-// Super Footer - Updated August 8, 2023
+// Super Footer - Updated August 24, 2023
 function noop() { }
 function run(fn) {
     return fn();
@@ -936,4 +936,4 @@ class Component extends SvelteComponent {
 	}
 }
 
-export default Component;
+export { Component as default };
