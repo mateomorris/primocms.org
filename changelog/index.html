@@ -339,7 +339,7 @@ footer.svelte-13um1f6.svelte-13um1f6{border-top:1px solid var(--border-color, #e
     
       <div class="nav-item svelte-lqzxcs"><div class="top-link svelte-lqzxcs">
           <span class="svelte-lqzxcs">About</span>
-            <span class="icon svelte-lqzxcs"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--akar-icons"><!-- HTML_TAG_START --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9l8 8l8-8"/><!-- HTML_TAG_END --></svg></span></div>
+            <span class="icon svelte-lqzxcs"></span></div>
         <div class="dropdown svelte-lqzxcs"><a href="/about/why" class="link svelte-lqzxcs">Why Primo</a><a href="/about/mission" class="link svelte-lqzxcs">Mission</a><a href="/about/how-it-works" class="link svelte-lqzxcs">How it Works</a>
           </div>
       </div>
@@ -355,7 +355,7 @@ footer.svelte-13um1f6.svelte-13um1f6{border-top:1px solid var(--border-color, #e
           <a href="/cloud" class="link svelte-lqzxcs">Cloud</a></div>
         
       </div>
-    <button id="open" class="svelte-lqzxcs"><div class="menu-icon svelte-lqzxcs"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START --><g id="iconifySvelte0"><g id="iconifySvelte1"><g id="iconifySvelte2" fill="currentColor"><rect width="18" height="2" x="3" y="11" rx=".95" ry=".95"/><rect width="18" height="2" x="3" y="16" rx=".95" ry=".95"/><rect width="18" height="2" x="3" y="6" rx=".95" ry=".95"/></g></g></g><!-- HTML_TAG_END --></svg></div></button></nav>
+    <button id="open" class="svelte-lqzxcs"><div class="menu-icon svelte-lqzxcs"></div></button></nav>
   </header></div> 
 <div class="section" id="section-18961b9e"><div class="section-container content svelte-gbuzio" data-key="content" style="
 --heading-align: left"><!-- HTML_TAG_START --><h1>Changelog</h1><h2>V2 Beta 12 - drag n drop improvements</h2><h3><em>July 31, 2023</em></h3><p>With this release, you can drag and drop Symbols in the sidebar to rearrange them. It also improves the reliability of dragging and dropping Symbols from the sidebar onto the page &amp; improves the overall UX of dragging and dropping.</p><h4>Database update</h4><p><strong>This update necessitates a small change in the database</strong> to enable rearranging. You can do it manually by creating a new column in your 'symbols' table called "index", making it a non-null integer, <strong>or preferably</strong> by running the query below.</p><ol><li><p>From your Supabase dashboard, click 'SQL Editor' in the dashboard</p></li><li><p>Click 'New query'</p></li><li><p>Paste in the following query:</p></li></ol><pre><code class="language-sql">alter table symbols

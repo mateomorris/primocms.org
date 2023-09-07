@@ -1,4 +1,4 @@
-// Hero - Updated September 1, 2023
+// Hero - Updated September 7, 2023
 function noop$1() { }
 const identity$1 = x => x;
 function assign$1(tar, src) {
