@@ -3189,7 +3189,7 @@ function create_if_block_9(ctx) {
 	};
 }
 
-// (312:28) 
+// (311:28) 
 function create_if_block_7(ctx) {
 	let div;
 	let html_tag;
@@ -3275,7 +3275,7 @@ function create_if_block_7(ctx) {
 	};
 }
 
-// (308:32) 
+// (307:32) 
 function create_if_block_6(ctx) {
 	let div;
 	let raw_value = /*tier_form*/ ctx[14].submission_confirmation.html + "";
@@ -3312,11 +3312,13 @@ function create_if_block_6(ctx) {
 function create_if_block(ctx) {
 	let t0;
 	let form_1;
+	let input;
+	let input_value_value;
 	let t1;
+	let t2;
 	let button;
 	let current_block_type_index;
 	let if_block1;
-	let form_1_name_value;
 	let current;
 	let mounted;
 	let dispose;
@@ -3351,12 +3353,14 @@ function create_if_block(ctx) {
 			if_block0.c();
 			t0 = space();
 			form_1 = element("form");
+			input = element("input");
+			t1 = space();
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			t1 = space();
+			t2 = space();
 			button = element("button");
 			if_block1.c();
 			this.h();
@@ -3364,14 +3368,16 @@ function create_if_block(ctx) {
 		l(nodes) {
 			if_block0.l(nodes);
 			t0 = claim_space(nodes);
-			form_1 = claim_element(nodes, "FORM", { netlify: true, name: true });
+			form_1 = claim_element(nodes, "FORM", {});
 			var form_1_nodes = children(form_1);
+			input = claim_element(form_1_nodes, "INPUT", { type: true, name: true });
+			t1 = claim_space(form_1_nodes);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].l(form_1_nodes);
 			}
 
-			t1 = claim_space(form_1_nodes);
+			t2 = claim_space(form_1_nodes);
 			button = claim_element(form_1_nodes, "BUTTON", { type: true, class: true });
 			var button_nodes = children(button);
 			if_block1.l(button_nodes);
@@ -3380,16 +3386,19 @@ function create_if_block(ctx) {
 			this.h();
 		},
 		h() {
+			attr(input, "type", "hidden");
+			attr(input, "name", "form-name");
+			input.value = input_value_value = /*tier*/ ctx[13].title;
 			attr(button, "type", "submit");
 			button.disabled = /*loading*/ ctx[5];
 			attr(button, "class", "button is-primary svelte-9oh45w");
-			attr(form_1, "netlify", "");
-			attr(form_1, "name", form_1_name_value = /*tier*/ ctx[13].title);
 		},
 		m(target, anchor) {
 			if_block0.m(target, anchor);
 			insert_hydration(target, t0, anchor);
 			insert_hydration(target, form_1, anchor);
+			append_hydration(form_1, input);
+			append_hydration(form_1, t1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
@@ -3397,7 +3406,7 @@ function create_if_block(ctx) {
 				}
 			}
 
-			append_hydration(form_1, t1);
+			append_hydration(form_1, t2);
 			append_hydration(form_1, button);
 			if_blocks[current_block_type_index].m(button, null);
 			current = true;
@@ -3408,6 +3417,10 @@ function create_if_block(ctx) {
 			}
 		},
 		p(ctx, dirty) {
+			if (!current || dirty & /*tiers*/ 2 && input_value_value !== (input_value_value = /*tier*/ ctx[13].title)) {
+				input.value = input_value_value;
+			}
+
 			if (dirty & /*tiers, form*/ 3) {
 				each_value_1 = /*tier_form*/ ctx[14].fields;
 				let i;
@@ -3420,7 +3433,7 @@ function create_if_block(ctx) {
 					} else {
 						each_blocks[i] = create_each_block_1(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(form_1, t1);
+						each_blocks[i].m(form_1, t2);
 					}
 				}
 
@@ -3455,10 +3468,6 @@ function create_if_block(ctx) {
 
 			if (!current || dirty & /*loading*/ 32) {
 				button.disabled = /*loading*/ ctx[5];
-			}
-
-			if (!current || dirty & /*tiers*/ 2 && form_1_name_value !== (form_1_name_value = /*tier*/ ctx[13].title)) {
-				attr(form_1, "name", form_1_name_value);
 			}
 		},
 		i(local) {
@@ -3544,7 +3553,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (280:18) {:else}
+// (279:18) {:else}
 function create_else_block_1(ctx) {
 	let label;
 	let span;
@@ -3637,7 +3646,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (271:18) {#if type === "textarea"}
+// (270:18) {#if type === "textarea"}
 function create_if_block_2(ctx) {
 	let label;
 	let span;
@@ -3719,7 +3728,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (284:24) {#if required}
+// (283:24) {#if required}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3750,7 +3759,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (275:24) {#if required}
+// (274:24) {#if required}
 function create_if_block_3(ctx) {
 	let span;
 	let t;
@@ -3781,7 +3790,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (269:16) {#each tier_form.fields as { label, type, placeholder, required }
+// (268:16) {#each tier_form.fields as { label, type, placeholder, required }
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 
@@ -3826,7 +3835,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (303:18) {:else}
+// (302:18) {:else}
 function create_else_block(ctx) {
 	let icon;
 	let current;
@@ -3858,7 +3867,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (300:18) {#if !loading}
+// (299:18) {#if !loading}
 function create_if_block_1(ctx) {
 	let icon;
 	let t0;
@@ -4318,7 +4327,7 @@ function create_fragment(ctx) {
 			if (!current || dirty & /*heading*/ 4) set_data(t0, /*heading*/ ctx[2]);
 			if (!current || dirty & /*subheading*/ 8) set_data(t2, /*subheading*/ ctx[3]);
 
-			if (dirty & /*flipped, tiers, submit_form, loading, form, submitted, error*/ 499) {
+			if (dirty & /*flipped, submit_form, loading, tiers, form, submitted, error*/ 499) {
 				each_value = /*tiers*/ ctx[1];
 				let i;
 
