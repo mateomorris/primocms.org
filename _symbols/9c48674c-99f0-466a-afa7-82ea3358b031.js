@@ -1,4 +1,4 @@
-// Pricing - Updated December 29, 2023
+// Pricing - Updated December 31, 2023
 function noop() { }
 function assign(tar, src) {
     // @ts-ignore
@@ -2961,7 +2961,7 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (204:14) {#each tier.features as { item, icon }
+// (207:14) {#each tier.features as { item, icon }
 function create_each_block_2(ctx) {
 	let li;
 	let span0;
@@ -3037,7 +3037,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (213:12) {#if !submitted}
+// (216:12) {#if !submitted}
 function create_if_block_8(ctx) {
 	let if_block_anchor;
 
@@ -3072,7 +3072,7 @@ function create_if_block_8(ctx) {
 	};
 }
 
-// (224:14) {:else}
+// (227:14) {:else}
 function create_else_block_3(ctx) {
 	let button;
 	let t_value = /*tier*/ ctx[14].button_label + "";
@@ -3121,7 +3121,7 @@ function create_else_block_3(ctx) {
 	};
 }
 
-// (214:14) {#if tier_index === 0}
+// (217:14) {#if tier_index === 0}
 function create_if_block_9(ctx) {
 	let div;
 	let button;
@@ -3195,7 +3195,7 @@ function create_if_block_9(ctx) {
 	};
 }
 
-// (289:28) 
+// (294:28) 
 function create_if_block_7(ctx) {
 	let div;
 	let html_tag;
@@ -3281,7 +3281,7 @@ function create_if_block_7(ctx) {
 	};
 }
 
-// (285:32) 
+// (290:32) 
 function create_if_block_6(ctx) {
 	let div;
 	let raw_value = /*tier_form*/ ctx[15].submission_confirmation.html + "";
@@ -3314,7 +3314,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (233:12) {#if !submitted && !error}
+// (236:12) {#if !submitted && !error}
 function create_if_block(ctx) {
 	let t0;
 	let form_1;
@@ -3325,6 +3325,7 @@ function create_if_block(ctx) {
 	let button;
 	let current_block_type_index;
 	let if_block1;
+	let form_1_name_value;
 	let current;
 	let mounted;
 	let dispose;
@@ -3378,7 +3379,7 @@ function create_if_block(ctx) {
 		l(nodes) {
 			if_block0.l(nodes);
 			t0 = claim_space(nodes);
-			form_1 = claim_element(nodes, "FORM", {});
+			form_1 = claim_element(nodes, "FORM", { netlify: true, name: true });
 			var form_1_nodes = children(form_1);
 			input = claim_element(form_1_nodes, "INPUT", { style: true, name: true });
 			t1 = claim_space(form_1_nodes);
@@ -3402,6 +3403,8 @@ function create_if_block(ctx) {
 			attr(button, "type", "submit");
 			button.disabled = /*loading*/ ctx[5];
 			attr(button, "class", "button is-primary svelte-9oh45w");
+			attr(form_1, "netlify", "");
+			attr(form_1, "name", form_1_name_value = /*tier*/ ctx[14].title);
 		},
 		m(target, anchor) {
 			if_block0.m(target, anchor);
@@ -3481,6 +3484,10 @@ function create_if_block(ctx) {
 			if (!current || dirty & /*loading*/ 32) {
 				button.disabled = /*loading*/ ctx[5];
 			}
+
+			if (!current || dirty & /*tiers*/ 2 && form_1_name_value !== (form_1_name_value = /*tier*/ ctx[14].title)) {
+				attr(form_1, "name", form_1_name_value);
+			}
 		},
 		i(local) {
 			if (current) return;
@@ -3503,7 +3510,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (236:14) {:else}
+// (239:14) {:else}
 function create_else_block_2(ctx) {
 	let h2;
 	let t;
@@ -3534,7 +3541,7 @@ function create_else_block_2(ctx) {
 	};
 }
 
-// (234:14) {#if tier_index < 2}
+// (237:14) {#if tier_index < 2}
 function create_if_block_5(ctx) {
 	let h2;
 	let t;
@@ -3565,7 +3572,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (257:18) {:else}
+// (262:18) {:else}
 function create_else_block_1(ctx) {
 	let label;
 	let span;
@@ -3658,7 +3665,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (248:18) {#if type === "textarea"}
+// (253:18) {#if type === "textarea"}
 function create_if_block_2(ctx) {
 	let label;
 	let span;
@@ -3740,7 +3747,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (261:24) {#if required}
+// (266:24) {#if required}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3771,7 +3778,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (252:24) {#if required}
+// (257:24) {#if required}
 function create_if_block_3(ctx) {
 	let span;
 	let t;
@@ -3802,7 +3809,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (246:16) {#each tier_form.fields as { label, type, placeholder, required }
+// (251:16) {#each tier_form.fields as { label, type, placeholder, required }
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 
@@ -3847,7 +3854,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (280:18) {:else}
+// (285:18) {:else}
 function create_else_block(ctx) {
 	let icon;
 	let current;
@@ -3879,7 +3886,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (277:18) {#if !loading}
+// (282:18) {#if !loading}
 function create_if_block_1(ctx) {
 	let icon;
 	let t0;
@@ -3930,7 +3937,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (189:4) {#each tiers as tier, tier_index}
+// (192:4) {#each tiers as tier, tier_index}
 function create_each_block(ctx) {
 	let div4;
 	let div3;
@@ -4339,7 +4346,7 @@ function create_fragment(ctx) {
 			if (!current || dirty & /*heading*/ 4) set_data(t0, /*heading*/ ctx[2]);
 			if (!current || dirty & /*subheading*/ 8) set_data(t2, /*subheading*/ ctx[3]);
 
-			if (dirty & /*flipped, submit_form, tiers, form, loading, submitted, error*/ 499) {
+			if (dirty & /*flipped, tiers, submit_form, form, loading, submitted, error*/ 499) {
 				each_value = /*tiers*/ ctx[1];
 				let i;
 
@@ -4416,9 +4423,13 @@ function instance($$self, $$props, $$invalidate) {
 	async function submit_form(e, endpoint) {
 		$$invalidate(5, loading = true);
 		const form_data = get_form_data(e.target);
-		const { data } = await axios.post(endpoint, form_data).catch(e => ({ data: null }));
 
-		if (data) {
+		// const { data } = await axios.post(endpoint, form_data).catch(e => ({ data: null }));
+		const res = await axios.post('/', form_data).catch(e => ({ data: null }));
+
+		console.log({ res });
+
+		if (res.data) {
 			$$invalidate(6, submitted = true);
 		} else {
 			$$invalidate(7, error = true);
