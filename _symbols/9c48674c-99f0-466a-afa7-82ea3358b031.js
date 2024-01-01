@@ -2924,34 +2924,34 @@ const exports = {}; const module = { exports };
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[14] = list[i];
-	child_ctx[17] = i;
+	child_ctx[13] = list[i];
+	child_ctx[16] = i;
 
-	const constants_0 = /*tier*/ child_ctx[14].form && /*tier*/ child_ctx[14].form.endpoint
-	? /*tier*/ child_ctx[14].form
+	const constants_0 = /*tier*/ child_ctx[13].form && /*tier*/ child_ctx[13].form.endpoint
+	? /*tier*/ child_ctx[13].form
 	: /*form*/ child_ctx[0];
 
-	child_ctx[15] = constants_0;
+	child_ctx[14] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[18] = list[i].label;
-	child_ctx[19] = list[i].type;
-	child_ctx[20] = list[i].placeholder;
-	child_ctx[21] = list[i].required;
-	child_ctx[24] = i;
-	const constants_0 = `${/*label*/ child_ctx[18]}-${/*i*/ child_ctx[24]}`;
-	child_ctx[22] = constants_0;
+	child_ctx[17] = list[i].label;
+	child_ctx[18] = list[i].type;
+	child_ctx[19] = list[i].placeholder;
+	child_ctx[20] = list[i].required;
+	child_ctx[23] = i;
+	const constants_0 = `${/*label*/ child_ctx[17]}-${/*i*/ child_ctx[23]}`;
+	child_ctx[21] = constants_0;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[25] = list[i].item;
-	child_ctx[26] = list[i].icon;
-	child_ctx[28] = i;
+	child_ctx[24] = list[i].item;
+	child_ctx[25] = list[i].icon;
+	child_ctx[27] = i;
 	return child_ctx;
 }
 
@@ -2962,11 +2962,11 @@ function create_each_block_2(ctx) {
 	let icon;
 	let t0;
 	let span1;
-	let t1_value = /*item*/ ctx[25] + "";
+	let t1_value = /*item*/ ctx[24] + "";
 	let t1;
 	let t2;
 	let current;
-	icon = new Component$1({ props: { icon: /*icon*/ ctx[26] } });
+	icon = new Component$1({ props: { icon: /*icon*/ ctx[25] } });
 
 	return {
 		c() {
@@ -3011,9 +3011,9 @@ function create_each_block_2(ctx) {
 		},
 		p(ctx, dirty) {
 			const icon_changes = {};
-			if (dirty & /*tiers*/ 2) icon_changes.icon = /*icon*/ ctx[26];
+			if (dirty & /*tiers*/ 2) icon_changes.icon = /*icon*/ ctx[25];
 			icon.$set(icon_changes);
-			if ((!current || dirty & /*tiers*/ 2) && t1_value !== (t1_value = /*item*/ ctx[25] + "")) set_data(t1, t1_value);
+			if ((!current || dirty & /*tiers*/ 2) && t1_value !== (t1_value = /*item*/ ctx[24] + "")) set_data(t1, t1_value);
 		},
 		i(local) {
 			if (current) return;
@@ -3036,7 +3036,7 @@ function create_if_block_8(ctx) {
 	let if_block_anchor;
 
 	function select_block_type(ctx, dirty) {
-		if (/*tier_index*/ ctx[17] === 0) return create_if_block_9;
+		if (/*tier_index*/ ctx[16] === 0) return create_if_block_9;
 		return create_else_block_3;
 	}
 
@@ -3069,13 +3069,13 @@ function create_if_block_8(ctx) {
 // (246:14) {:else}
 function create_else_block_3(ctx) {
 	let button;
-	let t_value = /*tier*/ ctx[14].button_label + "";
+	let t_value = /*tier*/ ctx[13].button_label + "";
 	let t;
 	let mounted;
 	let dispose;
 
 	function click_handler_1() {
-		return /*click_handler_1*/ ctx[11](/*tier_index*/ ctx[17]);
+		return /*click_handler_1*/ ctx[11](/*tier_index*/ ctx[16]);
 	}
 
 	return {
@@ -3105,7 +3105,7 @@ function create_else_block_3(ctx) {
 		},
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
-			if (dirty & /*tiers*/ 2 && t_value !== (t_value = /*tier*/ ctx[14].button_label + "")) set_data(t, t_value);
+			if (dirty & /*tiers*/ 2 && t_value !== (t_value = /*tier*/ ctx[13].button_label + "")) set_data(t, t_value);
 		},
 		d(detaching) {
 			if (detaching) detach(button);
@@ -3119,7 +3119,7 @@ function create_else_block_3(ctx) {
 function create_if_block_9(ctx) {
 	let div;
 	let button;
-	let t0_value = /*tier*/ ctx[14].button_label + "";
+	let t0_value = /*tier*/ ctx[13].button_label + "";
 	let t0;
 	let t1;
 	let a;
@@ -3128,7 +3128,7 @@ function create_if_block_9(ctx) {
 	let dispose;
 
 	function click_handler() {
-		return /*click_handler*/ ctx[10](/*tier_index*/ ctx[17]);
+		return /*click_handler*/ ctx[10](/*tier_index*/ ctx[16]);
 	}
 
 	return {
@@ -3179,7 +3179,7 @@ function create_if_block_9(ctx) {
 		},
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
-			if (dirty & /*tiers*/ 2 && t0_value !== (t0_value = /*tier*/ ctx[14].button_label + "")) set_data(t0, t0_value);
+			if (dirty & /*tiers*/ 2 && t0_value !== (t0_value = /*tier*/ ctx[13].button_label + "")) set_data(t0, t0_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div);
@@ -3189,11 +3189,11 @@ function create_if_block_9(ctx) {
 	};
 }
 
-// (313:28) 
+// (312:28) 
 function create_if_block_7(ctx) {
 	let div;
 	let html_tag;
-	let raw_value = /*tier_form*/ ctx[15].submission_error.html + "";
+	let raw_value = /*tier_form*/ ctx[14].submission_error.html + "";
 	let t0;
 	let button;
 	let icon;
@@ -3250,12 +3250,12 @@ function create_if_block_7(ctx) {
 			current = true;
 
 			if (!mounted) {
-				dispose = listen(button, "click", /*click_handler_2*/ ctx[13]);
+				dispose = listen(button, "click", /*click_handler_2*/ ctx[12]);
 				mounted = true;
 			}
 		},
 		p(ctx, dirty) {
-			if ((!current || dirty & /*tiers, form*/ 3) && raw_value !== (raw_value = /*tier_form*/ ctx[15].submission_error.html + "")) html_tag.p(raw_value);
+			if ((!current || dirty & /*tiers, form*/ 3) && raw_value !== (raw_value = /*tier_form*/ ctx[14].submission_error.html + "")) html_tag.p(raw_value);
 		},
 		i(local) {
 			if (current) return;
@@ -3275,10 +3275,10 @@ function create_if_block_7(ctx) {
 	};
 }
 
-// (309:32) 
+// (308:32) 
 function create_if_block_6(ctx) {
 	let div;
-	let raw_value = /*tier_form*/ ctx[15].submission_confirmation.html + "";
+	let raw_value = /*tier_form*/ ctx[14].submission_confirmation.html + "";
 
 	return {
 		c() {
@@ -3299,7 +3299,7 @@ function create_if_block_6(ctx) {
 			div.innerHTML = raw_value;
 		},
 		p(ctx, dirty) {
-			if (dirty & /*tiers, form*/ 3 && raw_value !== (raw_value = /*tier_form*/ ctx[15].submission_confirmation.html + "")) div.innerHTML = raw_value;		},
+			if (dirty & /*tiers, form*/ 3 && raw_value !== (raw_value = /*tier_form*/ ctx[14].submission_confirmation.html + "")) div.innerHTML = raw_value;		},
 		i: noop,
 		o: noop,
 		d(detaching) {
@@ -3312,10 +3312,7 @@ function create_if_block_6(ctx) {
 function create_if_block(ctx) {
 	let t0;
 	let form_1;
-	let input;
-	let input_value_value;
 	let t1;
-	let t2;
 	let button;
 	let current_block_type_index;
 	let if_block1;
@@ -3325,13 +3322,13 @@ function create_if_block(ctx) {
 	let dispose;
 
 	function select_block_type_2(ctx, dirty) {
-		if (/*tier_index*/ ctx[17] < 2) return create_if_block_5;
+		if (/*tier_index*/ ctx[16] < 2) return create_if_block_5;
 		return create_else_block_2;
 	}
 
 	let current_block_type = select_block_type_2(ctx);
 	let if_block0 = current_block_type(ctx);
-	let each_value_1 = /*tier_form*/ ctx[15].fields;
+	let each_value_1 = /*tier_form*/ ctx[14].fields;
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -3349,23 +3346,17 @@ function create_if_block(ctx) {
 	current_block_type_index = select_block_type_4(ctx);
 	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
-	function submit_handler(...args) {
-		return /*submit_handler*/ ctx[12](/*tier_form*/ ctx[15], ...args);
-	}
-
 	return {
 		c() {
 			if_block0.c();
 			t0 = space();
 			form_1 = element("form");
-			input = element("input");
-			t1 = space();
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			t2 = space();
+			t1 = space();
 			button = element("button");
 			if_block1.c();
 			this.h();
@@ -3375,14 +3366,12 @@ function create_if_block(ctx) {
 			t0 = claim_space(nodes);
 			form_1 = claim_element(nodes, "FORM", { netlify: true, name: true });
 			var form_1_nodes = children(form_1);
-			input = claim_element(form_1_nodes, "INPUT", { style: true, name: true });
-			t1 = claim_space(form_1_nodes);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].l(form_1_nodes);
 			}
 
-			t2 = claim_space(form_1_nodes);
+			t1 = claim_space(form_1_nodes);
 			button = claim_element(form_1_nodes, "BUTTON", { type: true, class: true });
 			var button_nodes = children(button);
 			if_block1.l(button_nodes);
@@ -3391,21 +3380,16 @@ function create_if_block(ctx) {
 			this.h();
 		},
 		h() {
-			set_style(input, "display", "none");
-			attr(input, "name", "type");
-			input.value = input_value_value = /*tier*/ ctx[14].title.toLowerCase();
 			attr(button, "type", "submit");
 			button.disabled = /*loading*/ ctx[5];
 			attr(button, "class", "button is-primary svelte-9oh45w");
 			attr(form_1, "netlify", "");
-			attr(form_1, "name", form_1_name_value = /*tier*/ ctx[14].title);
+			attr(form_1, "name", form_1_name_value = /*tier*/ ctx[13].title);
 		},
 		m(target, anchor) {
 			if_block0.m(target, anchor);
 			insert_hydration(target, t0, anchor);
 			insert_hydration(target, form_1, anchor);
-			append_hydration(form_1, input);
-			append_hydration(form_1, t1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
@@ -3413,25 +3397,19 @@ function create_if_block(ctx) {
 				}
 			}
 
-			append_hydration(form_1, t2);
+			append_hydration(form_1, t1);
 			append_hydration(form_1, button);
 			if_blocks[current_block_type_index].m(button, null);
 			current = true;
 
 			if (!mounted) {
-				dispose = listen(form_1, "submit", prevent_default(submit_handler));
+				dispose = listen(form_1, "submit", prevent_default(/*submit_form*/ ctx[8]));
 				mounted = true;
 			}
 		},
-		p(new_ctx, dirty) {
-			ctx = new_ctx;
-
-			if (!current || dirty & /*tiers*/ 2 && input_value_value !== (input_value_value = /*tier*/ ctx[14].title.toLowerCase()) && input.value !== input_value_value) {
-				input.value = input_value_value;
-			}
-
+		p(ctx, dirty) {
 			if (dirty & /*tiers, form*/ 3) {
-				each_value_1 = /*tier_form*/ ctx[15].fields;
+				each_value_1 = /*tier_form*/ ctx[14].fields;
 				let i;
 
 				for (i = 0; i < each_value_1.length; i += 1) {
@@ -3442,7 +3420,7 @@ function create_if_block(ctx) {
 					} else {
 						each_blocks[i] = create_each_block_1(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(form_1, t2);
+						each_blocks[i].m(form_1, t1);
 					}
 				}
 
@@ -3479,7 +3457,7 @@ function create_if_block(ctx) {
 				button.disabled = /*loading*/ ctx[5];
 			}
 
-			if (!current || dirty & /*tiers*/ 2 && form_1_name_value !== (form_1_name_value = /*tier*/ ctx[14].title)) {
+			if (!current || dirty & /*tiers*/ 2 && form_1_name_value !== (form_1_name_value = /*tier*/ ctx[13].title)) {
 				attr(form_1, "name", form_1_name_value);
 			}
 		},
@@ -3566,11 +3544,11 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (281:18) {:else}
+// (280:18) {:else}
 function create_else_block_1(ctx) {
 	let label;
 	let span;
-	let t0_value = /*label*/ ctx[18] + "";
+	let t0_value = /*label*/ ctx[17] + "";
 	let t0;
 	let t1;
 	let t2;
@@ -3578,7 +3556,7 @@ function create_else_block_1(ctx) {
 	let input_required_value;
 	let input_name_value;
 	let input_placeholder_value;
-	let if_block = /*required*/ ctx[21] && create_if_block_4();
+	let if_block = /*required*/ ctx[20] && create_if_block_4();
 
 	return {
 		c() {
@@ -3613,9 +3591,9 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(input, "type", "text");
-			input.required = input_required_value = /*required*/ ctx[21];
-			attr(input, "name", input_name_value = /*label*/ ctx[18]);
-			attr(input, "placeholder", input_placeholder_value = /*placeholder*/ ctx[20]);
+			input.required = input_required_value = /*required*/ ctx[20];
+			attr(input, "name", input_name_value = /*label*/ ctx[17]);
+			attr(input, "placeholder", input_placeholder_value = /*placeholder*/ ctx[19]);
 		},
 		m(target, anchor) {
 			insert_hydration(target, label, anchor);
@@ -3627,9 +3605,9 @@ function create_else_block_1(ctx) {
 			append_hydration(label, input);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*tiers, form*/ 3 && t0_value !== (t0_value = /*label*/ ctx[18] + "")) set_data(t0, t0_value);
+			if (dirty & /*tiers, form*/ 3 && t0_value !== (t0_value = /*label*/ ctx[17] + "")) set_data(t0, t0_value);
 
-			if (/*required*/ ctx[21]) {
+			if (/*required*/ ctx[20]) {
 				if (if_block) ; else {
 					if_block = create_if_block_4();
 					if_block.c();
@@ -3640,15 +3618,15 @@ function create_else_block_1(ctx) {
 				if_block = null;
 			}
 
-			if (dirty & /*tiers, form*/ 3 && input_required_value !== (input_required_value = /*required*/ ctx[21])) {
+			if (dirty & /*tiers, form*/ 3 && input_required_value !== (input_required_value = /*required*/ ctx[20])) {
 				input.required = input_required_value;
 			}
 
-			if (dirty & /*tiers, form*/ 3 && input_name_value !== (input_name_value = /*label*/ ctx[18])) {
+			if (dirty & /*tiers, form*/ 3 && input_name_value !== (input_name_value = /*label*/ ctx[17])) {
 				attr(input, "name", input_name_value);
 			}
 
-			if (dirty & /*tiers, form*/ 3 && input_placeholder_value !== (input_placeholder_value = /*placeholder*/ ctx[20])) {
+			if (dirty & /*tiers, form*/ 3 && input_placeholder_value !== (input_placeholder_value = /*placeholder*/ ctx[19])) {
 				attr(input, "placeholder", input_placeholder_value);
 			}
 		},
@@ -3659,18 +3637,18 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (272:18) {#if type === "textarea"}
+// (271:18) {#if type === "textarea"}
 function create_if_block_2(ctx) {
 	let label;
 	let span;
-	let t0_value = /*label*/ ctx[18] + "";
+	let t0_value = /*label*/ ctx[17] + "";
 	let t0;
 	let t1;
 	let t2;
 	let textarea;
 	let textarea_name_value;
 	let textarea_placeholder_value;
-	let if_block = /*required*/ ctx[21] && create_if_block_3();
+	let if_block = /*required*/ ctx[20] && create_if_block_3();
 
 	return {
 		c() {
@@ -3699,8 +3677,8 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(textarea, "name", textarea_name_value = /*label*/ ctx[18]);
-			attr(textarea, "placeholder", textarea_placeholder_value = /*placeholder*/ ctx[20]);
+			attr(textarea, "name", textarea_name_value = /*label*/ ctx[17]);
+			attr(textarea, "placeholder", textarea_placeholder_value = /*placeholder*/ ctx[19]);
 			attr(label, "class", "has-textarea");
 		},
 		m(target, anchor) {
@@ -3713,9 +3691,9 @@ function create_if_block_2(ctx) {
 			append_hydration(label, textarea);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*tiers, form*/ 3 && t0_value !== (t0_value = /*label*/ ctx[18] + "")) set_data(t0, t0_value);
+			if (dirty & /*tiers, form*/ 3 && t0_value !== (t0_value = /*label*/ ctx[17] + "")) set_data(t0, t0_value);
 
-			if (/*required*/ ctx[21]) {
+			if (/*required*/ ctx[20]) {
 				if (if_block) ; else {
 					if_block = create_if_block_3();
 					if_block.c();
@@ -3726,11 +3704,11 @@ function create_if_block_2(ctx) {
 				if_block = null;
 			}
 
-			if (dirty & /*tiers, form*/ 3 && textarea_name_value !== (textarea_name_value = /*label*/ ctx[18])) {
+			if (dirty & /*tiers, form*/ 3 && textarea_name_value !== (textarea_name_value = /*label*/ ctx[17])) {
 				attr(textarea, "name", textarea_name_value);
 			}
 
-			if (dirty & /*tiers, form*/ 3 && textarea_placeholder_value !== (textarea_placeholder_value = /*placeholder*/ ctx[20])) {
+			if (dirty & /*tiers, form*/ 3 && textarea_placeholder_value !== (textarea_placeholder_value = /*placeholder*/ ctx[19])) {
 				attr(textarea, "placeholder", textarea_placeholder_value);
 			}
 		},
@@ -3741,7 +3719,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (285:24) {#if required}
+// (284:24) {#if required}
 function create_if_block_4(ctx) {
 	let span;
 	let t;
@@ -3772,7 +3750,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (276:24) {#if required}
+// (275:24) {#if required}
 function create_if_block_3(ctx) {
 	let span;
 	let t;
@@ -3803,12 +3781,12 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (270:16) {#each tier_form.fields as { label, type, placeholder, required }
+// (269:16) {#each tier_form.fields as { label, type, placeholder, required }
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 
 	function select_block_type_3(ctx, dirty) {
-		if (/*type*/ ctx[19] === "textarea") return create_if_block_2;
+		if (/*type*/ ctx[18] === "textarea") return create_if_block_2;
 		return create_else_block_1;
 	}
 
@@ -3848,7 +3826,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (304:18) {:else}
+// (303:18) {:else}
 function create_else_block(ctx) {
 	let icon;
 	let current;
@@ -3880,7 +3858,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (301:18) {#if !loading}
+// (300:18) {#if !loading}
 function create_if_block_1(ctx) {
 	let icon;
 	let t0;
@@ -3938,20 +3916,20 @@ function create_each_block(ctx) {
 	let div1;
 	let header;
 	let h3;
-	let t0_value = /*tier*/ ctx[14].title + "";
+	let t0_value = /*tier*/ ctx[13].title + "";
 	let t0;
 	let t1;
 	let div0;
 	let span0;
-	let t2_value = /*tier*/ ctx[14].price.numerator + "";
+	let t2_value = /*tier*/ ctx[13].price.numerator + "";
 	let t2;
 	let t3;
 	let span1;
-	let t4_value = /*tier*/ ctx[14].price.denominator + "";
+	let t4_value = /*tier*/ ctx[13].price.denominator + "";
 	let t4;
 	let t5;
 	let span2;
-	let raw_value = /*tier*/ ctx[14].description.html + "";
+	let raw_value = /*tier*/ ctx[13].description.html + "";
 	let t6;
 	let hr;
 	let t7;
@@ -3963,7 +3941,7 @@ function create_each_block(ctx) {
 	let if_block1;
 	let t10;
 	let current;
-	let each_value_2 = /*tier*/ ctx[14].features;
+	let each_value_2 = /*tier*/ ctx[13].features;
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -4090,9 +4068,9 @@ function create_each_block(ctx) {
 			attr(div1, "class", "front svelte-9oh45w");
 			attr(div2, "class", "back svelte-9oh45w");
 			attr(div3, "class", "card-content svelte-9oh45w");
-			toggle_class(div3, "flipped", /*flipped*/ ctx[4] === /*tier_index*/ ctx[17]);
+			toggle_class(div3, "flipped", /*flipped*/ ctx[4] === /*tier_index*/ ctx[16]);
 			attr(div4, "class", "card svelte-9oh45w");
-			toggle_class(div4, "fullwidth", /*tier_index*/ ctx[17] === 2);
+			toggle_class(div4, "fullwidth", /*tier_index*/ ctx[16] === 2);
 		},
 		m(target, anchor) {
 			insert_hydration(target, div4, anchor);
@@ -4135,12 +4113,12 @@ function create_each_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if ((!current || dirty & /*tiers*/ 2) && t0_value !== (t0_value = /*tier*/ ctx[14].title + "")) set_data(t0, t0_value);
-			if ((!current || dirty & /*tiers*/ 2) && t2_value !== (t2_value = /*tier*/ ctx[14].price.numerator + "")) set_data(t2, t2_value);
-			if ((!current || dirty & /*tiers*/ 2) && t4_value !== (t4_value = /*tier*/ ctx[14].price.denominator + "")) set_data(t4, t4_value);
-			if ((!current || dirty & /*tiers*/ 2) && raw_value !== (raw_value = /*tier*/ ctx[14].description.html + "")) span2.innerHTML = raw_value;
+			if ((!current || dirty & /*tiers*/ 2) && t0_value !== (t0_value = /*tier*/ ctx[13].title + "")) set_data(t0, t0_value);
+			if ((!current || dirty & /*tiers*/ 2) && t2_value !== (t2_value = /*tier*/ ctx[13].price.numerator + "")) set_data(t2, t2_value);
+			if ((!current || dirty & /*tiers*/ 2) && t4_value !== (t4_value = /*tier*/ ctx[13].price.denominator + "")) set_data(t4, t4_value);
+			if ((!current || dirty & /*tiers*/ 2) && raw_value !== (raw_value = /*tier*/ ctx[13].description.html + "")) span2.innerHTML = raw_value;
 			if (dirty & /*tiers*/ 2) {
-				each_value_2 = /*tier*/ ctx[14].features;
+				each_value_2 = /*tier*/ ctx[13].features;
 				let i;
 
 				for (i = 0; i < each_value_2.length; i += 1) {
@@ -4215,7 +4193,7 @@ function create_each_block(ctx) {
 			}
 
 			if (!current || dirty & /*flipped*/ 16) {
-				toggle_class(div3, "flipped", /*flipped*/ ctx[4] === /*tier_index*/ ctx[17]);
+				toggle_class(div3, "flipped", /*flipped*/ ctx[4] === /*tier_index*/ ctx[16]);
 			}
 		},
 		i(local) {
@@ -4340,7 +4318,7 @@ function create_fragment(ctx) {
 			if (!current || dirty & /*heading*/ 4) set_data(t0, /*heading*/ ctx[2]);
 			if (!current || dirty & /*subheading*/ 8) set_data(t2, /*subheading*/ ctx[3]);
 
-			if (dirty & /*flipped, tiers, submit_form, form, loading, submitted, error*/ 499) {
+			if (dirty & /*flipped, tiers, submit_form, loading, form, submitted, error*/ 499) {
 				each_value = /*tiers*/ ctx[1];
 				let i;
 
@@ -4403,7 +4381,7 @@ function instance($$self, $$props, $$invalidate) {
 	let submitted = false;
 	let error = false;
 
-	async function submit_form(e, endpoint) {
+	async function submit_form(e) {
 		$$invalidate(5, loading = true);
 		const myForm = e.target;
 		const formData = new FormData(myForm);
@@ -4425,7 +4403,6 @@ function instance($$self, $$props, $$invalidate) {
 
 	const click_handler = tier_index => $$invalidate(4, flipped = tier_index);
 	const click_handler_1 = tier_index => $$invalidate(4, flipped = tier_index);
-	const submit_handler = (tier_form, e) => submit_form(e, tier_form.endpoint);
 	const click_handler_2 = () => $$invalidate(7, error = false);
 
 	$$self.$$set = $$props => {
@@ -4449,7 +4426,6 @@ function instance($$self, $$props, $$invalidate) {
 		props,
 		click_handler,
 		click_handler_1,
-		submit_handler,
 		click_handler_2
 	];
 }
