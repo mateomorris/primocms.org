@@ -1,4 +1,4 @@
-// Site Navigation - Updated January 30, 2024
+// Site Navigation - Updated February 7, 2024
 function noop() { }
 const identity = x => x;
 function assign(tar, src) {
@@ -21,14 +21,6 @@ function is_function(thing) {
 }
 function safe_not_equal(a, b) {
     return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
-}
-let src_url_equal_anchor;
-function src_url_equal(element_src, url) {
-    if (!src_url_equal_anchor) {
-        src_url_equal_anchor = document.createElement('a');
-    }
-    src_url_equal_anchor.href = url;
-    return element_src === src_url_equal_anchor.href;
 }
 function is_empty(obj) {
     return Object.keys(obj).length === 0;
@@ -3322,39 +3314,7 @@ function create_if_block_8(ctx) {
 
 // (379:14) {#if image.url}
 function create_if_block_6(ctx) {
-	let img;
-	let img_src_value;
-	let img_alt_value;
-
-	return {
-		c() {
-			img = element("img");
-			this.h();
-		},
-		l(nodes) {
-			img = claim_element(nodes, "IMG", { src: true, alt: true });
-			this.h();
-		},
-		h() {
-			if (!src_url_equal(img.src, img_src_value = /*image*/ ctx[22].url)) attr(img, "src", img_src_value);
-			attr(img, "alt", img_alt_value = /*image*/ ctx[22].alt);
-		},
-		m(target, anchor) {
-			insert_hydration(target, img, anchor);
-		},
-		p(ctx, dirty) {
-			if (dirty & /*recent_updates*/ 8 && !src_url_equal(img.src, img_src_value = /*image*/ ctx[22].url)) {
-				attr(img, "src", img_src_value);
-			}
-
-			if (dirty & /*recent_updates*/ 8 && img_alt_value !== (img_alt_value = /*image*/ ctx[22].alt)) {
-				attr(img, "alt", img_alt_value);
-			}
-		},
-		d(detaching) {
-			if (detaching) detach(img);
-		}
-	};
+	return { c: noop, l: noop, m: noop, d: noop };
 }
 
 // (385:18) {#if tag}
@@ -3380,7 +3340,7 @@ function create_each_block_4(ctx) {
 	let t5_value = /*date*/ ctx[26] + "";
 	let t5;
 	let t6;
-	let if_block0 = /*image*/ ctx[22].url && create_if_block_6(ctx);
+	let if_block0 = /*image*/ ctx[22].url && create_if_block_6();
 	let if_block1 = /*tag*/ ctx[23] && create_if_block_5();
 
 	return {
@@ -3460,10 +3420,8 @@ function create_each_block_4(ctx) {
 		},
 		p(ctx, dirty) {
 			if (/*image*/ ctx[22].url) {
-				if (if_block0) {
-					if_block0.p(ctx, dirty);
-				} else {
-					if_block0 = create_if_block_6(ctx);
+				if (if_block0) ; else {
+					if_block0 = create_if_block_6();
 					if_block0.c();
 					if_block0.m(li, t0);
 				}
