@@ -1,4 +1,4 @@
-// Accordion - Updated February 29, 2024
+// Accordion - Updated May 19, 2024
 function noop() { }
 const identity = x => x;
 function assign(tar, src) {
@@ -3175,7 +3175,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (71:2) {#if heading}
+// (72:2) {#if heading}
 function create_if_block_1(ctx) {
 	let h2;
 	let t;
@@ -3194,7 +3194,7 @@ function create_if_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-lu3muw");
+			attr(h2, "class", "heading svelte-1dljdb2");
 		},
 		m(target, anchor) {
 			insert_hydration(target, h2, anchor);
@@ -3209,7 +3209,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (83:8) {#if activeItem === i}
+// (84:8) {#if activeItem === i}
 function create_if_block(ctx) {
 	let div;
 	let raw_value = /*item*/ ctx[6].description.html + "";
@@ -3229,7 +3229,7 @@ function create_if_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "description content svelte-lu3muw");
+			attr(div, "class", "description content svelte-1dljdb2");
 			attr(div, "data-key", div_data_key_value = "items[" + /*i*/ ctx[8] + "].description");
 		},
 		m(target, anchor) {
@@ -3266,7 +3266,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (75:4) {#each items as item, i (i)}
+// (76:4) {#each items as item, i (i)}
 function create_each_block(key_1, ctx) {
 	let div1;
 	let button;
@@ -3332,10 +3332,10 @@ function create_each_block(key_1, ctx) {
 		},
 		h() {
 			attr(span0, "data-key", span0_data_key_value = "items[" + /*i*/ ctx[8] + "].title");
-			attr(span0, "class", "svelte-lu3muw");
-			attr(span1, "class", "icon svelte-lu3muw");
-			attr(button, "class", "svelte-lu3muw");
-			attr(div1, "class", "item svelte-lu3muw");
+			attr(span0, "class", "svelte-1dljdb2");
+			attr(span1, "class", "icon svelte-1dljdb2");
+			attr(button, "class", "svelte-1dljdb2");
+			attr(div1, "class", "item svelte-1dljdb2");
 			toggle_class(div1, "active", /*activeItem*/ ctx[2] === /*i*/ ctx[8]);
 			this.first = div1;
 		},
@@ -3461,8 +3461,8 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "accordion svelte-lu3muw");
-			attr(section, "class", "section-container svelte-lu3muw");
+			attr(div, "class", "accordion svelte-1dljdb2");
+			attr(section, "class", "section-container svelte-1dljdb2");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);

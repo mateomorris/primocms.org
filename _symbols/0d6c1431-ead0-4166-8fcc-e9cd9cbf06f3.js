@@ -1,4 +1,4 @@
-// Hero - Updated February 29, 2024
+// Hero - Updated May 19, 2024
 function noop$1() { }
 const identity$1 = x => x;
 function assign$1(tar, src) {
@@ -393,6 +393,14 @@ function set_data(text, data) {
     if (text.data === data)
         return;
     text.data = data;
+}
+function set_style(node, key, value, important) {
+    if (value == null) {
+        node.style.removeProperty(key);
+    }
+    else {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
 }
 function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
     const e = document.createEvent('CustomEvent');
@@ -21097,7 +21105,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "subheading svelte-553sor");
+			attr(h2, "class", "subheading svelte-1gxth1i");
 		},
 		m(target, anchor) {
 			insert_hydration(target, h2, anchor);
@@ -21118,7 +21126,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (389:6) {#if intro_video_id}
+// (408:6) {#if intro_video_id}
 function create_if_block_1(ctx) {
 	let button;
 	let span;
@@ -21159,8 +21167,8 @@ function create_if_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-553sor");
-			attr(button, "class", "pill-button svelte-553sor");
+			attr(span, "class", "svelte-1gxth1i");
+			attr(button, "class", "pill-button svelte-1gxth1i");
 		},
 		m(target, anchor) {
 			insert_hydration(target, button, anchor);
@@ -21172,7 +21180,7 @@ function create_if_block_1(ctx) {
 
 			if (!mounted) {
 				dispose = [
-					listen(button, "click", /*click_handler*/ ctx[9]),
+					listen(button, "click", /*click_handler*/ ctx[10]),
 					listen(button, "keyup", keyup_handler_1)
 				];
 
@@ -21198,7 +21206,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (401:0) {#if videoModalVisible}
+// (420:0) {#if videoModalVisible}
 function create_if_block(ctx) {
 	let div2;
 	let div0;
@@ -21243,16 +21251,16 @@ function create_if_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "bg svelte-553sor");
+			attr(div0, "class", "bg svelte-1gxth1i");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://www.youtube-nocookie.com/embed/ThInVXgxJ1Q")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "title", "YouTube video player");
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
 			iframe.allowFullscreen = true;
-			attr(iframe, "class", "svelte-553sor");
-			attr(div1, "class", "container has-video svelte-553sor");
+			attr(iframe, "class", "svelte-1gxth1i");
+			attr(div1, "class", "container has-video svelte-1gxth1i");
 			attr(div2, "id", "modal");
-			attr(div2, "class", "svelte-553sor");
+			attr(div2, "class", "svelte-1gxth1i");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -21264,7 +21272,7 @@ function create_if_block(ctx) {
 
 			if (!mounted) {
 				dispose = [
-					listen(div0, "click", /*hideModal*/ ctx[7]),
+					listen(div0, "click", /*hideModal*/ ctx[8]),
 					listen(div0, "keyup", keyup_handler_2)
 				];
 
@@ -21325,6 +21333,7 @@ function create_fragment(ctx) {
 	let iframe_src_value;
 	let t8;
 	let div3;
+	let style_max_width = `${/*container_max_width*/ ctx[6]}00px`;
 	let t9;
 	let if_block2_anchor;
 	let current;
@@ -21337,7 +21346,7 @@ function create_fragment(ctx) {
 		});
 
 	let if_block1 = /*intro_video_id*/ ctx[3] && create_if_block_1(ctx);
-	let if_block2 = /*videoModalVisible*/ ctx[6] && create_if_block(ctx);
+	let if_block2 = /*videoModalVisible*/ ctx[7] && create_if_block(ctx);
 
 	return {
 		c() {
@@ -21441,28 +21450,29 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "gradient svelte-553sor");
-			attr(h1, "class", "heading svelte-553sor");
+			attr(div0, "class", "gradient svelte-1gxth1i");
+			attr(h1, "class", "heading svelte-1gxth1i");
 			attr(a0, "href", a0_href_value = /*primary_button*/ ctx[4].url);
-			attr(a0, "class", "button svelte-553sor");
+			attr(a0, "class", "button svelte-1gxth1i");
 			attr(a0, "target", "_blank");
 			attr(a0, "rel", "noreferrer");
 			attr(a1, "href", a1_href_value = /*secondary_button*/ ctx[5].url);
-			attr(a1, "class", "button primary svelte-553sor");
+			attr(a1, "class", "button svelte-1gxth1i");
 			attr(a1, "target", "_blank");
 			attr(a1, "rel", "noreferrer");
-			attr(div1, "class", "buttons svelte-553sor");
-			attr(div2, "class", "top svelte-553sor");
+			attr(div1, "class", "buttons svelte-1gxth1i");
+			attr(div2, "class", "top svelte-1gxth1i");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*video_id*/ ctx[1] + "?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
 			iframe.allowFullscreen = true;
 			attr(iframe, "title", "Landing Page Demo");
-			attr(iframe, "class", "svelte-553sor");
-			attr(figure, "class", "svelte-553sor");
-			attr(div3, "class", "buttons svelte-553sor");
-			attr(div4, "class", "right svelte-553sor");
-			attr(header, "class", "section-container svelte-553sor");
+			attr(iframe, "class", "svelte-1gxth1i");
+			attr(figure, "class", "svelte-1gxth1i");
+			attr(div3, "class", "buttons svelte-1gxth1i");
+			attr(div4, "class", "right svelte-1gxth1i");
+			attr(header, "class", "section-container svelte-1gxth1i");
+			set_style(header, "max-width", style_max_width);
 		},
 		m(target, anchor) {
 			insert_hydration(target, header, anchor);
@@ -21548,11 +21558,15 @@ function create_fragment(ctx) {
 				check_outros();
 			}
 
-			if (/*videoModalVisible*/ ctx[6]) {
+			if (dirty & /*container_max_width*/ 64 && style_max_width !== (style_max_width = `${/*container_max_width*/ ctx[6]}00px`)) {
+				set_style(header, "max-width", style_max_width);
+			}
+
+			if (/*videoModalVisible*/ ctx[7]) {
 				if (if_block2) {
 					if_block2.p(ctx, dirty);
 
-					if (dirty & /*videoModalVisible*/ 64) {
+					if (dirty & /*videoModalVisible*/ 128) {
 						transition_in(if_block2, 1);
 					}
 				} else {
@@ -21616,24 +21630,26 @@ function instance($$self, $$props, $$invalidate) {
 	let { intro_video_id } = $$props;
 	let { primary_button } = $$props;
 	let { secondary_button } = $$props;
+	let { container_max_width } = $$props;
 	let videoModalVisible = false;
 
 	function hideModal() {
 		downloading = false;
 		modalVisible = false;
-		$$invalidate(6, videoModalVisible = false);
+		$$invalidate(7, videoModalVisible = false);
 	}
 
-	const click_handler = () => $$invalidate(6, videoModalVisible = true);
+	const click_handler = () => $$invalidate(7, videoModalVisible = true);
 
 	$$self.$$set = $$props => {
-		if ('props' in $$props) $$invalidate(8, props = $$props.props);
+		if ('props' in $$props) $$invalidate(9, props = $$props.props);
 		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
 		if ('video_id' in $$props) $$invalidate(1, video_id = $$props.video_id);
 		if ('subheading' in $$props) $$invalidate(2, subheading = $$props.subheading);
 		if ('intro_video_id' in $$props) $$invalidate(3, intro_video_id = $$props.intro_video_id);
 		if ('primary_button' in $$props) $$invalidate(4, primary_button = $$props.primary_button);
 		if ('secondary_button' in $$props) $$invalidate(5, secondary_button = $$props.secondary_button);
+		if ('container_max_width' in $$props) $$invalidate(6, container_max_width = $$props.container_max_width);
 	};
 
 	return [
@@ -21643,6 +21659,7 @@ function instance($$self, $$props, $$invalidate) {
 		intro_video_id,
 		primary_button,
 		secondary_button,
+		container_max_width,
 		videoModalVisible,
 		hideModal,
 		props,
@@ -21655,13 +21672,14 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			props: 8,
+			props: 9,
 			heading: 0,
 			video_id: 1,
 			subheading: 2,
 			intro_video_id: 3,
 			primary_button: 4,
-			secondary_button: 5
+			secondary_button: 5,
+			container_max_width: 6
 		});
 	}
 }
