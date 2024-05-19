@@ -793,10 +793,9 @@ function create_fragment(ctx) {
 	let header;
 	let h2;
 	let t0;
-	let t1;
 	let h3;
+	let t1;
 	let t2;
-	let t3;
 	let div;
 	let each_value = /*teasers*/ ctx[1];
 	let each_blocks = [];
@@ -810,11 +809,10 @@ function create_fragment(ctx) {
 			section = element("section");
 			header = element("header");
 			h2 = element("h2");
-			t0 = text(/*heading*/ ctx[0]);
-			t1 = space();
+			t0 = space();
 			h3 = element("h3");
-			t2 = text(/*subheading*/ ctx[2]);
-			t3 = space();
+			t1 = text(/*subheading*/ ctx[2]);
+			t2 = space();
 			div = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -830,15 +828,14 @@ function create_fragment(ctx) {
 			var header_nodes = children(header);
 			h2 = claim_element(header_nodes, "H2", { class: true });
 			var h2_nodes = children(h2);
-			t0 = claim_text(h2_nodes, /*heading*/ ctx[0]);
 			h2_nodes.forEach(detach);
-			t1 = claim_space(header_nodes);
+			t0 = claim_space(header_nodes);
 			h3 = claim_element(header_nodes, "H3", { class: true });
 			var h3_nodes = children(h3);
-			t2 = claim_text(h3_nodes, /*subheading*/ ctx[2]);
+			t1 = claim_text(h3_nodes, /*subheading*/ ctx[2]);
 			h3_nodes.forEach(detach);
 			header_nodes.forEach(detach);
-			t3 = claim_space(section_nodes);
+			t2 = claim_space(section_nodes);
 			div = claim_element(section_nodes, "DIV", { class: true });
 			var div_nodes = children(div);
 
@@ -861,11 +858,11 @@ function create_fragment(ctx) {
 			insert_hydration(target, section, anchor);
 			append_hydration(section, header);
 			append_hydration(header, h2);
-			append_hydration(h2, t0);
-			append_hydration(header, t1);
+			h2.innerHTML = /*heading*/ ctx[0];
+			append_hydration(header, t0);
 			append_hydration(header, h3);
-			append_hydration(h3, t2);
-			append_hydration(section, t3);
+			append_hydration(h3, t1);
+			append_hydration(section, t2);
 			append_hydration(section, div);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -875,8 +872,7 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
-			if (dirty & /*subheading*/ 4) set_data(t2, /*subheading*/ ctx[2]);
+			if (dirty & /*heading*/ 1) h2.innerHTML = /*heading*/ ctx[0];			if (dirty & /*subheading*/ 4) set_data(t1, /*subheading*/ ctx[2]);
 
 			if (dirty & /*teasers*/ 2) {
 				each_value = /*teasers*/ ctx[1];

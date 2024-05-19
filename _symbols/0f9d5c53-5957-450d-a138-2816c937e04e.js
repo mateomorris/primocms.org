@@ -2798,22 +2798,11 @@ function create_fragment(ctx) {
 	let raw_value = /*body*/ ctx[0].html + "";
 	let t2;
 	let div1;
-	let a0;
-	let icon0;
+	let a;
+	let icon;
 	let t3;
-	let t4;
-	let a1;
-	let icon1;
-	let t5;
 	let current;
-	icon0 = new Component$1({ props: { icon: "ion:server-outline" } });
-
-	icon1 = new Component$1({
-			props: {
-				class: "second-icon",
-				icon: "ic:outline-cloud"
-			}
-		});
+	icon = new Component$1({ props: { icon: "ion:server-outline" } });
 
 	return {
 		c() {
@@ -2825,13 +2814,9 @@ function create_fragment(ctx) {
 			div0 = element("div");
 			t2 = space();
 			div1 = element("div");
-			a0 = element("a");
-			create_component(icon0.$$.fragment);
-			t3 = text("\n        Self-host");
-			t4 = space();
-			a1 = element("a");
-			create_component(icon1.$$.fragment);
-			t5 = text("\n        Primo Cloud");
+			a = element("a");
+			create_component(icon.$$.fragment);
+			t3 = text("\n        self-host");
 			this.h();
 		},
 		l(nodes) {
@@ -2850,32 +2835,24 @@ function create_fragment(ctx) {
 			t2 = claim_space(div2_nodes);
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			a0 = claim_element(div1_nodes, "A", { href: true, class: true });
-			var a0_nodes = children(a0);
-			claim_component(icon0.$$.fragment, a0_nodes);
-			t3 = claim_text(a0_nodes, "\n        Self-host");
-			a0_nodes.forEach(detach);
-			t4 = claim_space(div1_nodes);
-			a1 = claim_element(div1_nodes, "A", { href: true, class: true });
-			var a1_nodes = children(a1);
-			claim_component(icon1.$$.fragment, a1_nodes);
-			t5 = claim_text(a1_nodes, "\n        Primo Cloud");
-			a1_nodes.forEach(detach);
+			a = claim_element(div1_nodes, "A", { href: true, class: true });
+			var a_nodes = children(a);
+			claim_component(icon.$$.fragment, a_nodes);
+			t3 = claim_text(a_nodes, "\n        self-host");
+			a_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			section_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-paj5et");
-			attr(div0, "class", "body svelte-paj5et");
-			attr(a0, "href", "https://docs.primocms.org/getting-started");
-			attr(a0, "class", "button svelte-paj5et");
-			attr(a1, "href", "/cloud");
-			attr(a1, "class", "button primary svelte-paj5et");
-			attr(div1, "class", "buttons svelte-paj5et");
-			attr(div2, "class", "card svelte-paj5et");
-			attr(section, "class", "section-container svelte-paj5et");
+			attr(h2, "class", "heading svelte-t3hmna");
+			attr(div0, "class", "body svelte-t3hmna");
+			attr(a, "href", "https://docs.primocms.org/getting-started");
+			attr(a, "class", "button svelte-t3hmna");
+			attr(div1, "class", "buttons svelte-t3hmna");
+			attr(div2, "class", "card svelte-t3hmna");
+			attr(section, "class", "section-container svelte-t3hmna");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);
@@ -2887,13 +2864,9 @@ function create_fragment(ctx) {
 			div0.innerHTML = raw_value;
 			append_hydration(div2, t2);
 			append_hydration(div2, div1);
-			append_hydration(div1, a0);
-			mount_component(icon0, a0, null);
-			append_hydration(a0, t3);
-			append_hydration(div1, t4);
-			append_hydration(div1, a1);
-			mount_component(icon1, a1, null);
-			append_hydration(a1, t5);
+			append_hydration(div1, a);
+			mount_component(icon, a, null);
+			append_hydration(a, t3);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -2901,19 +2874,16 @@ function create_fragment(ctx) {
 			if ((!current || dirty & /*body*/ 1) && raw_value !== (raw_value = /*body*/ ctx[0].html + "")) div0.innerHTML = raw_value;		},
 		i(local) {
 			if (current) return;
-			transition_in(icon0.$$.fragment, local);
-			transition_in(icon1.$$.fragment, local);
+			transition_in(icon.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
-			transition_out(icon0.$$.fragment, local);
-			transition_out(icon1.$$.fragment, local);
+			transition_out(icon.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
 			if (detaching) detach(section);
-			destroy_component(icon0);
-			destroy_component(icon1);
+			destroy_component(icon);
 		}
 	};
 }

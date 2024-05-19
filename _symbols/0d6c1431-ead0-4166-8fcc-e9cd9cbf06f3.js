@@ -21126,7 +21126,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (408:6) {#if intro_video_id}
+// (407:6) {#if intro_video_id}
 function create_if_block_1(ctx) {
 	let button;
 	let span;
@@ -21206,7 +21206,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (420:0) {#if videoModalVisible}
+// (419:0) {#if videoModalVisible}
 function create_if_block(ctx) {
 	let div2;
 	let div0;
@@ -21272,7 +21272,7 @@ function create_if_block(ctx) {
 
 			if (!mounted) {
 				dispose = [
-					listen(div0, "click", /*hideModal*/ ctx[8]),
+					listen(div0, "click", /*hideModal*/ ctx[7]),
 					listen(div0, "keyup", keyup_handler_2)
 				];
 
@@ -21315,26 +21315,21 @@ function create_fragment(ctx) {
 	let t1;
 	let t2;
 	let div1;
-	let a0;
-	let t3_value = /*primary_button*/ ctx[4].label + "";
+	let a;
+	let t3_value = /*secondary_button*/ ctx[4].label + "";
 	let t3;
-	let a0_href_value;
 	let t4;
-	let a1;
-	let t5_value = /*secondary_button*/ ctx[5].label + "";
-	let t5;
-	let t6;
 	let icon;
-	let a1_href_value;
-	let t7;
+	let a_href_value;
+	let t5;
 	let div4;
 	let figure;
 	let iframe;
 	let iframe_src_value;
-	let t8;
+	let t6;
 	let div3;
-	let style_max_width = `${/*container_max_width*/ ctx[6]}00px`;
-	let t9;
+	let style_max_width = `${/*container_max_width*/ ctx[5]}00px`;
+	let t7;
 	let if_block2_anchor;
 	let current;
 	let if_block0 = /*subheading*/ ctx[2].html && create_if_block_2(ctx);
@@ -21346,7 +21341,7 @@ function create_fragment(ctx) {
 		});
 
 	let if_block1 = /*intro_video_id*/ ctx[3] && create_if_block_1(ctx);
-	let if_block2 = /*videoModalVisible*/ ctx[7] && create_if_block(ctx);
+	let if_block2 = /*videoModalVisible*/ ctx[6] && create_if_block(ctx);
 
 	return {
 		c() {
@@ -21359,21 +21354,18 @@ function create_fragment(ctx) {
 			if (if_block0) if_block0.c();
 			t2 = space();
 			div1 = element("div");
-			a0 = element("a");
+			a = element("a");
 			t3 = text(t3_value);
 			t4 = space();
-			a1 = element("a");
-			t5 = text(t5_value);
-			t6 = space();
 			create_component(icon.$$.fragment);
-			t7 = space();
+			t5 = space();
 			div4 = element("div");
 			figure = element("figure");
 			iframe = element("iframe");
-			t8 = space();
+			t6 = space();
 			div3 = element("div");
 			if (if_block1) if_block1.c();
-			t9 = space();
+			t7 = space();
 			if (if_block2) if_block2.c();
 			if_block2_anchor = empty();
 			this.h();
@@ -21395,33 +21387,21 @@ function create_fragment(ctx) {
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
 
-			a0 = claim_element(div1_nodes, "A", {
+			a = claim_element(div1_nodes, "A", {
 				href: true,
 				class: true,
 				target: true,
 				rel: true
 			});
 
-			var a0_nodes = children(a0);
-			t3 = claim_text(a0_nodes, t3_value);
-			a0_nodes.forEach(detach);
-			t4 = claim_space(div1_nodes);
-
-			a1 = claim_element(div1_nodes, "A", {
-				href: true,
-				class: true,
-				target: true,
-				rel: true
-			});
-
-			var a1_nodes = children(a1);
-			t5 = claim_text(a1_nodes, t5_value);
-			t6 = claim_space(a1_nodes);
-			claim_component(icon.$$.fragment, a1_nodes);
-			a1_nodes.forEach(detach);
+			var a_nodes = children(a);
+			t3 = claim_text(a_nodes, t3_value);
+			t4 = claim_space(a_nodes);
+			claim_component(icon.$$.fragment, a_nodes);
+			a_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
-			t7 = claim_space(header_nodes);
+			t5 = claim_space(header_nodes);
 			div4 = claim_element(header_nodes, "DIV", { class: true });
 			var div4_nodes = children(div4);
 			figure = claim_element(div4_nodes, "FIGURE", { class: true });
@@ -21437,14 +21417,14 @@ function create_fragment(ctx) {
 
 			children(iframe).forEach(detach);
 			figure_nodes.forEach(detach);
-			t8 = claim_space(div4_nodes);
+			t6 = claim_space(div4_nodes);
 			div3 = claim_element(div4_nodes, "DIV", { class: true });
 			var div3_nodes = children(div3);
 			if (if_block1) if_block1.l(div3_nodes);
 			div3_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
 			header_nodes.forEach(detach);
-			t9 = claim_space(nodes);
+			t7 = claim_space(nodes);
 			if (if_block2) if_block2.l(nodes);
 			if_block2_anchor = empty();
 			this.h();
@@ -21452,14 +21432,10 @@ function create_fragment(ctx) {
 		h() {
 			attr(div0, "class", "gradient svelte-1gxth1i");
 			attr(h1, "class", "heading svelte-1gxth1i");
-			attr(a0, "href", a0_href_value = /*primary_button*/ ctx[4].url);
-			attr(a0, "class", "button svelte-1gxth1i");
-			attr(a0, "target", "_blank");
-			attr(a0, "rel", "noreferrer");
-			attr(a1, "href", a1_href_value = /*secondary_button*/ ctx[5].url);
-			attr(a1, "class", "button svelte-1gxth1i");
-			attr(a1, "target", "_blank");
-			attr(a1, "rel", "noreferrer");
+			attr(a, "href", a_href_value = /*secondary_button*/ ctx[4].url);
+			attr(a, "class", "button svelte-1gxth1i");
+			attr(a, "target", "_blank");
+			attr(a, "rel", "noreferrer");
 			attr(div1, "class", "buttons svelte-1gxth1i");
 			attr(div2, "class", "top svelte-1gxth1i");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*video_id*/ ctx[1] + "?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479")) attr(iframe, "src", iframe_src_value);
@@ -21485,21 +21461,18 @@ function create_fragment(ctx) {
 			if (if_block0) if_block0.m(div2, null);
 			append_hydration(div2, t2);
 			append_hydration(div2, div1);
-			append_hydration(div1, a0);
-			append_hydration(a0, t3);
-			append_hydration(div1, t4);
-			append_hydration(div1, a1);
-			append_hydration(a1, t5);
-			append_hydration(a1, t6);
-			mount_component(icon, a1, null);
-			append_hydration(header, t7);
+			append_hydration(div1, a);
+			append_hydration(a, t3);
+			append_hydration(a, t4);
+			mount_component(icon, a, null);
+			append_hydration(header, t5);
 			append_hydration(header, div4);
 			append_hydration(div4, figure);
 			append_hydration(figure, iframe);
-			append_hydration(div4, t8);
+			append_hydration(div4, t6);
 			append_hydration(div4, div3);
 			if (if_block1) if_block1.m(div3, null);
-			insert_hydration(target, t9, anchor);
+			insert_hydration(target, t7, anchor);
 			if (if_block2) if_block2.m(target, anchor);
 			insert_hydration(target, if_block2_anchor, anchor);
 			current = true;
@@ -21519,16 +21492,10 @@ function create_fragment(ctx) {
 				if_block0 = null;
 			}
 
-			if ((!current || dirty & /*primary_button*/ 16) && t3_value !== (t3_value = /*primary_button*/ ctx[4].label + "")) set_data(t3, t3_value);
+			if ((!current || dirty & /*secondary_button*/ 16) && t3_value !== (t3_value = /*secondary_button*/ ctx[4].label + "")) set_data(t3, t3_value);
 
-			if (!current || dirty & /*primary_button*/ 16 && a0_href_value !== (a0_href_value = /*primary_button*/ ctx[4].url)) {
-				attr(a0, "href", a0_href_value);
-			}
-
-			if ((!current || dirty & /*secondary_button*/ 32) && t5_value !== (t5_value = /*secondary_button*/ ctx[5].label + "")) set_data(t5, t5_value);
-
-			if (!current || dirty & /*secondary_button*/ 32 && a1_href_value !== (a1_href_value = /*secondary_button*/ ctx[5].url)) {
-				attr(a1, "href", a1_href_value);
+			if (!current || dirty & /*secondary_button*/ 16 && a_href_value !== (a_href_value = /*secondary_button*/ ctx[4].url)) {
+				attr(a, "href", a_href_value);
 			}
 
 			if (!current || dirty & /*video_id*/ 2 && !src_url_equal(iframe.src, iframe_src_value = "https://player.vimeo.com/video/" + /*video_id*/ ctx[1] + "?h=df40df2d2c&badge=0&loop=1&autopause=0&player_id=0&autoplay=1&muted=1&loop=1&title=0&sidedock=0&controls=&app_id=58479")) {
@@ -21558,15 +21525,15 @@ function create_fragment(ctx) {
 				check_outros();
 			}
 
-			if (dirty & /*container_max_width*/ 64 && style_max_width !== (style_max_width = `${/*container_max_width*/ ctx[6]}00px`)) {
+			if (dirty & /*container_max_width*/ 32 && style_max_width !== (style_max_width = `${/*container_max_width*/ ctx[5]}00px`)) {
 				set_style(header, "max-width", style_max_width);
 			}
 
-			if (/*videoModalVisible*/ ctx[7]) {
+			if (/*videoModalVisible*/ ctx[6]) {
 				if (if_block2) {
 					if_block2.p(ctx, dirty);
 
-					if (dirty & /*videoModalVisible*/ 128) {
+					if (dirty & /*videoModalVisible*/ 64) {
 						transition_in(if_block2, 1);
 					}
 				} else {
@@ -21603,7 +21570,7 @@ function create_fragment(ctx) {
 			if (if_block0) if_block0.d();
 			destroy_component(icon);
 			if (if_block1) if_block1.d();
-			if (detaching) detach(t9);
+			if (detaching) detach(t7);
 			if (if_block2) if_block2.d(detaching);
 			if (detaching) detach(if_block2_anchor);
 		}
@@ -21636,20 +21603,20 @@ function instance($$self, $$props, $$invalidate) {
 	function hideModal() {
 		downloading = false;
 		modalVisible = false;
-		$$invalidate(7, videoModalVisible = false);
+		$$invalidate(6, videoModalVisible = false);
 	}
 
-	const click_handler = () => $$invalidate(7, videoModalVisible = true);
+	const click_handler = () => $$invalidate(6, videoModalVisible = true);
 
 	$$self.$$set = $$props => {
-		if ('props' in $$props) $$invalidate(9, props = $$props.props);
+		if ('props' in $$props) $$invalidate(8, props = $$props.props);
 		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
 		if ('video_id' in $$props) $$invalidate(1, video_id = $$props.video_id);
 		if ('subheading' in $$props) $$invalidate(2, subheading = $$props.subheading);
 		if ('intro_video_id' in $$props) $$invalidate(3, intro_video_id = $$props.intro_video_id);
-		if ('primary_button' in $$props) $$invalidate(4, primary_button = $$props.primary_button);
-		if ('secondary_button' in $$props) $$invalidate(5, secondary_button = $$props.secondary_button);
-		if ('container_max_width' in $$props) $$invalidate(6, container_max_width = $$props.container_max_width);
+		if ('primary_button' in $$props) $$invalidate(9, primary_button = $$props.primary_button);
+		if ('secondary_button' in $$props) $$invalidate(4, secondary_button = $$props.secondary_button);
+		if ('container_max_width' in $$props) $$invalidate(5, container_max_width = $$props.container_max_width);
 	};
 
 	return [
@@ -21657,12 +21624,12 @@ function instance($$self, $$props, $$invalidate) {
 		video_id,
 		subheading,
 		intro_video_id,
-		primary_button,
 		secondary_button,
 		container_max_width,
 		videoModalVisible,
 		hideModal,
 		props,
+		primary_button,
 		click_handler
 	];
 }
@@ -21672,14 +21639,14 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			props: 9,
+			props: 8,
 			heading: 0,
 			video_id: 1,
 			subheading: 2,
 			intro_video_id: 3,
-			primary_button: 4,
-			secondary_button: 5,
-			container_max_width: 6
+			primary_button: 9,
+			secondary_button: 4,
+			container_max_width: 5
 		});
 	}
 }
