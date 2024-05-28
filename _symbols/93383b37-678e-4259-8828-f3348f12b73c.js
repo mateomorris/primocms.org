@@ -544,7 +544,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (118:10) {#if teaser.link.label}
+// (120:10) {#if teaser.link.label}
 function create_if_block_1(ctx) {
 	let a;
 	let t_value = /*teaser*/ ctx[4].link.label + "";
@@ -565,7 +565,7 @@ function create_if_block_1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "class", "link svelte-klxdzx");
+			attr(a, "class", "link svelte-1eizu3");
 			attr(a, "href", a_href_value = /*teaser*/ ctx[4].link.url);
 		},
 		m(target, anchor) {
@@ -585,7 +585,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (131:10) {:else}
+// (133:10) {:else}
 function create_else_block(ctx) {
 	let img;
 	let img_src_value;
@@ -622,7 +622,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (125:10) {#if teaser.video}
+// (127:10) {#if teaser.video}
 function create_if_block(ctx) {
 	let iframe;
 	let iframe_src_value;
@@ -649,7 +649,7 @@ function create_if_block(ctx) {
 			attr(iframe, "frameborder", "0");
 			attr(iframe, "allow", "autoplay; fullscreen; picture-in-picture");
 			attr(iframe, "title", "video");
-			attr(iframe, "class", "svelte-klxdzx");
+			attr(iframe, "class", "svelte-1eizu3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, iframe, anchor);
@@ -665,7 +665,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (113:4) {#each teasers as teaser}
+// (115:4) {#each teasers as teaser}
 function create_each_block(ctx) {
 	let div2;
 	let div1;
@@ -731,11 +731,11 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-klxdzx");
+			attr(h2, "class", "heading svelte-1eizu3");
 			attr(div0, "class", "body");
-			attr(div1, "class", "content svelte-klxdzx");
-			attr(figure, "class", "svelte-klxdzx");
-			attr(div2, "class", "teaser svelte-klxdzx");
+			attr(div1, "class", "content svelte-1eizu3");
+			attr(figure, "class", "svelte-1eizu3");
+			attr(div2, "class", "teaser svelte-1eizu3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -848,11 +848,11 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-klxdzx");
-			attr(h3, "class", "subheading svelte-klxdzx");
-			attr(header, "class", "svelte-klxdzx");
-			attr(div, "class", "teasers svelte-klxdzx");
-			attr(section, "class", "section-container svelte-klxdzx");
+			attr(h2, "class", "heading svelte-1eizu3");
+			attr(h3, "class", "subheading svelte-1eizu3");
+			attr(header, "class", "svelte-1eizu3");
+			attr(div, "class", "teasers svelte-1eizu3");
+			attr(section, "class", "section-container svelte-1eizu3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);
